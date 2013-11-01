@@ -1,0 +1,1999 @@
+@charset "utf-8";
+/*=====/card/ac/img/==== ../../images/qq/ =====*/
+/*===== 共享元素 =====*/
+.align_right,.alignright{text-align:right;}
+.align_center{text-align:center;}
+/*隐藏按钮文字*/
+.layer_global_title .close,
+.cardbox_exchange .close,
+.popup_shop .popup_shop_tips .btn,
+.popup_shop .close,
+.popup_shop .btn_preview,
+.popup_shop .btn_use{border:none;overflow:hidden;line-height:300px;font-size:0;background:#7A4D21;filter:alpha(opacity=0);opacity: 0;}
+/*滚动条DIY*/
+.popup_shop .list{scrollbar-3dlight-color:#DAC6B9;scrollbar-arrow-color:#8C7468; scrollbar-base-color:#DDD38D;scrollbar-darkshadow-color:#DAC6B9;scrollbar-face-color:#DAC6B9; scrollbar-highlight-color:#FFFCF7; scrollbar-shadow-color:#DDD38D;}
+.cardbox_achievement ul,
+.popup_achieve .achieve_content,
+.layer_exchange_friend .next,
+.layer_exchange_friend .list_cont,
+.exchange_setting .box_card_list ul,
+.popup_successful_collection .list,
+.popup_collect .list,
+.layer_global_cont{
+scrollbar-arrow-color:#B99A66;
+scrollbar-base-color:#6F3910;
+scrollbar-darkshadow-color:#6F3910;
+scrollbar-face-color:#6F3910;
+scrollbar-highlight-color:#B99A66;
+scrollbar-shadow-color:#B99A66;
+scrollbar-track-color:#6F3910;}
+/*===== 文字及链接  =====*/
+.text_desc{color:#666;}
+.text_important{color:#f00;}
+/*===== 闪卡背景图案  =====*/
+.flash_card_a,
+.flash_card_b{position:absolute;width:54px;height:259px;}
+.flash_card_a{background:url(../../images/qq/flash_card_a.png) no-repeat;}
+.flash_card_b{background:url(../../images/qq/flash_card_b.png) no-repeat;}
+/*===== 小黄条  =====*/
+.hint{margin:1px;padding:4px 8px 1px 8px;color:#4B4B4B;border:1px solid #FDCF1A;background-color:#FFF334;line-height:150%!important;_line-height:160%;position:relative;overflow:hidden;_zoom:1;text-align:left;}
+.hint_noicon{padding-left:8px}
+.hint a{text-decoration:underline;color:#f00;}
+.hint strong{color:#f00;}
+.hint_close{position:absolute;right:8px;top:8px;border:0;display:block;width:9px;height:9px;overflow:hidden;font-size:0;line-height:100px;background:url(../../images/qq/bg_hint_close.png) left top no-repeat}
+.note{text-align:center;margin:5px 0;}
+/*===== 首页小黄条  =====*/
+.elm_title_tips{margin: 29px 0 -29px;text-align:center;z-index: 8;}
+/*===== 按钮  =====*/
+/*按钮*/
+.btns{text-align:center;clear:both;}
+/*小按钮*/
+.bt_tx2,.bt_tx4,.bt_tx6,.bt_tx8{display:inline-block;zoom:1;margin:0 2px;background-image:url(../../images/qq/icon.png?v=81);background-color:transparent;border:0;height:23px;line-height:21px;color:#A4410B;vertical-align:middle;text-align:center;font-size:12px!important;font-family:arial!important;text-decoration:none!important;}
+.bt_tx2{width:43px;background-position:0 -240px;}
+.bt_tx4{width:66px;background-position:0 -270px;}
+.bt_tx6{width:90px;background-position:0 -300px;}
+.bt_tx8{width:114px;background-position:0 -330px;}
+/*强调小按钮*/
+.bt5_tx2,.bt5_tx4,.bt5_tx6,.bt5_tx8{display:inline-block;zoom:1;margin:0 2px;background-image:url(../../images/qq/icon.png?v=81);background-color:transparent;border:0;height:23px;line-height:21px;color:#fff;vertical-align:middle;text-align:center;font-size:12px!important;font-family:arial!important;text-decoration:none!important;}
+.bt5_tx2{width:43px;background-position:-180px -240px;}
+.bt5_tx4{width:66px;background-position:-180px -270px;}
+.bt5_tx6{width:90px;background-position:-180px -300px;}
+.bt5_tx8{width:114px;background-position:-180px -330px;}
+/*弱化小按钮*/
+.bt4_tx2,.bt4_tx4,.bt4_tx6,.bt4_tx8{display:inline-block;zoom:1;margin:0 2px;background-image:url(../../images/qq/icon.png?v=81);background-color:transparent;border:0;height:23px;line-height:21px;color:#EDEDED;vertical-align:middle;text-align:center;font-size:12px!important;font-family:arial!important;text-decoration:none!important;}
+.bt4_tx2{width:43px;background-position:-120px -330px;}
+.bt4_tx4{width:66px;background-position:-90px -300px;}
+.bt4_tx6{width:90px;background-position:-90px -270px;}
+.bt4_tx8{width:114px;background-position:-60px -240px;}
+/*大按钮*/
+.bt2_tx2,.bt2_tx4,.bt2_tx6,.bt2_tx8{display:inline-block;zoom:1;margin:0 3px;background-image:url(../../images/qq/icon.png?v=81);background-color:transparent;border:0;height:30px;line-height:30px;text-align:center;font-size:14px;font-family:arial,verdana!important; font-weight:bold; vertical-align:middle;color:#FFE3C1;text-decoration:none!important;font-weight:bold;}
+.bt2_tx2{width:60px;text-indent:4px;letter-spacing:6px;background-position:-300px -330px;}
+.bt2_tx4{width:77px;background-position:-270px -300px;}
+.bt2_tx6{width:105px;background-position:-270px -270px;}
+.bt2_tx8{width:131px;background-position:-240px -240px;}
+/*弱化大按钮*/
+.bt3_tx2,.bt3_tx4,.bt3_tx6,.bt3_tx8{display:inline-block;zoom:1;margin:0 3px;background-image:url(../../images/qq/icon.png?v=81);background-color:transparent;border:0;height:30px;line-height:30px;text-align:center;font-size:14px;font-family:arial,verdana!important; font-weight:bold; vertical-align:middle;color:#EDEDED;text-decoration:none!important;font-weight:bold;}
+.bt3_tx2{width:60px;text-indent:4px;letter-spacing:6px;background-position:-390px -330px;}
+.bt3_tx4{width:77px;background-position:-390px -300px;}
+.bt3_tx6{width:105px;background-position:-390px -270px;}
+.bt3_tx8{width:131px;background-position:-390px -240px;}
+/*强调按钮*/
+.bt_em,.bt_em_del{margin:0 2px;width:68px;height:20px;line-height:21px;_height:23px;border:0;display:inline-block;zoom:1;background-image:url(../../images/qq/icon.png?v=81);background-color:transparent;color:#FFF;vertical-align:middle;font-size:12px;text-align:center;text-decoration:none!important;}
+.bt_em{background-position:-60px -150px;}
+.bt_em_del{background-position:-150px -150px;}
+/*===== 文本 =====*/
+.tx,a.tx:link,a.tx:visited {color:#65431B;font-size:12px;}
+.tx1,a.tx1:link,a.tx1:visited {color:#65431B;font-size:14px;}
+.tx2,a.tx2:link,a.tx2:visited {color:#552B08;font-weight:bold;font-size:14px;}
+.tx3,a.tx3:link,a.tx3:visited {color:#D22300;font-weight:bold;font-size:14px;}
+.tx4,a.tx4:link,a.tx4:visited {color:#D22300;font-size:12px;}
+.tx5,a.tx5:link,a.tx5:visited {color:#067FC4;font-size:12px;}
+/*===== tab icon  =====*/
+.tab_icon{ margin-right:5px;display:inline-block;*display:inline;zoom:1;width:20px;height:19px;vertical-align:middle;}
+.tab_icon span{width:20px; height:19px;display:inline-block;*display:inline;zoom:1;background-image:url(../../images/qq/icon.png?v=81);background-repeat:no-repeat;vertical-align:middle;}
+.tab_icon_box{background-position:0 -472px;}
+.tab_icon_box_sel{background-position:-20px -472px;}
+.tab_icon_exchange{background-position:-240px -120px;}
+.tab_icon_exchange_sel{background-position:-270px -120px;}
+.tab_icon_insurance{background-position:-300px -120px;}
+.tab_icon_insurance_sel{background-position:-330px -120px;}
+.tab_icon_buy{background-position:0 -150px;}
+.tab_icon_buy_sel{background-position:-30px -150px;}
+.tab_icon_symbols{background-position:-240px 0;}
+.tab_icon_symbols_sel{background-position:-270px 0;}
+.tab_icon_book{background-position:-240px -150px;}
+.tab_icon_book_sel{background-position:-270px -150px;}
+.tab_icon_bottle{background-position:-180px -120px;}
+.tab_icon_bottle_sel{background-position:-210px -120px;}
+.tab_icon_flash{background-position:-360px -30px;}
+.tab_icon_flash_sel{background-position:-330px -30px;}
+.tab_icon_shop{background-position:-180px -60px;}
+.tab_icon_shop_sel{background-position:-210px -60px;}
+.tab_icon_propcard_sel{background-position:-300px -360px;}
+.tab_icon_spirit_sel{background-position:-330px -360px;}
+.tab_icon_prop{background-position:-390px -360px;}
+.tab_icon_prop_sel{background-position:-360px -360px;}
+/*===== 技能  =====*/
+.craftsmanship_item{position:relative;display:inline-block;*display:inline;zoom:1;width:71px;height:71px;overflow:hidden;}
+.craftsmanship_item .link{display:block;position:absolute;z-index:3;top:0;left:0;width:71px;height:71px;}
+.craftsmanship_item .link span{display:none;}
+.craftsmanship_item .border_red,
+.craftsmanship_item .borderhong_argentate,
+.craftsmanship_item .border_yellow{width:71px;height:71px;position:absolute;z-index:2;top:0;left:0;}
+.craftsmanship_item .border_red{background:url(../../images/qq/icon.png?v=81) no-repeat 0 -360px;}
+.craftsmanship_item .border_yellow{background:url(../../images/qq/icon.png?v=81) no-repeat -90px -360px;}
+.craftsmanship_item .borderhong_argentate{background:url(../../images/qq/icon.png?v=81) no-repeat -180px -360px;}
+.craftsmanship_item img{position:relative;z-index:1;}
+.craftsmanship_item .alpha{display:block;position:absolute;top:0;left:0;z-index:4;background:#000;filter:alpha(opacity=70);opacity: 0.7;width:71px;height:71px;}
+/*===== 共享窗口结构  =====*/
+/*窗口风格1 v1*/
+/*窗口背景*/
+.rank span,.layer_global,.layer_global_main{background:url(../../images/qq/layer.png?v=3) no-repeat;}
+.layer_global{position:relative;width:701px;}
+.layer_global_main{padding:55px 0 38px 0; background-position:-701px 100%;}
+.layer_global_title{position:absolute;top:0;left:0; width:100%;}
+.layer_global_title h3{ padding:15px 25px; font-size:14px; color:#F6B344;}
+.layer_global_title h3 span{font-size:18px; color:#FFF; padding:0 5px;}
+.layer_global_title .close{position:absolute;left:663px;top:15px; z-index:11; width:20px;height:20px;}
+.layer_global_title .close span{ display:none;}
+.layer_global .layer_info{ width:450px; padding:5px 0; float:left; color:#DD9E4D;}
+.layer_global .layer_strategy_tips{position:relative;z-index:3;clear:both;width:667px;_width:671px;background:#FBECD1;border:1px solid #FED0B0;color:#894626;text-align:left;text-indent:2px;}
+.layer_global .layer_strategy_tips strong{padding:0 2px;}
+.layer_global .layer_strategy_tips .card_help{position:absolute;right:5px;top:2px;text-decoration:none;}
+.layer_global .layer_strategy_tips .card_help_info{position:absolute;padding:5px;background:#FFFFE1;border:1px solid #000;width:200px;height:130px;}
+.layer_global .layer_strategy_tips .card_help_info li{font-family:SimSun;}
+.layer_global .layer_select strong,
+.layer_global .layer_info strong,
+.layer_global .layer_info a{ padding:2px 5px;text-decoration:none;zoom:1;}
+.layer_global .layer_info a.active{background:#E0D3CB;}
+.layer_global .layer_select{ float:right; padding:5px 0 0 0;}
+.layer_global .layer_select strong,
+.layer_global .layer_select a{padding:0 1px;text-decoration:none;}
+.layer_global .cont_top{height:30px;}
+.layer_global .cont_top_v2{height:58px;margin:0 15px;}
+.layer_global .purchase_cont_top{height:30px;margin:0 15px;}
+.layer_global .purchase_cont_top .vip_member{top:83px;border:0 none;left:30px;}
+.card_guarantee_tips_top{position:absolute;z-index:2;clear:both;width:655px;_width:649px;background:#FBECD1;border:1px solid #FED0B0;color:#894626;text-align:left;text-indent:10px;}
+.card_guarantee_tips_bottom{position:absolute;z-index:2;clear:both;width:655px;_width:649px;background:#FBECD1;border:1px solid #FED0B0;color:#894626;text-align:left;text-indent:10px;text-align:center;font-weight:bold;}
+
+.layer_global .info_top{position:absolute;left:5px;width:148px;height:26px;line-height:26px;text-align:center;z-index:6;color:#FFF;background:url(../../images/qq/icon.png?v=81) no-repeat -240px -60px;}
+.layer_global .layer_select *{color:#E8950B;}
+.layer_global .btns{ text-align:center; width:100%;}
+.layer_global .close span{display:none;}
+
+.mod_tab .tab2{display:inline-block;zoom:1;color:#DD9E4D;height:28px;text-decoration:none;padding-right:10px; background:url(../../images/qq/icon.png?v=81) no-repeat right -30px;color:#48250C;}
+.mod_tab .tab2_bg{display:inline-block;zoom:1;height:23px;_height:28px;padding:5px 0 0 10px;background:url(../../images/qq/icon.png?v=81) no-repeat -390px -30px;cursor:pointer;}
+.mod_tab .tab2_sel{display:inline-block;*display:inline;zoom:1;height:23px;padding:5px 10px 0 10px;text-decoration:none;color:#48250C;}
+.mod_tab .tab_sel{display:inline-block;zoom:1;padding-right:10px;height:28px;background:url(../../images/qq/icon.png?v=81) no-repeat right -30px; color:#48250C; text-decoration:none;}
+.mod_tab .tab_sel_bg{display:inline-block;zoom:1;height:23px;_height:28px;padding:3px 0 0 10px;background:url(../../images/qq/icon.png?v=81) no-repeat -390px -30px;cursor:pointer;}
+.mod_tab .tab{display:inline-block;zoom:1;color:#DD9E4D;height:28px;text-decoration:none;padding-right:10px; background:url(../../images/qq/icon.png?v=81) no-repeat right -60px;}
+.mod_tab .tab_bg{display:inline-block;zoom:1;height:23px;_height:28px;padding:3px 0 0 10px;background:url(../../images/qq/icon.png?v=81) no-repeat -390px -60px;cursor:pointer;}
+.mod_tab{ position:absolute;top:13px;left:20px;width:500px;}
+.mod_tab li{ float:left; padding-left:5px;position:relative;}
+.mod_tab .ico_new{position:absolute;top:-8px;right:-10px;}
+
+.prop_nav{zoom:1;border-bottom:1px solid #e9d6c4;margin:0 30px 0 30px;}
+.prop_nav:after{display:block;content:"";clear:both;height:0;overflow:hidden;}
+.prop_nav li{float:left;padding:0 5px;position:relative;height:22px;line-height:22px;overflow:hidden;margin-right:5px;}
+.prop_nav li .tab_icon{margin-right:2px;}
+.prop_nav li .tab_icon span{margin-top:-2px;_margin-top:0px;}
+.prop_nav li a,.prop_nav li a:link,.prop_nav li a:visited{text-decoration:none;color:#48250c;}
+.prop_nav li.tab_sel{background-color:#e9d6c4;}
+
+
+
+/*窗口风格1 v2*/
+.popup_module1{overflow:hidden;position:relative;margin:10px;padding:29px 0 28px 0;font:12px/200% Arial;color:#76552E;zoom:1;}
+.popup_module1 .mdl_main{_display:inline;}
+.popup_module1 .title{position:absolute;top:11px;left:17px;z-index:6; width:100%;}
+.popup_module1 .title h2{float:left;height:28px; padding:0 8px;font-size:14px;color:#F6B344;font-family:Microsoft YaHei, SimSun;}
+.popup_module1 .close{position:absolute;top:18px;right:17px;z-index:6;width:12px;line-height:100px;height:12px;overflow: hidden;border:none;font-size:0;background:url(../../images/qq/icon.png?v=81) no-repeat -60px -120px!important;}
+.popup_module1 .mdl_t_l,
+.popup_module1 .mdl_t_c,
+.popup_module1 .mdl_t_r,
+.popup_module1 .mdl_c_l,
+.popup_module1 .mdl_c_r,
+.popup_module1 .mdl_b_l,
+.popup_module1 .mdl_b_c,
+.popup_module1 .mdl_b_r{position:absolute; z-index:2;}
+.popup_module1 .mdl_t_l,
+.popup_module1 .mdl_t_c,
+.popup_module1 .mdl_t_c span,
+.popup_module1 .mdl_t_r,
+.popup_module1 .mdl_c_l,
+.popup_module1 .mdl_c_l span,
+.popup_module1 .mdl_c_r,
+.popup_module1 .mdl_c_r span,
+.popup_module1 .mdl_b_l,
+.popup_module1 .mdl_b_c,
+.popup_module1 .mdl_b_c span,
+.popup_module1 .mdl_b_r{ display:block; background-image:url(../../images/qq/popup_module1.png?v=5);}
+.popup_module1 .mdl_t_l{top:0;left:0;width:53px;height:41px;background-position:-6px -40px;}
+.popup_module1 .mdl_t_c{top:0;left:53px;right:117px;z-index:3;height:41px;background-position:-10px 2px; background-repeat:repeat-x;}
+.popup_module1 .mdl_t_c span{height:41px;background-position:-85px 2px;background-repeat:repeat-x;}
+.popup_module1 .mdl_t_r{top:0;right:0;z-index:5;width:177px;height:41px;background-position:-59px -40px;}
+.popup_module1 .mdl_c_l{overflow:hidden;top:20px;bottom:23px;left:0;z-index:1;width:6px;background-position:left top}
+.popup_module1 .mdl_c_l span{width:6px;height:1000px;background-position:0 -80px;}
+.popup_module1 .mdl_c_c{background:url(../../images/qq/popup_module1_bg.jpg?v=3) repeat-x 0 100%;overflow:hidden;margin:0 6px 6px;padding-top:10px;height:100%;zoom:1;}
+.popup_module1 .mdl_c_r{overflow:hidden;top:20px;bottom:23px;right:0;z-index:1;width:6px;background-position:right top;}
+.popup_module1 .mdl_c_r span{width:6px;height:2000px;background-position:right -79px;}
+.popup_module1 .mdl_b_l{bottom:0;left:0;width:53px;height:38px;background-position:-6px -81px;}
+.popup_module1 .mdl_b_c{bottom:-1px;z-index:1;right:20px;left:20px;height:38px;background-position:0 -121px;background-repeat:repeat-x;}
+.popup_module1 .mdl_b_c span{bottom:0;height:38px;background-position:-170px -121px;background-repeat:repeat-x;}
+.popup_module1 .mdl_b_r{bottom:0;right:0;width:177px;height:38px;background-position:-59px -81px;}
+.popup_module1 .btns{padding:30px 0 7px 0; clear:both; text-align:center; width:100%;}
+.popup_module1 .buttons{clear:both; text-align:center; width:100%;}
+.popup_module1 .content_text{ padding:25px 30px 5px;}
+.popup_module1 .align_center{text-align:center;}
+.popup_module1 .content_text{font-size:14px;line-height:200%;font-family:Microsoft YaHei, SimSun;}
+.popup_module1 .upgrade_gift_list{padding:25px 10px 5px;}
+.tips_bottom{margin:0 34px;padding-top:5px;border-top:1px dotted #6B4118;color:#894626;}
+
+/**窗口风格1 扩展*/
+.popup_module1_exnew{padding-top:75px;padding-bottom:0;margin:10px;}
+.popup_module1_exnew .mdl_t_l,.popup_module1_exnew .mdl_t_c,.popup_module1_exnew .mdl_t_r{top:35px;}
+.popup_module1_exnew .mdl_c_l,.popup_module1_exnew .mdl_c_r{top:55px;}
+.popup_module1_exnew .btns{padding-top:10px;}
+.popup_module1_exnew .close{top:53px;}
+.popup_module1_exnew .title{
+width:343px;left:50%;margin-left:-171px;top:0;
+background:url(../../images/qq/bg_poup_exnew_title.png) no-repeat;height:77px;cursor: move;
+_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/qq/bg_poup_exnew_title.png',sizingMethod='scale');}
+.popup_module1_exnew .title h2{float:none;height:77px;line-height:66px;font-size:32px;text-align:center;color:#572f10;font-weight:normal;}
+.popup_module1_exnew .mdl_c_c{height:294px;padding-top:0px;position:relative;z-index:9;background:url(../../images/qq/bg_poup_exnew_cont.jpg) no-repeat;}
+.popup_module1_exnew_b .mdl_c_c{height:294px;padding-top:0px;position:relative;z-index:9;background:url(../../images/qq/bg_poup_exnew_cont_b.jpg) no-repeat;}
+/*集卡册调整*/
+.popup_module1 .live_intro{font-size:14px;height:30px; line-height:30px;}
+.popup_module1 .live_prize{font-weight:bold;font-size:12px;height:24px;line-height:20px;}
+.popup_module1 .live_prize .hightlight{font-size:18px;color:#d33c19;padding:0 5px;}
+.popup_module1 .live_detail{color:#76552E; text-decoration:underline;padding-left:5px;font-size:12px; font-weight:normal;}
+.popup_module1 .qqshow_received{color:#76552E;text-align:right;padding-bottom:15px;}
+.popup_module1 .qqshow_received .qqshow_received_link{color:#76552E;}
+.popup_module1 .live_time{color:#d33c19;text-align:center;}
+.popup_module1 .live_prize strong.important{padding-right:4px;}
+
+/* 窗口风格2 */
+.popup_module2 .mdl_t_l,
+.popup_module2 .mdl_t_c,
+.popup_module2 .mdl_t_c span,
+.popup_module2 .mdl_t_r,
+.popup_module2 .mdl_c_l,
+.popup_module2 .mdl_c_l span,
+.popup_module2 .mdl_c_r,
+.popup_module2 .mdl_c_r span,
+.popup_module2 .mdl_b_l,
+.popup_module2 .mdl_b_c,
+.popup_module2 .mdl_b_c span,
+.popup_module2 .mdl_b_r{ display:block; background-image:url(../../images/qq/popup_module2.png?v=3);}
+.popup_module2 .mdl_c_c{background:url(../../images/qq/popup_module2_bg.jpg) repeat-x 0 100%;overflow:hidden;margin:0 6px 5px 6px;height:100%;zoom:1;}
+
+/* 窗口风格2 */
+.popup_module4 .mdl_t_l,
+.popup_module4 .mdl_t_c,
+.popup_module4 .mdl_t_c span,
+.popup_module4 .mdl_t_r,
+.popup_module4 .mdl_c_l,
+.popup_module4 .mdl_c_l span,
+.popup_module4 .mdl_c_r,
+.popup_module4 .mdl_c_r span,
+.popup_module4 .mdl_b_l,
+.popup_module4 .mdl_b_c,
+.popup_module4 .mdl_b_c span,
+.popup_module4 .mdl_b_r{ display:block; background-image:url(../../images/qq/popup_module4.png);}
+.popup_module4 .mdl_c_c{background:#FCF2D7 url(../../images/qq/popup_module4_bg.jpg) repeat-x 0 top;overflow:hidden;margin:0 6px 5px 6px;height:100%;zoom:1;}
+
+.popup_module3{padding:0;overflow:hidden;background-image:url(../../images/qq/popup_module3.png);}
+.popup_module3 .content_text{padding-top:60px;}
+/*等级*/
+.popup_module1 .rank{display:inline-block;*display:inline;zoom:1;}
+.popup_module1 .rank span{display:inline-block;zoom:1;height:13px; background:url(../../images/qq/layer.png?v=3) no-repeat -1402px -127px;}
+.popup_module1 .bor{ border:1px solid #F0E0DD;border-left:0;border-right:0;}
+.popup_module1 .card_lv1{width:15px;}
+.popup_module1 .card_lv2{width:32px;}
+.popup_module1 .card_lv3{width:51px;}
+.popup_module1 .card_lv4{width:69px;}
+.popup_module1 .card_lv5{width:86px;}
+/*套卡*/
+.card_theme_item{position:relative;display:inline-block;*display:inline;zoom:1;width:100px;height:130px;overflow:hidden;}
+.card_theme_item .link{position:absolute;top:0;left:0;z-index:10;width:120px;height:150px;line-height:350px;overflow:hidden;background:url("about:blank");}
+.card_theme_item .title{position:absolute;top:3px;left:0;z-index:1;width:100%;height:16px;font-weight:normal;color:#FFF;text-align:center;line-height:1.3;background:none;}
+.card_theme_item .bg{width:100px;height:130px;}
+.card_theme_item .alpha{display:block;position:absolute;top:0;left:0;width:100%;height:149px;}
+.card_theme_item sup{display:block;position:absolute;top:18px;left:9px;z-index:21;}
+.card_theme_item sup.ico_flash{display:block;position:absolute;top:2px;left:-1px;z-index:22;}
+.card_theme_item sup.ico_flash a{display:block;height:24px;width:28px;line-height:87px;overflow:hidden;zoom:1;}
+.card_theme_item .img{position:absolute;top:17px;left:8px;width:84px;height:87px;overflow:hidden;}
+.card_theme_item .text{display:block;position:absolute;top:109px;left:0;width:90px;height:14px;color:#FFF;text-align:right;}
+.card_theme_item .btns{display:block;position:absolute;z-index:2;top:121px;left:0;width:120px;}
+.card_theme_item .new_icon{position:absolute;top:0;left:0;z-index:2;display:block;width:36px;height:36px;font-size:0;line-height:300px;overflow:hidden;background:url(../../images/qq/icon.png?v=81) no-repeat 0 -30px;}
+.card_theme_item .quantity{position:absolute;top:0;left:0;z-index:2;display:block;width:36px;height:36px;font-size:16px;text-align:center;text-indent:-15px;color:#ff0; font-weight:bold;line-height:20px;overflow:hidden;background:url(../../images/qq/icon.png?v=81) no-repeat -60px -30px;}
+.card_theme_item_bg{position:absolute;top:0;left:0;z-index:8;width:120px;height:130px;background:url(../../images/qq/card_theme_item_bg.png?v=3) no-repeat;cursor:pointer;}
+.card_em_theme_item{width:120px;height:150px;position:relative;z-index:7;}
+.card_em_theme_item .bg{width:120px;height:150px;}
+.card_em_theme_item .img{top:20px;left:10px;width:100px;height:100px;}
+.card_em_theme_item .text{top:126px;width:104px;}
+/*阴影*/
+.box_shadow{position:absolute;top:0;left:0;width:146px;height:176px;background:url(../../images/qq/box_shadow.png);_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/qq/box_shadow.png',sizingMethod='scale');}
+/*卡片*/
+.card_item{position:relative;width:48px;height:48px;cursor:pointer;}
+.card_item .alpha{display:block;position:absolute;top:0;left:0;background:#000;filter:alpha(opacity=50);opacity: 0.5;width:48px;height:48px;}
+.card_item .amount{display:block;position:absolute;top:0;left:0;z-index:4;text-indent:-13px;width:27px;height:27px;text-align:center;font-weight:bold;background:url(../../images/qq/icon.png?v=81) no-repeat -120px -60px;color:#FFFF00;font-size:12px;}
+
+.card_box_vacant{overflow:hidden;display:inline-block;*display:inline;zoom:1;width:100px;height:130px;text-align:center;background:url(../../images/qq/card_box.png) no-repeat;}
+.card_box_unseal{overflow:hidden;display:inline-block;*display:inline;zoom:1;width:100px;height:130px;text-align:center;background:url(../../images/qq/card_box.png) no-repeat;}
+.card_box_unseal button{margin-top:73px;}
+.card_box_vip{overflow:hidden;display:inline-block;*display:inline;zoom:1;width:100px;height:130px;text-align:center;background:url(../../images/qq/card_box.png) no-repeat -100px 0;}
+.card_box_vip p{padding-top:33px;}
+.card_box_vip p strong{display:block;}
+.card_box_vip button{border:none;width:82px;height:19px;overflow:hidden;line-height:119px;font-size:0;background:url(../../images/qq/card_box.png) no-repeat -200px -19px;color:#fff;}
+.card_box_unseal button{border:none;width:64px;height:19px;line-height:119px;font-size:0;overflow:hidden;background:url(../../images/qq/card_box.png) no-repeat -200px 0;color:#fff;}
+/*商店*/
+.popup_shop{width:545px;background-repeat:repeat-x; background-position:0px 0px}
+.popup_shop .content_main{position:relative;width:545px;height:460px;background:url(../../images/qq/popup_shop.jpg?v=5);}
+.popup_shop .content{ padding:0;}
+.popup_shop h2{display:none;}
+.popup_shop .content .tips{position:absolute;top:38px;left:14px; z-index:2;}
+.popup_shop .top_info{position:absolute;top:40px;right:14px;z-index:2;}
+.popup_shop .tips .ico_lv_g,
+.popup_shop .tips .ico_lv{ margin:0 4px;}
+.popup_shop .tips .lv{*margin-top:-1px}
+.popup_shop .list{position:absolute;top:66px;left:1px;width:545px;height:393px; overflow-x:hidden; overflow-y:auto;}
+.popup_shop .item{ overflow:hidden; float:left; margin:5px 0; width:262px;height:146px;border-bottom:1px solid #FCFAEE;}
+.popup_shop .item .pic{float:left;width:113px;padding-right:3px;height:145px;border-bottom:1px solid #E0D7C6;}
+.popup_shop .item ul{float:left;width:146px;height:145px;border-bottom:1px solid #E0D7C6;}
+.popup_shop .item ul li .icon{margin:0 3px; display:inline-block;*display:inline;zoom:1;width:13px;height:14px;background-position:-90px 0;}
+.popup_shop .btns{ padding-top:33px;}
+.popup_shop .content_btns{padding:33px 0 0 0;}
+.popup_shop .content_btns button{>margin-right:2px;}
+.popup_shop .vip{position:absolute;top:41px;left:476px;display:block;width:59px;height:20px;color:#FFF;text-decoration:none;text-align:center;}
+.popup_shop .close button{right:13px;background:none;}
+.popup_shop .popup_shop_tips .bg{ position:absolute; top:1px; left:0; width:545px; height:64px;background:url(../../images/qq/popup_shop.jpg?v=5) repeat-x 0 -522px;}
+.popup_shop .popup_shop_tips .icon{ display:block; position:absolute; top:100px; left:100px; width:48px; height:52px; background:url(../../images/qq/popup_shop.jpg?v=5) no-repeat 0 -470px;}
+.popup_shop .popup_shop_tips h3{position:absolute; top:112px; left:160px; width:300px; font-size:16px;}
+.popup_shop .popup_shop_tips p{position:absolute; top:140px; left:160px; width:200px;}
+.popup_shop .popup_shop_tips .btn{position:absolute; top:200px; left:170px;width:112px;height:21px;background:url(../../images/qq/popup_shop.jpg?v=5) no-repeat -49px -470px;}
+/*升级礼包*/
+.popup_upgrade_gifts{width:535px; background-repeat:repeat-x; background-position:0px 0px}
+.popup_upgrade_gifts .close button{background:none;}
+.popup_upgrade_gifts .content_main{position:relative;height:400px;}
+.popup_upgrade_gifts .content_main_title h2{position:absolute;top:20px;left:80px;text-align:left; line-height:200%;}
+.popup_upgrade_gifts .tips{position:absolute;top:120px;left:100px; width:100%;}
+.popup_upgrade_gifts .tips .lv{*line-height:12px;zoom:1;}
+.popup_upgrade_gifts .content_btns{position:absolute;top:320px;left:0; width:100%;}
+.popup_upgrade_gifts .content_btns .btn{ text-decoration:none; margin:auto;display:block;width:149px;height:25px;;line-height:25px;border:none;font-weight:bold;background:url(../../images/qq/popup_shop.jpg?v=5) no-repeat -165px -470px;}
+.popup_upgrade_gifts .gift_list{ position:absolute; top:148px; left:100px;_left:60px;}
+.popup_upgrade_gifts .gift_list li{float:left; margin-right:10px; width:149px;height:150px;background-image:url(../../images/qq/popup_upgrade_gifts.jpg?v=3);}
+.popup_upgrade_gifts .gift_list li span{ display:block; margin-top:115px; width:100%; height:20px; padding:0; text-align:center; font-weight:bold; font-size:12px;}
+.popup_upgrade_gifts .gift_list .item_02{background-position:-148px 0;}
+.popup_upgrade_gifts .gift_list .item_03{background-position:-296px 0;}
+.popup_upgrade_gifts .info{position:absolute;top:377px;left:380px;}
+.popup_upgrade_gifts .tips_info h2 strong{ font-size:14px;}
+.popup_upgrade_gifts .tips_info h2{top:80px;}
+.popup_upgrade_gifts .tips_info .gift_tips{position:absolute;top:177px;left:96px; font-size:20px; font-weight:bold;}
+.popup_upgrade_gifts .tips_info .gift_tips strong{line-height:30px; font-size:30px; padding-right:5px;}
+.popup_upgrade_gifts .tips_info .gift_tips span{ line-height:300%; display:block; font-weight:normal;}
+/*升级提示*/
+.popup_pass_tips{position:absolute;right:-29px;top:296px;width:128px;height:163px;text-align:center;background:url(../../images/qq/popup_pass_tips.jpg);}
+.popup_pass_tips .text{position:absolute;left:7px;top:63px;width:117px;}
+.popup_pass_tips .deadline{position:absolute;left:7px;top:102px;width:117px;}
+.popup_pass_tips .deadline strong{font-size:24px; padding-right:3px;}
+.popup_pass_tips .btn{display:block;width:70px;height:21px;position:absolute;left:30px;top:131px;background:none;border:none;color:#5C3C26;text-decoration:none;}
+/*收集套卡*/
+.layer_card_theme .layer_global_cont{ width:680px; height:430px; margin:0 10px 0 10px;overflow:auto;}
+.layer_card_theme .layer_global_cont .theme_cont{ width:331px; height:140px; float:left;}
+.layer_card_theme .pic{width:100px;padding:10px 0 0 45px;float:left;text-align:center;}
+.layer_card_theme .pic img{ margin-bottom:10px;}
+.layer_card_theme .info{ float:left; padding:10px 0 0 10px;}
+.layer_card_theme .info li{line-height:200%;}
+.rank{display:inline-block;*display:inline;zoom:1;}
+.rank span{display:inliexchange_cradne-block;zoom:1;height:13px; background-position:-1402px -127px;}
+.layer_card_theme .bor{ border:1px solid #F0E0DD;border-left:0;border-right:0;}
+.card_lv1{width:15px;}
+.card_lv2{width:32px;}
+.card_lv3{width:51px;}
+.card_lv4{width:69px;}
+.card_lv5{width:86px;}
+/*请选择你的卡片箱*/
+.cardbox_exchange{position:absolute;top:2px;z-index:8;width:332px;height:546px;background:url(../../images/qq/cardbox_exchange_v2.png?v=3);}
+.cardbox_exchange ul{position:absolute; width:264px; height:158px; left:57px;background:#572D10;}
+.cardbox_exchange .exchange{top:78px;}
+.cardbox_exchange .insurance{top:266px;}
+.cardbox_exchange li{ position:relative; display:inline;float:left; overflow:hidden; width:50px; height:50px;background:url(../../images/qq/cardbox_exchange_v2.png?v=3) no-repeat -58px -78px;}
+.cardbox_exchange .active a{ display:block; border:2px solid #f00; width:46px; height:46px; _width:50px; _height:50px; overflow:hidden;}
+.cardbox_exchange .active img{ margin:0;}
+.cardbox_exchange li img{ width:48px; height:48px; margin:1px;}
+.cardbox_exchange .prev,
+.cardbox_exchange .next{position:absolute;left:179px;width:13px;height:7px; font-size:0; overflow:hidden; line-height:50px;}
+.cardbox_exchange .prev{top:255px;background:url(../../images/qq/cardbox_exchange_v2.png?v=3) no-repeat -61px -266px;}
+.cardbox_exchange .next{top:468px;background:url(../../images/qq/cardbox_exchange_v2.png?v=3) no-repeat -77px -266px;}
+.cardbox_exchange h4{ display:none;}
+.cardbox_exchange .determine{position:absolute; top:32px; width:152px; height:20px;left:160px;z-index:2;text-align:center;}
+.cardbox_exchange .quantity strong,
+.cardbox_exchange .determine strong{font-weight:bold;font-size:14px;padding:2px;}
+.cardbox_exchange .close{ position:absolute; right:0; top:5px; width:30px; height:20px;}
+.cardbox_exchange .quantity{position:absolute; top:485px; width:315px; height:20px;left:10px; color:#FFF; font-weight:bold;text-align:center;}
+.cardbox_exchange .quantity span{ padding:0 3px;}
+.cardbox_exchange .alpha{ position:absolute; top:1px; left:1px; width:48px; height:48px; filter:alpha(opacity=50);opacity: 0.5;background:#000;}
+.cardbox_exchange .close{top:8px;right:6px;}
+.cardbox_exchange .exchange_prev,
+.cardbox_exchange .exchange_next{position:absolute;left:179px;width:13px;height:7px; font-size:0; overflow:hidden; line-height:50px;}
+.cardbox_exchange .exchange_prev{top:67px;background:url(../../images/qq/cardbox_exchange_v2.png?v=3) no-repeat -61px -266px;}
+.cardbox_exchange .exchange_next{top:233px;background:url(../../images/qq/cardbox_exchange_v2.png?v=3) no-repeat -77px -266px;}
+
+/*派对天使*/
+.layer_strategy .layer_global_cont{ position:relative;margin:0 10px;height:480px;width:675px;overflow-y:auto;}
+.layer_strategy .theme_module{position:relative;background: url("../../images/qq/d.gif?v=3") repeat-x 0 bottom;padding:0 0 2px 0;overflow:hidden;clear:both;zoom:1;}
+.layer_strategy .theme_cont{position:relative;margin:2px;vertical-align:top;padding-top:4px;display:inline-block;*display:inline;zoom:1;width:73px;height:86px;_height:95px;margin:1px;text-align:center;overflow:hidden;}
+.layer_strategy .theme_cont .info{padding:3px 0;line-height:12px;}
+.layer_strategy .theme_cont .info .icon{margin:-3px 3px 0 0;display:inline-block;*display:inline;zoom:1;width:12px;height:11px;background:url(../../images/qq/icon.png?v=81) no-repeat -60px 0; vertical-align:middle;}
+.layer_strategy .theme_cont .info strong{padding:0 2px;}
+.layer_strategy .theme_cont .pic{position:relative;display:inline-block;width:56px;}
+.layer_strategy .theme_cont .alpha{top:3px;left:3px;width:50px;height:50px;background-color:rgba(0,0,0,0.5);filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#7f000000', endColorstr='#7f000000');background-color:transparent\9;}
+.layer_strategy .theme_cont .synthesis{top:3px;left:3px;width:50px;height:50px;line-height: 50px;font-weight:700;color:#333;}
+.layer_strategy .theme_cont .amount{display: block;position: absolute;top:3px;left:3px;z-index: 4;text-indent: -13px;width: 27px;height: 27px;text-align: center;font-weight: bold;background: url(../../images/qq/icon.png?v=81) no-repeat -120px -60px;color: yellow;font-size:12px;}
+.layer_strategy .theme_cont *sup.amount{font-size:14px;}
+.layer_strategy .theme_cont img{width:50px;height:50px;text-align:center; border:3px solid #fff;}
+.layer_strategy .theme_cont img.active{border:3px solid #f00;}
+.layer_strategy .theme_cont .btns{padding:0;position:absolute;left:0px;top:65px;}
+.layer_strategy .theme_cont_active img{border:3px solid #F0E0DD;}
+.layer_strategy .theme_cont_active{background:#F0E0DD;}
+.layer_strategy .theme_cont_zoom .pic{width:60px;}
+.layer_strategy .theme_cont_zoom img{width:54px;height:54px;}
+.layer_strategy .theme_cont_zoom .alpha,.layer_strategy .theme_cont_zoom .synthesis{width:54px;height:54px;}
+.layer_strategy .theme_info{position:absolute;top:30px;left:15px;width:130px;}
+.layer_strategy .theme_info strong{ display:block; font-weight:normal;}
+.layer_strategy .theme_list{margin-left:130px;zoom:1;text-align:center;}
+.layer_strategy .card_list_tips{ margin-right:55px;clear:both; float:right; display:inline; margin:0 60 0 80px; _padding-top:5px; width:520px;line-height:24px;height:24px;  border:1px solid #F5B876; background:#FEE0BF; text-align:center;font-family:SimSun;}
+.layer_strategy .card_list_tips p{display:inline-block;*display:inline;zoom:1;vertical-align:middle;line-height:26px;}
+.layer_strategy .card_list_tips .icon{ margin-right:5px;vertical-align:middle;display:inline-block;*display:inline;zoom:1; width:15px; height:15px;background:url(../../images/qq/icon.png?v=81) no-repeat 0 0;}
+.layer_strategy .layer_info{ width:450px; padding:5px 0; float:left; color:#DD9E4D;}
+.layer_strategy{position:relative;zoom:1; padding-bottom:7px;}
+.layer_strategy_tips{position:relative;z-index:3;clear:both;width:667px;_width:671px;background:#FFF6E7;border:1px solid #FED0B0;color:#894626;text-align:left;text-indent:2px;}
+.layer_strategy .layer_strategy_tips strong{padding:0 2px;}
+.layer_strategy .layer_strategy_tips .card_help{position:absolute;right:5px;top:2px;text-decoration:none;}
+.layer_strategy .layer_strategy_tips .card_help_info{position:absolute;padding:5px;background:#FFFFE1;border:1px solid #000;width:200px;height:130px;}
+.layer_strategy .layer_strategy_tips .card_help_info li{font-family:SimSun;}
+.layer_strategy .layer_select strong,
+.layer_strategy .layer_info strong,
+.layer_strategy .layer_info a{ padding:2px 5px;text-decoration:none;zoom:1;color:#5C3C26;border-right:1px solid #E7DDCB;}
+.layer_strategy .layer_info a.active{background:#C9B48C;}
+.layer_strategy .layer_select{position:absolute;right:14px;top:7px;width:220px;text-align:right;height:30px;z-index:5;}
+.layer_strategy .layer_select strong,
+.layer_strategy .layer_select a{padding:0 1px;text-decoration:none;border:none;}
+.layer_strategy .cont_top{height:30px;}
+.layer_strategy .cont_top_v2{position:relative;z-index:3;height:58px;width:100%;margin:0 15px;}
+.layer_strategy .purchase_cont_top{height:30px;margin:0 15px;}
+
+
+/*卡片兑换*/
+.layer_exchange .next,
+.layer_exchange .prev{display:block;overflow:hidden;border-top:3px solid #fff;margin:0 0 0 1px;width:208px;height:15px;line-height:500px;font-size:0;background:url(../../images/qq/layer_exchange.png) no-repeat 0 -512px;}
+.layer_exchange .next{position:absolute;bottom:3px;left:1px;background:url(../../images/qq/layer_exchange.png) no-repeat 0 -526px;}
+.layer_exchange .list_cont{overflow:hidden;zoom:1;margin:2px 0 0 1px;width:210px;}
+.layer_exchange .layer_global_cont{position:relative;height:455px;}
+.layer_exchange .list_tips{position:absolute;left:35px;z-index:113;width:187px;height:26px;line-height:26px;text-align:center;font-weight:bold;color:#B90000;background:url(../../images/qq/icon.png?v=81) no-repeat 0 -210px;}
+.layer_exchange .card_boxs{position:absolute; top:-11px; left:8px; width:213px;height:435px;}
+.layer_exchange .card_boxs .list_cont li{position:relative;float:left;width:50px;height:50px;margin:1px; overflow:hidden; background:url(../../images/qq/layer_exchange.png) no-repeat -208px -472px;}
+.layer_exchange .card_boxs .list_cont li .alpha{top:0;left:0;width:50px;height:50px;}
+.layer_exchange .card_boxs .list_cont li img{width:50px;height:50px;}
+.layer_exchange .incard{position:absolute; top:-12px; right:9px; _right:6px; width:212px;height:435px;}
+.layer_exchange .incard h2{color:#D7AD83;font-weight:normal;font-size:14px; height:20px; margin-bottom:5px; text-indent:10px;}
+.layer_exchange .incard .list_cont li{position:relative;float:left;width:50px;height:50px;overflow:hidden;margin:1px;background:url(../../images/qq/layer_exchange.png) no-repeat -208px -472px; font-size:0;}
+.layer_exchange .incard .list_cont li img{width:50px;height:50px;}
+.layer_exchange .card_exchange_list{ position:absolute; top:-14px; left:220px; width:259px; height:472px; overflow:hidden; background:url(../../images/qq/layer_exchange.png) no-repeat 0 0;}
+.layer_exchange .card_exchange_list h2{ display:none;}
+.layer_exchange .card_exchange_list .cont{ position:relative;margin:63px 14px 14px; display:inline; width:100px; height:360px; float:left; text-align:center;}
+.layer_exchange .card_exchange_list .cont h3{position:absolute;top:-23px;left:0;width:100px;height:29px;line-height:20px;text-align:center;color:#EFD2AD;}
+.layer_exchange .card_exchange_list .list_cont{position:relative;margin:0;width:100px;height:360px;}
+.layer_exchange .card_exchange_list .list_cont li{ position:absolute;left:0;overflow:auto;}
+.layer_exchange .card_exchange_list .list_cont .item_01{top:0;}
+.layer_exchange .card_exchange_list .list_cont .item_02{top:47px;}
+.layer_exchange .card_exchange_list .list_cont .item_03{top:95px;}
+.layer_exchange .card_exchange_list .list_cont .item_04{top:142px;}
+.layer_exchange .card_exchange_list .list_cont .item_05{top:189px;}
+.layer_exchange .card_exchange_list .list_cont{top:0;left:0;}
+.layer_exchange .card_exchange_list .enter{position:absolute;top:400px;left:0;height:30px;width:100%;text-align:center;}
+.layer_exchange .card_exchange_list .enter_tips{padding:5px 0;color:#F6B344;}
+.layer_exchange .mod_tab{position:relative;top:auto;left:auto;height:28px; width:213px;background:url(../../images/qq/line.gif) repeat-x 0 27px;}
+.layer_exchange .layer_global_main{ padding-bottom:10px;}
+.layer_exchange .ico_locking{position:absolute;bottom:1px;right:1px;}
+.layer_exchange .card_preview{position:relative;overflow:hidden;zoom:1;}
+.layer_exchange .position{position:absolute;z-index:10;}
+
+/*与好友交换卡片*/
+.layer_exchange_friend .next,
+.layer_exchange_friend .list_cont{position:relative;overflow:auto;zoom:1;margin:2px 0 0 1px;width:330px;height:350px;}
+.layer_exchange_friend .layer_global_cont{position:relative;height:495px;}
+.layer_exchange_friend .list_tips{position:absolute;left:62px;z-index:113;width:146px;height:26px;line-height:26px;text-align:center;font-weight:bold;color:#B90000;background:url(../../images/qq/icon.png?v=81) no-repeat -240px -30px;}
+.layer_exchange_friend .list_tips_v2{position:absolute;left:35px;z-index:113;width:187px;height:26px;line-height:26px;text-align:center;font-weight:bold;color:#B90000;background:url(../../images/qq/icon.png?v=81) no-repeat 0 -210px;}
+.layer_exchange_friend .card_boxs{position:absolute; top:30px; left:10px; width:332px;height:435px;}
+.layer_exchange_friend .card_boxs .list_cont li{position:relative;float:left;width:100px;height:130px;margin:1px 0 1px 3px; overflow:hidden; background:url(../../images/qq/layer_exchange.png) no-repeat -208px -472px;}
+.layer_exchange_friend .incard{position:absolute; top:30px; right:10px; _right:6px; width:332px;height:435px;}
+.layer_exchange_friend .incard h2{color:#D7AD83;font-weight:normal;font-size:14px; height:20px; margin-bottom:5px; text-indent:10px;}
+.layer_exchange_friend .incard .list_cont li{position:relative;float:left;width:100px;height:130px;overflow:hidden;margin:1px 0 1px 3px;background:url(../../images/qq/layer_exchange.png) no-repeat -208px -472px; font-size:0;}
+.layer_exchange_friend .card_exchange_list{ position:absolute; top:-14px; left:220px; width:259px; height:472px; overflow:hidden; background:url(../../images/qq/layer_exchange.png) no-repeat 0 0;}
+.layer_exchange_friend .card_exchange_list h2{ display:none;}
+.layer_exchange_friend .card_exchange_list .cont{ position:relative;margin:63px 14px 14px; display:inline; width:100px; height:360px; float:left; text-align:center;}
+.layer_exchange_friend .card_exchange_list .cont h3{position:absolute;top:-23px;left:0;width:100px;height:29px;line-height:20px;text-align:center;color:#EFD2AD;}
+.layer_exchange_friend .card_exchange_list .list_cont{position:relative;margin:0;width:100px;height:360px;}
+.layer_exchange_friend .card_exchange_list .list_cont li{ position:absolute;left:0;overflow:auto;}
+.layer_exchange_friend .card_exchange_list .list_cont .item_01{top:0;}
+.layer_exchange_friend .card_exchange_list .list_cont .item_02{top:47px;}
+.layer_exchange_friend .card_exchange_list .list_cont .item_03{top:95px;}
+.layer_exchange_friend .card_exchange_list .list_cont .item_04{top:142px;}
+.layer_exchange_friend .card_exchange_list .list_cont .item_05{top:189px;}
+.layer_exchange_friend .card_exchange_list .list_cont{top:0;left:0;}
+.layer_exchange_friend .card_exchange_list .enter{position:absolute;top:400px;left:0;height:30px;width:100%;text-align:center;}
+.layer_exchange_friend .card_exchange_list .enter_tips{padding:5px 0;color:#F6B344;}
+.layer_exchange_friend .mod_tab{position:relative;top:auto;left:auto;height:28px; width:100%;background:url(../../images/qq/line.gif) repeat-x 0 27px;}
+.layer_exchange_friend .layer_global_main{ padding-bottom:10px;}
+.layer_exchange_friend .ico_locking{position:absolute;bottom:1px;right:1px;}
+.layer_exchange_friend .card_preview{position:relative;overflow:hidden;zoom:1;}
+.layer_exchange_friend .position{position:absolute;z-index:10;}
+.layer_exchange_friend .popup_gift_tips{margin:-10px 12px 0 12px;}
+.layer_exchange_friend .btns{position:absolute; top:445px; left:0;}
+.layer_exchange_friend .tips{margin-top:5px;border-top:1px solid #CC6633;padding:3px;text-align:center;}
+.layer_exchange_friend strong.important{color:#FF6600!important;}
+.layer_exchange_friend .popup_gift_tips{position:absolute; top:0px; left:0;width:664px;}
+/*卡片购买交换*/
+.layer_market .tips{position:absolute;left:15px;top:60px;}
+.layer_market .tips a{color:#DD9E4D;}
+.layer_market .tips strong{font-size:14px;padding:0 2px;color:#ff0000;}
+.layer_market .synth_info{margin-left:15px;}
+.layer_market .synth_info strong{color:#5c3c26;}
+.layer_market .synth_info span{vertical-align:middle;}
+.layer_market .synth_info .icon{width:23px;height:23px;display:inline-block;overflow:hidden;border:1px solid #643a19;margin-right:4px;}
+.layer_market .synth_info a{color:#5c3c26;text-decoration:none;}
+.layer_market .synth_info a:hover{text-decoration:underline;}
+.exchange_card .layer_info{overflow:hidden;float:none;margin-left:15px;}
+.exchange_card .layer_info a{color:#5c3c26;border-left:1px solid #dd9e4d;margin-left:-1px;padding:0 3px 0 2px;display:inline-block;height:18px;line-height:18px;overflow:hidden;}
+.exchange_card .layer_info a span{padding:2px 5px;}
+.exchange_card .layer_info a.active{background:none;}
+.exchange_card .layer_info a.active span{background-color:#e0d3cb;}
+.layer_market .tips_v2{position:absolute;top:83px;width:670px;background:#FBECD1;border:1px solid #FED0B0;color:#894626;text-align:center;width:193px;right:11px;}
+.layer_market .tips_v2 a{color:#DD9E4D;}
+.layer_market .tips_v2 strong{font-size:14px;padding:0 2px;color:#ff0000;}
+.layer_market_tips{position:absolute;left:8px;top:0;width:100%;z-index:1;}
+.layer_market_tips .more{position:absolute;right:11px;top:3px;}
+.layer_market .layer_global_cont_tips{position:absolute;left:0;bottom:15px;text-align:center;width:100%;}
+.layer_market .list_props .layer_global_cont_tips{position:absolute;left:0;bottom:30px;text-align:center;width:100%;}
+.layer_market .layer_global_cont{ position:relative;margin:0 10px;width:680px; height:431px; overflow-y:auto; overflow-x:hidden;}
+.layer_market .layer_global_cont .list_market{float:left; clear:both; padding-top:35px;}
+.layer_market .layer_global_cont .info{padding:0 10px;margin-bottom:-30px;text-align:right;position:relative;
+z-index:2;}
+/*下拉按钮*/
+.layer_market  .btn_select{display:inline-block;#display:inline;zoom:1;width:77px;position:relative;vertical-align:middle;}
+.layer_market  .btn_select .btn_select_main{background:url(../../images/qq/bg_btn_select.jpg) no-repeat 0 0;height:20px;}
+.layer_market  .btn_select .btn_select_state2{background-position:0 -60px;}
+.layer_market  .btn_select .btn_select_state3{background-position:0 -90px;}
+.layer_market  .btn_select .btn_select_state4{background-position:0 -30px;}
+.layer_market  .btn_select .btn_select_link{display:inline-block;zoom:1;height:20px;width:64px;color:#fff;text-align:center;text-decoration:none;}
+.layer_market  .btn_select .btn_select_handle{display:inline-block;zoom:1;height:20px;width:17px;position:absolute;right:0px;top:0px;background:url("about:blank");}
+.layer_market  .btn_select .btn_select_list{position:absolute;left:0;top:19px;width:75px;_width:77px;border:1px solid #c60f02;border-bottom:0 none;background-color:#fff;}
+.layer_market  .btn_select .btn_select_list li{border-bottom:1px solid #c60f02;overflow:hidden;}
+.layer_market  .btn_select .btn_select_list li a,
+.layer_market  .btn_select .btn_select_list li a:link{color:#000;padding-left:5px;text-decoration:none;display:block;line-height:18px;}
+/*换卡及保险箱滚动条覆盖*/
+.layer_market div.huanka_cont{position:relative;margin:0 10px;width:680px; height:400px; overflow:hidden;zoom:1;}
+.layer_market div.huanka_cont .list_market{position:relative;float:left; clear:both;margin-top:30px;padding:0;width:680px; height:370px; overflow-y:auto; overflow-x:hidden;}
+.layer_market .layer_global_cont .margin{padding:0;}
+.layer_market .layer_global_cont .list_market li{position:relative; float:left;width:110px;height:155px;text-align:center;}
+.layer_market .layer_global_cont .list_market li .exchange_tips{position:absolute; top:138px;left:0;width:100%;z-index:3;}
+.layer_market .layer_global_cont .list_market .pic,
+.layer_market .layer_global_cont .list_market .card_box_vip,
+.layer_market .layer_global_cont .list_market .card_box_unseal,
+.layer_market .layer_global_cont .list_market .card_box_vacant,
+.layer_market .layer_global_cont .list_market .card_theme_item{margin-top:10px;}
+.layer_market .layer_global_cont .list_market li.active{position:relative;z-index:4;width:120px;margin:0 -5px;}
+.layer_market .layer_global_cont .list_market li.active .card_theme_item{margin-top:0;}
+.layer_market .layer_global_cont .list_market li .card_theme_item{ margin-left:auto;margin-right:auto;}
+.layer_market .layer_global_cont .alpha{position:absolute;left:0;bottom:15px; z-index:2;background:#000; width:110px; height:40px; filter:alpha(opacity=40);opacity: 0.4;}
+.layer_market .layer_global_cont .bookmarks{position:absolute;left:86px;bottom:9px;z-index:2;width:27px;height:28px;background:url(../../images/qq/icon.png?v=81) no-repeat -123px -32px;}
+.layer_market .book_collection_card{ text-align:center; }
+.layer_market .book_collection_card_tips{padding:20px 30px; text-align:left;}
+.layer_market .book_collection_card_info{padding:80px 0 80px 0; font-size:16px; font-weight:bold; color:#48250C;}
+.layer_market .popup_successful_collection{margin-left:10px;}
+.layer_market .popup_successful_collection .tips{padding-top:13px;}
+.layer_market .ico_locking{position:absolute;top:18px;left:8px;z-index:16;width:22px;height:24px;background:url(../../images/qq/icon.png?v=81) no-repeat -90px -180px;}
+.layer_market .prop_vip{margin:5px 0 10px 38px;position:relative;}
+.layer_market .prop_vip p{color:#48250c;}
+.layer_market .prop_vip p .ico_lv,.layer_market .prop_vip p .ico_lv_g,.layer_market .prop_vip p .ico_year{margin:-2px 3px 0;}
+.layer_market .prop_vip p .ico_lv,.layer_market .prop_vip p .ico_lv_g{margin-top:-3px;}
+.layer_market .prop_vip .btn_vip{margin-left:3px;}
+.layer_market .prop_vip .more,.layer_market .prop_vip .more:link,.layer_market .prop_vip .more:visited{position:absolute;right:50px;top:0px;color:#ec4300;}
+
+.list_propcard_v2{margin:0 10px;overflow:hidden;zoom:1;}
+.list_propcard_v2:after{display:block;content:"";clear:both;height:0;overflow:hidden;}
+.list_propcard_v2 .item{overflow:hidden;float:left;width:160px;text-align:center;margin:5px 0 5px;_display:inline;}
+.list_propcard_v2 .pic{display:inline-block;#display:inline;zoom:1;position:relative;margin-bottom:3px;}
+.list_propcard_v2 .pic .name{font-weight:400;position:absolute;width:120px;text-align:center;left:0px;top:2px;}
+.list_propcard_v2 .pic img{display:block;}
+.list_propcard_v2 .pic .sub_auto{position:absolute;right:-5px;bottom:-5px;display:block;width:90px;height:65px;}
+.list_propcard_v2 .pic .sub_52{position:absolute;right:-5px;bottom:-5px;display:block;width:91px;height:65px;background:url(../../images/qq/bg_sup_52.png) 0 0 no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true ,sizingMethod='crop', src='../../images/qq/bg_sup_52.png' );}
+.list_propcard_v2 .pic .sub_63{position:absolute;display:block;right:-5px;bottom:-5px;display:block;width:91px;height:65px;background:url(../../images/qq/bg_sup_63.png) 0 0 no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true ,sizingMethod='crop', src='../../images/qq/bg_sup_63.png' );}
+.list_propcard_v2 .pic .sub_45{position:absolute;display:block;right:-5px;bottom:-5px;display:block;width:84px;height:59px;background:url(../../images/qq/bg_sup_45.png) 0 0 no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true ,sizingMethod='crop', src='../../images/qq/bg_sup_45.png' );}
+.list_propcard_v2 .pic .sub_9{position:absolute;right:-4px;bottom:-4px;display:block;width:91px;height:64px;background:url(../../images/qq/bg_sup_9.png) 0 0 no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true ,sizingMethod='crop', src='../../images/qq/bg_sup_9.png' );}
+.list_propcard_v2 p{color:#5c3c26;line-height:16px;}
+.list_propcard_v2 p em{font-style:normal;font-weight:bold;color:#ff6b00;padding:0 3px 0 0;}
+.list_propcard_v2 .price{margin-top:5px;}
+.list_propcard_v2 .vip_price{margin-bottom:5px;}
+.list_propcard_v2 .vip_price em{color:red;}
+.list_symbols{margin:0 10px; overflow:hidden;}
+.list_symbols .item{ overflow:hidden; float:left; width:320px;height:150px;_height:165px;margin-left:-2px; padding-top:15px; border-left:1px solid #F0E0DD;border-bottom:1px solid #F0E0DD;}
+.list_symbols .pic{float:left;width:113px;height:145px;padding-left:20px;}
+.list_symbols ul{float:left;width:170px;height:145px; margin-left:10px;}
+.list_symbols ul li{ line-height:200%;}
+.list_symbols ul li .icon{margin:0 3px; display:inline-block;*display:inline;zoom:1;width:13px;height:14px;background-position:-90px 0;}
+.list_symbols ul .btns{ padding-top:14px; text-align:center;}
+
+.list_props .layer_global_cont_tips{position:absolute;left:0;bottom:30px;text-align:center;width:100%;}
+.list_props{margin:0 10px; overflow:hidden;text-align:center;}
+.list_props .props_item{width:645px;overflow:hidden;zoom:1;}
+.list_props .props_item_list{ overflow:hidden; float:left; width:215px;height:300px;margin-left:-2px; padding-top:5px;text-align:center;}
+.list_props .props_pic{width:100%;}
+.list_props .props_pic strong{display:block;}
+.list_props .props_item_list ul{padding:15px 0;}
+.list_props .props_item_list ul li{line-height:23px;text-align:left;text-indent:64px;}
+.list_props_tips{margin:10px auto;width:570px;height:77px;border:1px solid #F0E0DD;text-align:left;}
+.list_props_tips p{padding:10px 10px 10px 30px;line-height:180%;}
+
+.list_props_v2{overflow:hidden;text-align:center;}
+.list_props_v2 .layer_global_cont_tips{position:absolute;left:0;bottom:30px;text-align:center;width:100%;}
+.list_props_v2 .props_item{width:645px;overflow:hidden;zoom:1;margin:auto;}
+.list_props_v2 .props_item_list{ overflow:hidden; float:left; width:215px;height:265px;margin-left:-2px; padding-top:8px;text-align:center;}
+.list_props_v2 .props_pic{width:100%;}
+.list_props_v2 .props_item_list h3{color:#744C3A;padding-top:10px;}
+.list_props_v2 .props_item_list h3 strong{font-size:14px;font-family: arial;}
+.list_props_v2 .props_item_list ul{padding-bottom:15px;margin:auto;text-align:center;}
+.list_props_v2 .props_item_list ul li{line-height:20px;text-align:center;font-family: arial;}
+.props_preferential{width:594px;height:147px;position:relative;margin:0 auto;background:url(../../images/qq/bg_props_preferential.jpg) no-repeat;}
+.props_preferential h3{display:none;}
+.props_preferential .props_preferential_tips{position:absolute;color:#fffa56;left:415px;top:38px;}
+.props_preferential_info{position:absolute;left:147px;top:60px;color:#fff;text-align:left;line-height:18px;width:395px;}
+.props_preferential_info p{line-height:20px;vertical-align:middle;}
+.props_preferential_info em{font-size:18px;font-family:'Arial';color:#fff70f;font-style:normal;line-height:18px;position:relative;top:3px;padding:0 3px;}
+.props_preferential_btn{position:absolute;left:230px;top:10px;}
+.props_preferential_btn a,.props_preferential_btn a:link{display:inline-block;width:60px;height:24px;line-height:24px;color:#fff;font-weight:bold;text-align:center;margin-right:10px;
+background:url(../../images/qq/bg_props_preferential.jpg) 0 -147px no-repeat;overflow:hidden;text-decoration:none;}
+.list_shop{overflow:hidden;zoom:1;}
+.list_shop_tips{background:#DAC196;color:#5C3C26;overflow:hidden;zoom:1;padding:1px 5px;margin:0 30px 10px 15px;}
+.list_shop_tips p{float:left;}
+.list_shop_tips a{float:right;color:#5C3C26;}
+.list_shop .list_shop_item{margin:8px;padding-bottom:10px;overflow:hidden;zoom:1;border-bottom:1px dashed #C9A387;}
+.list_shop .list_shop_item h2{background:#6F3910;color:#fff;float:left;font-weight:normal;padding:0 5px;}
+.list_shop .list_shop_item ul{float:right;}
+.list_shop .shop_item{width:300px;float:left;}
+.list_shop .shop_item .item_pic{float:left;padding:0 10px;}
+.list_shop .shop_item .item_pic img{border:1px solid #874C2C;}
+.list_shop .shop_item .item_info{float:left;width:140px;}
+.list_shop .shop_item .item_info ul{float:left;}
+.list_shop .shop_item .item_info strong,
+.list_shop .shop_item .item_info h3{color:#5C3C26;font-family:arial;}
+.list_shop .shop_item .item_info p{line-height: 1.5;}
+.list_shop .shop_item .item_info .btns{text-align:right;}
+
+/*道具箱*/
+.porpbox_tips{text-align:center;}
+.porpbox_tips .popup_gift_tips{width:400px;display:inline-block;margin:60px auto;zoom:1;}
+
+.porpbox_cont{margin-left:15px;_margin-left:8px;}
+.layer_market .layer_global_cont .porpbox_cont li{width:126px;text-align:center;}
+.layer_market .layer_global_cont .porpbox_cont li.active{margin:0 3px;_margin:0 2px;}
+.layer_market .layer_global_main .museum_mod_tips{position:absolute;z-index:1000;width:160px;height:85px;background:url(../../images/qq/bg_card_tips.png) no-repeat;}
+.layer_market .layer_global_main .museum_mod_tips strong{display:block;margin:0px 5px 3px;border-bottom:1px dashed #928364;}
+.layer_market .layer_global_main .museum_mod_tips p{margin:0 5px;line-height:15px;white-space:normal;word-break:break-all;}
+.layer_market .layer_global_main .museum_mod_tips p .red{color:#c00;}
+/*vip会员*/
+.layer_market .vip_member{width:644px;border-bottom:1px solid #F0E0DD;}
+.layer_market .vip_member .vip{float:right;}
+.layer_market .vip_member .user_level{float:left;}
+.layer_market .vip_member #STRONG_RED{position:absolute;right:100px;top:0;}
+
+.vip_member{ position:absolute; top:49px; left:22px; z-index:6; width:515px;}
+.vip_member .user_level{ display:inline-block; *display:inline; zoom:1;}
+.vip_member .vip_user_level{ vertical-align:middle; display:inline-block;zoom:1; width:15px; height:13px;background:url(../../images/qq/icon.png?v=81) no-repeat -210px 0;}
+.vip_member .vip{margin-left:20px;display:inline-block;zoom:1;width:59px;height:21px;overflow:hidden;line-height:21px;background:url(../../images/qq/icon.png?v=81) no-repeat -150px 0;color:#fff;text-align:center;text-decoration:none; vertical-align:middle;}
+.vip_member .vip_strong{float:right;display:inline-block;zoom:1;width:84px;height:21px;overflow:hidden;line-height:21px;background:url(../../images/qq/icon.png?v=81) no-repeat -120px -180px;color:#fff;text-align:center;text-decoration:none; vertical-align:middle;}
+.popup_successful_collection .vip_member{left:auto;right:23px;text-align:left;}
+/*设置我想要交换的卡片模块*/
+.exchange_setting{ padding:10px;}
+.exchange_setting .tips{padding:7px 20px;color:#900001;line-height:1.8;}
+.exchange_setting .tips strong{font-size:14px;}
+.exchange_setting .box_card_list{ float:left; display:inline; margin-left:50px; width:170px;height:230px;}
+.exchange_setting .box_card_list h4{ padding:5px 0; color:#900001;}
+.exchange_setting .box_card_list ul{position:relative;width:170px;height:200px;border:1px solid #C3AA6F; overflow-y:auto;}
+.exchange_setting .box_card_list ul li{position:relative;height:20px;line-height:20px;text-indent:10px;margin:2px 0;}
+.exchange_setting .box_card_list ul li .state{position:absolute;top:3px;right:10px;display:block;overflow:hidden;width:12px;height:12px;line-height:80px;}
+.exchange_setting .box_card_list ul li .selected{background:url(../../images/qq/icon.png?v=81) no-repeat -480px 0;}
+.exchange_setting .box_card_list ul li .remove{background:url(../../images/qq/icon.png?v=81) no-repeat -510px 0;}
+.exchange_setting .box_card_list ul li.active{background:#E6E6E6;}
+.exchange_setting .box_card_list ul li a{text-decoration:none;}
+.exchange_setting .confirm_card{ padding-top:15px; text-align:center;zoom:1;}
+.exchange_setting .confirm_card p.align_left{text-align:left;padding:0 20px;}
+.exchange_setting .confirm_card .card_theme_item{ margin:auto;}
+.exchange_setting .confirm_card ul{text-align:center;margin-bottom:10px;}
+.exchange_setting .confirm_card ul li{display:inline-block;*display:inline;zoom:1;margin:0 20px;}
+.exchange_setting .confirm_card ul li strong{display:block;}
+.exchange_setting .tips_gift{padding:0 20px;font-weight:normal !important;width:100%;text-align:left;margin-bottom:-20px;}
+/*奖励模块*/
+.gift_list{margin:10px auto auto;overflow:hidden;zoom:1;}
+.gift_list li{display:inline-block;*display:inline; zoom:1; margin-right:10px; width:149px;height:150px;background-image:url(../../images/qq/popup_upgrade_gifts.jpg?v=3);}
+.gift_list li span{padding-top:122px;display:block;width:100%; text-align:center; font-weight:bold; font-size:12px;}
+.gift_list .item_02{background-position:-148px 0;}
+.gift_list .item_03{background-position:-296px 0;}
+.gift_list .item_04{background-position:-444px 0;}
+.gift_list .item_05{background-position:-592px 0;}
+.gift_list .item_06{background-position:-740px 0;}
+/*奖励*/
+.popup_gift{margin-bottom:-10px;}
+.popup_gift .tips{line-height:3;}
+.popup_gift .tips strong{font-size:14px;vertical-align:middle;}
+.popup_gift .tips span{margin:0 2px 0 10px;}
+.popup_gift .list{margin-top:20px;width:631px;text-align:center;}
+.popup_gift .list li{position:relative;top:0;width:145px;height:230px;position:relative;display:inline-block;*display:inline;zoom:1;vertical-align:top;text-align:center;}
+.popup_gift .list li.gif_item,
+.popup_gift .list li.gif_item .cont {width:165px;}
+.popup_gift .list li.gif_item .gift_info{margin-top:5px;}
+.popup_gift .list li.gif_item .gif_tips{padding:5px 0 0 5px;line-height:1.5;}
+.popup_gift .list li.gif_item .card_theme_item{margin-top:18px;}
+.popup_gift .list li .gif_tips{text-align:left;text-indent:2em;}
+.popup_gift .list li .experience_value{width:100px;text-align:center;}
+.popup_gift .list li .info{margin-left:-6px;width:155px; position: absolute;top:247px;left:0;}
+.popup_gift .list li .gift_info{position:relative;margin-top:-60px;}
+.popup_gift .list li .gift_info_v2{position:relative;text-align:left;margin-top:-60px;}
+.gift_button_right{margin-left:455px;}
+.popup_gift .list li .choose{ position:absolute; top:-15px; right:10px; display:block; width:30px; height:30px;overflow:hidden;line-height:300px;font-size:0;content:""; background:url(../../images/qq/icon.png?v=81) no-repeat -120px 0;}
+.popup_gift .list .pic{position:relative;margin:0; height:226px;width:140px; overflow:hidden;}
+.popup_gift .list .cont{position:relative;margin-bottom:3px;width:140px;height:226px;overflow:hidden;}
+.popup_gift .list .pic a{ position:absolute; top:0; left:0;display:block;margin:0;width:140px; height:226px; line-height:600px; font-size:0; overflow:hidden;background:url(../../images/qq/icon.png?v=81) no-repeat -2000px 0;}
+.popup_gift .list .info{width:140px;text-align:center;overflow:hidden;padding-top:3px;}
+.popup_gift .list a{color:#067FC4;margin:0 5px;}
+.popup_gift .list .info_more_bg{position:absolute;top:183px;left:0;width:140px;height:45px;background:#000;filter:alpha(opacity=70);opacity: 0.7;}
+.popup_gift .list .info_more{position:absolute;top:187px;left:0;padding:0;width:140px;height:40px;text-align:center;line-height:1.4;color:#FFF;}
+.popup_gift .list .info_more a{color:#A5DEFF;font-family:SimSun;}
+.popup_gift_tips{zoom:1;border:1px solid #FED0B0;padding:5px 5px 3px 5px;_padding-top:8px;display:block;margin:5px 2px;background:#FBECD1;color:#894626;font-size:12px;}
+.popup_gift_tips .ico_important{margin-top:-2px;}
+.popup_gift_tips *{vertical-align:middle;}
+
+
+
+/*奖励*/
+.popup_gift_comment {margin-bottom:-20px;}
+.popup_gift_comment  a{text-decoration: none;}
+.popup_gift_comment .tips{padding:5px 5px 0;}
+.popup_gift_comment .tips strong{font-size:14px;vertical-align:middle;color:#5C3C26;}
+.popup_gift_comment .tips span{margin:0 2px 0 10px;}
+.popup_gift_comment .list{width:625px;text-align:center;margin:0 5px;zoom:1;}
+.popup_gift_comment .list:after {content:"";display:block;height:0;line-height:0;clear:both;visibility:hidden;}
+.popup_gift_comment .list li{position:relative;top:0;width:140px;height:256px;float:left;_display:inline;zoom:1;vertical-align:top;text-align:center;margin:0 7px;}
+.popup_gift_comment .list li .alpha{display:block;position:absolute;top:0;left:0;z-index:2;width:140px;height:30px;background:#000;text-align:center;opacity: 0.5;filter:alpha(opacity=50);}
+.popup_gift_comment .list li strong{display:block;position:absolute;top:0;left:0;z-index:3;width:140px;line-height:30px;height:30px;text-align:center;color:#fff;font-size:14px;}
+.popup_gift_comment .list li.gif_item,
+.popup_gift_comment .list li.gif_item .cont {width:165px;}
+.popup_gift_comment .list li.gif_item .gift_info{margin-top:5px;}
+.popup_gift_comment .list li.gif_item .gif_tips{padding:5px 0 0 5px;line-height:1.5;}
+.popup_gift_comment .list li.gif_item .card_theme_item{margin-top:18px;}
+.popup_gift_comment .list li .gif_tips{text-align:left;text-indent:2em;}
+.popup_gift_comment .list li .experience_value{width:100px;text-align:center;}
+.popup_gift_comment .popup_gift_qqshow .button{position:absolute;top:203px;right:10px;border:none;width:57px;padding:1px 0;color:#864600;background:url(../../images/qq/icon.png?v=81) no-repeat -330px -210px;}
+.popup_gift_comment .list li .gift_info{position:relative;margin-top:-60px;}
+.popup_gift_comment .list li .gift_info_v2{position:relative;text-align:left;margin-top:-60px;}
+.popup_gift_comment .list li .choose{ position:absolute; top:-15px; right:10px; display:block; width:30px; height:30px;overflow:hidden;line-height:300px;font-size:0;content:""; background:url(../../images/qq/icon.png?v=81) no-repeat -120px 0;}
+.popup_gift_comment .list .pic{position:relative;margin:0; height:226px;width:140px; overflow:hidden;}
+.popup_gift_comment .list .cont{position:relative;margin-bottom:3px;width:140px;height:226px;overflow:hidden;}
+.popup_gift_comment .list .pic a{ position:absolute; top:0; left:0;display:block;margin:0;width:140px; height:226px; line-height:600px; font-size:0; overflow:hidden;background:url(../../images/qq/icon.png?v=81) no-repeat -2000px 0;}
+.popup_gift_comment .list .info{text-align:center;color:#5D5855;}
+.popup_gift_comment .list a{color:#067FC4;}
+.popup_gift_comment .list .info_more_bg{position:absolute;top:183px;left:0;width:140px;height:45px;background:#000;filter:alpha(opacity=70);opacity: 0.7;}
+.popup_gift_comment .list .info_more{position:absolute;top:187px;left:10px;padding:0;width:140px;height:40px;text-align:left;line-height:1.4;color:#FFF;}
+.popup_gift_comment .list .info_more a{color:#A5DEFF;font-family:SimSun;}
+.popup_gift_comment .comment{margin:0 10px 25px;padding-top:8px;border-top:1px dotted #ccc;zoom:1;}
+.popup_gift_comment .comment:after {content:"";display:block;height:0;line-height:0;clear:both;visibility:hidden;}
+.popup_gift_comment .comment .pic{width:100px;float:left;}
+.popup_gift_comment .comment .comment_form{float:right;}
+.popup_gift_comment .comment_textarea textarea{display:block;width:482px;height:70px;padding:0 3px;}
+.popup_gift_comment .comment .comment_form{position:relative;width:492px;}
+.popup_gift_comment .comment h3{color:#5D5855;font-size:14px;}
+.popup_gift_comment .comment .cont{position:absolute;top:28px;left:6px;color:#999;}
+.popup_gift_comment .comment .info{position:absolute;top:3px;right:0;color:#999;}
+.popup_gift_comment .comment .submission{margin-top:8px;height:21px;line-height:21px;vertical-align: middle;}
+.popup_gift_comment .comment .submission button{margin-right:8px;vertical-align: middle;width:106px;height:21px;border:none;background:url(../../images/qq/icon.png?v=81) no-repeat -210px -210px;}
+.popup_gift_comment .comment .submission button span{display:none;}
+
+.popup_gift_upgrade {margin-bottom:-20px;}
+.popup_gift_upgrade .gift_list{margin:auto;}
+.popup_gift_upgrade .gift_list li{margin:auto 6px;}
+.popup_gift_upgrade  a{text-decoration: none;}
+.popup_gift_upgrade .tips{padding:10px 13px 0;}
+.popup_gift_upgrade .tips strong{font-size:14px;vertical-align:middle;color:#5C3C26;}
+.popup_gift_upgrade .tips span{margin:0 2px 0 10px;}
+.popup_gift_upgrade .list{width:625px;text-align:center;margin:0 5px;zoom:1;}
+.popup_gift_upgrade .list:after {content:"";display:block;height:0;line-height:0;clear:both;visibility:hidden;}
+.popup_gift_upgrade .list li{position:relative;top:0;width:140px;height:256px;float:left;_display:inline;zoom:1;vertical-align:top;text-align:center;margin:0 7px;}
+.popup_gift_upgrade .list li .alpha{display:block;position:absolute;top:0;left:0;z-index:2;width:140px;height:30px;background:#000;text-align:center;opacity: 0.5;filter:alpha(opacity=50);}
+.popup_gift_upgrade .list li strong{display:block;position:absolute;top:0;left:0;z-index:3;width:140px;line-height:30px;height:30px;text-align:center;color:#fff;font-size:14px;}
+.popup_gift_upgrade .list li.gif_item,
+.popup_gift_upgrade .list li.gif_item .cont {width:165px;}
+.popup_gift_upgrade .list li.gif_item .gift_info{margin-top:5px;}
+.popup_gift_upgrade .list li.gif_item .gif_tips{padding:5px 0 0 5px;line-height:1.5;}
+.popup_gift_upgrade .list li.gif_item .card_theme_item{margin-top:18px;}
+.popup_gift_upgrade .list li .gif_tips{text-align:left;text-indent:2em;}
+.popup_gift_upgrade .list li .experience_value{width:100px;text-align:center;}
+.popup_gift_upgrade .popup_gift_qqshow .button{position:absolute;top:203px;right:10px;border:none;width:57px;padding:1px 0;color:#864600;background:url(../../images/qq/icon.png?v=81) no-repeat -330px -210px;}
+.popup_gift_upgrade .list li .gift_info{position:relative;margin-top:-60px;}
+.popup_gift_upgrade .list li .gift_info_v2{position:relative;text-align:left;margin-top:-60px;}
+.popup_gift_upgrade .list li .choose{ position:absolute; top:-15px; right:10px; display:block; width:30px; height:30px;overflow:hidden;line-height:300px;font-size:0;content:""; background:url(../../images/qq/icon.png?v=81) no-repeat -120px 0;}
+.popup_gift_upgrade .list .pic{position:relative;margin:0; height:226px;width:140px; overflow:hidden;}
+.popup_gift_upgrade .list .cont{position:relative;margin-bottom:3px;width:140px;height:226px;overflow:hidden;}
+.popup_gift_upgrade .list .pic a{ position:absolute; top:0; left:0;display:block;margin:0;width:140px; height:226px; line-height:600px; font-size:0; overflow:hidden;background:url(../../images/qq/icon.png?v=81) no-repeat -2000px 0;}
+.popup_gift_upgrade .list .info{text-align:center;color:#5D5855;}
+.popup_gift_upgrade .list a{color:#067FC4;}
+.popup_gift_upgrade .list .info_more_bg{position:absolute;top:183px;left:0;width:140px;height:45px;background:#000;filter:alpha(opacity=70);opacity: 0.7;}
+.popup_gift_upgrade .list .info_more{position:absolute;top:187px;left:10px;padding:0;width:140px;height:40px;text-align:left;line-height:1.4;color:#FFF;}
+.popup_gift_upgrade .list .info_more a{color:#A5DEFF;font-family:SimSun;}
+.popup_gift_upgrade .comment{margin:8px 10px 25px;padding-top:8px;border-top:1px dotted #ccc;zoom:1;}
+.popup_gift_upgrade .comment:after {content:"";display:block;height:0;line-height:0;clear:both;visibility:hidden;}
+.popup_gift_upgrade .comment .pic{width:100px;float:left;}
+.popup_gift_upgrade .comment .comment_form{float:right;}
+.popup_gift_upgrade .comment_textarea textarea{display:block;width:342px;height:70px;padding:0 3px;}
+.popup_gift_upgrade .comment .comment_form{position:relative;width:352px;}
+.popup_gift_upgrade .comment h3{color:#5D5855;font-size:14px;}
+.popup_gift_upgrade .comment .cont{position:absolute;top:28px;left:6px;color:#999;}
+.popup_gift_upgrade .comment .info{position:absolute;top:3px;right:0;color:#999;}
+.popup_gift_upgrade .comment .submission{margin-top:8px;height:21px;line-height:21px;vertical-align: middle;}
+.popup_gift_upgrade .comment .submission button{margin-right:8px;vertical-align: middle;width:106px;height:21px;border:none;background:url(../../images/qq/icon.png?v=81) no-repeat -210px -210px;}
+.popup_gift_upgrade .comment .submission button span{display:none;}
+
+
+
+
+
+/*成功收集套卡*/
+.popup_collect{width:680px;height:455px;}
+.popup_collect .theme_cont{position:relative;width:680px;height:73px; border-bottom:1px solid #F0E0DD;}
+.popup_collect .theme_cont .pic{position:absolute;top:5px;left:10px;}
+.popup_collect .theme_cont .pic img{width:55px;height:55px;}
+.popup_collect .theme_cont .info{position:absolute;top:5px;left:85px;}
+.popup_collect .issuancetime{position:absolute;top:45px;right:10px;}
+.popup_collect .issuancetime span{padding:0 10px;}
+.popup_collect .return{position:absolute; top:10px; right:20px;}
+.popup_collect .list{position:relative; margin-top:5px; width:680px; height:375px; overflow-y:auto;}
+.popup_collect .list li{float:left; margin-left:11px;*display:inline;}
+.popup_collect li .card_em_theme_item{margin-top:5px;}
+/*集卡册*/
+.popup_successful_collection{width:678px;zoom:1;}
+.popup_successful_collection .list{*float:left;overflow-x:hidden;overflow-y:auto!important;position:relative;border-top:1px solid #F0E0DD;width:678px; height:420px;}
+.popup_successful_collection .item{position:relative; width:330px; height:272px; margin-left:-2px; float:left; border-left:1px solid #F0E0DD; border-bottom:1px solid #F0E0DD;}
+.popup_successful_collection li.collect_tips{width:100%; height:50px; line-height:50px;clear:both;text-align:center;}
+.popup_successful_collection .item .pic{ position:absolute; top:10px; left:29px; width:54px; text-align:center;}
+.popup_successful_collection .item .pic img{width:54px; height:54px;}
+.popup_successful_collection .item a{color:#0780C5;}
+.popup_successful_collection .item .info{position:absolute; top:100px; left:25px;}
+.popup_successful_collection .item .show{position:absolute; right:10px; top:14px; text-align:center;}
+.popup_successful_collection .item .show img{ display:block;}
+.popup_successful_collection .tips{position:relative;right:auto;top:auto;font-size:14px; font-weight:bold; color:#5C3C26; text-indent:10px;}
+.popup_successful_collection .tips strong{ font-size:16px}
+/*收集成功*/
+.popup_collect_success{height:430px;text-align:left;}
+.popup_collect_success .info{position:absolute;left:115px;top:71px;color:#5E3B25; font-size:14px; font-weight:bold; line-height:30px;}
+.popup_collect_success .info img{ vertical-align:middlel;}
+.popup_collect_success .btn{ margin:auto; overflow:hidden; width:86px; height:32px; border:none; background:url(../../images/qq/popup_v1.png?v=3) no-repeat -396px -328px;}
+.popup_collect_success .btn span{ display:none;}
+.popup_collect_success .close{ border:none; position:absolute; top:8px; right:5px; width:18px; height:18px; overflow:hidden; line-height:50px; font-size:0; color:#FFFFFF;background:url(../../images/qq/popup_v1.png?v=3) no-repeat -303px -83px;}
+.popup_collect_success .more_mall{position:absolute;left:119px;top:420px; width:400px;}
+.popup_collect_success .more_card{ position:absolute;right:20px;top:50px; width:100px;color:#067FC4;}
+.popup_collect_success .gift_list{position:absolute;right:0;top:-20px; width:100%; height:450px; margin-left:30px;}
+.popup_collect_success .gift_list h2{display:none;}
+.popup_collect_success .gift_list .gift1{position:absolute;left:119px;top:117px;width:204px;height:309px;background:url(../../images/qq/popup_v1.png?v=3) no-repeat -220px -450px;}
+.popup_collect_success .gift_list .gift1 .info{ position:absolute; top:280px; left:115px;}
+.popup_collect_success .more_mall a,
+.popup_collect_success .gift_list .gift1 .info a{color:#067FC4;}
+.popup_collect_success .gift_list .gift1 .pic{border:1px solid #E5DDD6; width:140px; height:226px; position:absolute; top:38px; left:31px;}
+.popup_collect_success .gift_list .gift1 button{position:absolute; top:278px; left:20px; width:80px; height:21px;background:url(../../images/qq/popup_v1.png?v=3) no-repeat -253px -492px; border:none;}
+.popup_collect_success .gift_list .gift1 button span{ display:none;}
+.popup_collect_success .gift_list .gift1 .tips{position:absolute;top:279px;left:20px;width:100%;height:23px;line-height:23px;font-weight:bold;text-align:left;}
+.popup_collect_success .gift_list .gift2{position:absolute;left:372px;top:117px;width:149px;height:150px;background:url(../../images/qq/popup_v1.png?v=3) no-repeat -423px -450px;}
+.popup_collect_success .gift_list .gift3{position:absolute;left:372px;top:277px;width:149px;height:150px;background:url(../../images/qq/popup_v1.png?v=3) no-repeat -423px -599px;}
+.popup_collect_success .gift_list .gift2 .info,
+.popup_collect_success .gift_list .gift3 .info{position:absolute; left:0; top:120px; width:164px; text-align:center; font-size:12px;}
+
+.popup_guide{width:650px;}
+.popup_guide .mdl_c_c{height:380px;}
+.popup_guide .guide_cont h3{padding:30px;text-align:center;}
+.popup_guide .guide_cont .choose_title{text-align:left;padding-left:150px;}
+.popup_guide .guide_cont h4,
+.popup_guide .guide_cont ol{margin-left:209px;}
+.popup_guide .guide_tips{padding:30px 50px 0 50px;}
+.popup_guide .guide_tips h3{padding-top:15px;border-top:1px dotted #7E5D37}
+.popup_guide .guide_card_list{position:relative;padding:10px 0 0 17px;width:620px;height:218px;overflow:auto;}
+.popup_guide .guide_card_list li{float:left;width:146px;text-align:center;}
+.popup_guide .guide_card_list .card_theme_info strong{display:block;}
+.popup_guide .guide_card_list .card_theme_info .difficulty{display:block;}
+.popup_guide .guide_card_list .card_theme_info a{color:#0780C5;text-decoration:none;font-family:simsun,arlal;}
+.popup_guide h3.gift_title{text-align:left;padding-left:180px;}
+.popup_guide .gift_info{padding:5px;text-align:center;}
+
+.popup_guide_1 .return,
+.popup_guide_2 .return,
+.popup_guide .return{position:absolute;top:15px;right:25px;font-family:simsun,arlal;color:#D22300;font-weight:bold;}
+
+.popup_guide .rewards{padding-top:10px;position:relative;height:455px;_border-top:10px solid #ECD6B1;}
+.popup_guide .rewards .btns{padding:13px 0 7px;}
+.popup_guide .rewards .rewards_tips{margin:10px 0 10px 0;padding:0 17px;line-height:23px;height:23px;text-align:left;vertical-align:middlel;}
+.popup_guide .rewards .rewards_tips strong,
+.popup_guide .rewards .rewards_tips span{padding-left:8px;line-height:23px;height:23px;text-align:left;vertical-align:middle;}
+.popup_guide .rewards .rewards_tips img{vertical-align:middle;}
+.popup_guide .rewards .guide_rewards{position:relative;overflow:auto;margin-left:15px;padding-top:5px;_display:inline;height:163px;width:600px;background:#F3E5CF;border:2px solid #73461C;}
+.popup_guide .rewards .guide_rewards li{padding-top:7px;float:left;width:122px;text-align:center;margin-left:15px;_displsy:inline;}
+.popup_guide .rewards .guide_title{float:left;padding-top:10px;width:605px;margin-left:16px;_display:inline;border-bottom:1px dotted #976840;}
+.popup_guide .rewards .guide_list li{padding-top:10px;float:left;width:211px;text-align:center;}
+.popup_guide .rewards .guide_list li span{display:block;}
+
+.popup_guide_1{width:650px;}
+.popup_guide_1 .tips_image{position:absolute;top:15px;left:2px;width:246px;height:355px;background:url(../../images/qq/popup_guide_6.jpg);}
+.popup_guide_1 .tips_props_image{position:absolute;top:25px;left:2px;width:246px;height:429px;background:url(../../images/qq/popup_guide_7.jpg);}
+.popup_guide_1 .mdl_c_c{position:relative;height:397px;}
+.popup_guide_1 .card_list{position:absolute;top:20px;right:15px;width:376px;}
+.popup_guide_1 .card_list li{position:relative;margin-bottom:5px;float:left;width:376px;height:66px;border:2px solid #9F7048;background:#F3E6D1;}
+.popup_guide_1 .card_list li .important_default,
+.popup_guide_1 .card_list li .important_active{display:block;width:48px;height:66px;background:url(../../images/qq/popup_guide_1.png) no-repeat -45px 0;}
+.popup_guide_1 .card_list li .important_default{background:url(../../images/qq/popup_guide_1.png) no-repeat 0 0;}
+.popup_guide_1 .card_list li h3{position:absolute;top:8px;left:50px;}
+.popup_guide_1 .card_list li .tips{position:absolute;top:39px;left:50px;}
+.popup_guide_1 .card_list li .selected{position:absolute;top:18px;right:25px;display:block;width:31px;height:26px;background:url(../../images/qq/popup_guide_1.png) no-repeat -93px -31px;}
+.popup_guide_1 .card_list li .locking{position:absolute;top:18px;right:25px;display:block;width:26px;height:31px;background:url(../../images/qq/popup_guide_1.png) no-repeat -93px 0;}
+.popup_guide_1 .card_list li .buttons{position:absolute;top:18px;right:7px;width:auto;}
+.popup_guide_1 .popup_props{height:450px;*height:460px;}
+.popup_props .props_list li img.props{position:relative;}
+.popup_props .props_list{position:absolute;right:15px;top:20px;width:376px;}
+.popup_props .props_list li{background:#F3E6D1;border:2px solid #9F7048;float:left;margin-bottom:5px;position:relative;width:376px;}
+.popup_props .props_list li .gift_enter{position:absolute;top:75px;left:180px;font-family:simsun,arlal;}
+.popup_props .props_list li img.props{position:absolute;top:5px;right:10px;}
+.popup_props .props_list li img.process{margin:0 0 10px 5px;}
+.popup_props .props_list li h3{width:230px;margin:10px 10px 10px;}
+.popup_props .props_list li p{width:230px;margin:0 10px 30px;}
+
+.popup_guide_2{width:650px;}
+.popup_guide_2 .mdl_c_c{position:relative;height:397px;}
+.popup_guide_2 .tips_image{position:absolute;top:15px;left:2px;width:246px;height:355px;background:url(../../images/qq/popup_guide_6.jpg);}
+.popup_guide_2 .tips_boxs{position:absolute;top:35px;right:15px;width:376px;height:348px;border:2px solid #73461C;background:#F3E5CF;}
+.popup_guide_2 .tips_boxs .btns{padding:0;zoom:1;}
+.popup_guide_2 .tips_boxs_info{position:absolute;bottom:15px;left:25px;width:320px;border-top:1px dotted #7D4F26;padding-top:10px;}
+.popup_guide_2 .tips_boxs_img{margin-top:-8px;padding-bottom:3px;text-align:center;}
+.popup_guide_2 .tips_boxs_cont1{position:relative;margin-top:10px;padding:13px 20px 7px 15px;zoom:1;}
+.popup_guide_2 .tips_boxs_cont1 .my_card{position:absolute;top:-1px;left:145px;width:118px;height:95px;line-height:45px;text-align:right;background:url(../../images/qq/popup_guide_2.png) no-repeat;}
+.popup_guide_2 .tips_boxs .guide_img{margin:10px 30px;}
+/*卡片升级*/
+.card_upgrade{padding:3px;text-align:center;}
+.card_upgrade .card_upgrade_before{display:inline-block;*display:inline;zoom:1;text-align:center;font-size:0;}
+.card_upgrade .card_upgrade_arrow{font-size:0;display:inline-block;*display:inline;zoom:1;width:80px;height:105px;background:url(../../images/qq/popup_element_4.png?v=3) no-repeat 0 15px;}
+.card_upgrade .card_upgrade_after{font-size:0;display:inline-block;*display:inline;zoom:1;text-align:center;font-size:0;}
+.card_upgrade .card_upgrade_before strong,
+.card_upgrade .card_upgrade_after strong{font-size:12px;clear:both;display:block;}
+.card_upgrade .card_upgrade_before img,
+.card_upgrade .card_upgrade_after img{margin-left:1px;float:left;}
+
+.popup_gift .radio input{display:inline-block;zoom:1;margin:-2px 2px 0 2px;}
+
+.card_giftlist{padding-bottom:3px;text-align:center;width:100%;zoom:1;}
+.card_giftlist *{font-family: arial;}
+.card_giftlist li{display:inline-block;*display:inline;zoom:1;width:200px;margin:0 -20px;}
+.card_giftlist li .important{font-size:20px;}
+.card_giftlist li span{padding-top:5px;display:inline-block;*display:inline;zoom:1;}
+.card_giftlist li img{}
+.card_giftlist_tips{padding-bottom:1px;margin:0 32px;}
+.card_giftlist_info{padding-bottom:1px;margin:0 32px;}
+/*卡片保险箱*/
+.popup_insurance_card{width:370px;zoom:1;}
+.popup_insurance_card:after{display:block;content:"";clear:both;height:0;overflow:hidden;}
+.popup_insurance_card ul{float:right;width:220px;}
+.popup_insurance_card ul li{position:relative;height:34px;}
+.popup_insurance_card .insurance_input{display:block;position:absolute;top:1px;left:70px;width:94px;height:20px;background:url(../../images/qq/popup_element_5.png?v=5);}
+.popup_insurance_card .insurance_input button{position:absolute;top:3px;border:none;width:8px;height:15px;overflow:hidden;font-size:0;line-height:60px;background:none;}
+.popup_insurance_card .insurance_input input{position:absolute;top:0px;left:17px;width:61px;height:20px;line-height:20px;oveflow:hidden;border:none;background:none;text-align:center;}
+.popup_insurance_card li span.text{padding-left:104px;}
+.popup_insurance_card .increase{left:0;}
+.popup_insurance_card .reduce{right:0;}
+/*个人信息*/
+.popup_personal_information{padding:0 15px;}
+.popup_personal_information .personal_information_head{width:487px;margin:10px 10px 20px 10px;position:relative; padding-left:120px;font-size:14px;}
+.popup_personal_information .personal_information_head h3{color:#272727;display:block;height:40px;line-height: 40px;}
+.popup_personal_information .personal_information_head ul{display:block;width:425px;height:30px;overflow:hidden;color:#272727}
+.popup_personal_information .personal_information_head li{display:block;width:100px;float:left;}
+.popup_personal_information .personal_information_head li strong{color:#ff7200;font-family:Arial;}
+.popup_personal_information .personal_information_head .avatar{border:1px solid #ccc;position:absolute; overflow:hidden; left:10px; top:10px;width:100px;height:100px;}
+.popup_personal_information .personal_information_head .avatar img{position:absolute;}
+.popup_personal_information .personal_information_head .shop{position:relative; width:150px;}
+.popup_personal_information .personal_information_head .shop span{margin-right:1px;}
+.popup_personal_information .popup_personal_tab{height:250px;overflow:hidden;}
+.popup_personal_information .popup_personal_tab .tab_nav{border-bottom:3px solid #4D2911;height:22px;padding-left:30px;}
+.popup_personal_information .popup_personal_tab .tab_nav li{display:block;float:left;height:22px;overflow:hidden;}
+.popup_personal_information .popup_personal_tab .tab_nav li a{display:block;float:left;color:#272727;background:url('../../images/qq/icon.png?v=81') no-repeat -390px -90px;margin-right:1px;padding-left:2px;text-decoration:none;}
+.popup_personal_information .popup_personal_tab .tab_nav li span{display:block;height:22px;line-height:22px;float:left;padding:0 18px 0 16px;background:url('../../images/qq/icon.png?v=81') no-repeat 100% -90px;cursor:pointer;}
+.popup_personal_information .popup_personal_tab .tab_nav .on a{background:url('../../images/qq/icon.png?v=81') no-repeat -390px -360px;color:#fff;}
+.popup_personal_information .popup_personal_tab .tab_nav .on span{background:url('../../images/qq/icon.png?v=81') no-repeat 100% -360px;}
+.popup_personal_information .popup_personal_tab .content_box .lists{height:198px;padding:2px 10px 0 10px; overflow-y:scroll;scrollbar-arrow-color:#fff;scrollbar-base-color:#a9bed6;scrollbar-darkshadow-color:#a9bed6;scrollbar-face-color:#a9bed6;scrollbar-highlight-color:#fff;scrollbar-shadow-color:#fff;scrollbar-track-color:#d8e7f9;}
+.popup_personal_information .popup_personal_tab .lists li{display:block;line-height:2;}
+.popup_personal_information .popup_personal_tab .lists a{margin:0 8px;zoom:1;text-decoration:none;color:#0565b7;}
+.popup_personal_information .tab_content .message .lists{ height:112px;}
+.popup_personal_information .comments{position:relative;height:88px; padding-top:5px; padding-left:10px;}
+.popup_personal_information .comments textarea{width:493px;height:46px;}
+.popup_personal_information .comments_textarea_tips{margin:0 0 -4px 10px;padding:2px 5px;display:inline-block;*display:inline;zoom:1;color:#666;background:#F6B344;}
+.popup_personal_information .comments .text{position:absolute;left:15px;top:57px;color:#0565B7; text-decoration:none;}
+.popup_personal_information .comments .buttons{position:absolute;left:450px;top:58px;width:auto;}
+.popup_personal_information .comments_tips{position:absolute;left:338px;top:58px;}
+
+.popup_joint{padding:10px;}
+.popup_joint .tips{border:1px solid #E9E0B7;background:#FFFAE4;margin:10px 0;padding:10px 0;text-align:center;}
+.popup_joint .tutorial{position:relative;padding:10px 10px 0 10px;height:160px;text-align:center;zoom:1;}
+.popup_joint .tutorial strong{display:block;text-align:left;}
+.popup_joint .tutorial_tips{position:absolute;top:160px;left:22px;}
+.popup_joint .tutorial a.tx5{position:absolute;top:10px;right:10px;}
+.popup_joint .tutorial img{margin:15px auto 0 auto;}
+.popup_joint .joint_gift{border:none;}
+.popup_joint .joint_gift .ico_arrowup{}
+.popup_joint .joint_gift .ico_arrowdown{}
+.popup_joint .joint_gift button{width:235px;border:none;background:none;height:13px;line-height:13px;overflow:hidden;vertical-align:middle;}
+
+.popup_transpositional{position:relative;width:702px;height:518px;background:url('../../images/qq/popup_transpositional.png?v=5')}
+.popup_transpositional .title h2{position:absolute;top:10px;left:20px;color:#F6B344;font-size:14px;}
+.popup_transpositional .content{position:absolute;top:39px;left:5px;width:692px;height:472px;background:url('../../images/qq/transpositional.jpg?v=5');z-index:7;}
+.popup_transpositional .flash_card{background:url('../../images/qq/flash_card.jpg');}
+.popup_transpositional .close{position:absolute;right:13px;top:12px;z-index:11;width:20px;height:20px;background:none;border:none;}
+.popup_transpositional .close span{display:none;}
+.popup_transpositional .expendable{position:absolute;width:150px;text-align:center;}
+.popup_transpositional .program{position:absolute;width:150px;text-align:center;}
+.popup_transpositional .program .alpha{filter:alpha(opacity=50);opacity: 0.5;}
+.popup_transpositional .program h3,
+.popup_transpositional .expendable h3{display:none;}
+.popup_transpositional .expendable_flash{margin:auto;width:150px;height:175px;}
+.popup_transpositional .program button{margin:14px auto 0 auto;}
+.popup_transpositional .expendable button{margin:2px auto 0 auto;}
+.popup_transpositional .contingent{position:absolute;z-index:3;left:270px;top:241px;width:182px;height:31px;zoom:1;}
+.popup_transpositional .flash_card_plan .contingent{background:url('../../images/qq/flash_card.jpg') no-repeat -171px -504px;}
+.popup_transpositional .contingent h3{position:absolute;left:-28px;top:-17px;width:228px;height:25px;line-height:125px;overflow:hidden;}
+.popup_transpositional .kindle h3{background:url('../../images/qq/transpositional.jpg?v=5') no-repeat -146px -472px;}
+.popup_transpositional .flash_card .kindle h3{background:url('../../images/qq/flash_card.jpg') no-repeat -146px -472px;}
+.popup_transpositional .contingent_list{position:relative;z-index:3;}
+.popup_transpositional .contingent_list .default{cursor:default;}
+.popup_transpositional .contingent_list li{position:relative;cursor:pointer;width:40px;height:31px;float:left;font-size:0;color:rgba(0, 0, 0, 0);}
+.popup_transpositional .contingent_list .active{background-image:url('../../images/qq/popup_transpositional.png?v=5');}
+.popup_transpositional .contingent_list .item_01{background-position:0 -554px;}
+.popup_transpositional .contingent_list .item_02{margin-left:2px;background-position:-40px -554px;}
+.popup_transpositional .contingent_list .item_03{margin-left:2px;background-position:-80px -554px;}
+.popup_transpositional .contingent_list .item_04{margin-left:2px;width:45px;background-position:-120px -554px;}
+.popup_transpositional .kindle .contingent_list .item_01{background-position:0 -523px;}
+.popup_transpositional .kindle .contingent_list .item_02{margin-left:2px;background-position:-40px -523px;}
+.popup_transpositional .kindle .contingent_list .item_03{margin-left:2px;background-position:-80px -523px;}
+.popup_transpositional .kindle .contingent_list .item_04{margin-left:2px;width:45px;background-position:-120px -523px;}
+
+.popup_transpositional .flash_card .kindle .contingent_list .item_01{background-position:-240px -554px;}
+.popup_transpositional .flash_card .kindle .contingent_list .item_02{margin-left:2px;background-position:-280px -554px;}
+.popup_transpositional .flash_card .kindle .contingent_list .item_03{margin-left:2px;background-position:-320px -554px;}
+.popup_transpositional .flash_card .kindle .contingent_list .item_04{margin-left:2px;width:45px;background-position:-200px -523px;}
+.popup_transpositional .flash_card .kindle .contingent_list .item_05{background-position:-160px -523px;}
+.popup_transpositional .flash_card_plan .item_05{position:absolute;top:1px;left:43px;width: 40px;height: 31px;}
+.popup_transpositional .flash_card_plan .item_04{position:absolute;top:1px;left:89px;}
+.popup_transpositional .guide{  color: #FFA800;position: absolute;right:40px;top: 13px;}
+.popup_transpositional .contingent_tips{display:none;position:absolute;top:-27px;width:82px;height:31px;background:url('../../images/qq/popup_transpositional.png?v=5') no-repeat -275px -518px}
+.popup_transpositional .contingent_tips{color:#F27900;}
+.popup_transpositional .contingent_tips strong{display:none;}
+.popup_transpositional .contingent_tips span{display:block;font-size:bold;text-align:right;padding:3px 6px 0 5px;font-family:SimSun,arial;}
+.popup_transpositional .item_01 .contingent_tips{left:-19px;}
+.popup_transpositional .item_02 .contingent_tips{left:-22px;}
+.popup_transpositional .item_03 .contingent_tips{left:-21px;}
+.popup_transpositional .item_04 .contingent_tips{left:-22px;}
+.popup_transpositional .item_05 .contingent_tips{left:-22px;}
+.popup_transpositional .active .contingent_tips{display:block;zoom:1;}
+.popup_transpositional .explanatorily_flash{position:absolute;top:13px;left:205px;width:300px;height:195px;}
+.popup_transpositional .explanatorily{position:absolute;top:60px;left:237px;width:230px;height:250px;z-index:2;}
+.popup_transpositional .explanatorily h3{display:none;}
+.popup_transpositional .explanatorily .vertical{display:table-cell;vertical-align:middle;text-align:center;*display:block;*font-size:200px;*font-family:Arial;width:234px;height:218px;}
+.popup_transpositional .explanatorily .vertical .vertical_content{display:inline;zoom:1;vertical-align:middle;font-size:14px;color:#eee;text-align:center;font-family:Microsoft YaHei, SimSun;}
+.popup_transpositional .explanatorily .vertical strong{font-size:14px!important;}
+.popup_transpositional .explanatorily .enter{display:block;position:absolute;top:205px;left:46px;width:146px;height:104px;cursor:default;}
+.popup_transpositional .explanatorily .active{cursor:pointer;background:url('../../images/qq/transpositional.jpg?v=5') no-repeat 0 -472px;}
+.popup_transpositional .explanatorily .active span,
+.popup_transpositional .explanatorily .enter span{display:none;}
+.popup_transpositional .explanatorily .links{display:inline-block;zoom:1;margin-top:-4px;vertical-align:middle;color:#fff;text-decoration:none;font-family:Microsoft YaHei,SimSun,arial;font-size:14px;}
+
+.popup_flash_card{position:relative;width:702px;height:518px;background:url('../../images/qq/popup_flash_card_transpositional.png?v=3');}
+.popup_flash_card .flash_card_tips{position:absolute;top:9px;left:12px;color:#FFCE29;width:100%;height:23px;line-height:23px;}
+.popup_flash_card .flash_card_tips img{vertical-align: middle;margin:0 5px;}
+.popup_flash_card .flash_card_tips .more{position:absolute;top:2px;left:600px;color:#CC9900;text-decoration:none;}
+.popup_flash_card .card_plan_title{position:absolute;top:40px;left:215px;width:258px;height:18px;background:url('../../images/qq/popup_flash_card.jpg?v=3') no-repeat -443px -491px;}
+.popup_flash_card .title h2{position:absolute;top:10px;left:20px;color:#F6B344;font-size:14px;}
+.popup_flash_card .content{position:absolute;top:39px;left:5px;width:692px;height:472px;overflow:hidden;}
+.popup_flash_card .flash_card{margin-left:-10px;width:702px;height:472px;background:url('../../images/qq/popup_flash_card.jpg?v=3');}
+.popup_flash_card .close{position:absolute;right:13px;top:12px;z-index:11;width:20px;height:20px;background:none;border:none;}
+.popup_flash_card .close span{display:none;}
+.popup_flash_card .expendable{position:absolute;width:150px;text-align:center;z-index:7;top:64px;left:217px;}
+.popup_flash_card .backing_out_active,
+.popup_flash_card .backing_out{cursor: default;display:block;position:absolute;top:48px;z-index:10;right:154px;width:20px;height:20px;background:url("about:blank");font-size:0;overflow:hidden;line-height:200px;background:url('../../images/qq/icon.png?v=81') no-repeat -60px -90px;}
+.popup_flash_card .backing_out_active{background:url('../../images/qq/icon.png?v=81') no-repeat -90px -90px;cursor:pointer;}
+.popup_flash_card .program{position:absolute;width:150px;text-align:center;z-index:7;top:64px;right:218px;}
+.popup_flash_card .program .alpha{filter:alpha(opacity=50);opacity: 0.5;}
+.popup_flash_card .program h3,
+.popup_flash_card .expendable h3{display:none;}
+.popup_flash_card .contingent{position:absolute;z-index:3;left:260px;top:241px;width:182px;height:31px;zoom:1;}
+.popup_flash_card .flash_card_plan .contingent{background:url('../../images/qq/flash_card.jpg') no-repeat -171px -504px;}
+.popup_flash_card .contingent h3{position:absolute;left:-28px;top:-17px;width:228px;height:25px;line-height:125px;overflow:hidden;}
+.popup_flash_card .kindle h3{background:url('../../images/qq/transpositional.jpg?v=5') no-repeat -146px -472px;}
+.popup_flash_card .flash_card .kindle h3{background:url('../../images/qq/flash_card.jpg') no-repeat -146px -472px;}
+.popup_flash_card .contingent_list{position:relative;z-index:3;}
+.popup_flash_card .contingent_list .default{cursor:default;}
+.popup_flash_card .contingent_list li{position:relative;cursor:pointer;width:40px;height:31px;float:left;font-size:0;color:rgba(0, 0, 0, 0);}
+.popup_flash_card .contingent_list .active{background-image:url('../../images/qq/popup_transpositional.png?v=5');}
+.popup_flash_card .contingent_list .item_01{background-position:0 -554px;}
+.popup_flash_card .contingent_list .item_02{margin-left:2px;background-position:-40px -554px;}
+.popup_flash_card .contingent_list .item_03{margin-left:2px;background-position:-80px -554px;}
+.popup_flash_card .contingent_list .item_04{margin-left:2px;width:45px;background-position:-120px -554px;}
+.popup_flash_card .kindle .contingent_list .item_01{background-position:0 -523px;}
+.popup_flash_card .kindle .contingent_list .item_02{margin-left:2px;background-position:-40px -523px;}
+.popup_flash_card .kindle .contingent_list .item_03{margin-left:2px;background-position:-80px -523px;}
+.popup_flash_card .kindle .contingent_list .item_04{margin-left:2px;width:45px;background-position:-120px -523px;}
+.popup_flash_card .flash_card .kindle .contingent_list .item_01{background-position:-240px -554px;}
+.popup_flash_card .flash_card .kindle .contingent_list .item_02{margin-left:2px;background-position:-280px -554px;}
+.popup_flash_card .flash_card .kindle .contingent_list .item_03{margin-left:2px;background-position:-320px -554px;}
+.popup_flash_card .flash_card .kindle .contingent_list .item_04{margin-left:2px;width:45px;background-position:-200px -523px;}
+.popup_flash_card .flash_card .kindle .contingent_list .item_05{background-position:-160px -523px;}
+.popup_flash_card .flash_card_plan .item_05{position:absolute;top:1px;left:43px;width: 40px;height: 31px;}
+.popup_flash_card .flash_card_plan .item_04{position:absolute;top:1px;left:89px;}
+.popup_flash_card .guide{  color: #FFA800;position: absolute;right:40px;top: 13px;}
+.popup_flash_card .contingent_tips{display:none;position:absolute;top:-27px;width:82px;height:31px;background:url('../../images/qq/popup_transpositional.png?v=5') no-repeat -275px -518px}
+.popup_flash_card .contingent_tips{color:#F27900;}
+.popup_flash_card .contingent_tips strong{display:none;}
+.popup_flash_card .contingent_tips span{display:block;font-size:bold;text-align:right;padding:3px 6px 0 5px;font-family:SimSun,arial;}
+.popup_flash_card .item_01 .contingent_tips{left:-19px;}
+.popup_flash_card .item_02 .contingent_tips{left:-22px;}
+.popup_flash_card .item_03 .contingent_tips{left:-21px;}
+.popup_flash_card .item_04 .contingent_tips{left:-22px;}
+.popup_flash_card .item_05 .contingent_tips{left:-22px;}
+.popup_flash_card .active .contingent_tips{display:block;zoom:1;}
+
+.popup_flash_card .flash_card_box_list{width:167px;height:372px;overflow:auto;color:#D7C3B2;scrollbar-arrow-color:#B99A66;scrollbar-base-color:#6F3910;scrollbar-darkshadow-color:#6F3910;scrollbar-face-color:#6F3910;scrollbar-highlight-color:#B99A66;scrollbar-shadow-color:#B99A66;scrollbar-track-color:#6F3910;}
+.popup_flash_card .expendable_box{position:absolute;top:180px;left:10px;height:272px;}
+.popup_flash_card .expenprop_box{position:absolute;top:80px;left:10px;height:55px;}
+.popup_flash_card .program_box{position:absolute;top:75px;right:10px;}
+.popup_flash_card .program_box_more{position:absolute;top:49px;right:13px;color:#D7C3B2;}
+.popup_flash_card .flash_card_box_list h2{display:none;}
+.popup_flash_card .flash_card_box_list h3{margin-top:5px;height:20px;line-height:20px;text-align:center;background:url(../../images/qq/line_flash.png) no-repeat center;}
+.popup_flash_card .flash_card_box_list h3 span{padding:0 1px;background:#2C1E17;}
+.popup_flash_card .flash_card_box_list h4{clear:both;color}
+.popup_flash_card .flash_card_box_list ul{zoom:1;}
+.popup_flash_card .flash_card_box_list ul:after{display:block;content:"";clear:both;height:0;overflow:hidden;}
+.popup_flash_card .flash_card_box_list li{margin:2px;display:inline;font-size:0;position:relative;float:left;width:46px;height:46px;background:url(../../images/qq/flash_box_card.png);zoom:1;}
+.popup_flash_card .flash_card_box_list li .amount{display: block;position: absolute;top:1px;left: 1px;z-index: 4;text-indent: -13px;width: 27px;height: 27px;text-align: center;font-weight: bold;background: url(../../images/qq/icon.png?v=81) no-repeat -120px -60px;color: yellow;font-size:12px;}
+.popup_flash_card .flash_card_box_list li.hover .prop_btn{position:absolute;left:0px;width:100%;bottom:3px;text-align:center;}
+.popup_flash_card .flash_card_box_list li img{margin:1px;width:44px;height:44px;}
+.popup_flash_card .flash_card_box_list .flash_box_ripeness{display:block;position:absolute;top:0;left:0;float:left;width:26px;height:26px;text-align:center;}
+.popup_flash_card .flash_card_box_list .flash_box_ripeness span{position:relative;z-index:2;display:block;text-align:left;text-indent:2px;color:#ff0;font-weight:bold;font-size:12px;}
+.popup_flash_card .flash_card_box_list .flash_box_ripeness .bg{position:absolute;top:0;left:0;z-index:1;width:26px;height:26px;background:url(../../images/qq/flash_box_ripeness.png); _background-image:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/qq/flash_box_ripeness.png',sizingMethod='scale');}
+.popup_flash_card .flash_card_box_list h4{height:20px;font-weight:normal;padding:5px 0 0;}
+.popup_flash_card .flash_card_msg{padding-top:5px;text-align:left;}
+.popup_flash_card .flash_card_msg a{ color: #FFA800; text-decoration: underline;}
+
+.popup_flash_card .explanatorily_flash{position:absolute;top:13px;left:205px;width:300px;height:195px;}
+.popup_flash_card .explanatorily{position:absolute;top:60px;left:237px;width:230px;height:250px;z-index:2;}
+.popup_flash_card .explanatorily h3{display:none;}
+.popup_flash_card .explanatorily .vertical{display:table-cell;vertical-align:middle;text-align:center;*display:block;*font-size:200px;*font-family:Arial;width:234px;height:218px;}
+.popup_flash_card .explanatorily .vertical .vertical_content{display:inline;zoom:1;vertical-align:middle;font-size:14px;color:#eee;text-align:center;font-family:Microsoft YaHei, SimSun;}
+.popup_flash_card .explanatorily .vertical strong{font-size:14px!important;}
+.popup_flash_card .explanatorily .enter{display:block;position:absolute;top:205px;left:36px;width:146px;height:104px;cursor:default;}
+.popup_flash_card .explanatorily .active{cursor:pointer;background:url('../../images/qq/transpositional.jpg?v=5') no-repeat 0 -472px;}
+.popup_flash_card .explanatorily .active span,
+.popup_flash_card .explanatorily .enter span{display:none;}
+.popup_flash_card .explanatorily .links{display:inline-block;zoom:1;margin-top:-4px;vertical-align:middle;color:#fff;text-decoration:none;font-family:Microsoft YaHei,SimSun,arial;font-size:14px;}
+.popup_flash_card .flash_card_box_list li a{zoom:1;position:absolute;top:0;left:0;display:block;width:46px;height:46px;z-index:7;background:url("about:blank");cursor:pointer;}
+.popup_flash_card li .alpha{width:46px;height:46px;z-index:7;}
+.popup_flash_card li .active{border:2px solid #f00;width:42px;height:42px;_width:46px;_height:46px;display:block;position: absolute;top:0;left:0;z-index:6;}
+
+.popup_achieve{position:absolute;z-index:10;width:472px;height:440px;background:url('../../images/qq/popup_achieve.png') no-repeat;}
+.popup_achieve .achieve_content{position:absolute;top:76px;left:17px;overflow:auto;height:352px;width:441px;}
+.popup_achieve h2{position:absolute;top:10px;left:18px;color:#FFA800;font-size:14px;}
+.popup_achieve ul li{float:left;margin:0 0 3px 3px;}
+.popup_achieve .achieve_list{position:relative;clear:both;zoom:1;margin:1px 0 0 0;background:#572D10;}
+.popup_achieve .achieve_list h3{position:absolute;top:10px;left:10px;color:#F1CC9C;font-weight:normal;}
+.popup_achieve .achieve_list ul{padding:10px 0 0 66px;overflow:hidden;zoom:1;}
+.popup_achieve .achieve_tips{position:relative;padding:5px 0;margin:0 0 -1px 0;padding-left:30px;background:#4A260B;}
+.popup_achieve .achieve_tips p{padding-left:10px;color:#F1CC9C;display:inline;}
+.popup_achieve .achieve_info{position:absolute;top:50px;left:18px;z-index:3;}
+.popup_achieve .achieve_info strong{color:#FFA800;}
+.popup_achieve .achieve_info span,
+.popup_achieve .achieve_info a{color:#F1CC9C;padding:0 5px;text-decoration:none;}
+.popup_achieve .achieve_info .active{background:#4A260B;padding:2px 4px;}
+.popup_achieve .selector{position:absolute;top:51px;right:13px;z-index:3;}
+.popup_achieve .close{position:absolute;top:11px;right:13px;background:none;border:none;font-size:0;line-height:60px;width:20px;height:20px;}
+.popup_achieve .close span{display:none;}
+.popup_achieve .selector span{display:inline-block;*display:inline;zoom:1;padding:0;border:none;margin-left:3px;}
+.popup_achieve .selector strong{color:#FFA800;}
+.popup_achieve .selector a{text-decoration:none;}
+/*请选择你的卡片箱*/
+.cardbox_achieve{position:absolute;z-index:8;width:332px;height:486px;background:url(../../images/qq/cardbox_exchange_achieve.png?v=5);}
+.cardbox_achieve h2{position:absolute;top:10px;left:15px;color:#FFA800;font-size:12px;}
+.cardbox_achieve h2 a{color:#FFA800;font-size:12px; text-decoration: underline;}
+.cardbox_achieve .more{position:absolute;top:10px;right:40px;color:#FFA800;}
+.cardbox_achieve ul{position:absolute; width:264px; height:53px; left:45px;zoom:1;}
+.cardbox_achieve ul:after{display:block;content:"";clear:both;height:0;overflow:hidden;}
+.cardbox_achieve .exchange{top:59px;}
+.cardbox_achieve .insurance_wrap{height:300px;overflow:auto;width:268px;position:absolute;left:45px;top:148px;scrollbar-arrow-color:#B99A66;scrollbar-base-color:#6F3910;scrollbar-darkshadow-color:#6F3910;scrollbar-face-color:#6F3910;scrollbar-highlight-color:#B99A66;scrollbar-shadow-color:#B99A66;scrollbar-track-color:#6F3910;}
+.cardbox_achieve .insurance{top:148px;height:auto;position:static;width:250px;}
+.cardbox_achieve li{ position:relative; display:inline;float:left; overflow:hidden; width:50px; height:50px;background:url(../../images/qq/cardbox_exchange_achieve.png?v=5) no-repeat -47px -59px;}
+.cardbox_achieve li.hover .prop_btn{position:absolute;left:0px;width:100%;bottom:3px;text-align:center;}
+.cardbox_achieve .active a{ display:block; border:2px solid #f00; width:46px; height:46px; _width:50px; _height:50px; overflow:hidden;}
+.cardbox_achieve .active img{ margin:0;}
+.cardbox_achieve li img{ width:48px; height:48px; margin:1px;}
+.cardbox_achieve .prev,
+.cardbox_achieve .next{position:absolute;left:179px;width:13px;height:7px; font-size:0; overflow:hidden; line-height:50px;}
+.cardbox_achieve .prev{top:237px;background:url(../../images/qq/cardbox_exchange_achieve.png?v=5) no-repeat -70px -156px;}
+.cardbox_achieve .next{top:455px;background:url(../../images/qq/cardbox_exchange_achieve.png?v=5) no-repeat -70px -166px;}
+.cardbox_achieve h4{ display:none;}
+.cardbox_achieve .determine{position:absolute; top:32px; width:152px; height:20px;left:160px;z-index:2;text-align:center;}
+.cardbox_achieve .quantity strong,
+.cardbox_achieve .determine strong{font-weight:bold;font-size:14px;padding:2px;}
+.cardbox_achieve .close{ position:absolute; right:0; top:5px; width:30px; height:20px;}
+.cardbox_achieve .quantity{position:absolute; top:465px; width:315px; height:20px;left:10px; color:#FFF; font-weight:bold;text-align:center;}
+.cardbox_achieve .quantity span{ padding:0 3px;}
+.cardbox_achieve .alpha{ position:absolute; top:1px; left:1px; width:48px; height:48px; filter:alpha(opacity=50);opacity: 0.5;background:#000;}
+.cardbox_achieve .amount{display: block;position: absolute;top: 0;left: 0;z-index: 4;text-indent: -13px;width: 27px;height: 27px;text-align: center;font-weight: bold;background: url(../../images/qq/icon.png?v=81) no-repeat -120px -60px;color: yellow;}
+.cardbox_achieve .close{position:absolute;top:11px;right:13px;background:none;border:none;font-size:0;line-height:60px;width:20px;height:20px;}
+.cardbox_achieve .close span{display:none;}
+.cardbox_achieve .exchange_prev,
+.cardbox_achieve .exchange_next{position:absolute;left:179px;width:13px;height:7px; font-size:0; overflow:hidden; line-height:50px;}
+.cardbox_achieve .exchange_prev{top:45px;background:url(../../images/qq/cardbox_exchange_achieve.png?v=5) no-repeat -70px -258px;}
+.cardbox_achieve .exchange_next{top:215px;background:url(../../images/qq/cardbox_exchange_achieve.png?v=5) no-repeat -70px -268px;}
+.cardbox_achieve .alpha_arrow{opacity: 0.5;filter:alpha(opacity=50);cursor:default;}
+
+/*请选择你的卡片箱*/
+.cardbox_achievement{position:absolute;z-index:8;width:266px;height:236px;background:url(../../images/qq/cardbox_achievement.jpg);}
+.cardbox_achievement ul{position:absolute; width:220px; height:101px; left:39px;overflow:auto;}
+.cardbox_achievement .exchange{top:25px;}
+.cardbox_achievement .insurance{top:130px;}
+.cardbox_achievement li{ position:relative; display:inline;float:left; overflow:hidden; margin:2px;width:46px; height:46px;background:url(../../images/qq/cardbox_achievement.jpg) no-repeat -58px -236px;}
+.cardbox_achievement .active a{ display:block; border:2px solid #f00; width:42px; height:42px; _width:46px; _height:46px; overflow:hidden;}
+.cardbox_achievement .active img{ margin:0;width:42px; height:42px; }
+.cardbox_achievement li img{ width:46px; height:46px; }
+.cardbox_achievement .exchange_title_active,
+.cardbox_achievement .exchange_title{position:absolute;top:24px;left:8px;}
+.cardbox_achievement .insurance_title_active,
+.cardbox_achievement .insurance_title{position:absolute;top:129px;left:8px;}
+.cardbox_achievement .exchange_title_active{background:url(../../images/qq/cardbox_achievement.jpg) no-repeat -29px -236px;}
+.cardbox_achievement .insurance_title_active{background:url(../../images/qq/cardbox_achievement.jpg) no-repeat 0 -236px;}
+.cardbox_achievement h2 a,
+.cardbox_achievement h2{display:block;width:29px;height:103px;line-height:803px;overflow:hidden;}
+.cardbox_achievement .determine{position:absolute; top:32px; width:152px; height:20px;left:160px;z-index:2;text-align:center;}
+.cardbox_achievement .quantity strong,
+.cardbox_achievement .determine strong{font-weight:bold;font-size:14px;padding:2px;}
+.cardbox_achievement .close{ position:absolute; right:0; top:5px; width:30px; height:20px;}
+.cardbox_achievement .quantity{position:absolute; top:465px; width:315px; height:20px;left:10px; color:#FFF; font-weight:bold;text-align:center;}
+.cardbox_achievement .quantity span{ padding:0 3px;}
+.cardbox_achievement .alpha{ position:absolute; top:1px; left:1px; width:48px; height:48px; filter:alpha(opacity=50);opacity: 0.5;background:#000;}
+.cardbox_achievement .close{position:absolute;top:6px;right:9px;background:none;border:none;font-size:0;line-height:60px;width:20px;height:20px;}
+.cardbox_achievement .close span{display:none;}
+.cardbox_achievement .exchange_prev,
+.cardbox_achievement .exchange_next{position:absolute;left:179px;width:13px;height:7px; font-size:0; overflow:hidden; line-height:50px;}
+.cardbox_achievement .exchange_prev{top:45px;background:url(../../images/qq/cardbox_exchange_achieve.png?v=5) no-repeat -70px -258px;}
+.cardbox_achievement .exchange_next{top:215px;background:url(../../images/qq/cardbox_exchange_achieve.png?v=5) no-repeat -70px -268px;}
+.cardbox_achievement .alpha_arrow{opacity: 0.5;filter:alpha(opacity=50);cursor:default;}
+
+.popup_surprise strong{font-size:16px;}
+.popup_surprise .surprise_gift{position:relative;padding-top:30px;width:375px;height:130px;}
+.popup_surprise .surprise_gift ul{position:absolute;top:56px;left:0;width:375px;height:120px;background:url(../../images/qq/popup_surprise.png) no-repeat;}
+.popup_surprise .surprise_gift li{float:left;}
+.popup_surprise .surprise_gift li span{display:none;}
+.popup_surprise .surprise_gift li a{position:absolute;top:75px;right:-7px;}
+.popup_surprise .surprise_gift .day_01,
+.popup_surprise .surprise_gift .day_02,
+.popup_surprise .surprise_gift .day_03,
+.popup_surprise .surprise_gift .day_04,
+.popup_surprise .surprise_gift .day_05{position:absolute;top:56px;left:0;height:69px;background:url(../../images/qq/popup_surprise.png) no-repeat 0 -140px;}
+.popup_surprise .surprise_gift .day_01{width:66px;}
+.popup_surprise .surprise_gift .day_02{width:144px;}
+.popup_surprise .surprise_gift .day_03{width:220px;}
+.popup_surprise .surprise_gift .day_04{width:300px;}
+.popup_surprise .surprise_gift .day_05{width:380px;}
+
+.popup_encouragement{position:relative;color:#5C3C26;}
+.popup_encouragement .detail{position:absolute;top:75px;left:10px;}
+.popup_encouragement .surprise_gift{position:relative;width:375px;height:110px;}
+.popup_encouragement .surprise_gift ul{position:absolute;top:0px;left:0;width:375px;height:120px;background:url(../../images/qq/popup_surprise.png) no-repeat;}
+.popup_encouragement .surprise_gift li{float:left;}
+.popup_encouragement .surprise_gift li span{display:none;}
+.popup_encouragement .surprise_gift li .links{position:absolute;top:75px;right:-7px;}
+.popup_encouragement .surprise_gift .day_01,
+.popup_encouragement .surprise_gift .day_02,
+.popup_encouragement .surprise_gift .day_03,
+.popup_encouragement .surprise_gift .day_04,
+.popup_encouragement .surprise_gift .day_05{position:absolute;top:0px;left:0;height:69px;background:url(../../images/qq/popup_surprise.png) no-repeat 0 -140px;}
+.popup_encouragement .surprise_gift .day_01{width:66px;}
+.popup_encouragement .surprise_gift .day_02{width:144px;}
+.popup_encouragement .surprise_gift .day_03{width:220px;}
+.popup_encouragement .surprise_gift .day_04{width:300px;}
+.popup_encouragement .surprise_gift .day_05{width:380px;}
+.popup_encouragement .gold{margin-left:150px;position:relative;overflow:hidden;width:90px;height:90px;text-align:center;background:url(../../images/qq/encouragement.png) no-repeat;}
+.popup_encouragement .gold span{position:absolute;top:65px;left:0;text-align:center;width:100%;}
+.popup_encouragement .title_gift{margin-top:10px;padding-top:10px;border-top:1px dashed #76552E;}
+.popup_encouragement .card_giftlist_tips{margin:0;}
+
+.gold_explain .mdl_c_c{_padding-top:15px;}
+.gold_explain .explain{padding:10px;}
+.gold_explain table{width:550px;}
+.gold_explain table caption{font-weight:bold;padding:5px 0;}
+.gold_explain table td,
+.gold_explain table th,
+.gold_explain table{border:1px solid #DFD3D5;border-collapse:collapse;word-wrap:break-word;color:#5C3C26;}
+.gold_explain table th,
+.gold_explain table td{padding:5px;}
+.gold_explain .popup_gift_tips{position:relative;zoom:1;overflow:hidden;}
+.gold_explain .float{position:absolute;top:4px;right:5px;}
+.vip_content{padding-right:8px;display:inline-block;zoom:1;height:20px;line-height:20px;background:url(../../images/qq/icon.png?v=81) no-repeat right -360px;text-decoration:none!important;color:#FFF;}
+.vip_content span{padding-left:8px;display:inline-block;zoom:1;height:20px;line-height:20px;background:url(../../images/qq/icon.png?v=81) no-repeat -420px -360px;}
+.popup_choose_card{width:340px;}
+.popup_choose_card h3{padding-left:80px;margin:10px 10px 10px;height:20px;line-height:20px;width:220px;_width:300px;clear:both;background:url(../../images/qq/d.gif?v=3) repeat-x 0 8px;}
+.popup_choose_card h3 span{vertical-align:middle;zoom:1;background:#FCF2D7;}
+.popup_choose_card h3 strong{padding-left:5px;}
+.popup_choose_card .card_list{margin-top:8px;position:relative;z-index:41;overflow:auto;overflow-x:hidden;height:346px;width:325px;}
+.popup_choose_card .card_list ul{position:relative;margin:10px;zoom:1;overflow:hidden;width:300px;clear:both;}
+.popup_choose_card .card_list li{float:left;width:100px;color:#76552E;}
+.popup_choose_card .card_list li a{color:#76552E;text-decoration:none;}
+.popup_choose_card .card_list .list_spe li{width:150px;}
+.popup_choose_card .mod_tab{position:absolute;top:13px;left:12px;z-index:6;}
+.popup_choose_card .mod_tab .tab2{font-weight:bold;padding-right:8px;}
+.popup_choose_card .mod_tab .tab2 span{padding-left:8px;}
+.popup_choose_card .mod_tab .tab2_sel{color:#F6B344;font-weight:bold;}
+.popup_coalesce .tips {background:none repeat scroll 0 0 #FFFAE4;border:1px solid #E9E0B7;margin:10px 0;padding:10px 0;text-align:center;}
+.popup_coalesce .indent{text-indent:2em;}
+.title_tips{position:absolute;float:left;background:#fff334;border:1px solid #FDCF1A;color:#333;white-space:nowrap;}
+.title_tips strong{position:absolute;bottom:-7px;left:10px;width:10px;height:7px;overflow:hidden;background:url(../../images/qq/icon.png?v=81) no-repeat -240px -180px;font-size:0;line-height:40px;content:"";}
+.title_tips span{margin:0 5px;padding-right:14px;float:left;display:inline;line-height:20px;*line-height:21px;}
+.title_tips button{position:absolute;top:6px;right:5px;width:9px;height:8px;border:0;display:block;overflow:hidden;font-size:0;line-height:18px;content:"";}
+.title_tips{position:absolute;z-index:1;background:#FFE410;border:1px solid #E3B702;}
+.title_tips span{padding:3px;color:#6B3400;}
+.arrow_left_top strong{bottom:auto;top:-6px;background:url(../../images/qq/icon.png?v=81) no-repeat -253px -180px;}
+
+.popup_species_explain .cont{position:relative;margin:20px auto auto;width:591px;height:317px;background:url(../../images/qq/popup_species_explain.png?v=3);}
+.popup_species_explain .cont h3,
+.popup_species_explain .cont ul,
+.popup_species_explain .cont .vip_user span{display:none;}
+.popup_species_explain .cont .month_vip{position:absolute;top:234px;left:0;display:block;height:18px;width:75px;background:url(../../images/qq/popup_species_explain.png?v=3) no-repeat 0 -500px;}
+.popup_species_explain .cont .year_vip{position:absolute;top:234px;left:253px;display:block;height:18px;width:100px;background:url(../../images/qq/popup_species_explain.png?v=3) no-repeat 0 -500px;}
+.popup_species_explain .cont ol li{position:absolute;top:26px;z-index:2;width:119px;height:24px;line-height:240px;overflow:hidden;background:url(../../images/qq/popup_species_explain.png?v=3) no-repeat 0 -1500px;}
+.popup_species_explain .cont .firstly{left:0;}
+.popup_species_explain .cont .secondly{left:129px;}
+.popup_species_explain .cont .third{left:258px;}
+.popup_species_explain .cont .four{left:387px;}
+
+.popup_compliment_away .away_cont{height:340px;}
+
+/*====send===*/
+.popup_compliment_away .item_cont{text-align:center;zoom:1;width:490px;overflow:hidden;height:150px;clear:both;}
+.popup_compliment_away .item_cont .pic{float:left;padding-top:10px;}
+.popup_compliment_away .item_cont .info{float:right;padding-top:60px;width:150px;text-align:left;}
+.popup_compliment_away .item_cont .suit_item{margin:auto;width:270px;}
+.popup_compliment_away .item_cont .suit_item p{font-family:verdana;}
+.popup_compliment_away .item_cont .detail_link{width:137px; text-align:right; padding-top:18px;}
+.popup_compliment_away .item_cont .detail_link a{color:#0883C6; text-decoration:none}
+.popup_compliment_away .item_cont .detail_link a:hover{text-decoration:underline}
+
+/*====send===*/
+.popup_compliment_away .item_side{width:178px; height:300px; margin-top:10px; float:left; border-right:1px dotted #A1A1A1;}
+.popup_compliment_away .item_side .pic{padding-bottom:10px;}
+.popup_compliment_away .item_side .single_item{padding:77px 0 0 40px;}
+.popup_compliment_away .item_side .suit_item{padding:8px 0 0 18px;}
+.popup_compliment_away .item_side .suit_item p{font-family:verdana;}
+.popup_compliment_away .item_side .detail_link{width:137px; text-align:right; padding-top:18px;}
+.popup_compliment_away .item_side .detail_link a{color:#0883C6; text-decoration:none}
+.popup_compliment_away .item_side .detail_link a:hover{text-decoration:underline}
+.popup_compliment_away .info_cont{position:absolute;top:70px;right:12px;width:320px;}
+.popup_compliment_away .info_cont ol li{list-style:decimal;list-style-position:inside;}
+.popup_compliment_away .info_cont .tx1{padding-top:40px;}
+
+.info_content{margin:auto;padding-top:10px;width:450px;height:200px; overflow:hidden;position:relative; *float:none; *position:absolute}
+.info_content .give_con{padding-left:80px;}
+.info_content .give_con .user_num{_margin-top:1px;width:196px;height:23px;line-height:23px; padding-left:2px; margin-right:3px; float:left;border:1px solid #CEC7BF;}
+.info_content .give_con .list_btn{width:76px; height:25px;background:url(../../images/qq/icon.png?v=81) no-repeat -240px -30px;border:none; content:""; font-size:0; line-height:50px; }
+.info_content .popup_gift_tips{margin:5px 50px;text-align:center;}
+.info_content label{color:#7A7A7A;}
+.info_content .alert_btns{text-align:right; padding-right:17px; height:32px; overflow:hidden;}
+.info_content .hints{width:245px;}
+.info_content .give_hints{padding-left:20px; margin-top:10px;}
+.info_content .give_info{padding:0 0 0 27px; height:143px; overflow:hidden }
+.info_content .give_info h3{color:#6757A0; font-size:14px; padding-top:5px; line-height:20px;}
+.info_content .give_info p{text-indent:14px;}
+.info_content .give_info .msg_con{word-break:break-all; padding-right:10px;}
+.info_content .icon_title{background:url(http://imgcache.qq.com/qqshow_v3/ac/popup/send_bg.png) -292px 5px no-repeat;}
+.info_content .pay_way{padding:0 20px 0 27px; height:168px; overflow:hidden}
+.info_content .info_con{border:1px solid #E4E3E6; background:#FFF; padding:14px 10px 10px;}
+.info_content .pay_way .info_con{margin-top:5px; position:relative;}
+.info_content .info_con .pay_tips{color:#5B5981; margin:-10px 0 4px 0; line-height:16px;}
+.info_content .info_con .person_pay{color:#5B5981; font-weight:bold;}
+.info_content .info_con .balance{position:absolute;+margin:-2px 0 0;right:10px; _right:30px;}
+.info_content .info_con .balance .em{color:#0883C6;}
+.info_content .info_con .other_pay{text-align:right; padding-top:1px;}
+.info_content .info_con .other_pay a{ text-decoration:none;}
+.info_content .info_con .other_pay a:hover{text-decoration:underline;}
+
+.info_content  .balance_tips{padding-top:2px;}
+.info_content .balance_checkbox{float:left;}
+.info_content .ico_question,
+.info_content .ico_question a{width:18px; height:18px; overflow:hidden; float:left; *margin-top:5px;}
+.info_content .ico_question a:hover{text-decoration:none;}
+.info_content .ico_question a span{visibility:hidden;}
+.info_content .searching_friend_box .friend_list li{margin:0 5px;}
+
+.info_content .return_link{position:absolute; left:27px; bottom:5px;}
+.info_content .return_link a{ line-height:14px;text-decoration:none;}
+.info_content .return_link a:hover{text-decoration:underline;}
+
+.friend_box{width:277px; height:90px; border:1px solid #C1BCDC; position:absolute; left:80px; top:52px; background:#FFF; overflow:auto; zoom:1}
+.friend_group{margin:1px 0 0 10px}
+.friend_group a.icon_open{padding-left:16px;background:url(http://imgcache.qq.com/qqshow_v3/ac/theme_default/icon.png) 0 -2323px no-repeat; color:#888;}
+.friend_group a.icon_close {padding-left:16px;background:url(http://imgcache.qq.com/qqshow_v3/ac/theme_default/icon.png) 0 -2283px no-repeat;color:#888;}
+.friend_group a{text-decoration:none;}
+.friend_list li{margin-left:25px; list-style:none;}
+.friend_list li span{color:#999;}
+.friend_list li a,.friend_list li a:hover{text-decoration:none; padding-left:20px; line-height:22px; height:22px; display:block;color:#5B5F6B;white-space:nowrap;}
+.friend_list li.sel a{background-color:#7C6ACF; color:#FFFFFF;white-space:nowrap;}
+
+.recipience{padding:20px;}
+.recipience .pic{float:left;width:100px;}
+.recipience .text{float:right;width:280px;}
+.recipience h4{padding:10px 0;}
+
+.popup_fairy{position:relative;width:510px;height:410px;}
+.popup_fairy_bg{position:absolute;left:0;bottom:0;width:509px;height:355px;background:url(../../images/qq/popup_fairy.png?v=3);_background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/qq/popup_fairy.png?v=3',sizingMethod='scale');}
+.popup_fairy .flash{position:absolute;left:20px;top:0;width:240px;height:270px;}
+.popup_fairy .close span,
+.popup_fairy h1,
+.popup_fairy h2,
+.popup_fairy .name strong,
+.popup_fairy .food strong,
+.popup_fairy .rating strong{display:none;}
+.popup_fairy .name{position:absolute;left:303px;top:85px;}
+.popup_fairy .name input{padding: 0 3px;padding-top:6px\0;*padding-top:6px;width:102px;height:22px;lineheight:22px;font-size:12px;border:none;background:#FEF8EB;}
+.popup_fairy .name .input{background:none;}
+.popup_fairy .rating{position:absolute;left:303px;top:113px;font-weight:bold;}
+.popup_fairy .rating em{vertical-align: middle;font-style:normal;font-size:20px;color:#763A0F;}
+.popup_fairy .rating span{color:#763A0F;font-size:15px;font-weight:bold;font-family:Microsoft YaHei,Arial Unicode MS,Mingliu,Arial,Helvetica;}
+.popup_fairy .food{position:absolute;left:262px;top:230px;width:224px;height:67px;text-align:center;}
+.popup_fairy .food a{ overflow: hidden;display:inline-block;*display:inline;zoom:1;margin:-4px 5px 0 5px;width:60px;height:60px;font-size:0;line-hieght:400px;oveflow:hidden;color:#FFF7E6;background-image:url(../../images/qq/popup_fairy.png?v=3);}
+.popup_fairy .food_01{background-position:-265px -160px;}
+.popup_fairy .food_02{background-position:-262px -263px;}
+.popup_fairy .food_03{background-position:-111px -264px;}
+.popup_fairy .fettle{position:absolute;left:305px;top:154px;width:200px;}
+.popup_fairy .fettle strong{display:block;position:absolute;left:-2px;top:-5px;width:31px;height:31px;font-size:0;line-height:200px;oveflow:hidden;}
+.popup_fairy .fettle .hunger{background:url(../../images/qq/popup_fairy.png?v=3) no-repeat -51px -271px;}
+.popup_fairy .fettle strong span{display:none;}
+.popup_fairy .fettle div{position:absolute;left:33px;top:2px;width:136px;height:18px;overflow:hidden;background:url(../../images/qq/popup_fairy_lv.png) ;}
+.popup_fairy .fettle .lv0{width:0;}
+.popup_fairy .fettle .lv1{width:11px;}
+.popup_fairy .fettle .lv2{width:23px;}
+.popup_fairy .fettle .lv3{width:35px;}
+.popup_fairy .fettle .lv4{width:47px;}
+.popup_fairy .fettle .lv5{width:59px;}
+.popup_fairy .fettle .lv6{width:71px;}
+.popup_fairy .fettle .lv7{width:83px;}
+.popup_fairy .fettle .lv8{width:95px;}
+.popup_fairy .fettle .lv9{width:107px;}
+.popup_fairy .fettle .lv10{width:119px;}
+.popup_fairy .fettle p{position:absolute;left:-10px;top:28px;}
+.popup_fairy .craftsmanship{position:absolute;left:30px;top:314px;}
+.popup_fairy .craftsmanship li{float:left;margin-right:5px;}
+.popup_fairy .close{position:absolute;top:56px;right:0;width:34px;height:32px;background:none;border:none;}
+.popup_promotion{position:relative;width:408px;height:281px;}
+.popup_promotion_bg{position:absolute;left:0;bottom:0;width:408px;height:281px;background:url(../../images/qq/popup_promotion.png);_background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/qq/popup_promotion.png',sizingMethod='scale');}
+.popup_promotion .msg{position:absolute;left:45px;top:40px;width:330px;}
+.popup_promotion .promotion_pic{position:absolute;left:165px;top:110px;}
+.popup_promotion .msg2{position:absolute;left:45px;top:35px;width:305px;}
+.popup_promotion .msg2 h2{font-family:'Microsoft Yahei';font-size:16px;text-align:center;}
+.popup_promotion .msg2 input,.popup_promotion .msg2 label{vertical-align:middle;cursor:pointer;}
+.popup_promotion .msg2 ul{margin-top:5px;font-weight:700;color:#76552E;padding-left:5px;}
+.popup_promotion .msg2 ul li{margin-bottom:6px;}
+.popup_promotion .msg2 p{line-height:16px;margin-top:6px;}
+.popup_promotion .msg2 .msgyeart{text-align:center;color:#f00;border-bottom:1px solid #76552E;margin-top:0px;padding-bottom:6px;}
+.popup_promotion .msg2 .msgbtn{margin-top:10px;text-align:center;}
+.popup_promotion .msg2 .msgbtn .btn_open{background:url(http://imgcache.qq.com/qqshow_v3_5/live/global/sprite.png) 0 -151px repeat-x;width:135px;height:31px;display:inline-block;zoom:1;overflow:hidden;line-height:999px;font-size:0;}
+.popup_promotion .btns{position:absolute;left:0;top:215px;width:100%;text-align:center;}
+.popup_promotion_msg button,
+.popup_promotion button{width:80px;height:28px;margin:0 10px;border:none;}
+.popup_promotion_msg button span,
+.popup_promotion button span{display:block;height:28px;line-height:28px;font-size:14px;font-weight:bold;}
+.popup_promotion_msg button.btn_em,
+.popup_promotion button.btn_em{background:url(../../images/qq/icon.png?v=81) no-repeat -210px -90px;color:#FFE9CD;}
+.popup_promotion_msg button.btn,
+.popup_promotion button.btn{background:url(../../images/qq/icon.png?v=81) no-repeat -300px -90px;color:#944D00;}
+.popup_promotion .close{position:absolute;right:0;top:0;width:28px;height:28px;border:none;background:none;}
+.popup_promotion_msg{position:relative;width:408px;height:202px;}
+.popup_promotion_msg_bg{position:absolute;left:0;bottom:0;width:408px;height:202px;background:url(../../images/qq/popup_promotionmsg.png);_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/qq/popup_promotionmsg.png',sizingMethod='scale');}
+.popup_promotion_msg .msg a{font-size:14px;color: #067FC4;font-weight:normal;}
+.popup_promotion_msg .msg{position:absolute;left:45px;top:50px;width:330px;font-size:;}
+.popup_promotion_msg .mgs2{position:absolute;left:35px;top:50px;width:350px;font-size:;}
+.popup_promotion_msg .mgs2 input,.popup_promotion_msg .mgs2 label{vertical-align:middle;}
+.popup_promotion_msg .mgs2 ul{margin-top:5px;font-weight:700;color:#76552E;}
+.popup_promotion_msg .btns{position:absolute;left:0;top:140px;width:100%;text-align:center;}
+.popup_promotion_msg .close{position:absolute;right:0;top:0;width:28px;height:28px;border:none;background:none;margin:0!important;}
+.popup_promotion h1,
+.popup_promotion_msg h1,
+.popup_promotion button.close span,
+.popup_promotion_msg button.close span{display:none;}
+
+.popup_promotion_tips{position:absolute;z-index:20;border:3px solid #CA7024;background:url(../../images/qq/popup_promotiontips.png?v=3) repeat-x 0 bottom;}
+.popup_promotion_tips_cont{position:relative;z-index:2;padding:10px;}
+.popup_promotion_tips strong{color:#fff;}
+.popup_promotion_tips p{color:#F9BA3F;}
+.popup_promotion_tips .bg{display:none;}
+.popup_promotion_tips .arrow{position:absolute;bottom:-12px;left:50%;margin-left:-10px;width:21px;height:12px;overflow:hidden;background:url(../../images/qq/icon.png?v=81) no-repeat -300px -180px;}
+
+.card_vipexchange .content{padding:30px 30px 0 30px;}
+.card_vipexchange .content h3{height:30px;line-height:30px;}
+.card_vipexchange .content h3 span{margin:-5px 10px 0 0;vertical-align:middle;}
+.card_vipexchange .hint{margin: 3px 1px;}
+.popup_treasure h3{font-size:14px;}
+.popup_treasure h3 strong{font-size:16px;color:#f00;}
+.popup_treasure p{font-size:14px;}
+.popup_treasure .content{padding:30px 30px 0;overflow:hidden;zoom:1;}
+.popup_treasure ul{text-align:left;padding:10px 0;}
+.popup_treasure ul.center{text-align:center;}
+.popup_treasure ul.center li{margin:0 5px;}
+.popup_treasure ul.center li{display:inline-block;zoom:1;*display:inline;margin-right:10px;position:relative;zoom:1;}
+.popup_treasure .align{text-align:center;color:#333;font-size:12px;}
+.popup_treasure .btns{padding-top:5px;}
+.popup_treasure .popup_treasure_vipinfo{color:#ff0000;padding:16px 0 3px 0;font-size:12px;text-align:center;width:165px;float:right;}
+.popup_treasure_listv2_c{overflow:hidden;width:387px;}
+.popup_treasure .popup_treasure_listv2{zoom:1;padding:0 0 10px 0;position:relative;width:600px;}
+.popup_treasure .popup_treasure_listv2_wp{width:378px;padding:0;overflow:hidden;clear:both;}
+.popup_treasure_listv2:after{display:block;content:"";clear:both;height:0;overflow:hidden;}
+.popup_treasure_listv2 li{float:left;width:180px;position:relative;zoom:1;margin-right:30px;}
+.popup_treasure_listv2 li .popup_treasure_item{float:left;text-align:center;width:80px;margin-right:10px;position:relative;}
+.popup_treasure_listv2 li .disable p,.popup_treasure_listv2 li .disable p em{color:#9e9e9e;}
+.popup_treasure_item .alpha{position: absolute;left:0;top:0;z-index:9;background: black;display:block;width:70px;height:91px;margin-left:5px;filter: alpha(opacity=40);opacity: 0.4;}
+.popup_treasure_item img{width:70px;height:91px;}
+.popup_treasure_listv2 li .popup_treasure_iconplus{position:absolute;font-size:16px;color:#333;left:80px;top:35px;font-family:"Arial";}
+.popup_treasure_item p{margin-top:3px;color:#333;font-size:12px;}
+.popup_treasure_item p em{font-weight:bold;color:#ff0000;font-size:12px;font-style:normal;}
+.popup_treasure .treasure_bottom{padding-bottom:10px;border-top:1px dotted #76552E;zoom:1;overflow:hidden;}
+.popup_treasure .treasure_bottom ul{float:left;}
+.popup_treasure .treasure_bottom .front{float:right;}
+.popup_treasure .treasure_bottom p{bottom:-15px;_bottom:-19px;font-weight:normal;color:#76552E;width:200%;margin-left:-25px;}
+.popup_treasure ul.center p{position:absolute;bottom:18px;left:0;text-align:center;width:100%;color:#5A5A5A;font-size:12px;font-weight:bold;}
+.popup_card_explain{position:relative;width:502px;height:350px;}
+.popup_card_explain .bg{position:absolute;top:0;left:0;width:502px;height:350px;background:url(../../images/qq/popup_card_explain.png?v=5) no-repeat 0 0;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/qq/popup_card_explain.png?v=5',sizingMethod='scale');}
+.popup_card_explain .close span{display:none;}
+.popup_card_explain .text{position:absolute;top:45px;right:30px;width:218px;height:190px;}
+.popup_card_explain .text p{text-indent:2em;color:#944D00;line-height: 1.6;}
+.popup_card_explain .info{position:absolute;top:233px;right:30px;width:218px;text-align:center;color:#944D00;}
+.popup_card_explain .close{position:absolute;top:0;right:0;width:34px;height:32px;background:none;border:none;}
+.popup_card_explain .detail{ color: #067FC4;text-decoration:underline;}
+.popup_card_explain .more{position:absolute;top:313px;left:20px; color:#944D00;width:230px;text-align:center;}
+.popup_card_explain .more span{padding:0 8px;}
+.popup_card_explain .btn_1,
+.popup_card_explain .btn_2{position:absolute;top:288px;width:80px;height:28px;margin:0 10px;border:none;font-size:14px;font-weight:bold;}
+.popup_card_explain .btn_1{right:149px;width:80px;height:28px;border:none;background:url(../../images/qq/icon.png?v=81) no-repeat -210px -90px;color:#FFE9CD;}
+.popup_card_explain .btn_2{right:59px;width:80px;height:28px;background:url(../../images/qq/icon.png?v=81) no-repeat -300px -90px;color:#944D00;}
+.popup_vip_gift{position:relative;width:100%;zoom:1;padding-top:2px;text-align:center;}
+.popup_vip_gift .module,.popup_vip_gift .module_desc{position:relative;margin:5px auto;width:434px;}
+.popup_vip_gift .module{background:#FBECD1;border:1px solid #FED0B0;}
+.popup_vip_gift .module_desc{background:#EFEEEE;border:1px solid #EBE6E3;}
+.popup_vip_gift ul .info strong{color:#f00;font-size:14px;font-family: Microsoft YaHei,SimSun;line-height:1.2;}
+.popup_vip_gift ul li{width:30%;padding:10px 0;display:inline-block;zoom:1;*display:inline;}
+.popup_vip_gift .important,
+.popup_vip_gift .tips,.popup_vip_gift .tips_v2{margin:5px auto 2px auto;width:434px;text-align:left;color:#5C3C26;position:relative;}
+.popup_vip_gift .important .btn_vip{position:absolute;right:4px;bottom:2px;}
+.popup_vip_gift .tips_v2{font-weight:400;}
+.popup_vip_gift .important strong,
+.popup_vip_gift .tips strong,
+.popup_vip_gift .tips_v2 strong{color:#f00;font-weight:bold;}
+.popup_vip_gift .tips_v2 a,.popup_vip_gift .tips_v2 a:link,.popup_vip_gift .tips_v2:visited,.popup_vip_gift .tips_v2:active{color:#1974c8;}
+.popup_vip_gift .ico_strong,.popup_vip_gift .ico_vip{margin-right:8px;}
+.popup_vip_gift .important{margin:10px auto 5px auto;}
+.popup_vip_gift .vip_gift_desc,
+.popup_vip_gift .vip_gift,
+.popup_vip_gift .year_vip_gift,
+.popup_vip_gift .year_vip_gift_desc{position:absolute;top:-3px;left:-3px;width:53px;height:53px;line-height:500px;overflow:hidden;background-image:url(../../images/qq/vip_gift_popup.png?v=3);}
+.popup_vip_gift .vip_gift{background-position:0 0;}
+.popup_vip_gift .year_vip_gift{background-position:-120px 0;}
+.popup_vip_gift .year_vip_gift_desc{background-position:-60px 0;}
+.popup_vip_gift .vip_gift_desc{background-position:-177px 0;}
+.popup_vip_gift .btns{padding:15px;margin:auto;}
+.popup_vip_gift .btns .vip_year{position:relative;border:none;width:123px;height:29px;background:url(../../images/qq/vip_gift_popup.png?v=3) no-repeat 0 -60px;}
+.popup_vip_gift .btns .vip_year span{display:none;}
+.popup_vip_gift .more{text-align:right;margin-top:-25px;padding:0 10px;}
+.popup_vip_gift .more a{color:#1974C8;}
+.popup_vip_gift .vip_announcement{padding-top:10px;width:434px;margin:auto;text-align:left;}
+.popup_vip_gift .vip_announcement .ico_notice{margin:0 5px 0 -19px;}
+.popup_vip_gift .gift_day{margin: 10px auto 5px auto;width: 434px;text-align: left;position: relative;}
+.popup_vip_gift .gift_day .gift_day_cont{height:65px;width:430px;overflow:hidden;position:relative;background:url(../../images/qq/bg_card_giftday.png) 0 -65px no-repeat;}
+.popup_vip_gift .gift_day .gift_day_cont ul{position:relative;z-index:2;}
+.popup_vip_gift .gift_day .gift_day_cont ul li span{display:none;}
+.popup_vip_gift .gift_day .gift_day_cont ul li strong{position:absolute;top:25px;left:43px;font-size:14px;color:#8C8C8C;}
+.popup_vip_gift .gift_day .gift_day_cont sup{position:absolute;width:90px;height:100%;overflow:hidden;left:0;top:0;z-index:1;background:url(../../images/qq/bg_card_giftday.png) 0 0 no-repeat;}
+.popup_vip_gift .gift_day .gdc_2 sup{width:180px;}
+.popup_vip_gift .gift_day .gdc_3 sup{width:270px;}
+.popup_vip_gift .gift_day .gdc_4 sup{width:360px;}
+.popup_vip_gift .gift_day .gdc_5 sup{width:430px;}
+.popup_vip_gift .gift_day .gift_day_cont .gday_1 strong,
+.popup_vip_gift .gift_day .gdc_2 .gday_1 strong,
+.popup_vip_gift .gift_day .gdc_2 .gday_2 strong,
+.popup_vip_gift .gift_day .gdc_3 .gday_1 strong,
+.popup_vip_gift .gift_day .gdc_3 .gday_2 strong,
+.popup_vip_gift .gift_day .gdc_3 .gday_3 strong,
+.popup_vip_gift .gift_day .gdc_4 .gday_1 strong,
+.popup_vip_gift .gift_day .gdc_4 .gday_2 strong,
+.popup_vip_gift .gift_day .gdc_4 .gday_3 strong,
+.popup_vip_gift .gift_day .gdc_4 .gday_4 strong,
+.popup_vip_gift .gift_day .gdc_5 .gdc_1 strong{display:none;}
+.popup_vip_gift .gift_day .gift_day_cont li{position:inherit;*position:relative;_position:inherit;width:90px;height:76px;float:left;overflow:hidden;}
+.popup_vip_gift .gift_day .gift_day_cont .gday_5{width:70px;}
+.popup_vip_gift .gift_day .gift_btn{margin:10px 0;text-align:right;}
+.gift_day_bt{margin:10px auto 0 auto;width:436px;}
+.popup_vip_gift  .gold{margin:0 auto;position: relative;overflow: hidden;width: 90px;height: 90px;text-align: center;background: url(../../images/qq/encouragement.png) no-repeat;}
+.popup_vip_gift  .gold span {position: absolute;top: 65px;left: 0;text-align: center;width: 100%;font-size:14px;font-weight:bold;color:#ff0000;}
+.popup_vip_gift .gift_position{position:relative;width:428px;border:1px solid #EDB64D;margin-top:10px;background:#FFF6E4;}
+.popup_vip_gift .gift_position .red{color:#f00;}
+
+.gift_position .arrow{position:absolute;top:-7px;overflow: hidden;width:20px;height:20px;text-align: center;background: url(../../images/qq/icon.png?v=81) no-repeat -330px -180px;}
+.gift_position .cont{padding:10px;}
+.gift_position .cont a{text-decoration:underline;color:#1974C8;}
+.gift_position .btns{text-align:center;}
+.gift_position_list{text-align:center;}
+ul.gift_position_list li{margin:0 20px;text-algin:center;overflow:hidden;display:inline-block;zoom:1;*display:inline;width:130px;height:120px;padding:0;background:#FBEBD1;border:1px solid #FFDAAD;}
+.gift_position_list li .pic{padding-top:15px;text-align:center;}
+.gift_position_list li .info{text-align:center;}
+.gift_position_list li.del{background:#F3F1EE;border:1px solid #EBE3DB;}
+
+/*收集花种子*/
+.popup_duanwujie{position:relative;width:420px;height:342px;}
+.popup_duanwujie *{font-family:"Microsoft YaHei",Simsun,Arial;}
+.popup_duanwujie a{color:#0380BF;font-weight:bold;text-decoration:none;}
+.popup_duanwujie a:hover{color:#0380BF;font-weight:bold;text-decoration: underline;}
+.popup_duanwujie .bg{position:absolute;top:0;left:0;width:420px;height:380px;background:url(../../images/qq/popup_duanwujie.png) no-repeat left top;_background-image:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/qq/popup_duanwujie.png',sizingMethod='scale');}
+.popup_duanwujie .content_list,
+.popup_duanwujie .content{position:relative;z-index:3;zoom:1;width:420px;height:342px;overflow:hidden;}
+.popup_duanwujie h1{display:none;}
+.popup_duanwujie .info{position:absolute;top:130px;left:35px;width:360px;font-size:13px;font-weight: bold;color:#4D401D;}
+.popup_duanwujie .close{position:absolute;top:3px;right:0;width:32px;height:32px;background:none;border:none;overflow:hidden;text-indent: -500px;}
+.popup_duanwujie .user_tips{position:absolute;top:205px;left:0;width:100%;height:38px;text-align:center;}
+.popup_duanwujie .user_tips .amount{height:28px;line-height:28px;font-size:16px;font-weight:bold;}
+.popup_duanwujie .user_tips .amount strong{color:#f00;font-size:18px;left: 197px;}
+.popup_duanwujie .exchange{position: absolute; width: 120px; left:140px; top:270px;}
+.popup_duanwujie .exchange .button{padding:0;width:96px;height:37px;background:url(../../images/qq/popup_duanwujie.png) -218px -343px no-repeat;margin: 0 0 0 10px;}
+.popup_duanwujie .exchange button{cursor:pointer;width:96px;height:32px;line-height:232px;font-size:0;overflow:hidden;background:none;border:none; overflow:hidden;line-height:800px;}
+.popup_duanwujie .content_list .user_tips{top:126px;}
+.popup_duanwujie .content_list .rules{position:absolute;top:180px;left:25px;width:365px;height:38px;text-align:left;}
+.popup_duanwujie .content_list .rules li{padding:1px 0;position:relative;zoom:1;font-family:arial;}
+.popup_duanwujie .btn_strong,
+.popup_duanwujie .btn_strong span,
+.popup_duanwujie .btn_dec,
+.popup_duanwujie .btn_dec span{position:relative;cursor:pointer;display:inline-block;zoom:1;height:17px;line-height:17px;font-weight:normal;text-decoration:none!important;color:#fff;background-image:url(../../images/qq/btn.png);font-family:Simsun,Arial;}
+.popup_duanwujie .btn_dec{padding-left:2px;background-position:left top; position:absolute;top:2px;right:0;}
+.popup_duanwujie .btn_dec span{background-position:right top;padding:0 7px 0 5px;margin-right:-2px;}
+.popup_duanwujie .btn_strong{padding-left:2px;background-position:left -17px;position:absolute;top:2px;right:0;}
+.popup_duanwujie .btn_strong span{background-position:right -17px;padding:0 7px 0 5px;margin-right:-2px;}
+.popup_duanwujie .msg{position:absolute;top:160px;left:0;text-align:center;width:100%;}
+.popup_duanwujie .msg h3{font-size:18px;}
+.popup_duanwujie .msg p{font-size:16px;padding:10px;font-weight:bold;}
+.popup_duanwujie .msg .btns {padding-top:20px;}
+.popup_duanwujie .msg .btns div{margin:0 5px;height:36px;display:inline-block;zoom:1;*display:inline;}
+.popup_duanwujie .msg .return{width:121px;background:url(../../images/qq/popup_duanwujie.png) no-repeat 0 -343px;}
+.popup_duanwujie .msg .more{width:95px;background:url(../../images/qq/popup_duanwujie.png) no-repeat -122px -343px;}
+.popup_duanwujie .msg .btns button{height:31px;width:100%;border:none;background:none;}
+.popup_duanwujie .msg .btns button span{display:none;}
+.popup_duanwujie .close{position:absolute;top:-8px;right:-11px;z-index:3;width:34px;height:30px;background:url(../../images/qq/popup_duanwujie.png) no-repeat -315px -343px;}
+
+/*勋章获得*/
+.mod_xunzhang{position:relative;}
+.mod_xunzhang h1{font-family: "Microsoft YaHei,SimHei";margin-top:25px;color:#5c3c26;font-size:22px;font-weight:normal;text-align:center;}
+.mod_xunzhang .xunzhang_img{position:absolute;left:60px;display:block;top:70px;}
+.mod_xunzhang .xunzhang_info{padding-left:160px;}
+.mod_xunzhang .xunzhang_info strong{font-size:16px;color:#5c3c26;}
+.mod_xunzhang .xunzhang_info p{line-height:24px;margin:5px 0;}
+.mod_xunzhang .xunzhang_info span{font-weight:bold;font-size:13px;color:#f6b344;}
+.mod_xunzhang .btns{text-align:left;padding-left:160px;}
+/*日常任务*/
+.popup_dailytask{position:relative;padding-top:40px;}
+.popup_dailytask .mdl_c_c{overflow:visible;background:#ecdfc7;padding-top:1px;padding-bottom:20px;margin-bottom:-20px;position:relative;z-index:999;}
+.popup_dailytask .content_text{margin:10px;#margin-top:20px;border:1px solid #f3c8a8;padding:1px;}
+.popup_dailytask ol{border:1px solid #f7d4ad;border-bottom:none;}
+.popup_dailytask li{position:relative;border-bottom:1px solid #f7d4ad;overflow:hidden;zoom:1;#display:inline;width:100%;background-color:#fffcf1;}
+.popup_dailytask li h3{background-color:#fef4e2;border-bottom:1px solid #f5e7d3;height:24px;line-height:24px;padding-left:6px;}
+.dailytask_t1,.dailytask_t2,.dailytask_t3,.dailytask_t4{
+display:inline-block;width:49px;height:14px;background-image:url(../../images/qq/bg_dtask.png);margin-right:10px;overflow:hidden;line-height:99px;font-size:0;content:'';vertical-align:top;margin-top:5px;}
+.dailytask_t1{background-position:0 0;}
+.dailytask_t2{background-position:0 -15px;}
+.dailytask_t3{background-position:0 -30px;}
+.dailytask_t4{background-position:0 -45px;}
+.popup_dailytask li h3 strong{color:#48250c;line-height:24px;display:inline-block;vertical-align:middle;font-size:14px;}
+.popup_dailytask li ul{margin:8px;}
+.popup_dailytask li ul li{border:none;padding-left:60px;overflow:hidden;line-height:22px;width:280px;display:block;}
+.popup_dailytask li ul li em{position:absolute;left:0px;top:0px;font-style:normal;color:#bb794a;vertical-align:middle;}
+.popup_dailytask li ul li span{vertical-align:middle;display:inline-block;vertical-align:middle;_margin-top:1px;}
+.popup_dailytask li ul li span.tx4{margin-right:6px;margin-left:4px;font-family:'Tahoma';font-weight:bold;}
+.dailytask_state{position:absolute;width:124px;text-align:center;right:0px;top:50%;}
+.dailytask_state strong{display:block;line-height:24px;}
+.dailytask_state_complete{margin-top:-15px;}
+.dailytask_state_complete strong{color:#48250c;}
+.dailytask_state_in{margin-top:-10px;}
+.dailytask_state_in strong{color:#d31e15;}
+.dailytask_state_over strong{color:#48250c;}
+.dailytask_tips{text-align:center;color:#bb794a;font-weight:bold;position:relative;margin-bottom:-10px;z-index:3;}
+.dtask_q,.dtask_p,.dtask_z,.dtask_m{position:absolute;width:8px;height:8px;background-image:url(../../images/qq/icon.png?v=81);overflow:hidden;}
+.dtask_q{left:0px;top:0px;background-position:-240px -432px;}
+.dtask_p{right:0px;top:0px;background-position:-248px -432px;}
+.dtask_z{left:0px;bottom:0px;background-position:-240px -440px;}
+.dtask_m{right:0px;bottom:0px;background-position:-248px -440px;}
+/*集卡册优化*/
+.popup_cardbook{width:880px;height:635px;position:relative;overflow:hidden;}
+.popup_cardbook .content{position:relative;z-index:2;}
+.popup_cardbook .popup_bg{position:absolute;left:19px;top:0px;z-index:1;}
+.popup_cardbook .popup_bg .bg_01{width:861px;height:43px;background:url(../../images/qq/cardbook_sprite.png?v=3) 0 -167px no-repeat;overflow:hidden;}
+.popup_cardbook .popup_bg .bg_02{width:851px;height:547px;background:url(../../images/qq/cardbook_bg02.jpg?v=3) repeat-y;}
+.popup_cardbook .popup_bg .bg_03{width:851px;height:45px;background:url(../../images/qq/cardbook_sprite.png?v=3) 0 -113px no-repeat;overflow:hidden;}
+.popup_cardbook .user_info{position:relative;left:35px;top:25px;}
+.user_info_integrity{text-align:center;width:70px;}
+.popup_cardbook .user_info strong{margin-bottom:10px;display:block;}
+.cardbook_menu{margin-top:45px;width:122px;position:relative;margin-left:19px;}
+.cardbook_menu ul{border-top:1px dashed #7d6248;border-bottom:1px dashed #daaf84;}
+.cardbook_menu li{border-top:1px dashed #daaf84;border-bottom:1px dashed #7d6248;position:relative;
+visibility:visible;height:35px;_height:36px;#display:inline;zoom:1;width:122px;}
+.cardbook_menu li a{color:#000;text-decoration:none;line-height:36px;display:block;outline:none;text-decoration:none !important;}
+.cardbook_menu li a:focus{outline:0;}
+.cardbook_menu li span{position:absolute;top:9px;left:75px;}
+.cardbook_menu li .cardbook_menu_tab{position:absolute;height:36px;line-height: 36px;top:0px;left:0;text-indent: 14px;width:122px;cursor: pointer;}
+.cardbook_menu li.active .cardbook_menu_tab{background:url(../../images/qq/cardbook_sprite.png?v=3) -124px 0 no-repeat;left:-18px;cursor:default;}
+.cardbook_book{position:absolute;
+#width:685px;_width:auto;left:153px;top:29px;#top:25px;zoom:1;overflow:visible;zoom:1;}
+.cardbook_book:after{display:block;content:"";clear:both;height:0;overflow:hidden;}
+.cardbook_page_l{width:345px;float:left;position:relative;height:585px;}
+.cardbook_page_r{width:340px;float:left;position:relative;height:585px;}
+.cardbook_page_num{position:absolute;left:10px;bottom:5px;font-size:20px;font-family:'Tahoma';color:#353535}
+.cardbook_page_r .cardbook_page_num{left:auto;right:10px;}
+.cardbook_cardlist{margin-top:9px;zoom:1;}
+.cardbook_cardlist:after{display:block;content:"";clear:both;height:0;overflow:hidden;}
+.cardbook_cardlist li{float:left;display:inline-block;_display:inline;zoom:1;margin:13px 10px 0 30px;height:175px;_height:176px;overflow:hidden;}
+.cardbook_cardlist .card_theme_info{text-align:center;color:#000;margin-top:6px;}
+.cardbook_cardlist .card_em_theme_item{overflow:visible;}
+.cardbook_cardlist .card_em_theme_item .text{width:25px;height:25px;color:#1c0907;line-height:25px;background:url(../../images/qq/cardbook_sprite.png?v=3) -112px -67px no-repeat;text-align:center;left:auto;bottom:-8px;right:-8px;top:auto;}
+.cardbook_prev,.cardbook_next,
+.cardbook_prev_dis,.cardbook_next_dis,.cardbook_back{background:url(../../images/qq/cardbook_sprite.png?v=3) 0 0 no-repeat;display:block;width:30px;height:66px;overflow:hidden;line-height:200px;position:absolute;top:240px;}
+.cardbook_prev,.cardbook_prev_dis{left:-30px;}
+.cardbook_next,.cardbook_next_dis{right:-30px;}
+.cardbook_prev{background-position:-62px 0;}
+.cardbook_next{background-position:-31px 0;}
+.cardbook_next_dis{background-position:-93px 0;}
+.cardbook_back{width:26px;height:45px;background-position:-85px -67px;right:-26px;top:23px;}
+.popup_cardbook .close{position:absolute;right:0px;top:0px;width:30px;height:30px;z-index:2;border:none;background:none;overflow:hidden;display:block;line-height:99px;}
+.cardbook_cardsuit_info{margin:22px 0 0 22px;zoom:1;position:relative;}
+.cardbook_cardsuit_info .card_info{position:absolute;top:0px;left:130px;}
+.cardbook_cardsuit_info .card_info h3{margin-bottom:5px;}
+.cardbook_cardsuit_info .card_info p{height:26px;}
+.cardbook_cardsuit_info .card_info p span{vertical-align:middle;}
+.cardbook_cardsuit_info .card_info .grade{background:url(../../images/qq/cardbook_sprite.png?v=3) 0 -67px no-repeat;height:13px;display:inline-block;vertical-align:middle;line-height: 99px;overflow:hidden;}
+.cardbook_cardsuit_info .card_info .card_lv1{width:15px;}
+.cardbook_cardsuit_info .card_info .card_lv2{width:30px;}
+.cardbook_cardsuit_info .card_info .card_lv3{width:45px;}
+.cardbook_cardsuit_info .card_info .card_lv4{width:60px;}
+.cardbook_cardsuit_info .card_info .card_lv5{width:75px;}
+.cardsuit_detail{margin:10px 0 0 22px;width:306px;}
+.cardsuit_detail_t,.cardsuit_detail_b{background:url(../../images/qq/cardbook_sprite.png?v=3)  no-repeat;
+display:block;}
+.cardsuit_detail_t{background-position:-380px 0;height:21px;}
+.cardsuit_detail_b{background-position:-380px -25px;height:7px;}
+.cardsuit_detail_bd{border-left:1px solid #c1966d;border-right:1px solid #c1966d;background-color:#f1dfd5;height:365px;overflow-y:scroll;scrollbar-3dlight-color:#DAC6B9;scrollbar-arrow-color:#f2dfd5; scrollbar-base-color:#DDD38D;scrollbar-darkshadow-color:#DAC6B9;scrollbar-face-color:#bf9972; scrollbar-highlight-color:#f2dfd5; scrollbar-shadow-color:#DDD38D;position:relative;}
+.cardsuit_detail_bd ul li{float:left;_display:inline;zoom:1;width:142px;text-align:center;margin-top:10px;}
+.cardbook_page_r h3{margin:20px 0 0 20px;}
+.cardbook_page_r h3 a.helplink{color:#5c3c26;text-decoration:underline; padding-left:10px;font-weight:normal;}
+.cardbook_page_r h3 a.helplink:hover{text-decoration:none;}
+.cardbook_showdemons_list{margin-left:20px;zoom:1;}
+.cardbook_showdemons_list:after{display:block;content:"";clear:both;height:0;overflow:hidden;}
+.cardbook_showdemons_list li{float:left;_display:inline;zoom:1;text-align:center;width:140px;margin:5px 15px 0 0;position:relative;}
+.cardbook_showdemons_list li .received{position:absolute; right:-10px;top:150px;text-indent:-10000em; z-index:3;background:url(../../images/qq/icon_received.png) no-repeat 0 0 transparent; width:84px; height:84px;_background-image:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/qq/icon_received.png',sizingMethod='scale');}
+.cardbook_showdemons_list li img{display:block;}
+.cardbook_btn{margin:8px 0 6px 0;height:25px;}
+.cardbook_demons{background:url(../../images/qq/cardbook_sprite.png?v=3) 0 -81px no-repeat;display:block;width:84px;height:25px;overflow:hidden;zoom:1;line-height:99px;margin:0 auto;}
+/*好友分享*/
+.list_module li{border:1px solid #f7d4ad;margin-bottom:3px;position:relative;background-color:#fffcf1;}
+.list_module .listm_q,.list_module .listm_p,.list_module .listm_z,.list_module .listm_m{position:absolute;width:8px;height:8px;background-image:url(../../images/qq/icon.png?v=81);overflow:hidden;}
+.list_module .listm_q{left:0px;top:0px;background-position:-240px -432px;}
+.list_module .listm_p{right:0px;top:0px;background-position:-248px -432px;}
+.list_module .listm_z{left:0px;bottom:0px;background-position:-240px -440px;}
+.list_module .listm_m{right:0px;bottom:0px;background-position:-248px -440px;}
+.popup_share .content_text {padding: 8px 2px 5px;}
+.popup_share_tips{font-weight:bold;padding:2px 12px 0;color:#bb794a;}
+.popup_share_list{position:relative;overflow-y:scroll;height:320px;margin-right:3px;scrollbar-arrow-color:#B99A66;scrollbar-base-color:#6F3910;scrollbar-darkshadow-color:#6F3910;scrollbar-face-color:#6F3910;scrollbar-highlight-color:#B99A66;scrollbar-shadow-color:#B99A66;scrollbar-track-color:#6F3910;}
+.popup_share_list ul{margin-right:4px;}
+.popup_share_list li{}
+.popup_share_list_h{height:70px;width:70px;display:block;overflow:hidden;text-align:center;}
+.popup_share_list_h img{margin-top:7px;}
+.popup_share_list_c{position:absolute;left:70px;top:0px;height:70px;overflow:hidden;zoom:1;}
+.popup_share_list_c_align{display:table-cell;width:260px;height:70px;font-size:5em;vertical-align:middle;zoom:1;}
+.popup_share_list_c_align_sp{display:inline-block;font-size:0.2em;vertical-align:middle;}
+.popup_share_list_c_align_sp span{vertical-align:middle;}
+.popup_share_list_c_align_sp .ico_gold2,.popup_share_list_c_align_sp .ico_experience2{margin-left:3px;}
+.popup_share_list_c_align_sp .tx4{font-weight:bold;margin-left:3px;}
+.popup_share_list_c_align strong{margin-right:8px;}
+.popup_share_list_c_align em{color:#d22300;font-style:normal;font-weight:bold;vertical-align:middle;}
+.popup_share_list_s{position:absolute;right:0px;top:0px;width:158px;vertical-align:middle;}
+.popup_share_list_s span{width:64px;display:block;height:64px;float:left;}
+.popup_share_icon_g{background:url(../../images/qq/pic_gold4.jpg) center center no-repeat;}
+.popup_share_list_s button{margin-top:23px;margin-left:5px;}
+.popup_share_list_s em{color:#ff6500;line-height:70px;font-style:normal;margin-left:10px;}
+.popup_share_list_s em.dis{color:#9c9b96;width:84px;margin-left:0px;text-align:center;margin-top:20px;line-height:18px;display:inline-block;zoom:1;}
+/*升级炉子*/
+.popup_upgradeoven h3{font-size:14px;}
+.popup_upgradeoven h3 em{font-family:'Tahoma';color:#ff0039;font-style:normal;}
+.popup_upgradeoven h3,.popup_upgradeoven .popup_upgradeoven_info{margin-left:62px;color:#5c3c26;}
+.popup_upgradeoven .card_upgrade{margin-bottom:15px;#margin-left:-10px;}
+.popup_upgradeoven .radio{margin-bottom:10px;margin-left:60px;#margin-left:56px;}
+.popup_upgradeoven .radio input,.popup_upgradeoven .radio label{vertical-align:middle;}
+.popup_upgradeoven .radio label{margin-right:20px;cursor:pointer;}
+/*购买道具卡*/
+.prop_buy_tips{margin:0 48px;}
+.popup_insurance_card{zoom:1;margin-bottom:10px;}
+.popup_insurance_card:after{display:block;content:"";clear:both;height:0;overflow:hidden;}
+.popup_insurance_card img{float:left;display:inline;margin-left:20px;}
+.popup_insurance_card .prop_buy_info{color:#343739;float:left;margin-left:10px;width:176px;}
+.popup_insurance_card .prop_buy_info li{height:auto;margin-bottom:10px;text-align:center;}
+.popup_insurance_card .prop_buy_info h3{font-size:14px;}
+.popup_insurance_card .prop_buy_info    .prop_buy_info_desc{width:120px;line-height:1.4;text-align:left;margin-left:28px;}
+.prop_buy_info .insurance_input{left:50px;_left:40px;#top:-3px;}
+.prop_buy_info li em{font-style:normal;font-weight:bold;padding:0 4px;color:#FF6B00;}
+.popup_insurance_card_v2{width:auto;margin-bottom:20px;}
+.popup_insurance_card_v2 .card_title{color:#5c3c26;font-size:14px;text-align:center;margin-bottom:20px;}
+.popup_insurance_card_v2 .card_title em{color:#ff6b00;font-style:normal;}
+.popup_insurance_card_v2 .pic{float:left;display:inline;margin-left:20px;position:relative;}
+.popup_insurance_card_v2 .pic .name{font-weight:400;position:absolute;width:120px;text-align:center;left:0px;top:2px;}
+.popup_insurance_card_v2 .pic .sub_auto{position:absolute;right:-5px;bottom:-5px;display:block;width:90px;height:65px;}
+.popup_insurance_card_v2 .pic .sub_52{position:absolute;right:-5px;bottom:-5px;display:block;width:91px;height:65px;background:url(../../images/qq/bg_sup_52.png) 0 0 no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true ,sizingMethod='crop', src='../../images/qq/bg_sup_52.png' );}
+.popup_insurance_card_v2 .pic .sub_9{position:absolute;right:-4px;bottom:-4px;display:block;width:91px;height:64px;background:url(../../images/qq/bg_sup_9.png) 0 0 no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true ,sizingMethod='crop', src='../../images/qq/bg_sup_9.png' );}
+.popup_insurance_card_v2 .pic .sub_63{position:absolute;right:-4px;bottom:-4px;display:block;width:91px;height:65px;background:url(../../images/qq/bg_sup_63.png) 0 0 no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true ,sizingMethod='crop', src='../../images/qq/bg_sup_63.png' );}
+.popup_insurance_card_v2 .pic .sub_45{position:absolute;right:-4px;bottom:-4px;display:block;width:84px;height:59px;background:url(../../images/qq/bg_sup_45.png) 0 0 no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true ,sizingMethod='crop', src='../../images/qq/bg_sup_45.png' );}
+.popup_insurance_card_v2 img{float:none;display:block;margin:0;}
+.popup_insurance_card_v2 .prop_buy_info_52{color:#343739;float:left;margin-left:20px;width:160px;}
+.popup_insurance_card_v2 .prop_buy_info_52 li{;color:#5c3c26;margin-bottom:10px;height:auto;}
+.popup_insurance_card_v2 .prop_buy_info_52 .prop_buy_info_desc{width:160px;margin-top:10px;line-height:20px;}
+.popup_insurance_card_v2 .prop_buy_info_52 li em{color:#ff6b00;font-style:normal;font-weight:bold;margin:0 2px;}
+.popup_insurance_card_v2 .insurance_input{left:35px;#top:-3px;}
+/*音速*/
+.content_yinsu{text-align:center;}
+.content_yinsu .red{color:#f00;}
+.content_yinsu h3{font-size:14px;}
+.content_yinsu .yinsu_bg{width:374px;margin:30px auto 5px;}
+.content_yinsu .popup_gift_tips{border:0 none;background-color:#fff;}
+.content_yinsu .popup_gift_tips a{margin-left:5px;color:#76552e;}
+.content_yinsu .popup_gift_tips a.red{color:#f00;}
+/*新上架*/
+.content_newcard{margin:10px 20px;color:#4e2b12;}
+.content_newcard h3{text-align:center;color:#4e2b12;font-size:14px;}
+.content_newcard ul{margin:5px 10px 0;text-align:center;}
+.content_newcard ul.newcard_2 li{width:145px;margin:0 15px;overflow:hidden;}
+.content_newcard ul li{display:inline-block;#display:inline;zoom:1;vertical-align:top;}
+.content_newcard ul .info{text-align:left;margin-top:10px;height:48px;}
+.content_newcard ul.newcard_2 .info{line-height:16px;margin-top:8px;}
+.content_newcard ul.newcard_2 .btn{padding-top:8px;}
+.content_newcard .announce{margin:20px 10px 0;height:210px;}
+.content_newcard .announce strong{padding-bottom:20px;display:inline-block;zoom:1;}
+.content_newcard .announce p{font-size:14px;text-indent:1em;}
+/*通用公告*/
+.popup_announcement{margin:30px 5px;line-height:1.8;zoom:1;overflow:hidden;}
+.popup_announcement:after{display:block;content:"";clear:both;height:0;overflow:hidden;}
+.popup_announcement_h{margin:5px 0 15px 0;padding:0;display:block;}
+.popup_announcement_r{float:right;margin:5px 0 0 35px;}
+.popup_announcement_t{padding-left:1em;}
+/*升级炉子V2*/
+.popup_upgradeoven_v2{}
+.popup_upgradeoven_v2 h3{font-size:14px;font-weight:700;color:#5c3c26;text-align:center;}
+.popup_upgradeoven_v2 em{font-style:normal;}
+.popup_upgradeoven_v2 .red{color:#ff0039;}
+.popup_upgradeoven_v2 .btns{padding:8px 0 0;}
+.popup_upgradeoven_v2 .update_stove{position:relative;background-color:#f2e1c9;padding:10px;margin-top:15px;}
+.popup_upgradeoven_v2 .card_upgrade .card_upgrade_arrow{background-position:-110px 15px;}
+.popup_upgradeoven_v2 .popup_upgradeoven_info{text-align:center;}
+.popup_upgradeoven_v2 .popup_upgradeoven_info input,
+.popup_upgradeoven_v2 .popup_upgradeoven_info label{vertical-align:middle;}
+.popup_upgradeoven_v2 .popup_upgradeoven_info input{margin-left:25px;margin-right:5px;}
+.popup_upgradeoven_v2 .popup_upgradeoven_info label{margin-right:25px;cursor:pointer;}
+.popup_upgradeoven_v2 .btn_stove{display:inline-block;background:#b85900 url(../../images/qq/popup_element_4.png?v=3) 0 -97px no-repeat;width:97px;height:28px;line-height:25px;border:0 none;color:#ffe3c0;text-align:center;font-size:14px;font-weight:700;}
+.popup_upgradeoven_v2 .stove_lt,
+.popup_upgradeoven_v2 .stove_rt,
+.popup_upgradeoven_v2 .stove_lb,
+.popup_upgradeoven_v2 .stove_rb{background:url(../../images/qq/popup_element_4.png?v=3) 0 -135px no-repeat;position:absolute;display:block;overflow:hidden;width:9px;height:9px;}
+.popup_upgradeoven_v2 .stove_lt{left:0px;top:0px;}
+.popup_upgradeoven_v2 .stove_rt{right:0px;top:0px;background-position:-13px -135px;}
+.popup_upgradeoven_v2 .stove_lb{left:0px;bottom:0px;background-position:0 -149px;}
+.popup_upgradeoven_v2 .stove_rb{right:0px;bottom:0px;background-position:-13px -149px;}
+.mod_rentstove{zoom:1;}
+.mod_rentstove:after{display:block;content:"";clear:both;height:0;overflow:hidden;}
+.mod_rentstove .rent_stove{float:left;display:inline;zoom:1;width:220px;height:150px;background-color:#f2e1c9;position:relative;}
+.mod_rentstove .rent_stove2{margin-left:18px;}
+.mod_rentstove .rent_stove h3{line-height:30px;}
+.mod_rentstove .rent_stove .stove_pic{margin-left:18px;}
+.mod_rentstove .rent_stove .rent_stove_info,
+.mod_rentstove .rent_stove .rent_stove_explain{position:absolute;left:84px;top:36px;}
+.mod_rentstove .rent_stove .rent_stove_explain{line-height:14px;top:47px;width:120px;}
+.mod_rentstove .time_bar{background:url(../../images/qq/popup_element_4.png?v=3) 0 -168px no-repeat;overflow:hidden;width:110px;height:11px;margin-top:5px;}
+.mod_rentstove .time_bar .time_bar_value{width:106px;height:9px;display:block;zoom:1;overflow:hidden;margin:1px 0 0 2px;background:url(../../images/qq/popup_element_4.png?v=3) 0 -183px no-repeat;}
+
+/*魔卡情人节2012*/
+.popup_valentine{width:598px;height:368px;position:relative;z-index:0;}
+.popup_valentine a{text-decoration:none;}
+.popup_valentine a:hover{text-decoration:underline;}
+.popup_valentine .content{position:relative;width:598px;height:368px;z-index:1;zoom:1;overflow:hidden;}
+.popup_valentine .bg{position:absolute;top:0;left:0;width:598px;height:368px;background:url(/card/images/valentine_bg.png) 0 0 no-repeat transparent;}
+.popup_valentine h1{text-indent:-9999em;}
+.popup_valentine .close{position:absolute;top:68px;right:89px;display:block;width:20px;height:20px;overflow:hidden;z-index:1;}
+.popup_valentine .close span{display:block;text-indent:-9999px;}
+.popup_valentine .msg{position:absolute;top:64px;left:70px;text-align:center;width:440px;}
+.popup_valentine .msg .live_time{font-size:12px;color:#fff;font-weight:bold;padding-top:4px;}
+.popup_valentine .msg .live_time a{color:#fff;padding-left:12px;}
+.popup_valentine .msg .live_intro{height:75px;text-indent:-9999em;}
+.popup_valentine .card_list{height:175px;position:relative;}
+.popup_valentine .card_list .pic_link{display:block;width:66px;height:66px;position:absolute;top:33px;text-indent:-9999em;}
+.popup_valentine .card_list .item1 .pic_link{left:35px;}
+.popup_valentine .card_list .item2 .pic_link{left:123px;}
+.popup_valentine .card_list .item3 .pic_link{left:237px;}
+.popup_valentine .card_list .item4 .pic_link{left:325px;}
+.popup_valentine .card_list .txt_link{display:block;width:75px;height:28px;position:absolute;top:142px;text-indent:-9999em;}
+.popup_valentine .card_list .item1 .txt_link{left:16px;}
+.popup_valentine .card_list .item2 .txt_link{left:123px;width:88px}
+.popup_valentine .card_list .item3 .txt_link{left:215px;}
+.popup_valentine .card_list .item4 .txt_link{left:328px;width:88px;}
+
+/*红钻贵族礼包*/
+.popup_vipgift{position:relative;color:#313131;width:573px;height:446px;}
+.popup_vipgift h1{height:92px;line-height:9999px;overflow:hidden;font-size:0px;}
+.popup_vipgift .close{width:32px;height:24px;border:0 none;position:absolute;right:17px;top:31px;overflow:hidden;background-color:transparent;}
+.popup_vipgift .close span{display:none;}
+.popup_vipgift .content{width:514px;margin-left:30px;}
+.popup_vipgift .btn_open,
+.popup_vipgift .btn_openyear,
+.popup_vipgift .btn_getgift{background:url('../../images/qq/bg_popup_vipgift_2.jpg?v=5') no-repeat 0 -491px;width:111px;height:27px;display:inline-block;overflow:hidden;line-height:999px;font-size:0px;margin-top:13px;}
+.popup_vipgift .btn_openyear{width:144px;background-position:-121px -491px;}
+.popup_vipgift .btn_getgift{background-position:-275px -491px;line-height:27px;font-size:14px;font-weight:700;color:#fff;text-decoration:none;color:#eafbe8;}
+.vipgift_tips{background:url('../../images/qq/bg_popup_vipgift_2.jpg?v=5') no-repeat;height:31px;overflow:hidden;position:relative;}
+.vipgift_tips p{color:#313131;line-height:31px;padding-left:15px;}
+.vipgift_tips p em,.vipgift_tips p a{color:#ca0000;font-style:normal;font-weight:700;text-decoration:none;}
+.vipgift_tips p a:hover{text-decoration:underline;}
+.vipgift_tips .tips_close{width:15px;height:15px;display:block;overflow:hidden;position:absolute;right:10px;top:10px;z-index:2;background:url("about:blank");}
+.vipgift_user{margin:10px 0;position:relative;}
+.vipgift_user strong{color:#d70000;}
+.vipgift_user .more{position:absolute;right:4px;top:0px;}
+.vipgift_user a,.vipgift_user a:link,.vipgift_user a:visited{color:#0084d7;}
+.vipgift_binfo{position:absolute;bottom:30px;height:20px;width:512px;}
+.vipgift_binfo em{color:#d70000;font-style:normal;}
+.vipgift_binfo .more,.vipgift_binfo .more:link,.vipgift_binfo .more:visited{position:absolute;right:0px;top:0px;line-height:20px;color:#0084d7;}
+.vipgift_gift1,.vipgift_gift2,.vipgift_gift3{position:relative;}
+.vipgift_gift1 .bg,.vipgift_gift2 .bg,.vipgift_gift3 .bg{background:url('../../images/qq/bg_popup_vipgift_2.jpg?v=5') 0 -31px no-repeat;height:148px;overflow:hidden;z-index:2;position:absolute;top:0px;left:0px;width:512px;}
+.vipgift_gift1 ul,.vipgift_gift2 ul,.vipgift_gift3 ul{zoom:1;z-index:3;}
+.vipgift_gift1 ul:after,.vipgift_gift2 ul:after,.vipgift_gift3 ul:after{display:block;content:"";clear:both;height:0;overflow:hidden;}
+.vipgift_gift1 ul li,.vipgift_gift2 ul li,.vipgift_gift3 ul li{float:left;text-align:center;}
+.popup_vipgift .item_wrap{height:150px;}
+.popup_vipgift .item_wrap h3,.popup_vipgift .item_wrap span ,.popup_vipgift .item_wrap p{position:absolute;left:-9999px;}
+.popup_vipgift .vipgift_gift1 ul .gift_item_1{width:208px;}
+.popup_vipgift .vipgift_gift1 ul .gift_item_2{width:294px;margin-left:12px;}
+.popup_vipgift .vipgift_gift2 .bg{background-position:0 -179px;}
+.popup_vipgift .vipgift_gift2 ul .gift_item_1{width:260px;}
+.popup_vipgift .vipgift_gift2 ul .gift_item_2{width:240px;margin-left:12px;}
+.popup_vipgift .vipgift_gift3 .bg{background-position:0 -327px;height:154px;}
+.popup_vipgift .vipgift_gift3 .item_wrap{height:156px;}
+.popup_vipgift .vipgift_gift3 ul .gift_item_1{width:512px;}
+.popup_vipgift .vipgift_gift4{height:265px;background:url('../../images/qq/bg_popup_vipgift_3.jpg') 0 0 no-repeat;position:relative;border-top:1px solid #f19901;}
+.popup_vipgift .vipgift_gift4 h2{position:absolute;left:-9999px;}
+.popup_vipgift .vipgift_gift4 h2.remind{background-color:#fff;left:0px;position:relative;width:514px;height:40px;padding-top:15px;color:#5C3C26;font-size:12px;font-weight:400;}
+.popup_vipgift .gift_act{position:absolute;left:35px;top:80px;color:#562e24;}
+.popup_vipgift .gift_act p{line-height:34px;}
+.popup_vipgift .vipgift_gift5{height:295px;background:url('../../images/qq/bg_popup_vipgift_4.jpg') 0 0 no-repeat;position:relative;width:458px;margin:20px 0 0 28px;position:relative;}
+.popup_vipgift .vipgift_gift5 .vipgift_gift5_note{position:relative;height:245px;overflow:hidden;}
+.popup_vipgift .vipgift_gift5 .vipgift_gift5_note h3,
+.popup_vipgift .vipgift_gift5 .vipgift_gift5_note p,
+.popup_vipgift .vipgift_gift5 .vipgift_gift5_note li{position:absolute;left:-9999px;}
+.popup_vipgift .vipgift_gift5 .vipgift_gift_btn{margin-top:10px;text-align:center;}
+
+/* 梦之队CDkey*/
+.popup_cdkey .list_wrap{height:160px;overflow:hidden;overflow-y:auto;border:1px solid #825527;zoom:1;position:relative;}
+.popup_cdkey .intro{margin-bottom:10px;}
+.popup_cdkey .list{border:1px solid #825527;}
+.popup_cdkey .list_wrap .list{border:none}
+.popup_cdkey .list li{height:30px;position:relative;border-bottom:1px solid #EEE;margin-bottom:0;}
+.popup_cdkey .list p{width:160px;position:absolute;top:2px;left:10px;font-size:16px;}
+.popup_cdkey .list .copy{position:absolute;display:block;width:50px;height:30px;top:5px;right:5px;text-align:center;}
+.popup_cdkey .list .copy object{position:absolute;top:0;left:0;}

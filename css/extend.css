@@ -1,0 +1,100 @@
+.overflow_auto{ overflow: auto; }
+.clear{ clear: both; }
+.width_10{ width: 10%; }
+.width_20{ width: 20%; }
+.width_23{ width: 23%; }
+.width_25{ width: 25%; }
+.width_30{ width: 30%; }
+.width_40{ width: 40%; }
+.width_50{ width: 50%; }
+.width_60{ width: 60%; }
+.width_70{ width: 70%; }
+.width_80{ width: 80%; }
+.width_87{ width: 87%; }
+.width_90{ width: 90%; }
+.width_100{ width: 100%; }
+.text_align_center{ text-align: center; }
+.float_left{ float: left; }
+.float_right{ float: right; }
+.selected { background-color: #B3EE3A; }
+#eventDiv { float: left; padding-top: 5px; width: 500px; text-align: center; }
+#helper_min{ position: fixed; top: 250px; right: 0px; background-color: #b1d85c; padding: 5px; border-radius:5px 0 0 5px; z-index: 1000; }
+#helper { color: #fff; overflow: auto; position: absolute; top: 30px; width: 100%; z-index: 100; }
+#my_composing_themes { }
+#my_composing_themes a { padding: 2px; }
+#my_composing_themes a.current img { border: solid 3px #00f; }
+
+#theme_tree { padding: 2px; }
+#theme_tree .level { width: 98%; }
+#theme_tree .level .info { width: 100px; }
+#theme_tree .level .info .time { float: left; width: 100px; }
+#theme_tree .level .info .meny { float: left; width: 100px; }
+/*card_mini start*/
+.card_mini { cursor: pointer; margin: 2px 5px; width: 70px; }
+.mouse_on .card_mini_img{ background-color: #B3EE3A; }
+.linked .card_mini_img{ background-color: #B3EE3A; }
+.selected .card_mini_img{ background-color: #B3EE3A; }
+.card_mini_img{ color: #f00; margin-bottom: 5px; padding: 5px 0 5px 0; position: relative; }
+.card_mini_img img { height: 60px; width: 60px; }
+.card_mini_img span { left: 5px; top: 5px; width: 60px; position: absolute; }
+.card_mini_img .composing { height: 20px; top: 25px; }
+.card_mini_img .bg { background-color: #000; height: 60px; opacity: 0.5; top: 5px; }
+.card_mini_img .num { background-color: transparent; height: 30px; top: 5px; width: 60px; text-align: left; }
+.card_mini_img .num div{ width:0; height:0; overflow:hidden; border: 15px solid #000; border-color:  #0f0 transparent transparent #0f0; position: absolute; top:0; left: 0; }
+.card_mini_img .num b{ position: absolute; top:0; left: 0;  color: #000;}
+.card_mini_img .need_num { background-color: transparent; height: 30px; width: 60px; text-align: right; top: 35px; }
+.card_mini_img .need_num div{ width:0; height:0; overflow:hidden; border: 15px solid #000; border-color: transparent #0ff #0ff transparent; position: absolute; bottom:0; right: 0; }
+.card_mini_img .need_num b{ position: absolute; bottom:0; right: 0; color: #000;}
+/*card_mini end*/
+
+.box { width: 87%; }
+.half_box { width: 49%; float: left; margin-left: 1%; }
+
+/*card big start*/
+.card_big.selected { background-color: #B3EE3A; }
+.card_big_img { height: 130px; width: 106px; position: relative; }
+.card_big_img .position_absolute { position: absolute; width: 96px; left: 5px; }
+.card_big_img .theme_bg { height: 120px; top: 5px; }
+.card_big_img .theme { height: 120px; top: 5px; }
+.card_big_img .card { height: 80px; width: 80px; top: 21px; left: 13px; }
+.card_big_img .name { height: 20px; top: 5px; text-align: center; }
+.card_big_img .meny { height: 20px; top: 102px; text-align: right; }
+.card_big_img .lock { height: 22px; width: 22px; top: 5px; background-color: transparent; background-image: url(/images/qq/icon.png); background-position: -419px 1px; }
+.card_big_img .buttons {bottom: 10px;}
+.card_big_img .mask_not_click { height: 120px; top: 5px; background-color: #000; opacity: 0.5; }
+.selected .card_big_img .mask { height: 120px; top: 5px; background-color: #000; opacity: 0.5; }
+.card_big.not_click .mask { height: 120px; top: 5px; background-color: #000; opacity: 0.5; }
+.card_big.need_mask .mask { height: 120px; top: 5px; background-color: #000; opacity: 0.5; }
+.selected .card_big_img .checked { height: 32px; width: 32px; top: 93px; left: 69px; background-color: transparent; background-image: url(/images/qq/icon.png); background-position: -118px 1px; }
+/*card big end*/
+
+/*公用主题选择面板 start*/
+#choose_theme_dialog_tabs {height: 450px;}
+.collected{ background-color: #0A0; }
+.theme_choose { width: 100%; clear: both; margin-top: 5px; }
+.selectTheme_tabs_content { width: 100%; }
+/*等级*/
+.theme_choose .rank{ display:inline-block; *display:inline; zoom:1; }
+.theme_choose .rank span{ display:inline-block; zoom:1; height:13px; background:url(/images/qq/layer.png) no-repeat -1402px -127px; }
+.theme_choose .bor{ border:1px solid #F0E0DD; border-left:0; border-right:0; }
+.theme_choose .card_lv1{ width:15px; }
+.theme_choose .card_lv2{ width:32px; }
+.theme_choose .card_lv3{ width:51px; }
+.theme_choose .card_lv4{ width:69px; }
+.theme_choose .card_lv5{ width:86px; }
+/*公用主题选择面板 end*/
+#submit_collection_dialog .received{position:absolute; right:-10px;top:150px;text-indent:-10000em; z-index:3;background:url(/images/qq/icon_received.png) no-repeat 0 0 transparent; width:84px; height:84px;}
+
+.dialogClass { z-index: 1000;position: fixed; }
+
+#exchange_dialog_exchange_box ul{ height: 450px; }
+#exchange_dialog_coffer_box ul{ height: 450px; }
+#exchange_dialog_ta_exchange_box ul{ height: 450px; }
+#exchange_dialog_ta_coffer_box ul{ height: 450px; }
+
+#transform_dialog_exchange_box ul{ height: 450px; }
+#transform_dialog_coffer_box ul{ height: 450px; }
+#transform_dialog_theme_tree { height: 450px; overflow: auto;}
+
+#market_dialog_market_tabs ul.overflow_auto{ height: 450px; }
+#market_dialog_my_box_tabs ul.overflow_auto{ height: 450px; }

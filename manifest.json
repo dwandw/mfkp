@@ -1,0 +1,28 @@
+{
+  "name": "魔卡助手",
+  "version": "2.0",
+  "manifest_version": 2,
+  "description": "QQ magic card helper.",
+  "icons": {
+    "32": "images/icon_32.png",
+    "48": "images/icon_48.png",
+    "64": "images/icon_64.png"
+  },
+  "browser_action": {
+    "default_icon": "images/icon_19.png",
+    "default_title": "魔卡助手 V2.0",
+    "default_popup": "html/popup.html"
+  },
+  "background": {
+    "page": "html/background.html"
+  },
+  //  "options_page":"html/options.html",
+  "permissions": ["webRequest", "webRequestBlocking", "tabs", "notifications", "http://*/*", "https://*/*"],
+  "web_accessible_resources": ["images/*", "js/*", "css/*"],
+  "content_scripts": [{
+    "matches": ["http://*.qq.com/card/index_v3*"],
+    "js": ["js/weaving.js"],
+    "run_at": "document_end",
+    "all_frames": true
+  }]
+}
