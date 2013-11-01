@@ -1,4 +1,6 @@
 mfkp
 ====
 
-QQ magic card helper（魔法卡卡助手）
+QQ magic card helper（QQ游戏魔法卡片助手）
+
+chrome的插件
