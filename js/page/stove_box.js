@@ -1,4 +1,4 @@
-H.stove = {
+H.stoveBox = {
 	sortFunction: function(a, b) {
 		if (a.flag == 2) return -1;
 		if (b.flag == 2) return 1;
@@ -11,7 +11,7 @@ H.stove = {
 		}
 		return 1;
 	},
-	showStoveBox: function() {
+	showStoves: function() {
 		var div = jQuery("#stoves");
 		if (div.children().length > 0) {
 			div.empty();
@@ -55,7 +55,7 @@ H.stove = {
 			html += '<div class="card_big_img">';
 			html += H.ui.getImgItemWithBg(slot.id);
 			if (i == stoveArr.length - 1) {
-				html += '<span class="position_absolute buttons" style="display:none;"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stove.cancelStoveCard(' + slot.slot + ',' + slot.id + ');"><span class="ui-button-text">取消</span></button></span>';
+				html += '<span class="position_absolute buttons" style="display:none;"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveBox.cancelStoveCard(' + slot.slot + ',' + slot.id + ');"><span class="ui-button-text">取消</span></button></span>';
 			}
 			html += '</div>';
 			html += '<div class="width_100 text_align_center clear">' + getDayStr(slot.btime + slot.locktime, now) + '</div>';
@@ -96,9 +96,9 @@ H.stove = {
 		}
 		html += '</ul>';
 		div.append(html);
-		this._showStoveBox(stoveArr, now);
+		this._showStoves(stoveArr, now);
 	},
-	_showStoveBox: function() {
+	_showStoves: function() {
 		function getTimeStr(time) {
 			var hours = Math.floor(time / 3600);
 			var minutes = Math.floor(time % 3600 / 60);
@@ -143,7 +143,7 @@ H.stove = {
 					jQuery('#timer_' + slot.slot).html(html);
 				}
 			} else {
-				html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stove.getStoveCard(' + slot.slot + ',function(){H.stove.showStoveBox();H.stove.showStoveTree(' + this._selected_theme_id + ');});" title="取卡"><span class="ui-button-text">取卡</span></button>';
+				html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveBox.getStoveCard(' + slot.slot + ',function(){H.stoveBox.showStoves();H.stoveTree.showStoveTree(' + this._selected_theme_id + ');});" title="取卡"><span class="ui-button-text">取卡</span></button>';
 				if (jQuery('#timer_' + slot.slot).html().indexOf("取卡") < 0) {
 					jQuery('#timer_' + slot.slot).html(html);
 				}
@@ -160,7 +160,7 @@ H.stove = {
 			if (slot.btime + slot.locktime - new Date().getTime() / 1000 > 0) {
 				html += '<div class="width_100 text_align_center clear"><a class="bt4_tx2" href="javascript:void(0);" title="扣卡">' + slot.slot + '扣卡</a></div>';
 			} else {
-				html += '<div class="width_100 text_align_center clear"><a class="bt_tx2" href="javascript:void(1);" onclick="javascript:H.stove.getStolenCard(' + slot.slot + ',function(){H.stove.showStoveBox();H.stove.showStoveTree(' + this._selected_theme_id + ');})" title="扣卡">' + slot.slot + '扣卡</a></div>';
+				html += '<div class="width_100 text_align_center clear"><a class="bt_tx2" href="javascript:void(1);" onclick="javascript:H.stoveBox.getStolenCard(' + slot.slot + ',function(){H.stoveBox.showStoves();H.stoveTree.showStoveTree(' + this._selected_theme_id + ');})" title="扣卡">' + slot.slot + '扣卡</a></div>';
 			}
 			html += '</li>';
 		}
@@ -174,7 +174,7 @@ H.stove = {
 					html += '<div style="position: absolute;width: 94px;left: 5px;border: solid 1px #000;">' + getTimeStr(slot.btime + slot.locktime - now) + '</div>';
 					jQuery('#timer_' + slot.slot).html(html);
 				} else {
-					html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stove.getStealCard(0,' + slot.opuin + ',function(){H.stove.showStoveBox();H.stove.showStoveTree(' + this._selected_theme_id + ');});" title="取卡"><span class="ui-button-text">取卡</span></button>';
+					html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveBox.getStealCard(0,' + slot.opuin + ',function(){H.stoveBox.showStoves();H.stoveTree.showStoveTree(' + this._selected_theme_id + ');});" title="取卡"><span class="ui-button-text">取卡</span></button>';
 					if (jQuery('#timer_' + slot.slot).html().indexOf("取卡") < 0) {
 						jQuery('#timer_' + slot.slot).html(html);
 					}
@@ -188,7 +188,7 @@ H.stove = {
 					html += '<div style="position: absolute;width: 94px;left: 5px;border: solid 1px #000;">' + getTimeStr(slot.btime + slot.locktime - now) + '</div>';
 					jQuery('#timer_' + slot.slot + '_1').html(html);
 				} else {
-					html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stove.getStealCard(1,' + slot.opuin2 + ',function(){H.stove.showStoveBox();H.stove.showStoveTree(' + this._selected_theme_id + ');});" title="取卡"><span class="ui-button-text">取卡</span></button>';
+					html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveBox.getStealCard(1,' + slot.opuin2 + ',function(){H.stoveBox.showStoves();H.stoveTree.showStoveTree(' + this._selected_theme_id + ');});" title="取卡"><span class="ui-button-text">取卡</span></button>';
 					if (jQuery('#timer_' + slot.slot + '_1').html().indexOf("取卡") < 0) {
 						jQuery('#timer_' + slot.slot + '_1').html(html);
 					}
@@ -198,7 +198,7 @@ H.stove = {
 		}
 
 		this.timer = setTimeout(function() {
-			H.stove._showStoveBox();
+			H.stoveBox._showStoves();
 		}, 1000);
 	},
 	cancelStoveCard: function(slotId, cardId) {
@@ -210,9 +210,202 @@ H.stove = {
 		}
 		if (confirm("您确定要取消炼制卡片" + CARD.data.mapCard[cardId][2] + "吗?\n提示:取消后,已经炼制一段时间的卡片进度将不能保存。")) {
 			this.cancelRefineCard(slotId, function() {
-				H.stove.showStoveBox();
-				H.stove.showStoveTree(H.stove._selected_theme_id);
+				H.stoveBox.showStoves();
+				H.stoveTree.showStoveTree(H.stoveTree._selected_theme_id);
 			});
 		}
+	},
+	getStoveCard: function(slotId, fnSucceed) {
+		function fnSucc(oXml) {
+			H.ui.waitEnd();
+			var obj = oXml.xmlDom.getElementsByTagName("QQHOME")[0];
+			var iCode = obj.getAttribute("code") * 1;
+			if (iCode != 0) {
+				console.error(H.resChinese(oXml.text));
+				fnFail(iCode);
+				return;
+			}
+			money = obj.getAttribute("money") * 1;
+			exp = obj.getAttribute("exp") * 1;
+			capable = obj.getAttribute("capable") * 1;
+			stovenum = obj.getAttribute("stovenum") * 1;
+			rentstovenum = obj.getAttribute("rentstovenum") * 1;
+			lv = obj.getAttribute("lv") * 1;
+			lv_diff = obj.getAttribute("lv_diff") * 1;
+			var card = obj.getElementsByTagName("card")[0];
+			var slotType = card.getAttribute("location") * 1;
+			var box = slotType == 0 ? H.user.mapExchangeBox : H.user.mapCofferBox;
+			var _oCard = {
+				slot: card.getAttribute("slot") * 1,
+				id: card.getAttribute("id") * 1,
+				status: card.getAttribute("status") * 1,
+				type: card.getAttribute("type") * 1
+			};
+			box[_oCard.slot] = _oCard;
+			H.user.clearStoveSlot(slotId);
+			H.user.oMyData.money = money;
+			H.user.oMyData.exp = exp;
+			H.user.oMyData.lv = lv;
+			//setTimeout("CARD.mission.checkMission(CARD.mission.BUY_CARD)", 0);
+			if (fnSucceed) fnSucceed();
+		}
+
+		function fnFail(iCode) {
+			H.ui.waitEnd();
+			H.ui.showErrDlg({
+				title: '取卡失败',
+				msg: H.getMsgByCode(iCode)
+			});
+			return;
+		}
+
+		H.ui.waitStart();
+		var url = 'http://card.show.qq.com/cgi-bin/card_stove_refinedcard_get?uin=' + H.user.getUin() + '&slotid=' + slotId + '&slottype=1&ver=1&code=';
+		var xhr = new CARD.XHR(url, fnSucc, null, fnFail);
+		xhr.send();
+	},
+	getStealCard: function(type, opUin, fnSucceed) {
+		function fnSucc(oXml) {
+			H.ui.waitEnd();
+			var obj = oXml.xmlDom.getElementsByTagName("QQHOME")[0];
+			var iCode = obj.getAttribute("code") * 1;
+			if (iCode != 0) {
+				console.error(H.resChinese(oXml.text));
+				fnFail(iCode);
+				return;
+			}
+			money = obj.getAttribute("money") * 1;
+			exp = obj.getAttribute("exp") * 1;
+			capable = obj.getAttribute("capable") * 1;
+			stovenum = obj.getAttribute("stovenum") * 1;
+			rentstovenum = obj.getAttribute("rentstovenum") * 1;
+			lv = obj.getAttribute("lv") * 1;
+			lv_diff = obj.getAttribute("lv_diff") * 1;
+			var card = obj.getElementsByTagName("card")[0];
+			var slotType = card.getAttribute("location") * 1;
+			var box = slotType == 0 ? H.user.mapExchangeBox : H.user.mapCofferBox;
+			var _oCard = {
+				slot: card.getAttribute("slot") * 1,
+				id: card.getAttribute("id") * 1,
+				status: card.getAttribute("status") * 1,
+				type: card.getAttribute("type") * 1
+			};
+			box[_oCard.slot] = _oCard;
+			if (type == 0) {
+				H.user.mapStoveBox[6].id = 0;
+				H.user.mapStoveBox[6].opuin = 0;
+			} else {
+				H.user.mapStoveBox[6].id2 = 0;
+				H.user.mapStoveBox[6].opuin2 = 0;
+			}
+			H.user.oMyData.money = money;
+			H.user.oMyData.exp = exp;
+			H.user.oMyData.lv = lv;
+			//setTimeout("CARD.mission.checkMission(CARD.mission.BUY_CARD)", 0);
+			if (fnSucceed) fnSucceed();
+		}
+
+		function fnFail(iCode) {
+			H.ui.waitEnd();
+			H.ui.showErrDlg({
+				title: '取卡失败',
+				msg: H.getMsgByCode(iCode)
+			});
+			return;
+		}
+
+		H.ui.waitStart();
+		var url = 'http://card.show.qq.com/cgi-bin/card_stove_stealcard_get?uin=' + H.user.getUin() + '&opuin=' + opUin + '&slotid=5&slottype=1&ver=1&code=';
+		var xhr = new CARD.XHR(url, fnSucc, null, fnFail);
+		xhr.send();
+	},
+	getStolenCard: function(opUin, fnSucceed) {
+		function fnSucc(oXml) {
+			H.ui.waitEnd();
+			var obj = oXml.xmlDom.getElementsByTagName("QQHOME")[0];
+			var iCode = obj.getAttribute("code") * 1;
+			if (iCode != 0) {
+				console.error(H.resChinese(oXml.text));
+				fnFail(iCode);
+				return;
+			}
+			money = obj.getAttribute("money") * 1;
+			exp = obj.getAttribute("exp") * 1;
+			capable = obj.getAttribute("capable") * 1;
+			stovenum = obj.getAttribute("stovenum") * 1;
+			rentstovenum = obj.getAttribute("rentstovenum") * 1;
+			lv = obj.getAttribute("lv") * 1;
+			lv_diff = obj.getAttribute("lv_diff") * 1;
+			var card = obj.getElementsByTagName("card")[0];
+			var slotType = card.getAttribute("location") * 1;
+			var box = slotType == 0 ? H.user.mapExchangeBox : H.user.mapCofferBox;
+			var _oCard = {
+				slot: card.getAttribute("slot") * 1,
+				id: card.getAttribute("id") * 1,
+				status: card.getAttribute("status") * 1,
+				type: card.getAttribute("type") * 1
+			};
+			box[_oCard.slot] = _oCard;
+			H.user.clearStoveSlot(5);
+			H.user.oMyData.money = money;
+			H.user.oMyData.exp = exp;
+			H.user.oMyData.lv = lv;
+			//setTimeout("CARD.mission.checkMission(CARD.mission.BUY_CARD)", 0);
+			if (fnSucceed) fnSucceed();
+		}
+
+		function fnFail(iCode) {
+			H.ui.waitEnd();
+			H.ui.showErrDlg({
+				title: '扣卡失败',
+				msg: H.getMsgByCode(iCode)
+			});
+			return;
+		}
+
+		H.ui.waitStart();
+		var url = 'http://card.show.qq.com/cgi-bin/card_stove_pin?uin=' + H.user.getUin() + '&opuin=' + opUin + '&slotid=5&slottype=1&ver=1&code=';
+		var xhr = new CARD.XHR(url, fnSucc, null, fnFail);
+		xhr.send();
+	},
+	cancelRefineCard: function(slotId, fnSucceed) {
+		function fnSucc(oXml) {
+			H.ui.waitEnd();
+			// console.debug(H.resChinese(oXml.text));
+			var obj = oXml.xmlDom.getElementsByTagName("QQHOME")[0];
+			var iCode = obj.getAttribute("code") * 1;
+			if (iCode != 0) {
+				console.error(H.resChinese(oXml.text));
+				fnError(iCode);
+				return;
+			}
+			var cards = obj.getElementsByTagName("card");
+			for (var i = 0; i < cards.length; i++) {
+				var card = cards[i];
+				var slot = {};
+				slot.id = card.getAttribute("id") * 1;
+				slot.slot = card.getAttribute("slot") * 1;
+				slot.locate = card.getAttribute("location") * 1;
+				slot.type = card.getAttribute("type") * 1;
+				slot.status = card.getAttribute("status") * 1;
+				slot.locate == 0 ? H.user.mapExchangeBox[slot.slot] = slot : H.user.mapCofferBox[slot.slot] = slot;
+			}
+			H.user.mapStoveBox[slotId].id = 0;
+			if (fnSucceed) fnSucceed();
+		}
+
+		function fnError(iCode, sMsg, iEndTime) {
+			H.ui.waitEnd();
+			H.ui.showErrDlg({
+				title: '取消炼卡失败',
+				msg: H.getMsgByCode(iCode)
+			});
+			return;
+		}
+
+		H.ui.waitStart();
+		var sUrl = 'http://card.show.qq.com/cgi-bin/card_stove_cancel?type=1&ver=1&slotid=' + slotId;
+		var xhr = new CARD.XHR(sUrl, fnSucc, null, fnError);
+		xhr.send();
 	}
 };

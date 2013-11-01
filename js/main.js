@@ -5,12 +5,21 @@ require.config({
 	paths: {
 		"domReady": "lib/domReady",
 		"jquery": "lib/jquery",
+		"jtemplates": "lib/jquery.jtemplates",
 		"jqueryui": "lib/jquery-ui",
 		"json": "lib/json2",
 		"date": "lib/date",
+		"date_format": "lib/date.format",
+
 		"base": "page/base",
+		"ui": "page/ui",
+		"download": "page/download",
+		"notification": "page/notification",
+		"user": "page/user",
+
 		"box": "page/box",
-		"stove": "page/stove",
+		"stove_box": "page/stove_box",
+		"stove_tree": "page/stove_tree",
 		"collection": "page/collection",
 		"submitCollection": "page/submitCollection",
 		"friends": "page/friends",
@@ -26,17 +35,41 @@ require.config({
 			deps: ['jquery'],
 			exports: 'jqueryui'
 		},
+		'jtemplates': {
+			deps: ['jquery'],
+			exports: 'jtemplates'
+		},
 		'base': {
-			deps: ['jqueryui', 'date', 'json'],
+			deps: ['jqueryui','jtemplates', 'date', 'json','date_format'],
 			exports: 'base'
+		},
+		'ui': {
+			deps: ['base'],
+			exports: 'ui'
+		},
+		'download': {
+			deps: ['base'],
+			exports: 'download'
+		},
+		'notification': {
+			deps: ['base'],
+			exports: 'notification'
+		},
+		'user': {
+			deps: ['base', 'ui'],
+			exports: 'user'
+		},
+		'stove_box': {
+			deps: ['base', 'user'],
+			exports: 'stove_box'
+		},
+		'stove_tree': {
+			deps: ['base', 'user'],
+			exports: 'stove_tree'
 		},
 		'box': {
 			deps: ['base'],
 			exports: 'box'
-		},
-		'stove': {
-			deps: ['base'],
-			exports: 'stove'
 		},
 		'collection': {
 			deps: ['base'],
@@ -71,7 +104,7 @@ require.config({
 			exports: 'submitCollection'
 		},
 		'entrance': {
-			deps: ['box', 'stove', 'collection', 'friends', 'exchange', 'dailytask', 'share', 'transform', 'market', 'submitCollection'],
+			deps: ['box', 'stove_box', 'stove_tree', 'collection', 'friends', 'exchange', 'dailytask', 'share', 'transform', 'market', 'submitCollection', 'notification'],
 			exports: 'entrance'
 		}
 	}

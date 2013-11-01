@@ -17,23 +17,18 @@
 .float_left{ float: left; }
 .float_right{ float: right; }
 .selected { background-color: #B3EE3A; }
-#eventDiv { float: left; padding-top: 5px; width: 500px; text-align: center; }
+#eventDiv { float: left; padding-top: 5px; width: 500px; text-align: right; }
 #helper_min{ position: fixed; top: 250px; right: 0px; background-color: #b1d85c; padding: 5px; border-radius:5px 0 0 5px; z-index: 1000; }
 #helper { color: #fff; overflow: auto; position: absolute; top: 30px; width: 100%; z-index: 100; }
-#my_composing_themes { }
-#my_composing_themes a { padding: 2px; }
-#my_composing_themes a.current img { border: solid 3px #00f; }
 
-#theme_tree { padding: 2px; }
-#theme_tree .level { width: 98%; }
-#theme_tree .level .info { width: 100px; }
-#theme_tree .level .info .time { float: left; width: 100px; }
-#theme_tree .level .info .meny { float: left; width: 100px; }
+#stove_tree_dialog a { padding: 2px; }
+#stove_tree_dialog a.current img { border: solid 3px #00f; }
+
 /*card_mini start*/
 .card_mini { cursor: pointer; margin: 2px 5px; width: 70px; }
 .mouse_on .card_mini_img{ background-color: #B3EE3A; }
-.linked .card_mini_img{ background-color: #B3EE3A; }
-.selected .card_mini_img{ background-color: #B3EE3A; }
+.linked .card_mini_img{ background-color: #FF6666; }
+.selected .card_mini_img{ background-color: #FFEEEE; }
 .card_mini_img{ color: #f00; margin-bottom: 5px; padding: 5px 0 5px 0; position: relative; }
 .card_mini_img img { height: 60px; width: 60px; }
 .card_mini_img span { left: 5px; top: 5px; width: 60px; position: absolute; }
