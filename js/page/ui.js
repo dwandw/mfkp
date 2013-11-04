@@ -79,7 +79,7 @@ H.ui = {
 				html += '<span class="position_absolute mask"></span>';
 				html += '<span class="position_absolute checked"></span>';
 				var now = parseInt(new Date().getTime() / 1000);
-				if (now < slot.unlock) {
+				if (now < slot.unlock && slot.locate == 0) {
 					html += '<span class="position_absolute lock"></span>';
 				}
 				html += '<span class="position_absolute buttons" style="display:none;">';
@@ -128,7 +128,7 @@ H.ui = {
 			obj.radius = 25;
 			obj.circleLineWidth = 4;
 			obj.circleColor = 'lightgray';
-			obj.moveArcColor = 'gray';
+			obj.moveArcColor = 'red';
 		}
 		var canvas = jQuery('#wait_dialog_wait_effect')[0];
 		if (!canvas.getContext) return;

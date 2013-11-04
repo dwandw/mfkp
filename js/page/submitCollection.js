@@ -404,8 +404,8 @@ H.submitCollection = {
 			H.submitCollection.showSnapList(themeId);
 		});
 		H.user.load(function(){
-			H.stove.init();
-			H.stove.showStoveTree();
+			H.stoveTree.init();
+			H.stoveTree.showTree();
 		});
 		// CARD.getFlashObj().showShareMotion('1'); //显示主动分享魔女，分享撒礼特性添加了这个功能
 		// QSFL.sns.getApplicationWindow().QSFL.dialog.messageBox.moveWindow.init(window, jQuery('#submit_collection_dialog #DIV_SUC_TITLE')[0]);

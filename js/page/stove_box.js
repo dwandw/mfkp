@@ -143,7 +143,7 @@ H.stoveBox = {
 					jQuery('#timer_' + slot.slot).html(html);
 				}
 			} else {
-				html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveBox.getStoveCard(' + slot.slot + ',function(){H.stoveBox.showStoves();H.stoveTree.showStoveTree(' + this._selected_theme_id + ');});" title="取卡"><span class="ui-button-text">取卡</span></button>';
+				html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveBox.getStoveCard(' + slot.slot + ',function(){H.stoveBox.showStoves();});" title="取卡"><span class="ui-button-text">取卡</span></button>';
 				if (jQuery('#timer_' + slot.slot).html().indexOf("取卡") < 0) {
 					jQuery('#timer_' + slot.slot).html(html);
 				}
@@ -160,7 +160,7 @@ H.stoveBox = {
 			if (slot.btime + slot.locktime - new Date().getTime() / 1000 > 0) {
 				html += '<div class="width_100 text_align_center clear"><a class="bt4_tx2" href="javascript:void(0);" title="扣卡">' + slot.slot + '扣卡</a></div>';
 			} else {
-				html += '<div class="width_100 text_align_center clear"><a class="bt_tx2" href="javascript:void(1);" onclick="javascript:H.stoveBox.getStolenCard(' + slot.slot + ',function(){H.stoveBox.showStoves();H.stoveTree.showStoveTree(' + this._selected_theme_id + ');})" title="扣卡">' + slot.slot + '扣卡</a></div>';
+				html += '<div class="width_100 text_align_center clear"><a class="bt_tx2" href="javascript:void(1);" onclick="javascript:H.stoveBox.getStolenCard(' + slot.slot + ',function(){H.stoveBox.showStoves();})" title="扣卡">' + slot.slot + '扣卡</a></div>';
 			}
 			html += '</li>';
 		}
@@ -174,7 +174,7 @@ H.stoveBox = {
 					html += '<div style="position: absolute;width: 94px;left: 5px;border: solid 1px #000;">' + getTimeStr(slot.btime + slot.locktime - now) + '</div>';
 					jQuery('#timer_' + slot.slot).html(html);
 				} else {
-					html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveBox.getStealCard(0,' + slot.opuin + ',function(){H.stoveBox.showStoves();H.stoveTree.showStoveTree(' + this._selected_theme_id + ');});" title="取卡"><span class="ui-button-text">取卡</span></button>';
+					html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveBox.getStealCard(0,' + slot.opuin + ',function(){H.stoveBox.showStoves();});" title="取卡"><span class="ui-button-text">取卡</span></button>';
 					if (jQuery('#timer_' + slot.slot).html().indexOf("取卡") < 0) {
 						jQuery('#timer_' + slot.slot).html(html);
 					}
@@ -188,7 +188,7 @@ H.stoveBox = {
 					html += '<div style="position: absolute;width: 94px;left: 5px;border: solid 1px #000;">' + getTimeStr(slot.btime + slot.locktime - now) + '</div>';
 					jQuery('#timer_' + slot.slot + '_1').html(html);
 				} else {
-					html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveBox.getStealCard(1,' + slot.opuin2 + ',function(){H.stoveBox.showStoves();H.stoveTree.showStoveTree(' + this._selected_theme_id + ');});" title="取卡"><span class="ui-button-text">取卡</span></button>';
+					html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveBox.getStealCard(1,' + slot.opuin2 + ',function(){H.stoveBox.showStoves();});" title="取卡"><span class="ui-button-text">取卡</span></button>';
 					if (jQuery('#timer_' + slot.slot + '_1').html().indexOf("取卡") < 0) {
 						jQuery('#timer_' + slot.slot + '_1').html(html);
 					}
@@ -211,7 +211,7 @@ H.stoveBox = {
 		if (confirm("您确定要取消炼制卡片" + CARD.data.mapCard[cardId][2] + "吗?\n提示:取消后,已经炼制一段时间的卡片进度将不能保存。")) {
 			this.cancelRefineCard(slotId, function() {
 				H.stoveBox.showStoves();
-				H.stoveTree.showStoveTree(H.stoveTree._selected_theme_id);
+				H.stoveTree.showTree(H.stoveTree._selected_theme_id);
 			});
 		}
 	},

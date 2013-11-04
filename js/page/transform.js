@@ -161,7 +161,8 @@ H.transform = {
 		if (this.selectedSrcCard) {
 			cardPrice = CARD.data.mapCard[this.selectedSrcCard.id][3];
 		}
-		themeId = themeId || (H.stove._my_theme_array.length > 0 ? H.stove._my_theme_array[0].tid : 40);
+		H.stoveTree.init();
+		themeId = themeId || (H.stoveTree._my_theme_array.length > 0 ? H.stoveTree._my_theme_array[0].tid : 40);
 		this.selectedThemeId = themeId;
 		var div = jQuery("#transform_dialog_theme_tree");
 		if (div.children().length > 0) {
@@ -169,37 +170,37 @@ H.transform = {
 		}
 		var html = '';
 		html += '<div id="transform_dialog_my_composing_themes">';
-		for (var len = H.stove._my_theme_array.length, i = 0, obj; i < len; i++) {
-			obj = H.stove._my_theme_array[i];
-			html += '<a id="' + obj.tid + '" href="javascript:void(1);" onclick="H.stove.init();H.transform.showTheme(' + obj.tid + ');H.transform.showMyBox();">' + H.ui.getThemeMiniLogo(obj.tid) + '</a>';
+		for (var len = H.stoveTree._my_theme_array.length, i = 0, obj; i < len; i++) {
+			obj = H.stoveTree._my_theme_array[i];
+			html += '<a id="' + obj.tid + '" href="javascript:void(1);" onclick="H.stoveTree.init();H.transform.showTheme(' + obj.tid + ');H.transform.showMyBox();">' + H.ui.getThemeMiniLogo(obj.tid) + '</a>';
 		}
 		html += '<a href="javascript:void(1);" onclick="H.transform.showSelectTheme();">选择</a>';
 		html += '</div>';
 
 		function getStat(cardId) {
 			var tem = '';
-			var num = H.stove._my_box_card_map[cardId] || 0;
-			// if (num == 0 || H.stove._my_stove_card_map[cardId] > 0) {
+			var num = H.stoveTree._my_box_card_map[cardId] || 0;
+			// if (num == 0 || H.stoveTree._my_stove_card_map[cardId] > 0) {
 			// 	tem += '<span class="bg"></span>';
 			// }
-			// if (H.stove._my_stove_card_map[cardId] > 0) {
+			// if (H.stoveTree._my_stove_card_map[cardId] > 0) {
 			// 	tem += '<span class="composing">合成中</span>';
 			// }
-			if (H.stove._my_card_map[cardId] > 0) {
-				tem += '<span class="num"><div></div><b>' + H.stove._my_card_map[cardId] + '</b></span>';
+			if (H.stoveTree._my_card_map[cardId] > 0) {
+				tem += '<span class="num"><div></div><b>' + H.stoveTree._my_card_map[cardId] + '</b></span>';
 			}
-			if (H.stove._need_num_map[cardId] != 0) {
-				tem += '<span class="need_num"><div></div><b>' + H.stove._need_num_map[cardId] + '</b></span>';
+			if (H.stoveTree._need_num_map[cardId] != 0) {
+				tem += '<span class="need_num"><div></div><b>' + H.stoveTree._need_num_map[cardId] + '</b></span>';
 			}
 			return tem;
 		}
 
-		H.stove.initThemeMap(themeId);
-		for (var j = 0; j < H.stove._my_theme_map._time_temp_arr.length; j++) {
-			html += '<h3>面值' + CARD.data.mapCard[H.stove._my_theme_map._time_arr[H.stove._my_theme_map._time_temp_arr[j]][0]][3] + '</h3>';
+		H.stoveTree.initThemeMap(themeId);
+		for (var j = 0; j < H.stoveTree._my_theme_map._time_temp_arr.length; j++) {
+			html += '<h3>面值' + CARD.data.mapCard[H.stoveTree._my_theme_map._time_arr[H.stoveTree._my_theme_map._time_temp_arr[j]][0]][3] + '</h3>';
 			html += '<ul class="overflow_auto">';
-			for (i = 0, len = H.stove._my_theme_map._time_arr[H.stove._my_theme_map._time_temp_arr[j]].length; i < len; i++) {
-				var card = CARD.data.mapCard[H.stove._my_theme_map._time_arr[H.stove._my_theme_map._time_temp_arr[j]][i]];
+			for (i = 0, len = H.stoveTree._my_theme_map._time_arr[H.stoveTree._my_theme_map._time_temp_arr[j]].length; i < len; i++) {
+				var card = CARD.data.mapCard[H.stoveTree._my_theme_map._time_arr[H.stoveTree._my_theme_map._time_temp_arr[j]][i]];
 				html += '<li id="' + card[0] + '" title="' + card[2] + '" class="card_mini float_left' + (this.selectedDstCardId && this.selectedDstCardId === card[0] ? ' selected' : '') + '"';
 				html += (CARD.data.mapCard[card[0]][3] <= cardPrice ? ' onmouseout="javascript:H.transform.mouseOutItem(this);" onmouseover="javascript:H.transform.mouseOverItem(this);" onclick="javascript:H.transform.selectDstItem(this, ' + card[0] + ');"' : '');
 				html += '><div class="card_mini_img width_100 text_align_center">';
@@ -210,10 +211,10 @@ H.transform = {
 			}
 			html += '</ul>';
 		}
-		html += '<h3>面值' + CARD.data.mapCard[H.stove._my_theme_map._normal_card_arr[0]][3];
+		html += '<h3>面值' + CARD.data.mapCard[H.stoveTree._my_theme_map._normal_card_arr[0]][3];
 		html += '<ul class="overflow_auto">';
-		for (var i = 0, len = H.stove._my_theme_map._normal_card_arr.length; i < len; i++) {
-			var card = CARD.data.mapCard[H.stove._my_theme_map._normal_card_arr[i]];
+		for (var i = 0, len = H.stoveTree._my_theme_map._normal_card_arr.length; i < len; i++) {
+			var card = CARD.data.mapCard[H.stoveTree._my_theme_map._normal_card_arr[i]];
 			html += '<li id="' + card[0] + '" title="' + card[2] + '" class="card_mini float_left' + (this.selectedDstCardId && this.selectedDstCardId === card[0] ? ' selected' : '') + '"';
 			html += (CARD.data.mapCard[card[0]][3] <= cardPrice ? ' onmouseout="javascript:H.transform.mouseOutItem(this);" onmouseover="javascript:H.transform.mouseOverItem(this);" onclick="javascript:H.transform.selectDstItem(this, ' + card[0] + ');"' : '');
 			html += '><div class="card_mini_img width_100 text_align_center">';
@@ -228,7 +229,7 @@ H.transform = {
 	showSelectTheme: function() {
 		H.ui.showSelectTheme({
 			handleTheme: function(tid) {
-				H.stove.init();
+				H.stoveTree.init();
 				H.transform.showTheme(tid);
 				H.transform.showMyBox();
 			}
@@ -464,7 +465,7 @@ H.transform = {
 			}
 			H.transform.selectedSrcCard = 0;
 			H.transform.showMyBox();
-			H.stove.init();
+			H.stoveTree.init();
 			H.transform.showTheme(H.transform.selectedThemeId);
 			if (manaCost > 0) {
 				H.user.oMyData.mana -= manaCost;
