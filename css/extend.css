@@ -16,7 +16,6 @@
 .text_align_center{ text-align: center; }
 .float_left{ float: left; }
 .float_right{ float: right; }
-.selected { background-color: #B3EE3A; }
 #eventDiv { float: left; padding-top: 5px; width: 500px; text-align: right; }
 #helper_min{ position: fixed; top: 250px; right: 0px; background-color: #b1d85c; padding: 5px; border-radius:5px 0 0 5px; z-index: 1000; }
 #helper { color: #fff; overflow: auto; position: absolute; top: 30px; width: 100%; z-index: 100; }
@@ -27,8 +26,8 @@
 /*card_mini start*/
 .card_mini { cursor: pointer; margin: 2px 5px; width: 70px; }
 .mouse_on .card_mini_img{ background-color: #B3EE3A; }
+.selected .card_mini_img{ background-color: #FF3333; }
 .linked .card_mini_img{ background-color: #FF6666; }
-.selected .card_mini_img{ background-color: #FFEEEE; }
 .card_mini_img{ color: #f00; margin-bottom: 5px; padding: 5px 0 5px 0; position: relative; }
 .card_mini_img img { height: 60px; width: 60px; }
 .card_mini_img span { left: 5px; top: 5px; width: 60px; position: absolute; }
@@ -41,9 +40,6 @@
 .card_mini_img .need_num div{ width:0; height:0; overflow:hidden; border: 15px solid #000; border-color: transparent #0ff #0ff transparent; position: absolute; bottom:0; right: 0; }
 .card_mini_img .need_num b{ position: absolute; bottom:0; right: 0; color: #000;}
 /*card_mini end*/
-
-.box { width: 87%; }
-.half_box { width: 49%; float: left; margin-left: 1%; }
 
 /*card big start*/
 .card_big.selected { background-color: #B3EE3A; }
@@ -81,6 +77,9 @@
 #submit_collection_dialog .received{position:absolute; right:-10px;top:150px;text-indent:-10000em; z-index:3;background:url(/images/qq/icon_received.png) no-repeat 0 0 transparent; width:84px; height:84px;}
 
 .dialogClass { z-index: 1000;position: fixed; }
+
+#cardFriends .selected{background-color:#B3EE3A;}
+#friends .selected{background-color:#B3EE3A;}
 
 #exchange_dialog_exchange_box ul{ height: 450px; }
 #exchange_dialog_coffer_box ul{ height: 450px; }

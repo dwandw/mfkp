@@ -48,15 +48,23 @@ H.stoveBox = {
 		for (var i = 0; i < stoveArr.length; i++) {
 			var slot = stoveArr[i];
 			html += '<li id="' + slot.slot + '" class="float_left card_big text_align_center"';
-			if (i == stoveArr.length - 1) {
-				html += ' onmouseover="javascript:H.ui.mouseOverSlotItem(this)" onmouseout="javascript:H.ui.mouseOutSlotItem(this)"';
+			if (slot.btime + slot.locktime - now > 0) {
+			html += ' onmouseover="javascript:H.ui.mouseOverSlotItem(this)" onmouseout="javascript:H.ui.mouseOutSlotItem(this)"';
 			}
 			html += '>';
 			html += '<div class="card_big_img">';
 			html += H.ui.getImgItemWithBg(slot.id);
-			if (i == stoveArr.length - 1) {
-				html += '<span class="position_absolute buttons" style="display:none;"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveBox.cancelStoveCard(' + slot.slot + ',' + slot.id + ');"><span class="ui-button-text">取消</span></button></span>';
+			html += '<span class="position_absolute buttons" style="display:none;">';
+			if (slot.btime + slot.locktime - now > 0) {
+				html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveBox.elfFlashFireCard(' + slot.slot + ');"><span class="ui-button-text">秒卡</span></button>';
+				if (i == stoveArr.length - 1) {
+					html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveBox.cancelStoveCard(' + slot.slot + ',' + slot.id + ');"><span class="ui-button-text">取消</span></button>';
+				}
+				if (slot.btime < now) {
+					html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveBox.accelerateCard(' + slot.slot + ',1,' + slot.prop + ');"><span class="ui-button-text">一昧真火</span></button>';
+				}
 			}
+			html += '</span>';
 			html += '</div>';
 			html += '<div class="width_100 text_align_center clear">' + getDayStr(slot.btime + slot.locktime, now) + '</div>';
 			html += '<div id="timer_' + slot.slot + '" class="width_100 text_align_center clear" style="position:relative;height:30px;">';
@@ -211,7 +219,6 @@ H.stoveBox = {
 		if (confirm("您确定要取消炼制卡片" + CARD.data.mapCard[cardId][2] + "吗?\n提示:取消后,已经炼制一段时间的卡片进度将不能保存。")) {
 			this.cancelRefineCard(slotId, function() {
 				H.stoveBox.showStoves();
-				H.stoveTree.showTree(H.stoveTree._selected_theme_id);
 			});
 		}
 	},
@@ -371,7 +378,6 @@ H.stoveBox = {
 	cancelRefineCard: function(slotId, fnSucceed) {
 		function fnSucc(oXml) {
 			H.ui.waitEnd();
-			// console.debug(H.resChinese(oXml.text));
 			var obj = oXml.xmlDom.getElementsByTagName("QQHOME")[0];
 			var iCode = obj.getAttribute("code") * 1;
 			if (iCode != 0) {
@@ -405,6 +411,133 @@ H.stoveBox = {
 
 		H.ui.waitStart();
 		var sUrl = 'http://card.show.qq.com/cgi-bin/card_stove_cancel?type=1&ver=1&slotid=' + slotId;
+		var xhr = new CARD.XHR(sUrl, fnSucc, null, fnError);
+		xhr.send();
+	},
+	elfFlashFireCard: function(slotId, fnSucceed) {
+		function fnSucc(oXml) {
+			H.ui.waitEnd();
+			var obj = oXml.xmlDom.getElementsByTagName("QQHOME")[0];
+			var iCode = obj.getAttribute("code") * 1;
+			if (iCode != 0) {
+				console.error(H.resChinese(oXml.text));
+				fnError(iCode);
+				return;
+			}
+
+			var elf = obj.getElementsByTagName("elf")[0];
+			var stovebox = obj.getElementsByTagName("stovebox")[0];
+			H.user.oMyData.stovebox_cur = stovebox.getAttribute("cur") * 1;
+			H.user.oMyData.stovebox_max = stovebox.getAttribute("max") * 1;
+			H.user.oMyData.stovebox_stovenum = stovebox.getAttribute("stovenum") * 1;
+			stoveboxcards = stovebox.getElementsByTagName("card");
+			H.user.mapStoveBox = {};
+			for (var i = 0; i < stoveboxcards.length; i++) {
+				card = stoveboxcards[i];
+				slot = {};
+				slotId = card.getAttribute("slot") * 1;
+				slot.slot = slotId;
+				slot.stove = card.getAttribute("stove") * 1;
+				slot.btime = card.getAttribute("btime") * 1;
+				slot.locktime = card.getAttribute("locktime") * 1;
+				slot.id = card.getAttribute("id") * 1;
+				slot.type = card.getAttribute("type") * 1;
+				slot.prop = card.getAttribute("prop") * 1;
+				slot.flag = card.getAttribute("flag") * 1;
+				if (card.getAttribute("slottype")) {
+					slot.slottype = card.getAttribute("slottype");
+					slot.opuin = card.getAttribute("opuin") * 1;
+					slot.opuin2 = card.getAttribute("opuin2") * 1;
+					slot.id2 = card.getAttribute("id2") * 1;
+				}
+				H.user.mapStoveBox[slotId] = slot;
+			}
+			H.stoveBox.showStoves();
+			if (fnSucceed) fnSucceed();
+		}
+
+		function fnError(iCode, sMsg, iEndTime) {
+			H.ui.waitEnd();
+			H.ui.showErrDlg({
+				title: '秒卡失败',
+				msg: H.getMsgByCode(iCode)
+			});
+			return;
+		}
+
+		H.ui.waitStart();
+		var sUrl = 'http://card.show.qq.com/cgi-bin/card_elf_flash_fire?slotid=' + slotId + '&uin=' + H.user.getUin();
+		var xhr = new CARD.XHR(sUrl, fnSucc, null, fnError);
+		xhr.send();
+	},
+	accelerateCard: function(slotId, type, prop, fnSucceed) {
+		function fnSucc(oXml) {
+			H.ui.waitEnd();
+			var obj = oXml.xmlDom.getElementsByTagName("QQHOME")[0];
+			var iCode = obj.getAttribute("code") * 1;
+			if (iCode != 0) {
+				console.error(H.resChinese(oXml.text));
+				fnError(iCode);
+				return;
+			}
+
+			var elf = obj.getElementsByTagName("elf")[0];
+			var stovebox = obj.getElementsByTagName("stovebox")[0];
+			H.user.oMyData.stovebox_cur = stovebox.getAttribute("cur") * 1;
+			H.user.oMyData.stovebox_max = stovebox.getAttribute("max") * 1;
+			H.user.oMyData.stovebox_stovenum = stovebox.getAttribute("stovenum") * 1;
+			stoveboxcards = stovebox.getElementsByTagName("card");
+			H.user.mapStoveBox = {};
+			for (var i = 0; i < stoveboxcards.length; i++) {
+				card = stoveboxcards[i];
+				slot = {};
+				slotId = card.getAttribute("slot") * 1;
+				slot.slot = slotId;
+				slot.stove = card.getAttribute("stove") * 1;
+				slot.btime = card.getAttribute("btime") * 1;
+				slot.locktime = card.getAttribute("locktime") * 1;
+				slot.id = card.getAttribute("id") * 1;
+				slot.type = card.getAttribute("type") * 1;
+				slot.prop = card.getAttribute("prop") * 1;
+				slot.flag = card.getAttribute("flag") * 1;
+				if (card.getAttribute("slottype")) {
+					slot.slottype = card.getAttribute("slottype");
+					slot.opuin = card.getAttribute("opuin") * 1;
+					slot.opuin2 = card.getAttribute("opuin2") * 1;
+					slot.id2 = card.getAttribute("id2") * 1;
+				}
+				H.user.mapStoveBox[slotId] = slot;
+			}
+			H.stoveBox.showStoves();
+			if (fnSucceed) fnSucceed();
+		}
+
+		function fnError(iCode, sMsg, iEndTime) {
+			H.ui.waitEnd();
+			var title = '';
+			switch (type) {
+				case 1:
+					title = '一昧真火';
+					return;
+				case 9:
+					title = '烈地魔火';
+					return;
+				case 10:
+					title = '紫天魔火';
+					return;
+				default:
+					title = '一昧真火';
+					return;
+			}
+			H.ui.showErrDlg({
+				title: title + '失败',
+				msg: H.getMsgByCode(iCode)
+			});
+			return;
+		}
+
+		H.ui.waitStart();
+		var sUrl = 'http://card.show.qq.com/cgi-bin/card_stove_accelerate?uin=' + H.user.getUin() + '&slotid=' + slotId + '&prop=' + prop + '&bottletype=' + type;
 		var xhr = new CARD.XHR(sUrl, fnSucc, null, fnError);
 		xhr.send();
 	}

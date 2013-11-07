@@ -10,6 +10,7 @@ require.config({
 		"json": "lib/json2",
 		"date": "lib/date",
 		"date_format": "lib/date.format",
+		"local_storage": "page/local_storage",
 
 		"base": "page/base",
 		"ui": "page/ui",
@@ -40,7 +41,7 @@ require.config({
 			exports: 'jtemplates'
 		},
 		'base': {
-			deps: ['jqueryui','jtemplates', 'date', 'json','date_format'],
+			deps: ['jqueryui', 'jtemplates', 'date', 'json', 'date_format'],
 			exports: 'base'
 		},
 		'ui': {
@@ -54,6 +55,10 @@ require.config({
 		'notification': {
 			deps: ['base'],
 			exports: 'notification'
+		},
+		'local_storage': {
+			deps: ['base'],
+			exports: 'local_storage'
 		},
 		'user': {
 			deps: ['base', 'ui'],
@@ -104,7 +109,7 @@ require.config({
 			exports: 'submitCollection'
 		},
 		'entrance': {
-			deps: ['box', 'stove_box', 'stove_tree', 'collection', 'friends', 'exchange', 'dailytask', 'share', 'transform', 'market', 'submitCollection', 'notification'],
+			deps: ['box', 'stove_box', 'stove_tree', 'collection', 'friends', 'exchange', 'dailytask', 'share', 'transform', 'market', 'submitCollection', 'notification', 'local_storage', 'download'],
 			exports: 'entrance'
 		}
 	}

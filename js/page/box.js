@@ -29,6 +29,9 @@
 			}, {
 				text: "出售卡片",
 				click: "H.box.showSellCard"
+			}, {
+				text: "炼卡攻略",
+				click: "H.box.showTree"
 			}]
 		});
 		html += '</div>';
@@ -49,6 +52,9 @@
 			}, {
 				text: "出售卡片",
 				click: "H.box.sellCardInStoreBox"
+			}, {
+				text: "炼卡攻略",
+				click: "H.box.showTree"
 			}]
 		});
 		html += '</div>';
@@ -158,6 +164,12 @@
 		};
 		H.ui.showErrDlg(arg);
 		return;
+	},
+	showTree: function(slotId, locate) {
+		var slot = locate == 0 ? H.user.mapExchangeBox[slotId] : H.user.mapCofferBox[slotId];
+		var cardId = slot.id;
+		var themeId = CARD.data.mapCard[cardId][1];
+		H.stoveTree.showTree(themeId);
 	},
 	moveCard: function(srcSlotId, srcSlotType, fnSucceed) {
 		var dstSlotId = H.user.getEmptySlot(srcSlotType == 0 ? 1 : 0);
@@ -279,7 +291,7 @@
 		}
 
 		H.ui.waitStart();
-		var sUrl = 'http://card.show.qq.com/cgi-bin/card_market_npc_sell?uin=' + H.user.getUin() + '&slot_no=' + slotId + '&type='+H.user.mapExchangeBox[slotId].type+'&cardid=' + H.user.mapExchangeBox[slotId].id;
+		var sUrl = 'http://card.show.qq.com/cgi-bin/card_market_npc_sell?uin=' + H.user.getUin() + '&slot_no=' + slotId + '&type=' + H.user.mapExchangeBox[slotId].type + '&cardid=' + H.user.mapExchangeBox[slotId].id;
 		var xhr = new CARD.XHR(sUrl, fnSucc, null, fnError);
 		xhr.send();
 	},

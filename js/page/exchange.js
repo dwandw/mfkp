@@ -26,7 +26,7 @@ H.exchange = {
 			dialog = jQuery('<div id="exchange_dialog"></div>');
 		}
 		var html = '';
-		html += '<div class="half_box">';
+		html += '<div class="float_left width_50">';
 		html += '    <div id="exchange_dialog_my_tabs">';
 		html += '        <ul>';
 		html += '            <li><a href="#exchange_dialog_my_tabs-1" onclick="javascript:H.exchange.showExchangeBox();">我的换卡箱(' + H.user.getCardNum(0) + '/' + H.user.oMyData.exchangebox_cur + ')</a></li>';
@@ -41,12 +41,12 @@ H.exchange = {
 		html += '    </div>';
 		html += '    <div id="exchange_dialog_my_box_text" class="width_100"></div>';
 		html += '</div>';
-		html += '<div class="half_box">';
+		html += '<div class="float_left width_50">';
 		html += '    <div id="exchange_dialog_ta_tabs">';
 		html += '        <ul>';
 		html += '            <li><a href="#exchange_dialog_ta_tabs-1" onclick="javascript:H.exchange.showFriendExchangeBox();">TA的换卡箱</a></li>';
 		html += '            <li><a href="#exchange_dialog_ta_tabs-2" onclick="javascript:H.exchange.showFriendCofferBox();">TA的保险箱</a></li>';
-		html += '            好友[' + this.oMyData.nick + '('+this.oMyData.uin+')]想交换到的卡片：';
+		html += '            好友[' + this.oMyData.nick + '(' + this.oMyData.uin + ')]想交换到的卡片：';
 		for (var i = 0; i < this.oMyData.exchangebox_exch.length; i++) {
 			html += CARD.data.mapTheme[this.oMyData.exchangebox_exch[i]][1] + (i == this.oMyData.exchangebox_exch.length - 1 ? '' : ',');
 		};
@@ -58,11 +58,14 @@ H.exchange = {
 		html += '            <div id="exchange_dialog_ta_coffer_box" class="width_100"></div>';
 		html += '        </div>';
 		html += '    </div>';
-		html += '    <div id="exchange_dialog_ta_box_text" class="width_100"></div>';
+		html += '    <div id="exchange_dialog_ta_box_text" class="width_100" style="height:20px;"></div>';
 		html += '</div>';
 		html += '<div class="clear"></div>';
-		html += '<div id="exchange_dialog_exchange_button" class="width_100 text_align_center" style="display:none;">';
+		html += '<div id="exchange_dialog_exchange_button_useful" class="width_100 text_align_center" style="display:none;">';
 		html += '    <a href="javascript:void(1);" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="H.exchange.goExchange();"><span class="ui-button-text">交换</span></a>';
+		html += '</div>';
+		html += '<div id="exchange_dialog_exchange_button" class="width_100 text_align_center">';
+		html += '    <a href="javascript:void(0);" class="ui-button ui-widget ui-state-active ui-corner-all ui-button-text-only"><span class="ui-button-text">交换</span></a>';
 		html += '</div>';
 		dialog.html(html);
 		dialog.dialog({
@@ -150,18 +153,18 @@ H.exchange = {
 	},
 	checkCanSelect: function(slotId, locate) {
 		locate == locate || 0;
-		var cardId = locate == 0 ?H.user.mapExchangeBox[slotId].id : H.user.mapCofferBox[slotId].id;
+		var cardId = locate == 0 ? H.user.mapExchangeBox[slotId].id : H.user.mapCofferBox[slotId].id;
 		// data.mapTheme[12] type
 		if (CARD.data.mapTheme[CARD.data.mapCard[cardId][1]][12] == 2 || (CARD.data.mapTheme[CARD.data.mapCard[cardId][1]][12] == 5 && CARD.data.mapCard[cardId][1] != 111)) {
+			return true;
+		}
+		if (CARD.data.mapCard[cardId][3] > 30 && !CARD.data.mapCompose[cardId]) {
 			return true;
 		}
 		if (this.oMyData.exchangebox_exch.length == 0) return true;
 		else {
 			for (var j = 0; j < this.oMyData.exchangebox_exch.length; j++) {
 				if (CARD.data.mapCard[cardId][1] == this.oMyData.exchangebox_exch[j]) {
-					return true;
-				}
-				if (CARD.data.mapCard[cardId][3] > 30 && !CARD.data.mapCompose[cardId]) {
 					return true;
 				}
 			}
@@ -176,7 +179,7 @@ H.exchange = {
 		var html = H.ui.showBox({
 			box: H.user.mapExchangeBox,
 			onClick: "H.exchange.mouseClickSlotItem",
-			canOnClick:function(slotId, locate) {
+			canOnClick: function(slotId, locate) {
 				return H.exchange.checkCanSelect(slotId, locate);
 			}
 		});
@@ -190,7 +193,7 @@ H.exchange = {
 		var html = H.ui.showBox({
 			box: H.user.mapCofferBox,
 			onClick: "H.exchange.mouseClickSlotItem",
-			canOnClick:function(slotId, locate) {
+			canOnClick: function(slotId, locate) {
 				return H.exchange.checkCanSelect(slotId, locate);
 			}
 		});
@@ -204,8 +207,18 @@ H.exchange = {
 		var html = H.ui.showBox({
 			box: H.exchange.mapExchangeBox,
 			onClick: "H.exchange.mouseClickSlotItemFriend",
-			canOnClick:function(slotId, locate) {
-				return true;
+			canOnClick: function(slotId, locate) {
+				if (!H.localStorage.get("themes") && !H.localStorage.get("cards")) {
+					return true;
+				}
+				var cardId = H.exchange.mapExchangeBox[slotId].id;
+				var themeId = CARD.data.mapCard[cardId][1];
+				if (H.localStorage.checkIn("themes", themeId)) {
+					return true;
+				}
+				if (H.localStorage.checkIn("cards", cardId)) {
+					return true;
+				}
 			}
 		});
 		div.html(html);
@@ -234,8 +247,8 @@ H.exchange = {
 		}
 		locate = locate || 0;
 		if (selected) {
-			if (this.taSelectCards.length == 5) return;
 			if (isFriendBox) {
+				if (this.taSelectCards.length == 5) return;
 				var slot = {};
 				srcSlot = this.mapExchangeBox[slotId];
 				for (var name in srcSlot) {
@@ -243,6 +256,7 @@ H.exchange = {
 				}
 				this.taSelectCards.push(slot);
 			} else {
+				if (this.mySelectCards.length == 5) return;
 				var slot = {};
 				srcSlot = locate === 0 ? H.user.mapExchangeBox[slotId] : H.user.mapCofferBox[slotId];
 				for (var name in srcSlot) {
@@ -308,9 +322,11 @@ H.exchange = {
 			};
 		}
 		if (canExchange) {
-			jQuery('#exchange_dialog_exchange_button').show();
-		} else {
+			jQuery('#exchange_dialog_exchange_button_useful').show();
 			jQuery('#exchange_dialog_exchange_button').hide();
+		} else {
+			jQuery('#exchange_dialog_exchange_button_useful').hide();
+			jQuery('#exchange_dialog_exchange_button').show();
 		}
 	},
 	goExchange: function() {
@@ -369,7 +385,8 @@ H.exchange = {
 			}
 			H.exchange.taSelectCards = [];
 			H.exchange.mySelectCards = [];
-			jQuery('#exchange_dialog_exchange_button').hide();
+			jQuery('#exchange_dialog_exchange_button_useful').hide();
+			jQuery('#exchange_dialog_exchange_button').show();
 			H.ui.showErrDlg({
 				title: '提示',
 				msg: '卡片交换成功！'

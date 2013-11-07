@@ -259,6 +259,14 @@ H.stoveTree = {
 		}
 		html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="H.stoveTree.showSelectTheme();" title="选择主题"><span class="ui-button-text">选择主题</span></button>';
 		html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.submitCollection.init(' + themeId + ');" title="已集齐"><span class="ui-button-text">已集齐</span></button>';
+		if (H.localStorage.checkIn("themes", themeId)) {
+			html += '<button type="button" class="ui-button ui-widget ui-state-active ui-corner-all ui-button-text-only" onclick="javascript:H.localStorage.remove(\'themes\', ' + themeId + ');H.stoveTree.showTree(' + themeId + ');" title="不想交换这个主题"><span class="ui-button-text">不想交换这个主题</span></button>';
+		} else {
+			html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.localStorage.add(\'themes\', ' + themeId + ');H.stoveTree.showTree(' + themeId + ');" title="想交换这个主题"><span class="ui-button-text">想交换这个主题</span></button>';
+		}
+		if (H.localStorage.get("themes") || H.localStorage.get("cards")) {
+			html += '<button type="button" class="ui-button ui-widget ui-state-active ui-corner-all ui-button-text-only" onclick="javascript:H.localStorage.clear(\'themes\');H.localStorage.clear(\'cards\');H.stoveTree.showTree(' + themeId + ');" title="清除想交换的"><span class="ui-button-text">清除想交换的</span></button>';
+		}
 		html += '</div>';
 
 		function getStat(cardId) {
@@ -300,6 +308,11 @@ H.stoveTree = {
 				can_compose = H.stoveTree._my_stove_num_map.home_empty > 0 ? true : false;
 				var html = '';
 				html += '<div class="width_100 text_align_center clear">';
+				if (H.localStorage.checkIn("cards", o[0])) {
+					html += '<button type="button" class="ui-button ui-widget ui-state-active ui-corner-all ui-button-text-only" onclick="javascript:H.localStorage.remove(\'cards\', ' + o[0] + ');H.stoveTree.showTree(' + themeId + ');" title="不交换"><span class="ui-button-text">不交换</span></button>';
+				} else {
+					html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.localStorage.add(\'cards\', ' + o[0] + ');H.stoveTree.showTree(' + themeId + ');" title="想交换"><span class="ui-button-text">想交换</span></button>';
+				}
 				if (H.stoveTree._steal_uin > 0) {
 					if (meny == 40) {
 						if (can_steal) {
@@ -391,11 +404,18 @@ H.stoveTree = {
 		for (var i = 0, len = this._my_theme_map._normal_card_arr.length; i < len; i++) {
 			var card = CARD.data.mapCard[this._my_theme_map._normal_card_arr[i]];
 			html += '<li id="' + card[0] + '" title="' + card[2] + '"  class="card_mini float_left">' + '<div class="width_100 card_mini_img text_align_center">' + H.ui.getCardMiniImg(card[0]) + getStat(card[0]) + '</div>';
-			if (!H.checkRP(themeId) && !H.checkFlashCard(themeId) && !H.checkJbCard(themeId)) {
-				html += '<div class="width_100 text_align_center clear"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveTree.buy(' + card[0] + ',function(){H.stoveTree.showTree(' + card[1] + ')});" title="购买"><span class="ui-button-text">购买</span></button></div></li>';
-			} else if (H.checkFlashCard(themeId)) {
-				html += '<div class="width_100 text_align_center clear"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveTree._dst_trans_card_id=' + card[1] + ';H.stoveTree.buyFlashCard(' + card[1] + ',' + card[0] + ');" title="购变"><span class="ui-button-text">购变</span></button></div></li>';
+			html += '<div class="width_100 text_align_center clear">';
+			if (H.localStorage.checkIn("cards", card[0])) {
+				html += '<button type="button" class="ui-button ui-widget ui-state-active ui-corner-all ui-button-text-only" onclick="javascript:H.localStorage.remove(\'cards\', ' + card[0] + ');H.stoveTree.showTree(' + themeId + ');" title="不交换"><span class="ui-button-text">不交换</span></button>';
+			} else {
+				html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.localStorage.add(\'cards\', ' + card[0] + ');H.stoveTree.showTree(' + themeId + ');" title="想交换"><span class="ui-button-text">想交换</span></button>';
 			}
+			if (!H.checkRP(themeId) && !H.checkFlashCard(themeId) && !H.checkJbCard(themeId)) {
+				html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveTree.buy(' + card[0] + ',function(){H.stoveTree.showTree(' + card[1] + ')});" title="购买"><span class="ui-button-text">购买</span></button>';
+			} else if (H.checkFlashCard(themeId)) {
+				html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveTree._dst_trans_card_id=' + card[1] + ';H.stoveTree.buyFlashCard(' + card[1] + ',' + card[0] + ');" title="购变"><span class="ui-button-text">购变</span></button>';
+			}
+			html += '</div></li>';
 		}
 		html += '        </ul>';
 		html += '    </div>';

@@ -50,8 +50,9 @@ H.ui = {
 		for (var i = 0; i < slotArr.length; i++) {
 			var slot = slotArr[i];
 			if (slot.id > 0) {
+				var canOnClick = false;
 				if (arg.onClick) {
-					var canOnClick = arg.canOnClick(slot.slot, slot.locate);
+					canOnClick = arg.canOnClick(slot.slot, slot.locate);
 				}
 				html += '<li id=' + slot.slot;
 				if (arg.buttons && arg.buttons.length > 0) {

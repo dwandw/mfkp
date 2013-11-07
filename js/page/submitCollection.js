@@ -1,5 +1,4 @@
 H.submitCollection = {
-	_iUin: 0,
 	_curGiftid: 0,
 	_iThemeid: 0,
 	_iJBCard: 0,
@@ -62,32 +61,13 @@ H.submitCollection = {
 		}
 		var html = '';
 		html += '<div id="DIV_CONTENT">';
-		// html += '   <div class="title" id="DIV_TITLE"><h2>集卡册</h2></div>';
-		// html += '   <div class="mdl_c_c">';
 		html += '   <div class="content_text popup_gift">';
 		html += '   <p class="live_intro" id="P_COL_DESC"></p>';
 		html += '   <p class="live_prize" id="P_COL_PRIZE"></p>';
 		html += '   <ul class="list" id="UL_SHOW_LIST">';
 		html += '	</ul>';
 		html += '	</div>';
-		// html += '	   <div class="btns"><button type="button" class="bt2_tx4" onclick="H.submitCollection.submitCollect();">选好了</button><button type="button" class="bt2_tx8" onclick="H.submitCollection.notSubmit();">暂不放入集卡册</button></div>';
-		// html += '   </div>';
-		// html += '	<button class="close" type="button" title="关闭" onclick="H.submitCollection.notSubmit();"></button>';
 		html += '</div>';
-
-		html += '<!--窗口 开始-->';
-		html += '<div style="display:none;width:400px;" class="popup_module1" id="DIV_ALERT">';
-		html += '   <div class="title"><h2>温馨提示</h2></div>';
-		html += '   <div class="mdl_c_c">';
-		html += '   <div class="content_text align_center">';
-		html += '	   <p><strong id="STRONG_CONTENT"></strong></p>';
-		html += '	</div>';
-		html += '	   <div class="btns"><button type="button" class="bt2_tx4" onclick="jQuery(\'#DIV_ALERT\')[0].style.display=\'none\';jQuery(\'#DIV_SUC_CONTENT\')[0].style.display=\'\';" id="BUT_USE">确定</button>';
-		html += '	    <button type="button" class="bt2_tx4" onclick="H.submitCollection.closeFloatShow();" id="BUT_CANCEL" style="display:none">确定</button></div>';
-		html += '   </div>';
-		html += '	<button class="close" type="button" title="关闭" onclick="jQuery(\'#DIV_ALERT\')[0].style.display=\'none\';jQuery(\'#DIV_SUC_CONTENT\')[0].style.display=\'\';" id="BUT_ALERT_CLOSE"></button>';
-		html += '</div>';
-		html += '<!--窗口 结束-->';
 
 		html += '<div class="popup_module1" style="display:none;width:360px;" id="DiV_GIFT">';
 		html += '<div style="_display:inline;zoom:1;">';
@@ -129,7 +109,6 @@ H.submitCollection = {
 				}
 			}]
 		});
-		H.submitCollection._iUin = H.user.getUin();
 		// QSFL.sns.getApplicationWindow().QSFL.dialog.messageBox.moveWindow.init(window, jQuery('#DIV_TITLE')[0]);
 		// var themeid = CARD.getURLParam("themeid"); 
 		H.submitCollection._iThemeid = themeId;
@@ -248,7 +227,7 @@ H.submitCollection = {
 		// var tmplt = jQuery('#DIV_TPL_SHOW')[0].innerHTML.between("<!--TPL.SHOWLIST","TPL.SHOWLIST-->");
 
 		// CARD.showCardData(arrData, jQuery('#UL_SHOW_LIST')[0], tmplt, mapName);
-		// jQuery('#UL_SHOW_LIST')[0].innerHTML = '<p id="A_QQSHOW_FAQ" class="qqshow_received"><a target="_blank" href="http://service.qq.com/info/33490.html" class="qqshow_received_link">获得的QQ秀存放在哪？</a></p>' + jQuery('#UL_SHOW_LIST')[0].innerHTML; /**escNone**/
+		// jQuery('#UL_SHOW_LIST')[0].innerHTML = '<p id="A_QQSHOW_FAQ" class="qqshow_received"><a target="_blank" href="http://service.qq.com/info/33490.html" class="qqshow_received_link">获得的QQ秀存放在哪？</a></p>' + jQuery('#UL_SHOW_LIST')[0].innerHTML;
 	},
 	chooseShow: function(giftid) {
 		var strStrong = "#submit_collection_dialog #STRONG_" + H.submitCollection._curGiftid;
@@ -405,7 +384,6 @@ H.submitCollection = {
 		});
 		H.user.load(function(){
 			H.stoveTree.init();
-			H.stoveTree.showTree();
 		});
 		// CARD.getFlashObj().showShareMotion('1'); //显示主动分享魔女，分享撒礼特性添加了这个功能
 		// QSFL.sns.getApplicationWindow().QSFL.dialog.messageBox.moveWindow.init(window, jQuery('#submit_collection_dialog #DIV_SUC_TITLE')[0]);
@@ -433,7 +411,7 @@ H.submitCollection = {
 		arr.push('<a href="http://show.qq.com/show.html?MUrl=http%3A//imgcache.qq.com/qqshow_v3/htdocs/mall/inc/particular.html%3Ftype%3D10%26uin%3D0%26iID%3D' + recmdId + '" target="_blank" title="点击查看物品详情"></a></p>');
 		arr.push('<p class="info_more_bg"></p>');
 		arr.push('<p class="info_more">将保存在QQ秀商城<br/>"<a href="http://show.qq.com/show.html?MUrl=/my/inc/item.html" target="_blank" onclick="CARD.sendPGV(\'ISD.QQshow.Card.my_qqshow\');">我的QQ秀</a>"中</p></div>');
-		arr.push('<p class="info"><button  class="bt_tx4" type="button" onclick="H.submitCollection.tryShow( ' + recmdId + ' );CARD.sendPGV(\'ISD.QQshow.Card.try\');" id="BUT_PUTON_SHOW">马上穿上</button>');
+		arr.push('<p class="info"><button  class="bt_tx4" type="button" onclick="H.submitCollection.tryShow(' + recmdId + ');CARD.sendPGV(\'ISD.QQshow.Card.try\');" id="BUT_PUTON_SHOW">马上穿上</button>');
 		arr.push('<span id="P_TEXT_SUC" style="display:none;">保存成功</span>');
 		arr.push('<a target="_blank" onclick="CARD.sendPGV(\'ISD.QQshow.Card.check_particular\');"  href="http://show.qq.com/show.html?MUrl=http%3A//imgcache.qq.com/qqshow_v3/htdocs/mall/inc/particular.html%3Ftype%3D10%26uin%3D0%26iID%3D' + recmdId + '">查看物品详情</a></p>');
 
@@ -497,7 +475,7 @@ H.submitCollection = {
 		// arr.push('</ul></div><div class="btns"><a href="' + strFenXiang + '" target="_blank" type="button" class="bt2_tx6" onclick="H.submitCollection.closeFloatShow();CARD.sendPGV(\'ISD.QQshow.Card.FenXiangCol\');">分享给好友</a></div>');
 		arr.push('</ul></div>');
 
-		// jQuery('#submit_collection_dialog #DIV_SUC_INFO')[0].innerHTML = arr.join(''); /**escNone**/
+		// jQuery('#submit_collection_dialog #DIV_SUC_INFO')[0].innerHTML = arr.join('');
 		// jQuery('#submit_collection_dialog #DIV_CONTENT')[0].style.display = 'none';
 		// jQuery('#submit_collection_dialog #DIV_SUC_CONTENT')[0].style.display = '';
 		//parent.jQuery('#SPAN_TIPS')[0].innerHTML = '';
@@ -514,7 +492,7 @@ H.submitCollection = {
 		function fnSucc(oXml) {
 			var obj = oXml.xmlDom.getElementsByTagName("QQHOME")[0];
 			var iCode = obj.getAttribute("code");
-			jQuery('#submit_collection_dialog #BTN_NBA_CDKEY')[0].style.display = "none";
+			jQuery('#submit_collection_dialog #BTN_NBA_CDKEY').hide();
 
 			if (iCode != 0) {
 				console.error(oXml.text);
@@ -535,7 +513,7 @@ H.submitCollection = {
 		}
 
 		function fnError(iCode) {
-			jQuery('#submit_collection_dialog #DIV_SUC_CONTENT')[0].style.display = "none";
+			jQuery('#submit_collection_dialog #DIV_SUC_CONTENT').hide();
 			var sContent;
 			//用户未注册
 			if (iCode == -1005) {
@@ -561,7 +539,7 @@ H.submitCollection = {
 				left: 40,
 				top: 140,
 				callback: function() {
-					jQuery('#submit_collection_dialog #DIV_SUC_CONTENT')[0].style.display = "";
+					jQuery('#submit_collection_dialog #DIV_SUC_CONTENT').show();
 					CARD.dialog.closeMessage();
 				}
 			});
@@ -658,8 +636,8 @@ H.submitCollection = {
 	getPropCard: function(themeid) {
 		themeid = themeid || 0;
 		if (0 == themeid) {
-			jQuery('#submit_collection_dialog #P_GIFT_INFO')[0].innerHTML = '<strong>非常抱歉，现在领取的人多，请稍候在活动页面补领。</strong>'; /**escNone**/
-			jQuery('#submit_collection_dialog #BUT_GIFT_USE')[0].innerHTML = '确定'; /**escNone**/
+			jQuery('#submit_collection_dialog #P_GIFT_INFO')[0].innerHTML = '<strong>非常抱歉，现在领取的人多，请稍候在活动页面补领。</strong>';
+			jQuery('#submit_collection_dialog #BUT_GIFT_USE')[0].innerHTML = '确定';
 			jQuery('#submit_collection_dialog #BUT_GIFT_USE')[0].onclick = function() {
 				jQuery('#submit_collection_dialog #DiV_GIFT')[0].style.display = 'none';
 				jQuery('#submit_collection_dialog #DIV_SUC_CONTENT')[0].style.display = '';
@@ -682,8 +660,8 @@ H.submitCollection = {
 			jQuery('#submit_collection_dialog #DIV_SUC_CONTENT')[0].style.display = "none";
 
 			if (curMap) {
-				jQuery('#submit_collection_dialog #DIV_GIFT_PIC')[0].innerHTML = '<img src="http://appimg2.qq.com/card/img/props/prop_month_exchange_' + curMap.id + '.png">'; /**escNone**/
-				jQuery('#submit_collection_dialog #P_GIFT_INFO')[0].innerHTML = '<strong>您已经成功领取了<span class="text_important" style="font-size:14px">民居系列套卡</span>奖励——' + (curMap.num * 1 + H.submitCollection._addPropNum * 1) + '张“' + curMap.name + '”道具卡，可进行兑换收集《民居》绝版卡!   <a href="http://sobar.soso.com/t/88521193" target="_blank">了解活动详情》</a></strong><br/>'; /**escNone**/
+				jQuery('#submit_collection_dialog #DIV_GIFT_PIC')[0].innerHTML = '<img src="http://appimg2.qq.com/card/img/props/prop_month_exchange_' + curMap.id + '.png">';
+				jQuery('#submit_collection_dialog #P_GIFT_INFO')[0].innerHTML = '<strong>您已经成功领取了<span class="text_important" style="font-size:14px">民居系列套卡</span>奖励——' + (curMap.num * 1 + H.submitCollection._addPropNum * 1) + '张“' + curMap.name + '”道具卡，可进行兑换收集《民居》绝版卡!   <a href="http://sobar.soso.com/t/88521193" target="_blank">了解活动详情》</a></strong><br/>';
 				cardName = curMap.name;
 				jQuery('#submit_collection_dialog #GIFT_DOWN_TIPS')[0].innerHTML = '<br/><strong>"' + curMap.name + '"道具卡已经放到您的道具箱中去了.</strong>'
 			} else {
@@ -694,12 +672,12 @@ H.submitCollection = {
 						break;
 					}
 				}
-				jQuery('#submit_collection_dialog #DIV_GIFT_PIC')[0].innerHTML = '<img src="http://appimg2.qq.com/card/img/props/prop_month_exchange_' + H.submitCollection._addProp + '.png">'; /**escNone**/
-				jQuery('#submit_collection_dialog #P_GIFT_INFO')[0].innerHTML = '<strong>您已经成功领取<span class="text_important" style="font-size:14px">民居欢乐送活动</span>——' + H.submitCollection._addPropNum + '张“' + cur[1] + '”道具卡，可进行兑换收集《民居》绝版卡!   <a href="http://sobar.soso.com/t/88521193" target="_blank">了解活动详情》</a></strong><br/>'; /**escNone**/
+				jQuery('#submit_collection_dialog #DIV_GIFT_PIC')[0].innerHTML = '<img src="http://appimg2.qq.com/card/img/props/prop_month_exchange_' + H.submitCollection._addProp + '.png">';
+				jQuery('#submit_collection_dialog #P_GIFT_INFO')[0].innerHTML = '<strong>您已经成功领取<span class="text_important" style="font-size:14px">民居欢乐送活动</span>——' + H.submitCollection._addPropNum + '张“' + cur[1] + '”道具卡，可进行兑换收集《民居》绝版卡!   <a href="http://sobar.soso.com/t/88521193" target="_blank">了解活动详情》</a></strong><br/>';
 				jQuery('#submit_collection_dialog #GIFT_DOWN_TIPS')[0].innerHTML = '<br/><strong>"' + cur[1] + '"道具卡已经放到您的道具箱中去了.</strong>'
 			}
 
-			jQuery('#submit_collection_dialog #BUT_GIFT_USE')[0].innerHTML = '确定'; /**escNone**/
+			jQuery('#submit_collection_dialog #BUT_GIFT_USE')[0].innerHTML = '确定';
 			jQuery('#submit_collection_dialog #BUT_GIFT_USE')[0].onclick = function() {
 				jQuery('#submit_collection_dialog #DiV_GIFT')[0].style.display = 'none';
 				jQuery('#submit_collection_dialog #DIV_SUC_CONTENT')[0].style.display = '';
@@ -710,7 +688,6 @@ H.submitCollection = {
 		}
 
 		function fnError(iCode) {
-			jQuery('#submit_collection_dialog #DIV_SUC_CONTENT')[0].style.display = "none";
 			var sContent;
 			//用户未注册
 			if (iCode == -1005) {
@@ -730,19 +707,12 @@ H.submitCollection = {
 			} else {
 				sContent = '对不起，当前领取的人数过多，请稍后补领。';
 			}
-
-			jQuery('#submit_collection_dialog #STRONG_CONTENT')[0].innerHTML = sContent; /**escNone**/
-			jQuery('#submit_collection_dialog #BUT_ALERT_CLOSE')[0].onclick = function() {
-				jQuery('#submit_collection_dialog #DIV_ALERT')[0].style.display = 'none';
-				jQuery('#DIV_SUC_CONTENT')[0].style.display = '';
-			};
-			jQuery('#submit_collection_dialog #DIV_ALERT')[0].style.display = "";
+			H.ui.showErrDlg({
+				title: '领取失败',
+				msg: sContent
+			});
 		}
-		var uin = H.user.getUin();
-		if (!uin) {
-			CARD.showLogin();
-		}
-		var sUrl = 'http://card.show.qq.com/cgi-bin/card_user_get_gift?uin=' + uin + '&type=5&themeid=' + themeid + '&subtype1=' + H.submitCollection._addProp + '&count1' + H.submitCollection._addPropNum;
+		var sUrl = 'http://card.show.qq.com/cgi-bin/card_user_get_gift?uin=' + H.user.getUin() + '&type=5&themeid=' + themeid + '&subtype1=' + H.submitCollection._addProp + '&count1' + H.submitCollection._addPropNum;
 		var xhr = new CARD.XHR(sUrl, fnSucc, null, fnError);
 		xhr.send();
 		jQuery('#submit_collection_dialog #BTN_MINGJU')[0].style.display = "none";
@@ -750,7 +720,7 @@ H.submitCollection = {
 	},
 	reConfirm: function() {
 		jQuery('#submit_collection_dialog #DIV_SUC_CONTENT')[0].style.display = "none";
-		jQuery('#submit_collection_dialog #STRONG_CONTENT')[0].innerHTML = '您确定不领取春节礼包吗？'; /**escNone**/
+		jQuery('#submit_collection_dialog #STRONG_CONTENT')[0].innerHTML = '您确定不领取春节礼包吗？';
 		jQuery('#submit_collection_dialog #BUT_USE')[0].innerHTML = '返回领取';
 		jQuery('#submit_collection_dialog #BUT_USE')[0].onclick = function() {
 			jQuery('#submit_collection_dialog #DIV_ALERT')[0].style.display = "none";
@@ -763,13 +733,6 @@ H.submitCollection = {
 		CARD.closeDialog();
 		parent.window.location.href = "/card/museum/museum_81.html";
 	},
-	/**
-	 * 用户点击"暂时不放入集卡册"
-	 */
-	notSubmit: function() {
-		CARD.getFlashObj().writeThemeSo(H.submitCollection._iThemeid);
-		CARD.closeDialog();
-	},
 	tryShow: function(recmdId) {
 		function fnSucc(oXml) {
 			var obj = oXml.xmlDom.getElementsByTagName("QQSHOW")[0];
@@ -779,7 +742,7 @@ H.submitCollection = {
 				fnError(iCode);
 				return;
 			}
-			jQuery('#submit_collection_dialog #P_TEXT_SUC')[0].style.display = "";
+			jQuery('#submit_collection_dialog #P_TEXT_SUC').show();
 
 		}
 
@@ -796,18 +759,17 @@ H.submitCollection = {
 			} else {
 				sContent = "保存失败,您可以到物品栏查看,再穿上保存。";
 			}
-
-			jQuery('#submit_collection_dialog #STRONG_CONTENT')[0].innerHTML = sContent; /**escNone**/
-			jQuery('#submit_collection_dialog #DIV_SUC_CONTENT')[0].style.display = 'none';
-			jQuery('#submit_collection_dialog #DIV_ALERT')[0].style.display = '';
+			H.ui.showErrDlg({
+				title: '保存失败',
+				msg: sContent
+			});
 		}
-		jQuery('#submit_collection_dialog #BUT_PUTON_SHOW')[0].style.display = "none";
+		jQuery('#submit_collection_dialog #BUT_PUTON_SHOW').hide();
 		var sUrl = 'http://show.qq.com/cgi-bin/qqshow_sns_saveshow?from=0&recmd=' + recmdId;
 		var xhr = new CARD.XHR(sUrl, fnSucc, null, fnError);
 		xhr.send();
 
 	},
-	/*************临时接口***********/
 	goTo361: function() {
 		window.open("http://361london.qq.com");
 		CARD.sendPGV("ISD.QQshow.Card.click_go_to_361");
@@ -815,36 +777,6 @@ H.submitCollection = {
 		img.src = "http://jump.t.l.qq.com/ping?target=http%3A//361london.qq.com/%3Fapp%3Dmoka&cpid=641009734&type=53";
 	}
 };
-// <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn"><head>
-// 	<meta http-equiv="X-UA-Compatible" content="IE=7">
-// 	<meta name="Keywords" content="魔法卡片,免费QQ秀,QQ秀,红钻,QQ空间,App,QQ游戏,Qzone,游戏,卡片,魔法,card,magic,腾讯,QQ,Tencent">
-// 	<meta name="Description" content="魔法卡片是一个集卡游戏。在游戏里面，您是一位万能的魔法师，和您的好友一起交换、炼制卡片，最后集成套卡，留作永久纪念！游戏中，魔法学院还会给您免费发放精美QQ秀，作为集卡的奖励~">
-// 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-// 	<meta http-equiv="Content-Language" content="UTF-8">
-// 	<meta name="robots" content="all">
-// 	<meta name="author" content="Tencent-ISRD">
-// 	<meta name="Copyright" content="Tencent">
-// 	<title>魔法卡片 - QQ秀</title>
-// <link rel="stylesheet" href="http://appimg2.qq.com/card/ac/css/style_v2.css" type="text/css" media="screen">
-// <link rel="stylesheet" href="http://appimg2.qq.com/card/ac/css/style_v3.css" type="text/css" media="screen">
-// <link rel="stylesheet" href="http://appimg2.qq.com/card/ac/css/dialog.css" type="text/css" media="screen">
-// 	<link rel="Shortcut Icon" href="http://show.qq.com/favicon.ico" type="image/x-icon">
-
-// 	<script>
-// 	document.domain="qq.com";
-// 	var oElem = top.document.getElementById("sideFrame");
-// 	if(oElem)
-// 	{
-// 		oElem.parentNode.cols="0,*";
-// 	}
-// 	</script>
-// <script type="text/javascript" src="/card/mk/card_info_v3.js" charset="UTF-8"></script>
-// <script type="text/javascript" src="/card/js/card_collect_des.js" charset="UTF-8"></script>
-// <script type="text/javascript" src="http://imgcache.qq.com/qqshow/qsfl/sh_core.js"></script><script type="text/javascript" charset="gb2312" src="http://imgcache.qq.com/ac/qqshow/qsfl/2_71/core.js"></script>
-// <script type="text/javascript" src="http://imgcache.qq.com/qqshow/qsfl/expand/app_sns.js" charset="gb2312"></script> 
-// <script type="text/javascript" src="/card/js/card_comm_v3.js?t=20120418" charset="UTF-8"></script>
-// <script type="text/javascript" src="/card/js/prop_card_info.js?t=20120606" charset="UTF8"></script>
-// </head>
 
 function copyDone() {
 	CARD.dialog.showMessage({

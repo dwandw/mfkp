@@ -172,7 +172,8 @@ var H = {
 	testUrl: function(url, arg) {
 		function fnSucc(oXml) {
 			H.ui.waitEnd();
-			console.warn(H.resChinese(oXml.text));
+			console.debug(oXml.text);
+			console.debug(H.resChinese(oXml.text));
 		}
 
 		function fnError(iCode) {

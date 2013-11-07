@@ -87,14 +87,12 @@ H.market = {
 					H.market.updateTime();
 				}, 1000);
 			} else {
-				this.load();
+				// this.load();
 			}
 		}
 	},
 	show: function() {
-		this.init(function() {
-			// H.friends.showFriends();
-		});
+		this.init();
 	},
 	showCards: function() {
 		for (var i = 0; i < this.tabArr[this.showNow].length; i++) {

@@ -1,6 +1,6 @@
 H.transform = {
 	selectedThemeId: 0,
-	selectedSrc: {},
+	selectedSrcCard: 0,
 	selectedDstCardId: 0,
 	magicType: 2,
 	init: function() {
@@ -75,9 +75,6 @@ H.transform = {
 	},
 	showMyExchangeBox: function() {
 		var cardPrice = 0;
-		if (this.selectedDstCardId) {
-			cardPrice = CARD.data.mapCard[this.selectedDstCardId][3];
-		}
 		var div = jQuery('#transform_dialog_exchange_box');
 		if (div.children().length > 0) {
 			div.empty();
@@ -96,10 +93,15 @@ H.transform = {
 			// var slot = H.user.mapExchangeBox[index];
 			var locked = false;
 			if (slot.id > 0) {
-				if (H.checkFlashCard(this.selectedThemeId)) {
-					locked = !(((CARD.data.mapTheme[this.selectedThemeId][16] === CARD.data.mapCard[slot.id][1]) && cardPrice <= (CARD.data.mapCard[slot.id][3] * 3)) || ((this.selectedThemeId === CARD.data.mapCard[slot.id][1]) && (cardPrice <= CARD.data.mapCard[slot.id][3])));
+				if (this.selectedDstCardId) {
+					cardPrice = CARD.data.mapCard[this.selectedDstCardId][3];
+					if (H.checkFlashCard(this.selectedThemeId)) {
+						locked = !((CARD.data.mapTheme[this.selectedThemeId][16] === CARD.data.mapCard[slot.id][1] && cardPrice <= CARD.data.mapCard[slot.id][3] * 3) || (this.selectedThemeId === CARD.data.mapCard[slot.id][1] && cardPrice <= CARD.data.mapCard[slot.id][3]));
+					} else {
+						locked = cardPrice > CARD.data.mapCard[slot.id][3];
+					}
 				} else {
-					locked = cardPrice > CARD.data.mapCard[slot.id][3];
+					locked = false;
 				}
 				html += '<li id="' + slot.slot + '"';
 				html += locked ? '' : ' onmouseout="javascript:H.transform.mouseOutItem(this);" onmouseover="javascript:H.transform.mouseOverItem(this);" onclick="javascript:H.transform.selectSrcItem(this, ' + slot.slot + ', ' + slot.id + ', ' + slot.locate + ');"';
@@ -117,9 +119,6 @@ H.transform = {
 	},
 	showMyCofferBox: function() {
 		var cardPrice = 0;
-		if (this.selectedDstCardId) {
-			cardPrice = CARD.data.mapCard[this.selectedDstCardId][3];
-		}
 		var div = jQuery('#transform_dialog_coffer_box');
 		if (div.children().length > 0) {
 			div.empty();
@@ -138,10 +137,15 @@ H.transform = {
 			// var slot = H.user.mapCofferBox[index];
 			var locked = false;
 			if (slot.id > 0) {
-				if (H.checkFlashCard(this.selectedThemeId)) {
-					locked = !((CARD.data.mapTheme[this.selectedThemeId][16] === CARD.data.mapCard[slot.id][1]) && (cardPrice <= (CARD.data.mapCard[slot.id][3] * 3)) || (this.selectedThemeId === CARD.data.mapCard[slot.id][1]) && (cardPrice <= CARD.data.mapCard[slot.id][3]));
+				if (this.selectedDstCardId) {
+					cardPrice = CARD.data.mapCard[this.selectedDstCardId][3];
+					if (H.checkFlashCard(this.selectedThemeId)) {
+						locked = !((CARD.data.mapTheme[this.selectedThemeId][16] === CARD.data.mapCard[slot.id][1] && cardPrice <= CARD.data.mapCard[slot.id][3] * 3) || (this.selectedThemeId === CARD.data.mapCard[slot.id][1] && cardPrice <= CARD.data.mapCard[slot.id][3]));
+					} else {
+						locked = cardPrice > CARD.data.mapCard[slot.id][3];
+					}
 				} else {
-					locked = cardPrice > CARD.data.mapCard[slot.id][3];
+					locked = false;
 				}
 				html += '<li id="' + slot.slot + '"';
 				html += locked ? '' : ' onmouseout="javascript:H.transform.mouseOutItem(this);" onmouseover="javascript:H.transform.mouseOverItem(this);" onclick="javascript:H.transform.selectSrcItem(this, ' + slot.slot + ', ' + slot.id + ', ' + slot.locate + ');"';
@@ -157,10 +161,7 @@ H.transform = {
 		div.html(html);
 	},
 	showTheme: function(themeId) {
-		var cardPrice = 99999;
-		if (this.selectedSrcCard) {
-			cardPrice = CARD.data.mapCard[this.selectedSrcCard.id][3];
-		}
+		var cardPrice = 999999;
 		H.stoveTree.init();
 		themeId = themeId || (H.stoveTree._my_theme_array.length > 0 ? H.stoveTree._my_theme_array[0].tid : 40);
 		this.selectedThemeId = themeId;
@@ -201,11 +202,23 @@ H.transform = {
 			html += '<ul class="overflow_auto">';
 			for (i = 0, len = H.stoveTree._my_theme_map._time_arr[H.stoveTree._my_theme_map._time_temp_arr[j]].length; i < len; i++) {
 				var card = CARD.data.mapCard[H.stoveTree._my_theme_map._time_arr[H.stoveTree._my_theme_map._time_temp_arr[j]][i]];
+				var locked = true;
+				if (this.selectedSrcCard) {
+					cardPrice = CARD.data.mapCard[this.selectedSrcCard.id][3];
+					if (H.checkFlashCard(this.selectedThemeId)) {
+						if (CARD.data.mapTheme[this.selectedThemeId][16] == CARD.data.mapCard[this.selectedSrcCard.id][1] && CARD.data.mapCard[card[0]][3] <= cardPrice * 3) locked = false;
+						if (this.selectedThemeId == CARD.data.mapCard[this.selectedSrcCard.id][1] && cardPrice >= CARD.data.mapCard[card[0]][3]) locked = false;
+					} else {
+						locked = cardPrice <= CARD.data.mapCard[card[0]][3];
+					}
+				} else {
+					locked = false;
+				}
 				html += '<li id="' + card[0] + '" title="' + card[2] + '" class="card_mini float_left' + (this.selectedDstCardId && this.selectedDstCardId === card[0] ? ' selected' : '') + '"';
-				html += (CARD.data.mapCard[card[0]][3] <= cardPrice ? ' onmouseout="javascript:H.transform.mouseOutItem(this);" onmouseover="javascript:H.transform.mouseOverItem(this);" onclick="javascript:H.transform.selectDstItem(this, ' + card[0] + ');"' : '');
+				html += !locked ? ' onmouseout="javascript:H.transform.mouseOutItem(this);" onmouseover="javascript:H.transform.mouseOverItem(this);" onclick="javascript:H.transform.selectDstItem(this, ' + card[0] + ');"' : '';
 				html += '><div class="card_mini_img width_100 text_align_center">';
 				html += H.ui.getCardMiniImg(card[0]);
-				html += (CARD.data.mapCard[card[0]][3] <= cardPrice ? '' : '<span class="bg"></span>');
+				html += !locked ? '' : '<span class="bg"></span>';
 				html += getStat(card[0]);
 				html += '</div></li>';
 			}
@@ -215,11 +228,23 @@ H.transform = {
 		html += '<ul class="overflow_auto">';
 		for (var i = 0, len = H.stoveTree._my_theme_map._normal_card_arr.length; i < len; i++) {
 			var card = CARD.data.mapCard[H.stoveTree._my_theme_map._normal_card_arr[i]];
+			var locked = true;
+			if (this.selectedSrcCard) {
+				cardPrice = CARD.data.mapCard[this.selectedSrcCard.id][3];
+				if (H.checkFlashCard(this.selectedThemeId)) {
+					if (CARD.data.mapTheme[this.selectedThemeId][16] == CARD.data.mapCard[this.selectedSrcCard.id][1] && CARD.data.mapCard[card[0]][3] <= cardPrice * 3) locked = false;
+					if (this.selectedThemeId == CARD.data.mapCard[this.selectedSrcCard.id][1] && cardPrice >= CARD.data.mapCard[card[0]][3]) locked = false;
+				} else {
+					locked = cardPrice <= CARD.data.mapCard[card[0]][3];
+				}
+			} else {
+				locked = false;
+			}
 			html += '<li id="' + card[0] + '" title="' + card[2] + '" class="card_mini float_left' + (this.selectedDstCardId && this.selectedDstCardId === card[0] ? ' selected' : '') + '"';
-			html += (CARD.data.mapCard[card[0]][3] <= cardPrice ? ' onmouseout="javascript:H.transform.mouseOutItem(this);" onmouseover="javascript:H.transform.mouseOverItem(this);" onclick="javascript:H.transform.selectDstItem(this, ' + card[0] + ');"' : '');
+			html += !locked ? ' onmouseout="javascript:H.transform.mouseOutItem(this);" onmouseover="javascript:H.transform.mouseOverItem(this);" onclick="javascript:H.transform.selectDstItem(this, ' + card[0] + ');"' : '';
 			html += '><div class="card_mini_img width_100 text_align_center">';
 			html += H.ui.getCardMiniImg(card[0]);
-			html += (CARD.data.mapCard[card[0]][3] <= cardPrice ? '' : '<span class="bg"></span>');
+			html += !locked ? '' : '<span class="bg"></span>';
 			html += getStat(card[0]);
 			html += '</div></li>';
 		}
@@ -258,7 +283,10 @@ H.transform = {
 			this.showEmpty(1);
 			this.selectedSrcCard = 0;
 		}
-		this.showTheme(this.selectedThemeId);
+		this.showPercent();
+		if (this.selectedDstCardId == 0) {
+			this.showTheme(this.selectedThemeId);
+		}
 		this.showTransformButton();
 	},
 	selectDstItem: function(doc, cardId) {
@@ -278,7 +306,9 @@ H.transform = {
 			this.selectedDstCardId = 0;
 		}
 		this.showPercent();
-		this.showMyBox();
+		if (this.selectedSrcCard == 0) {
+			this.showMyBox();
+		}
 		this.showTransformButton();
 	},
 	showBigCard: function(isSrc, cardId) {
