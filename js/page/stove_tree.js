@@ -257,7 +257,8 @@ H.stoveTree = {
 			obj = this._my_theme_array[i];
 			html += '<a id="' + obj.tid + '" href="javascript:void(1);" onclick="H.stoveTree.init();H.stoveTree.showTree(' + obj.tid + ');"' + (themeId == obj.tid ? 'class="current"' : '') + '>' + H.ui.getThemeMiniLogo(obj.tid) + '</a>';
 		}
-		html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="H.stoveTree.showSelectTheme();" title="选择主题"><span class="ui-button-text">选择主题</span></button>';
+		html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="H.stoveTree.showSelectTheme();" title="选择主题"><span class="ui-button-text">选择主题</span></button><br />';
+		html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.download.getImgByThemeId(' + themeId + ');" title="下载图片"><span class="ui-button-text">下载图片</span></button>';
 		html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.submitCollection.init(' + themeId + ');" title="已集齐"><span class="ui-button-text">已集齐</span></button>';
 		if (H.localStorage.checkIn("themes", themeId)) {
 			html += '<button type="button" class="ui-button ui-widget ui-state-active ui-corner-all ui-button-text-only" onclick="javascript:H.localStorage.remove(\'themes\', ' + themeId + ');H.stoveTree.showTree(' + themeId + ');" title="不想交换这个主题"><span class="ui-button-text">不想交换这个主题</span></button>';
@@ -317,15 +318,15 @@ H.stoveTree = {
 					if (meny == 40) {
 						if (can_steal) {
 							if (direct_compose) {
-								html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveTree.submitCompose(' + themeId + ',' + o[0] + ');" title="偷"><span class="ui-button-text">偷</span></button>';
+								html += '<button type="button" class="ui-button ui-widget ui-state-active ui-corner-all ui-button-text-only" onclick="javascript:H.stoveTree.submitCompose(' + themeId + ',' + o[0] + ');" title="偷"><span class="ui-button-text">偷</span></button>';
 							} else {
 								html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveTree.submitCompose(' + themeId + ',' + o[0] + ');" title="买偷"><span class="ui-button-text">买偷</span></button>';
 							}
 						} else {
 							if (direct_compose) {
-								html += '<button type="button" class="ui-button ui-widget ui-state-active ui-corner-all ui-button-text-only" onclick="javascript:void(0);" title="偷"><span class="ui-button-text">偷</span></button>';
+								// html += '<button type="button" class="ui-button ui-widget ui-state-active ui-corner-all ui-button-text-only" onclick="javascript:void(0);" title="偷"><span class="ui-button-text">偷</span></button>';
 							} else {
-								html += '<button type="button" class="ui-button ui-widget ui-state-active ui-corner-all ui-button-text-only" onclick="javascript:void(0);" title="买偷"><span class="ui-button-text">买偷</span></button>';
+								// html += '<button type="button" class="ui-button ui-widget ui-state-active ui-corner-all ui-button-text-only" onclick="javascript:void(0);" title="买偷"><span class="ui-button-text">买偷</span></button>';
 							}
 						}
 					}
@@ -333,27 +334,27 @@ H.stoveTree = {
 					if (can_buy_compose) {
 						if (can_compose) {
 							if (direct_compose) {
-								html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveTree.submitCompose(' + themeId + ',' + o[0] + ');" title="合成"><span class="ui-button-text">合成</span></button>';
+								html += '<button type="button" class="ui-button ui-widget ui-state-active ui-corner-all ui-button-text-only" onclick="javascript:H.stoveTree.submitCompose(' + themeId + ',' + o[0] + ');" title="合成"><span class="ui-button-text">合成</span></button>';
 							} else {
 								html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveTree.submitCompose(' + themeId + ',' + o[0] + ');" title="购合"><span class="ui-button-text">购合</span></button>';
 							}
 						} else {
 							if (direct_compose) {
-								html += '<button type="button" class="ui-button ui-widget ui-state-active ui-corner-all ui-button-text-only" onclick="javascript:void(0);" title="合成"><span class="ui-button-text">合成</span></button>';
+								// html += '<button type="button" class="ui-button ui-widget ui-state-active ui-corner-all ui-button-text-only" onclick="javascript:void(0);" title="合成"><span class="ui-button-text">合成</span></button>';
 							}
 						}
 					} else {
 						if (can_compose) {
 							if (direct_compose) {
-								html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveTree.submitCompose(' + themeId + ',' + o[0] + ');" title="合成"><span class="ui-button-text">合成</span></button>';
+								html += '<button type="button" class="ui-button ui-widget ui-state-active ui-corner-all ui-button-text-only" onclick="javascript:H.stoveTree.submitCompose(' + themeId + ',' + o[0] + ');" title="合成"><span class="ui-button-text">合成</span></button>';
 							} else {
 								html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveTree.submitCompose(' + themeId + ',' + o[0] + ');" title="自动"><span class="ui-button-text">自动</span></button>';
 							}
 						} else {
 							if (direct_compose) {
-								html += '<button type="button" class="ui-button ui-widget ui-state-active ui-corner-all ui-button-text-only" onclick="javascript:void(0);" title="合成"><span class="ui-button-text">合成</span></button>';
+								// html += '<button type="button" class="ui-button ui-widget ui-state-active ui-corner-all ui-button-text-only" onclick="javascript:void(0);" title="合成"><span class="ui-button-text">合成</span></button>';
 							} else {
-								html += '<button type="button" class="ui-button ui-widget ui-state-active ui-corner-all ui-button-text-only" onclick="javascript:void(0);" title="自动"><span class="ui-button-text">自动</span></button>';
+								// html += '<button type="button" class="ui-button ui-widget ui-state-active ui-corner-all ui-button-text-only" onclick="javascript:void(0);" title="自动"><span class="ui-button-text">自动</span></button>';
 							}
 						}
 					}
@@ -425,7 +426,7 @@ H.stoveTree = {
 		dialog.html(html);
 		dialog.dialog({
 			minWidth: 1000,
-			title: "炼卡攻略",
+			title: "炼卡攻略("+CARD.data.mapTheme[themeId][1]+")",
 			dialogClass: "dialogClass",
 			position: "right top"
 		});

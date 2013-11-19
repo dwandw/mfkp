@@ -118,4 +118,75 @@ require.config({
 require(['entrance'], function(entrance) {
 	jQuery.noConflict();
 	injectDiv();
+	document.onkeydown = function() {
+		shortcuts();
+	};
 });
+
+var scMap = {
+	"E": 69,
+	"F": 70,
+	"LEFT": 37,
+	"RIGHT": 39
+};
+
+var shortcuts = function() {
+	if (event.keyCode == scMap.LEFT) {
+		if (H.exchange.index === 0) {
+			alert("前面没有了");
+			return;
+		}
+		var index = H.exchange.index - 1;
+		var uin = 0;
+		if (H.exchange.isCardFriends) {
+			uin = H.cardFriends.mapFriend[index];
+			if (Math.floor(index / H.cardFriends.pageSize) != Math.floor(index + 1 / H.cardFriends.pageSize)) {
+				H.cardFriends.showFriends(Math.floor(index / H.cardFriends.pageSize) + 1);
+			}
+			H.cardFriends.onClick(uin);
+		} else {
+			uin = H.friends.mapFriend[index].uin;
+			if (Math.floor(index / H.friends.pageSize) != Math.floor(index + 1 / H.friends.pageSize)) {
+				H.friends.showFriends(Math.floor(index / H.friends.pageSize) + 1);
+			}
+			H.friends.onClick(uin);
+		}
+		H.exchange.showBox(uin, index, H.exchange.isCardFriends);
+	}
+	if (event.keyCode == scMap.RIGHT) {
+		var uin = 0;
+		var index = 0;
+		if (H.exchange.isCardFriends) {
+			if (H.cardFriends.mapFriend.length === H.exchange.index + 1) {
+				alert("到头了，后面没有了");
+				return;
+			}
+			index = H.exchange.index + 1;
+			uin = H.cardFriends.mapFriend[index];
+			if (Math.floor(index / H.cardFriends.pageSize) != Math.floor(index - 1 / H.cardFriends.pageSize)) {
+				H.cardFriends.showFriends(Math.floor(index / H.cardFriends.pageSize) + 1);
+			}
+			H.cardFriends.onClick(uin);
+		} else {
+			if (H.friends.pall === H.exchange.index + 1) {
+				alert("到头了，后面没有了");
+				return;
+			}
+			index = H.exchange.index + 1;
+			uin = H.friends.mapFriend[index].uin;
+			if (Math.floor(index / H.friends.pageSize) != Math.floor(index - 1 / H.friends.pageSize)) {
+				H.friends.showFriends(Math.floor(index / H.friends.pageSize) + 1);
+			}
+			H.friends.onClick(uin);
+		}
+		H.exchange.showBox(uin, index, H.exchange.isCardFriends);
+	}
+	if (event.keyCode == scMap.F) {
+		H.user.load(function() {
+			H.notification.getUnlockTimes();
+		});
+	}
+	if (event.keyCode == scMap.E) {
+		H.exchange.goExchange();
+	}
+}

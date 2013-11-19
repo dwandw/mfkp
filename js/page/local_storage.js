@@ -37,7 +37,7 @@ H.localStorage = {
 			values = ',' + localStorage[key] + ',';
 			_value = ',' + value + ','
 			if (values.indexOf(_value) > -1) {
-				values = values.replace(_value, '');
+				values = values.replace(_value, ',');
 				if (values.indexOf(",") == 0) {
 					values = values.replace(",", "");
 				}

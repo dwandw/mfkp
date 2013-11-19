@@ -195,9 +195,6 @@ H.submitCollection = {
 		var html = '';
 		for (var i = 0; i < arrData.length; i++) {
 			var data = arrData[i];
-			var imgUrl = 'http://imgcache.qq.com/qqshow_v3/htdocs/syndata/excel_snashot/' + Math.floor(data[2] % 1000 / 100) + '/' + (data[2] % 1000 % 100) + '/' + data[2] + '_0.gif';
-			html += '<li onclick="H.submitCollection.chooseShow(' + data[1] + ');"><p class="pic"><img src="' + imgUrl + '" title="精美QQ秀"></p>';
-			html += '<strong class="choose" style="display:' + (data[0] == 0 ? '' : 'none') + '" id="STRONG_' + data[1] + '">已选中</strong>';
 			var num = 0;
 			if (H.user.mapCollection[themeId] && H.user.mapCollection[themeId].gifts) {
 				giftArr = H.user.mapCollection[themeId].gifts;
@@ -205,8 +202,11 @@ H.submitCollection = {
 					if (giftArr[j][0] == data[2]) num++;
 				};
 			}
+			var imgUrl = 'http://imgcache.qq.com/qqshow_v3/htdocs/syndata/excel_snashot/' + Math.floor(data[2] % 1000 / 100) + '/' + (data[2] % 1000 % 100) + '/' + data[2] + '_0.gif';
+			html += '<li onclick="H.submitCollection.chooseShow(' + data[1] + ');"><p class="pic"><img src="' + imgUrl + '" title="'+num+'"></p>';
+			html += '<strong class="choose" style="display:' + (data[0] == 0 ? '' : 'none') + '" id="STRONG_' + data[1] + '">已选中</strong>';
 			if (num > 0) {
-				html += '<div class="received" title="' + num + '"></div>';
+				html += '<div class="received"></div>';
 			}
 			// html += '<p class="info" id="P_INFO_' + data[1] + '">' + (data[0] == 0 ? '已选中' : ('<a href="javascript:void(1);" onclick="H.submitCollection.chooseShow(' + data[1] + ')">选择这套</a>')) + '</p></li>';
 			html += '</li>';
@@ -742,8 +742,13 @@ H.submitCollection = {
 				fnError(iCode);
 				return;
 			}
-			jQuery('#submit_collection_dialog #P_TEXT_SUC').show();
-
+			H.ui.showErrDlg({
+				title: '保存成功',
+				msg: "您的形象保存成功"
+			});
+			setTimeout(function() {
+				H.ui.removeErrDlg();
+			}, 1000);
 		}
 
 		function fnError(iCode) {
@@ -764,7 +769,7 @@ H.submitCollection = {
 				msg: sContent
 			});
 		}
-		jQuery('#submit_collection_dialog #BUT_PUTON_SHOW').hide();
+		// jQuery('#submit_collection_dialog #BUT_PUTON_SHOW').hide();
 		var sUrl = 'http://show.qq.com/cgi-bin/qqshow_sns_saveshow?from=0&recmd=' + recmdId;
 		var xhr = new CARD.XHR(sUrl, fnSucc, null, fnError);
 		xhr.send();

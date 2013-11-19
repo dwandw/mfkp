@@ -3,6 +3,7 @@ H.friends = {
 	bInit: false,
 	pageSize: 20,
 	mapFriend: {},
+	mapFriendMemo: {},
 	init: function(fnSucceed, reload) {
 		if (reload) {
 			H.friends.bInit = false;
@@ -42,9 +43,9 @@ H.friends = {
 			var user = this.mapFriend[i];
 			html += '<li id="' + user.uin + '" class="width_100">';
 			if (user.uin == H.user.getUin()) {
-				html += (i * 1 + 1) + '\t[' + user.nick + '](' + user.uin + ')\t<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" onclick="javascript:H.stove.setStealUin(' + user.uin + ');"><span class="ui-button-text">炼卡</span></button><br />';
+				html += (i * 1 + 1) + '\t[' + user.nick + ']\t(' + user.uin + ')\t<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" onclick="javascript:H.stove.setStealUin(' + user.uin + ');"><span class="ui-button-text">炼卡</span></button><br />';
 			} else {
-				html += (i * 1 + 1) + '\t[' + user.nick + '](' + user.uin + ')\t<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" onclick="javascript:H.stove.setStealUin(' + user.uin + ');"><span class="ui-button-text">偷炉</span></button>\t<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" onclick="javascript:H.friends.onClick(' + user.uin + ');H.exchange.showBox(' + user.uin + ', ' + i + ', 0);"><span class="ui-button-text">换卡</span></button><br />';
+				html += (i * 1 + 1) + '\t[' + (H.friends.mapFriendMemo[user.uin] ? H.friends.mapFriendMemo[user.uin] : user.nick) + ']\t(' + user.uin + ')\t<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" onclick="javascript:H.stove.setStealUin(' + user.uin + ');"><span class="ui-button-text">偷炉</span></button>\t<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" onclick="javascript:H.friends.onClick(' + user.uin + ');H.exchange.showBox(' + user.uin + ', ' + i + ', 0);"><span class="ui-button-text">换卡</span></button><br />';
 			}
 			html += '</li></ul>';
 		}
@@ -75,11 +76,10 @@ H.friends = {
 	},
 	load: function(fnSucceed) {
 		function fnSucc(oXml) {
-			H.ui.waitEnd();
 			qqhome = oXml.xmlDom.getElementsByTagName("QQHOME")[0];
 			code = qqhome.getAttribute("code");
 			if (code != 0) {
-				console.warn(oXml);
+				console.error(oXml);
 				fnError(code);
 				return;
 			}
@@ -95,6 +95,40 @@ H.friends = {
 				_user.nick = user.getAttribute("nick");
 				H.friends.mapFriend[i] = _user;
 			}
+			H.friends.loadFriendMemo(fnSucceed);
+		}
+
+		function fnError(iCode) {
+			H.ui.showErrDlg({
+				title: '加载好友列表失败',
+				msg: H.getMsgByCode(iCode)
+			});
+			return;
+		}
+
+		H.ui.waitStart();
+		var sUrl = 'http://card.show.qq.com/cgi-bin/card_user_list?uin=' + H.user.getUin();
+		var xhr = new CARD.XHR(sUrl, fnSucc, null, fnError);
+		xhr.send();
+	},
+	loadFriendMemo: function(fnSucceed) {
+		function fnSucc(oXml) {
+			H.ui.waitEnd();
+			var text = oXml.text;
+			var code = text.substring(text.indexOf("(") + 1, text.indexOf(",")).replaceAll("\"", "") * 1;
+			if (code != 0) {
+				console.error(oXml);
+				fnError(code);
+				return;
+			}
+			var data = jQuery.parseJSON(text.substring(text.indexOf(",") + 1, text.indexOf("\n")));
+			H.friends.mapFriendMemo = {};
+			for (var i = 0; i < data.data.length; i++) {
+				var temp = data.data[i];
+				var uin = temp.ui;
+				var memo = temp.memo;
+				H.friends.mapFriendMemo[uin] = memo;
+			}
 			if (fnSucceed) fnSucceed();
 		}
 
@@ -107,8 +141,7 @@ H.friends = {
 			return;
 		}
 
-		H.ui.waitStart();
-		var sUrl = 'http://card.show.qq.com/cgi-bin/card_user_list?uin=' + H.user.getUin();
+		var sUrl = 'http://card.show.qq.com/cgi-bin/card_user_memo?uin=' + H.user.getUin();
 		var xhr = new CARD.XHR(sUrl, fnSucc, null, fnError);
 		xhr.send();
 	}
@@ -197,7 +230,7 @@ H.cardFriends = {
 			qqhome = oXml.xmlDom.getElementsByTagName("QQHOME")[0];
 			code = qqhome.getAttribute("code");
 			if (code != 0) {
-				console.warn(qqhome);
+				console.error(qqhome);
 				fnError(code);
 				return;
 			}
@@ -236,4 +269,4 @@ H.cardFriends = {
 			}
 		});
 	},
-}
+};

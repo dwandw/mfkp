@@ -38,11 +38,17 @@ var H = {
 	},
 	getMsgByCode: function(code) {
 		switch (code) {
+			case -33075:
+				return "你已经秒过卡了！|系统繁忙，请稍后再试！";
+				break;
 			case -33076:
 				return "对不起，您好友的专属精灵施展了“据守”技能，您无法偷他的炉！";
 				break;
 			case -33058:
 				return "好友的卡片处于锁定状态,您不能交换哦!";
+				break;
+			case -33023:
+				return "您选择的卡片类型并不是您的好友所需要的!";
 				break;
 			case -1007:
 				break;
@@ -90,7 +96,6 @@ var H = {
 			case -33007:
 				break;
 			case -1001:
-				CARD.showLogin();
 				return "请重新登陆！";
 				break;
 			case -11006:
@@ -152,7 +157,7 @@ var H = {
 			case -50004:
 				return "系统繁忙，请销后再试！";
 			default:
-				return "系统繁忙，请销后再试！";
+				return "系统繁忙，请销后再试。。。。。。";
 		}
 	},
 	sortCardFunc: function(a, b) {

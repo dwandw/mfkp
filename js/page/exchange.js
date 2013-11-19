@@ -46,7 +46,7 @@ H.exchange = {
 		html += '        <ul>';
 		html += '            <li><a href="#exchange_dialog_ta_tabs-1" onclick="javascript:H.exchange.showFriendExchangeBox();">TA的换卡箱</a></li>';
 		html += '            <li><a href="#exchange_dialog_ta_tabs-2" onclick="javascript:H.exchange.showFriendCofferBox();">TA的保险箱</a></li>';
-		html += '            好友[' + this.oMyData.nick + '(' + this.oMyData.uin + ')]想交换到的卡片：';
+		html += '            好友[' + (H.friends.mapFriendMemo[this.oMyData.uin] ? H.friends.mapFriendMemo[this.oMyData.uin] : this.oMyData.nick) + '(' + this.oMyData.uin + ')]想交换到的卡片：';
 		for (var i = 0; i < this.oMyData.exchangebox_exch.length; i++) {
 			html += CARD.data.mapTheme[this.oMyData.exchangebox_exch[i]][1] + (i == this.oMyData.exchangebox_exch.length - 1 ? '' : ',');
 		};
@@ -208,17 +208,25 @@ H.exchange = {
 			box: H.exchange.mapExchangeBox,
 			onClick: "H.exchange.mouseClickSlotItemFriend",
 			canOnClick: function(slotId, locate) {
-				if (!H.localStorage.get("themes") && !H.localStorage.get("cards")) {
+				var slot = locate == 0 ? H.exchange.mapExchangeBox[slotId] : H.exchange.mapCofferBox[slotId];
+				var now = parseInt(new Date().getTime() / 1000);
+				if (now > slot.unlock) {
 					return true;
+				}
+			},
+			needMask: function(slotId, locate) {
+				if (!H.localStorage.get("themes") && !H.localStorage.get("cards")) {
+					return false;
 				}
 				var cardId = H.exchange.mapExchangeBox[slotId].id;
 				var themeId = CARD.data.mapCard[cardId][1];
 				if (H.localStorage.checkIn("themes", themeId)) {
-					return true;
+					return false;
 				}
 				if (H.localStorage.checkIn("cards", cardId)) {
-					return true;
+					return false;
 				}
+				return true;
 			}
 		});
 		div.html(html);

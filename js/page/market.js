@@ -280,6 +280,7 @@ var MARKET = {
 			});
 			return;
 		}
+		code = code * 1;
 		if (code != 0) {
 			console.error(oXml.text);
 			fnError(code);

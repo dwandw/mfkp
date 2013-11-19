@@ -20,7 +20,7 @@
   "permissions": ["webRequest", "webRequestBlocking", "tabs", "notifications", "http://*/*", "https://*/*"],
   "web_accessible_resources": ["images/*", "js/*", "css/*"],
   "content_scripts": [{
-    "matches": ["http://*.qq.com/card/index_v3*"],
+    "matches": ["http://*.qq.com/card/index_v3*","http://*.qq.com/snsapp/app/free_gift*"],
     "js": ["js/weaving.js"],
     "run_at": "document_end",
     "all_frames": true

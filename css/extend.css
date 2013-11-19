@@ -42,7 +42,7 @@
 /*card_mini end*/
 
 /*card big start*/
-.card_big.selected { background-color: #B3EE3A; }
+.card_big.selected { background-color: #FF3333; }
 .card_big_img { height: 130px; width: 106px; position: relative; }
 .card_big_img .position_absolute { position: absolute; width: 96px; left: 5px; }
 .card_big_img .theme_bg { height: 120px; top: 5px; }
@@ -78,8 +78,8 @@
 
 .dialogClass { z-index: 1000;position: fixed; }
 
-#cardFriends .selected{background-color:#B3EE3A;}
-#friends .selected{background-color:#B3EE3A;}
+#cardFriends .selected{background-color:#FF3333;}
+#friends .selected{background-color:#FF3333;}
 
 #exchange_dialog_exchange_box ul{ height: 450px; }
 #exchange_dialog_coffer_box ul{ height: 450px; }

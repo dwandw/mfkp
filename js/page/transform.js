@@ -209,7 +209,7 @@ H.transform = {
 						if (CARD.data.mapTheme[this.selectedThemeId][16] == CARD.data.mapCard[this.selectedSrcCard.id][1] && CARD.data.mapCard[card[0]][3] <= cardPrice * 3) locked = false;
 						if (this.selectedThemeId == CARD.data.mapCard[this.selectedSrcCard.id][1] && cardPrice >= CARD.data.mapCard[card[0]][3]) locked = false;
 					} else {
-						locked = cardPrice <= CARD.data.mapCard[card[0]][3];
+						locked = cardPrice < CARD.data.mapCard[card[0]][3];
 					}
 				} else {
 					locked = false;
@@ -235,7 +235,7 @@ H.transform = {
 					if (CARD.data.mapTheme[this.selectedThemeId][16] == CARD.data.mapCard[this.selectedSrcCard.id][1] && CARD.data.mapCard[card[0]][3] <= cardPrice * 3) locked = false;
 					if (this.selectedThemeId == CARD.data.mapCard[this.selectedSrcCard.id][1] && cardPrice >= CARD.data.mapCard[card[0]][3]) locked = false;
 				} else {
-					locked = cardPrice <= CARD.data.mapCard[card[0]][3];
+					locked = cardPrice < CARD.data.mapCard[card[0]][3];
 				}
 			} else {
 				locked = false;
@@ -476,6 +476,7 @@ H.transform = {
 	},
 	transformCard: function() {
 		function fnSucc(oXml) {
+			H.ui.waitEnd();
 			var obj = oXml.xmlDom.getElementsByTagName("QQHOME")[0];
 			var iCode = obj.getAttribute("code");
 			if (iCode != 0) {
@@ -511,7 +512,7 @@ H.transform = {
 			});
 			return;
 		}
-
+		H.ui.waitStart();
 		var sUrl = 'http://card.show.qq.com/cgi-bin/card_user_transfer_card?type=' + H.transform.magicType + '&uin=' + H.user.getUin() + '&srcid=' + H.transform.selectedSrcCard.id + '&dstid=' + H.transform.selectedDstCardId + '&slottype=' + H.transform.selectedSrcCard.locate + '&slotid=' + H.transform.selectedSrcCard.slot;
 		var xhr = new CARD.XHR(sUrl, fnSucc, null, fnError);
 		xhr.send();

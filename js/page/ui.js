@@ -51,8 +51,11 @@ H.ui = {
 			var slot = slotArr[i];
 			if (slot.id > 0) {
 				var canOnClick = false;
+				var needMask = false;
 				if (arg.onClick) {
 					canOnClick = arg.canOnClick(slot.slot, slot.locate);
+					if(arg.needMask)
+						needMask = arg.needMask(slot.slot, slot.locate);
 				}
 				html += '<li id=' + slot.slot;
 				if (arg.buttons && arg.buttons.length > 0) {
@@ -66,6 +69,8 @@ H.ui = {
 				html += ' class="float_left card_big text_align_center';
 				if (arg.onClick) {
 					if (!canOnClick) {
+						html += ' not_click';
+					}else if(needMask){
 						html += ' not_click';
 					}
 				}

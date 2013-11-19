@@ -49,7 +49,7 @@ H.stoveBox = {
 			var slot = stoveArr[i];
 			html += '<li id="' + slot.slot + '" class="float_left card_big text_align_center"';
 			if (slot.btime + slot.locktime - now > 0) {
-			html += ' onmouseover="javascript:H.ui.mouseOverSlotItem(this)" onmouseout="javascript:H.ui.mouseOutSlotItem(this)"';
+				html += ' onmouseover="javascript:H.ui.mouseOverSlotItem(this)" onmouseout="javascript:H.ui.mouseOutSlotItem(this)"';
 			}
 			html += '>';
 			html += '<div class="card_big_img">';
@@ -253,7 +253,6 @@ H.stoveBox = {
 			H.user.oMyData.money = money;
 			H.user.oMyData.exp = exp;
 			H.user.oMyData.lv = lv;
-			//setTimeout("CARD.mission.checkMission(CARD.mission.BUY_CARD)", 0);
 			if (fnSucceed) fnSucceed();
 		}
 
@@ -308,7 +307,6 @@ H.stoveBox = {
 			H.user.oMyData.money = money;
 			H.user.oMyData.exp = exp;
 			H.user.oMyData.lv = lv;
-			//setTimeout("CARD.mission.checkMission(CARD.mission.BUY_CARD)", 0);
 			if (fnSucceed) fnSucceed();
 		}
 
@@ -357,7 +355,6 @@ H.stoveBox = {
 			H.user.oMyData.money = money;
 			H.user.oMyData.exp = exp;
 			H.user.oMyData.lv = lv;
-			//setTimeout("CARD.mission.checkMission(CARD.mission.BUY_CARD)", 0);
 			if (fnSucceed) fnSucceed();
 		}
 
@@ -464,11 +461,12 @@ H.stoveBox = {
 			});
 			return;
 		}
-
-		H.ui.waitStart();
-		var sUrl = 'http://card.show.qq.com/cgi-bin/card_elf_flash_fire?slotid=' + slotId + '&uin=' + H.user.getUin();
-		var xhr = new CARD.XHR(sUrl, fnSucc, null, fnError);
-		xhr.send();
+		if (confirm("提示\n确定秒卡吗?")) {
+			H.ui.waitStart();
+			var sUrl = 'http://card.show.qq.com/cgi-bin/card_elf_flash_fire?slotid=' + slotId + '&uin=' + H.user.getUin();
+			var xhr = new CARD.XHR(sUrl, fnSucc, null, fnError);
+			xhr.send();
+		}
 	},
 	accelerateCard: function(slotId, type, prop, fnSucceed) {
 		function fnSucc(oXml) {
@@ -535,10 +533,11 @@ H.stoveBox = {
 			});
 			return;
 		}
-
-		H.ui.waitStart();
-		var sUrl = 'http://card.show.qq.com/cgi-bin/card_stove_accelerate?uin=' + H.user.getUin() + '&slotid=' + slotId + '&prop=' + prop + '&bottletype=' + type;
-		var xhr = new CARD.XHR(sUrl, fnSucc, null, fnError);
-		xhr.send();
+		if (confirm("提示\n确定加速吗?")) {
+			H.ui.waitStart();
+			var sUrl = 'http://card.show.qq.com/cgi-bin/card_stove_accelerate?uin=' + H.user.getUin() + '&slotid=' + slotId + '&prop=' + prop + '&bottletype=' + type;
+			var xhr = new CARD.XHR(sUrl, fnSucc, null, fnError);
+			xhr.send();
+		}
 	}
 };
