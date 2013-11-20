@@ -237,7 +237,25 @@ H.exchange = {
 			div.empty();
 		}
 		var html = H.ui.showBox({
-			box: H.exchange.mapCofferBox
+			box: H.exchange.mapCofferBox,
+			canOnClick: function(slotId, locate) {
+				return false;
+			},
+			onClick: "H.exchange.mouseClickSlotItemFriend",
+			needMask: function(slotId, locate) {
+				if (!H.localStorage.get("themes") && !H.localStorage.get("cards")) {
+					return false;
+				}
+				var cardId = H.exchange.mapCofferBox[slotId].id;
+				var themeId = CARD.data.mapCard[cardId][1];
+				if (H.localStorage.checkIn("themes", themeId)) {
+					return false;
+				}
+				if (H.localStorage.checkIn("cards", cardId)) {
+					return false;
+				}
+				return true;
+			}
 		});
 		div.html(html);
 	},

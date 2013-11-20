@@ -1230,6 +1230,10 @@ freeGift.receivePage = {
 			var _html = [];
 			// start
 			var tempArr = re.freegifts.sort(function(a, b) {
+				if(a.freegift_id == 7 || a.freegift_id == 8)
+					return -1;
+				if(b.freegift_id == 7 || b.freegift_id == 8)
+					return 1;
 				if (a.flags != b.flags) return a.flags - b.flags;
 				else
 					return freeGiftConfigMap[b.freegift_id] - freeGiftConfigMap[a.freegift_id];

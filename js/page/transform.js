@@ -490,6 +490,7 @@ H.transform = {
 			if (result === 1) {
 				H.transform.showBigCard(1, H.transform.selectedDstCardId);
 				H.transform.selectedSrcCard.id = H.transform.selectedDstCardId;
+				H.transform.selectedSrcCard.unlock = parseInt(new Date().getTime() / 1000) + 300;
 			} else {
 				H.transform.showEmpty(1);
 				H.user.clearSlot(H.transform.selectedSrcCard.slot, H.transform.selectedSrcCard.locate);

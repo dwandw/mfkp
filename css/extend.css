@@ -16,6 +16,8 @@
 .text_align_center{ text-align: center; }
 .float_left{ float: left; }
 .float_right{ float: right; }
+
+
 #eventDiv { float: left; padding-top: 5px; width: 500px; text-align: right; }
 #helper_min{ position: fixed; top: 250px; right: 0px; background-color: #b1d85c; padding: 5px; border-radius:5px 0 0 5px; z-index: 1000; }
 #helper { color: #fff; overflow: auto; position: absolute; top: 30px; width: 100%; z-index: 100; }
@@ -61,19 +63,21 @@
 
 /*公用主题选择面板 start*/
 #choose_theme_dialog_tabs {height: 450px;}
-.collected{ background-color: #0A0; }
-.theme_choose { width: 100%; clear: both; margin-top: 5px; }
+.background_color_gray{background-color: #666;}
+.background_color_red{background-color: #f99;}
+.background_color_dark_red{background-color: #f00;}
 .selectTheme_tabs_content { width: 100%; }
 /*等级*/
-.theme_choose .rank{ display:inline-block; *display:inline; zoom:1; }
-.theme_choose .rank span{ display:inline-block; zoom:1; height:13px; background:url(/images/qq/layer.png) no-repeat -1402px -127px; }
-.theme_choose .bor{ border:1px solid #F0E0DD; border-left:0; border-right:0; }
-.theme_choose .card_lv1{ width:15px; }
-.theme_choose .card_lv2{ width:32px; }
-.theme_choose .card_lv3{ width:51px; }
-.theme_choose .card_lv4{ width:69px; }
-.theme_choose .card_lv5{ width:86px; }
+.theme_difficult_lv { width: 100%; clear: both; margin-top: 5px; }
+.theme_difficult_lv .rank{ display:inline-block; *display:inline; zoom:1; }
+.theme_difficult_lv .rank span{ display:inline-block; zoom:1; height:13px; background:url(/images/qq/layer.png) no-repeat -1402px -127px; }
+.theme_difficult_lv .card_lv1{ width:15px; }
+.theme_difficult_lv .card_lv2{ width:32px; }
+.theme_difficult_lv .card_lv3{ width:51px; }
+.theme_difficult_lv .card_lv4{ width:69px; }
+.theme_difficult_lv .card_lv5{ width:86px; }
 /*公用主题选择面板 end*/
+
 #submit_collection_dialog .received{position:absolute; right:-10px;top:150px;text-indent:-10000em; z-index:3;background:url(/images/qq/icon_received.png) no-repeat 0 0 transparent; width:84px; height:84px;}
 
 .dialogClass { z-index: 1000;position: fixed; }

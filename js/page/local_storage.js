@@ -1,5 +1,6 @@
 H.localStorage = {
 	get: function(key) {
+		key = this.getKey(key);
 		if (localStorage[key]) {
 			return localStorage[key];
 		} else {
@@ -7,6 +8,7 @@ H.localStorage = {
 		}
 	},
 	add: function(key, value) {
+		key = this.getKey(key);
 		if (localStorage[key]) {
 			values = ',' + localStorage[key] + ',';
 			_value = ',' + value + ','
@@ -18,6 +20,7 @@ H.localStorage = {
 		}
 	},
 	checkIn: function(key, value) {
+		key = this.getKey(key);
 		if (!localStorage[key]) {
 			return false;
 		} else {
@@ -31,6 +34,7 @@ H.localStorage = {
 		}
 	},
 	remove: function(key, value) {
+		key = this.getKey(key);
 		if (!localStorage[key]) {
 			return;
 		} else {
@@ -49,6 +53,10 @@ H.localStorage = {
 		}
 	},
 	clear: function(key) {
+		key = this.getKey(key);
 		localStorage[key] = '';
+	},
+	getKey: function(key) {
+		return H.user.getUin() + '-' + key;
 	}
 };

@@ -54,7 +54,7 @@ H.ui = {
 				var needMask = false;
 				if (arg.onClick) {
 					canOnClick = arg.canOnClick(slot.slot, slot.locate);
-					if(arg.needMask)
+					if (arg.needMask)
 						needMask = arg.needMask(slot.slot, slot.locate);
 				}
 				html += '<li id=' + slot.slot;
@@ -70,7 +70,7 @@ H.ui = {
 				if (arg.onClick) {
 					if (!canOnClick) {
 						html += ' not_click';
-					}else if(needMask){
+					} else if (needMask) {
 						html += ' not_click';
 					}
 				}
@@ -313,13 +313,11 @@ H.ui = {
 			html += '    <div id="choose_theme_dialog_tabs-' + i + '">';
 			html += '        <div class="choose_theme_dialog_tabs_content">';
 			for (var j = 0; j < tempArr[i].length; j++) {
-				html += '            <h3 class="theme_choose"><span>难度系数</span><strong class="rank"><span class="card_lv' + (j + 1) + '"></span></strong></h3>';
+				html += '            <h3 class="theme_difficult_lv"><span>难度系数</span><strong class="rank"><span class="card_lv' + (j + 1) + '"></span></strong></h3>';
 				html += '            <ul class="overflow_auto">';
-
-				function sortFunc(a, b) {
+				tempArr[i][j].sort(function(a, b) {
 					return b[0] - a[0];
-				}
-				tempArr[i][j].sort(sortFunc);
+				});
 				for (var k = 0; k < tempArr[i][j].length; k++) {
 					var theme = tempArr[i][j][k];
 					html += '                <li onclick="javascript:H.ui.handleTheme(' + theme[0] + ')" class="float_left text_align_center width_23';
@@ -328,7 +326,12 @@ H.ui = {
 						num = H.user.mapCollection[theme[0]].num;
 					}
 					if (num > 0) {
-						html += ' collected';
+						if (num < 4)
+							html += ' background_color_red';
+						else
+							html += ' background_color_gray';
+					} else {
+						html += ' background_color_dark_red';
 					}
 					html += '" style="margin: 2px 1%; cursor: pointer;">';
 					html += '<span>' + theme[1] + '</span>';
