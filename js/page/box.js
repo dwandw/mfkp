@@ -191,7 +191,7 @@
 		function fnSucc(oXml) {
 			H.ui.waitEnd();
 			var obj = oXml.xmlDom.getElementsByTagName("QQHOME")[0];
-			var iCode = obj.getAttribute("code");
+			var iCode = obj.getAttribute("code") * 1;
 			var iEndTime = obj.getAttribute("endTime") || 0;
 			if (iCode != 0) {
 				console.error(H.resChinese(oXml.text));
@@ -252,7 +252,7 @@
 		function fnSucc(oXml) {
 			H.ui.waitEnd();
 			var obj = oXml.xmlDom.getElementsByTagName("QQHOME")[0];
-			var iCode = obj.getAttribute("code");
+			var iCode = obj.getAttribute("code") * 1;
 			var iEndTime = obj.getAttribute("endTime") || 0;
 			if (iCode != 0) {
 				console.error(H.resChinese(oXml.text));
@@ -314,7 +314,7 @@
 		function fnSucc(oXml) {
 			H.ui.waitEnd();
 			var obj = oXml.xmlDom.getElementsByTagName("QQHOME")[0];
-			var iCode = obj.getAttribute("code");
+			var iCode = obj.getAttribute("code") * 1;
 			var iEndTime = obj.getAttribute("endTime") || 0;
 			if (iCode != 0) {
 				console.error(H.resChinese(oXml.text));
@@ -406,7 +406,7 @@
 		function fnSucc(oXml) {
 			H.ui.waitEnd();
 			var obj = oXml.xmlDom.getElementsByTagName("QQHOME")[0];
-			var iCode = obj.getAttribute("code");
+			var iCode = obj.getAttribute("code") * 1;
 			var iEndTime = obj.getAttribute("endTime") || 0;
 			if (iCode != 0) {
 				console.error(oXml.text);

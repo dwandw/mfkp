@@ -111,6 +111,9 @@ H.stoveTree = {
 		}
 
 		function themeNumSort(a, b) {
+			if(b.num - a.num == 0){
+				return b.tid - a.tid;
+			}
 			return b.num - a.num;
 		}
 		this._my_theme_array.sort(themeNumSort);
@@ -252,12 +255,20 @@ H.stoveTree = {
 		}
 		var html = '';
 		html += '<div class="width_100">';
-		html += this._my_theme_array.length == 0 ? '<strong class="tips_title">您当前没有正在合成的卡片</strong>' : '<strong>正在合成的卡：</strong>';
+		//html += this._my_theme_array.length == 0 ? '<strong class="tips_title">您当前没有正在合成的卡片</strong>' : '<strong>正在合成的卡：</strong>';
 		for (var len = this._my_theme_array.length, i = 0, obj; i < len; i++) {
 			obj = this._my_theme_array[i];
 			html += '<a id="' + obj.tid + '" href="javascript:void(1);" onclick="H.stoveTree.init();H.stoveTree.showTree(' + obj.tid + ');"' + (themeId == obj.tid ? 'class="current"' : '') + '>' + H.ui.getThemeMiniLogo(obj.tid) + '</a>';
 		}
-		html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="H.stoveTree.showSelectTheme();" title="选择主题"><span class="ui-button-text">选择主题</span></button><br />';
+		html += '<br />';
+		this._my_theme_array = this._my_theme_array.sort(function(a, b) {
+			return b.tid - a.tid;
+		});
+		for (var len = this._my_theme_array.length, i = 0, obj; i < len; i++) {
+			obj = this._my_theme_array[i];
+			html += '<a id="' + obj.tid + '" href="javascript:void(1);" onclick="H.stoveTree.init();H.stoveTree.showTree(' + obj.tid + ');"' + (themeId == obj.tid ? 'class="current"' : '') + '>' + H.ui.getThemeMiniLogo(obj.tid) + '</a>';
+		}
+		html += '<br /><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="H.stoveTree.showSelectTheme();" title="选择主题"><span class="ui-button-text">选择主题</span></button>';
 		html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.download.getImgByThemeId(' + themeId + ');" title="下载图片"><span class="ui-button-text">下载图片</span></button>';
 		html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.submitCollection.init(' + themeId + ');" title="已集齐"><span class="ui-button-text">已集齐</span></button>';
 		if (H.localStorage.checkIn("themes", themeId)) {
@@ -365,7 +376,7 @@ H.stoveTree = {
 		}
 
 		this.initThemeMap(themeId);
-		html += '<div class="width_100 overflow_auto" style="height: 600px;">'
+		html += '<div class="width_100 overflow_auto" style="height: 533px;">'
 		for (var j = 0; j < this._my_theme_map._time_temp_arr.length; j++) {
 			var _o = CARD.data.mapCompose[this._my_theme_map._time_arr[this._my_theme_map._time_temp_arr[j]][0]];
 			if (_o) {
@@ -426,7 +437,7 @@ H.stoveTree = {
 		dialog.html(html);
 		dialog.dialog({
 			minWidth: 1000,
-			title: "炼卡攻略("+CARD.data.mapTheme[themeId][1]+")",
+			title: CARD.data.mapTheme[themeId][1] + '-' + CARD.data.mapTheme[themeId][2] + '星' + CARD.data.mapTheme[themeId][12] + (H.checkJbCard(themeId) ? "(绝版)" : "") + (H.checkRP(themeId) ? "(免合成)" : "") + (!H.checkCanTransfer(themeId) ? "(不能变)" : "") + (H.checkFlashCard(themeId) ? "(闪卡)" : ""),
 			dialogClass: "dialogClass",
 			position: "right top"
 		});
@@ -620,7 +631,7 @@ H.stoveTree = {
 		function fnSucc(oXml) {
 			H.ui.waitEnd();
 			var obj = oXml.xmlDom.getElementsByTagName("QQHOME")[0];
-			var iCode = obj.getAttribute("code");
+			var iCode = obj.getAttribute("code") * 1;
 			if (iCode != 0) {
 				console.error(H.resChinese(oXml.text));
 				fnError(iCode, obj.getAttribute("message"), iEndTime);
@@ -716,7 +727,7 @@ H.stoveTree = {
 		function fnSucc(oXml) {
 			H.ui.waitEnd();
 			var obj = oXml.xmlDom.getElementsByTagName("QQHOME")[0];
-			var iCode = obj.getAttribute("code");
+			var iCode = obj.getAttribute("code") * 1;
 			var iEndTime = obj.getAttribute("endTime") || 0;
 			if (iCode != 0) {
 				console.error(H.resChinese(oXml.text));
@@ -841,7 +852,8 @@ H.stoveTree = {
 				unlock: card.getAttribute("unlock") * 1,
 				id: card.getAttribute("id") * 1,
 				type: card.getAttribute("type") * 1,
-				st: card.getAttribute("st") * 1
+				st: card.getAttribute("st") * 1,
+				locate: 0
 			};
 			H.user.mapExchangeBox[_oCard.slot] = _oCard;
 			H.user.oMyData.money -= 20;

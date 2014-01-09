@@ -57,7 +57,7 @@ function notification() {
 	}
 }
 
-if (location.host == "appimg.qq.com" || location.host == "appimg2.qq.com") {
+if ((location.host == "appimg.qq.com" || location.host == "appimg2.qq.com") && location.pathname == "/card/index_v3.html") {
 	var js = document.createElement("script");
 	//  <script src="/js/require.js" data-main="/js/main" defer async="true" ></script>
 	js.type = "text/javascript";

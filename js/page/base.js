@@ -38,6 +38,9 @@ var H = {
 	},
 	getMsgByCode: function(code) {
 		switch (code) {
+			case -41002:
+				return "系统繁忙，请稍后再试！";
+				break;
 			case -33075:
 				return "你已经秒过卡了！|系统繁忙，请稍后再试！";
 				break;
@@ -60,7 +63,7 @@ var H = {
 				return "要输入验证码！";
 				break;
 			case -32002:
-				return "系统繁忙，请稍后再试!";
+				return "找不到相应的记录。";
 				break;
 			case -10004:
 				break;
@@ -139,8 +142,8 @@ var H = {
 			case -32001:
 				return "对不起，您的消耗卡面值低于目标卡，请重新选择消耗卡。";
 				break;
-			case -32002:
-				return "对不起，您的消耗卡可能已经被好友换走，请刷新\"我的魔法屋\"后再试。";
+			case -33060:
+				return "您只能和好友交换等数量等面值的卡片哦";
 				break;
 			case -33061:
 				return "尊敬的魔法师，好友的卡片可能已被换走，请刷新查看后再试~";

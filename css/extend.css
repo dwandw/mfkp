@@ -17,13 +17,15 @@
 .float_left{ float: left; }
 .float_right{ float: right; }
 
+.center{margin: 0 auto; }
+
 
 #eventDiv { float: left; padding-top: 5px; width: 500px; text-align: right; }
 #helper_min{ position: fixed; top: 250px; right: 0px; background-color: #b1d85c; padding: 5px; border-radius:5px 0 0 5px; z-index: 1000; }
 #helper { color: #fff; overflow: auto; position: absolute; top: 30px; width: 100%; z-index: 100; }
 
 #stove_tree_dialog a { padding: 2px; }
-#stove_tree_dialog a.current img { border: solid 3px #00f; }
+#stove_tree_dialog a.current img { border: solid 3px #f00; }
 
 /*card_mini start*/
 .card_mini { cursor: pointer; margin: 2px 5px; width: 70px; }
@@ -39,8 +41,8 @@
 .card_mini_img .num div{ width:0; height:0; overflow:hidden; border: 15px solid #000; border-color:  #0f0 transparent transparent #0f0; position: absolute; top:0; left: 0; }
 .card_mini_img .num b{ position: absolute; top:0; left: 0;  color: #000;}
 .card_mini_img .need_num { background-color: transparent; height: 30px; width: 60px; text-align: right; top: 35px; }
-.card_mini_img .need_num div{ width:0; height:0; overflow:hidden; border: 15px solid #000; border-color: transparent #0ff #0ff transparent; position: absolute; bottom:0; right: 0; }
-.card_mini_img .need_num b{ position: absolute; bottom:0; right: 0; color: #000;}
+.card_mini_img .need_num div{ width:0; height:0; overflow:hidden; border: 15px solid #000; border-color: transparent #f33 #f33 transparent; position: absolute; bottom:0; right: 0; }
+.card_mini_img .need_num b{ position: absolute; bottom:0; right: 0; color: #FFF;}
 /*card_mini end*/
 
 /*card big start*/

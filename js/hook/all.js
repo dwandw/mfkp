@@ -32,7 +32,7 @@ var freeGiftConfig = [{
 	"msg": "已为您增加20个魔法金币",
 	"name": "20魔法金币 ",
 	"rewards_name": "点经验",
-	"show": 1,
+	"show": 0,
 	"type": "金币",
 	"index": 10000
 }, {

@@ -515,7 +515,7 @@ H.collection = {
 		function fnSucc(oXml) {
 
 			var obj = oXml.xmlDom.getElementsByTagName("QQSHOW")[0];
-			var iCode = obj.getAttribute("code");
+			var iCode = obj.getAttribute("code") * 1;
 			if (iCode != 0) {
 				console.error(oXml.text);
 				fnError(iCode);

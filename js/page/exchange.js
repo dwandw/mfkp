@@ -151,9 +151,11 @@ H.exchange = {
 		H.exchange.showFriendExchangeBox();
 		// H.exchange.showFriendCofferBox();
 	},
-	checkCanSelect: function(slotId, locate) {
+	canOnClick: function(slotId, locate) {
 		locate == locate || 0;
 		var cardId = locate == 0 ? H.user.mapExchangeBox[slotId].id : H.user.mapCofferBox[slotId].id;
+		if (cardId == H.props.UNIVERSAL_CARD_ID)
+			return false;
 		// data.mapTheme[12] type
 		if (CARD.data.mapTheme[CARD.data.mapCard[cardId][1]][12] == 2 || (CARD.data.mapTheme[CARD.data.mapCard[cardId][1]][12] == 5 && CARD.data.mapCard[cardId][1] != 111)) {
 			return true;
@@ -171,6 +173,28 @@ H.exchange = {
 		}
 		return false;
 	},
+	needMask: function(slotId, locate) {
+		locate == locate || 0;
+		var cardId = locate == 0 ? H.user.mapExchangeBox[slotId].id : H.user.mapCofferBox[slotId].id;
+		if (cardId == H.props.UNIVERSAL_CARD_ID)
+			return true;
+		// data.mapTheme[12] type
+		if (CARD.data.mapTheme[CARD.data.mapCard[cardId][1]][12] == 2 || (CARD.data.mapTheme[CARD.data.mapCard[cardId][1]][12] == 5 && CARD.data.mapCard[cardId][1] != 111)) {
+			return false;
+		}
+		if (CARD.data.mapCard[cardId][3] > 30 && !CARD.data.mapCompose[cardId]) {
+			return false;
+		}
+		if (this.oMyData.exchangebox_exch.length == 0) return false;
+		else {
+			for (var j = 0; j < this.oMyData.exchangebox_exch.length; j++) {
+				if (CARD.data.mapCard[cardId][1] == this.oMyData.exchangebox_exch[j]) {
+					return false;
+				}
+			}
+		}
+		return true;
+	},
 	showExchangeBox: function() {
 		var div = jQuery('#exchange_dialog_exchange_box');
 		if (div.children().length > 0) {
@@ -179,8 +203,11 @@ H.exchange = {
 		var html = H.ui.showBox({
 			box: H.user.mapExchangeBox,
 			onClick: "H.exchange.mouseClickSlotItem",
+			needMask: function(slotId, locate) {
+				return H.exchange.needMask(slotId, locate);
+			},
 			canOnClick: function(slotId, locate) {
-				return H.exchange.checkCanSelect(slotId, locate);
+				return H.exchange.canOnClick(slotId, locate);
 			}
 		});
 		div.html(html);
@@ -193,8 +220,11 @@ H.exchange = {
 		var html = H.ui.showBox({
 			box: H.user.mapCofferBox,
 			onClick: "H.exchange.mouseClickSlotItem",
+			needMask: function(slotId, locate) {
+				return H.exchange.needMask(slotId, locate);
+			},
 			canOnClick: function(slotId, locate) {
-				return H.exchange.checkCanSelect(slotId, locate);
+				return H.exchange.canOnClick(slotId, locate);
 			}
 		});
 		div.html(html);
@@ -213,17 +243,20 @@ H.exchange = {
 				if (now > slot.unlock) {
 					return true;
 				}
+				return false;
 			},
 			needMask: function(slotId, locate) {
-				if (!H.localStorage.get("themes") && !H.localStorage.get("cards")) {
+				var slot = locate == 0 ? H.exchange.mapExchangeBox[slotId] : H.exchange.mapCofferBox[slotId];
+				var now = parseInt(new Date().getTime() / 1000);
+				if (!H.localStorage.get("themes") && !H.localStorage.get("cards") && now > slot.unlock) {
 					return false;
 				}
 				var cardId = H.exchange.mapExchangeBox[slotId].id;
 				var themeId = CARD.data.mapCard[cardId][1];
-				if (H.localStorage.checkIn("themes", themeId)) {
+				if (H.localStorage.checkIn("themes", themeId) && now > slot.unlock) {
 					return false;
 				}
-				if (H.localStorage.checkIn("cards", cardId)) {
+				if (H.localStorage.checkIn("cards", cardId) && now > slot.unlock) {
 					return false;
 				}
 				return true;
@@ -376,7 +409,7 @@ H.exchange = {
 			code = qqhome.getAttribute("code") * 1;
 			if (code != 0) {
 				fnError(code);
-				console.error(oXml.text);
+				console.error(H.resChinese(oXml.text));
 				return;
 			}
 

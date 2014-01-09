@@ -12,7 +12,7 @@ H.ui = {
 	getCardMiniImg: function(cardId) {
 		var card = CARD.data.mapCard[cardId];
 		if (!card) return '<img/>';
-		return '<img title="' + card[2].escHtml() + '" src="' + H.extension_base_url + 'images/card/' + card[0] + '_56" />';
+		return '<img title="' + card[2].escHtml() + '[' + card[3] + ']" src="' + H.extension_base_url + 'images/card/' + card[0] + '_56" />';
 	},
 	getCardBigImg: function(cardId) {
 		var card = CARD.data.mapCard[cardId];
@@ -52,27 +52,20 @@ H.ui = {
 			if (slot.id > 0) {
 				var canOnClick = false;
 				var needMask = false;
-				if (arg.onClick) {
+				if (arg.canOnClick)
 					canOnClick = arg.canOnClick(slot.slot, slot.locate);
-					if (arg.needMask)
-						needMask = arg.needMask(slot.slot, slot.locate);
-				}
+				if (arg.needMask)
+					needMask = arg.needMask(slot.slot, slot.locate);
 				html += '<li id=' + slot.slot;
 				if (arg.buttons && arg.buttons.length > 0) {
 					html += ' onmouseover="javascript:H.ui.mouseOverSlotItem(this)" onmouseout="javascript:H.ui.mouseOutSlotItem(this)"';
 				}
-				if (arg.onClick) {
-					if (canOnClick) {
-						html += ' onclick="javascript:' + arg.onClick + '(this, ' + slot.slot + ', ' + slot.locate + ');"';
-					}
+				if (canOnClick) {
+					html += ' onclick="javascript:' + arg.onClick + '(this, ' + slot.slot + ', ' + slot.locate + ');"';
 				}
 				html += ' class="float_left card_big text_align_center';
-				if (arg.onClick) {
-					if (!canOnClick) {
-						html += ' not_click';
-					} else if (needMask) {
-						html += ' not_click';
-					}
+				if (needMask) {
+					html += ' not_click';
 				}
 				html += '">';
 				html += '<div class="card_big_img">';

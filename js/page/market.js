@@ -97,6 +97,9 @@ H.market = {
 	showCards: function() {
 		for (var i = 0; i < this.tabArr[this.showNow].length; i++) {
 			html = '<ul class="overflow_auto">';
+			this.tabArr[this.showNow][i].sort(function(a, b){
+				return b[0] - a[0];
+			});
 			for (var j = 0; j < this.tabArr[this.showNow][i].length; j++) {
 				var card = this.tabArr[this.showNow][i][j];
 				html += '<li id="' + card[0] + '" onclick="javascript:H.market.onClick(this, ' + card[0] + ');" class="float_left card_big">';
@@ -119,8 +122,14 @@ H.market = {
 			box: H.user.mapExchangeBox,
 			onClick: "H.market.mouseClickSlotItem",
 			canOnClick: function(slotId, locate) {
-				if (CARD.data.mapCard[H.user.mapExchangeBox[slotId].id][3] > 10) return false;
+				if (CARD.data.mapCard[H.user.mapExchangeBox[slotId].id][3] > 10)
+					return false;
 				return true;
+			},
+			needMask: function(slotId, locate) {
+				if (CARD.data.mapCard[H.user.mapExchangeBox[slotId].id][3] > 10)
+					return true;
+				return false;
 			}
 		});
 		div.html(html);
@@ -134,7 +143,13 @@ H.market = {
 			box: H.user.mapCofferBox,
 			onClick: "H.market.mouseClickSlotItem",
 			canOnClick: function(slotId, locate) {
-				if (CARD.data.mapCard[H.user.mapCofferBox[slotId].id][3] > 10) return true;
+				if (CARD.data.mapCard[H.user.mapCofferBox[slotId].id][3] > 10)
+					return false;
+				return true;
+			},
+			needMask: function(slotId, locate) {
+				if (CARD.data.mapCard[H.user.mapCofferBox[slotId].id][3] > 10)
+					return true;
 				return false;
 			}
 		});
@@ -154,7 +169,6 @@ H.market = {
 		}
 	},
 	mouseClickSlotItem: function(obj, slotId, locate) {
-		if (!this.selectedDstCard) return;
 		doc = jQuery(obj);
 		var selected = true;
 		if (doc.attr("class").indexOf("selected") > -1) selected = false;
@@ -245,9 +259,9 @@ H.market = {
 		function fnSucc(oXml) {
 			H.ui.waitEnd();
 			qqhome = oXml.xmlDom.getElementsByTagName("QQHOME")[0];
-			code = qqhome.getAttribute("code");
+			code = qqhome.getAttribute("code") * 1;
 			if (code != 0) {
-				console.error(oXml.text);
+				console.error(H.resChinese(oXml.text));
 				fnError(code);
 				return;
 			}
@@ -282,7 +296,7 @@ var MARKET = {
 		}
 		code = code * 1;
 		if (code != 0) {
-			console.error(oXml.text);
+			console.error(H.resChinese(oXml.text));
 			fnError(code);
 			return;
 		}

@@ -45,28 +45,28 @@ H.friends = {
 			if (user.uin == H.user.getUin()) {
 				html += (i * 1 + 1) + '\t[' + user.nick + ']\t(' + user.uin + ')\t<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" onclick="javascript:H.stove.setStealUin(' + user.uin + ');"><span class="ui-button-text">炼卡</span></button><br />';
 			} else {
-				html += (i * 1 + 1) + '\t[' + (H.friends.mapFriendMemo[user.uin] ? H.friends.mapFriendMemo[user.uin] : user.nick) + ']\t(' + user.uin + ')\t<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" onclick="javascript:H.stove.setStealUin(' + user.uin + ');"><span class="ui-button-text">偷炉</span></button>\t<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" onclick="javascript:H.friends.onClick(' + user.uin + ');H.exchange.showBox(' + user.uin + ', ' + i + ', 0);"><span class="ui-button-text">换卡</span></button><br />';
+				html += (i * 1 + 1) + '\t[' + (H.friends.mapFriendMemo[user.uin] && H.friends.mapFriendMemo[user.uin].length > 0 ? H.friends.mapFriendMemo[user.uin] : user.nick) + ']\t(' + user.uin + ')\t<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" onclick="javascript:H.stove.setStealUin(' + user.uin + ');"><span class="ui-button-text">偷炉</span></button>\t<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" onclick="javascript:H.friends.onClick(' + user.uin + ');H.exchange.showBox(' + user.uin + ', ' + i + ', 0);"><span class="ui-button-text">换卡</span></button><br />';
 			}
 			html += '</li></ul>';
 		}
 		if (pageNo > 1) {
 			tempEvent = extEvent.replace(/pageNo/g, "" + 1);
-			html = html + '<a href="javascript:void(1);" onclick="' + tempEvent + '">&lt;&lt;</a>';
+			html = html + '<a href="javascript:void(1);" onclick="' + tempEvent + '"><b>&lt;&lt;</b></a>';
 			tempEvent = extEvent.replace(/pageNo/g, "" + (pageNo - 1));
-			html = html + '&nbsp;<a href="javascript:void(1);" onclick="' + tempEvent + '">&lt;</a>';
+			html = html + '&nbsp;&nbsp;&nbsp;<a href="javascript:void(1);" onclick="' + tempEvent + '"><b>&lt;</b></a>';
 		} else {
-			html = html + '<a href="javascript:void(0);" onclick="javascript:void(0);">&lt;&lt;</a>';
-			html = html + '&nbsp;<a href="javascript:void(0);" onclick="javascript:void(0);">&lt;</a>';
+			html = html + '<a href="javascript:void(0);" onclick="javascript:void(0);"><b>&lt;&lt;</b></a>';
+			html = html + '&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" onclick="javascript:void(0);"><b>&lt;</b></a>';
 		}
-		html = html + "&nbsp;" + pageNo + '/' + pageCnt;
+		html = html + "&nbsp;&nbsp;&nbsp;" + pageNo + '/' + pageCnt;
 		if (pageNo < pageCnt) {
 			tempEvent = extEvent.replace(/pageNo/g, "" + (pageNo + 1));
-			html = html + '&nbsp;<a href="javascript:void(1);" onclick="' + tempEvent + '">&gt;</a>';
+			html = html + '&nbsp;&nbsp;&nbsp;<a href="javascript:void(1);" onclick="' + tempEvent + '"><b>&gt;</b></a>';
 			tempEvent = extEvent.replace(/pageNo/g, "" + pageCnt);
-			html = html + '&nbsp;<a href="javascript:void(1);" onclick="' + tempEvent + '">&gt;&gt;</a>';
+			html = html + '&nbsp;&nbsp;&nbsp;<a href="javascript:void(1);" onclick="' + tempEvent + '"><b>&gt;&gt;</b></a>';
 		} else {
-			html = html + '&nbsp;<a href="javascript:void(0);" onclick="javascript:void(0);">&gt;</a>';
-			html = html + '&nbsp;<a href="javascript:void(0);" onclick="javascript:void(0);">&gt;&gt;</a>';
+			html = html + '&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" onclick="javascript:void(0);"><b>&gt;</b></a>';
+			html = html + '&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" onclick="javascript:void(0);"><b>&gt;&gt;</b></a>';
 		}
 		div.find('div').append(html);
 	},
@@ -77,7 +77,7 @@ H.friends = {
 	load: function(fnSucceed) {
 		function fnSucc(oXml) {
 			qqhome = oXml.xmlDom.getElementsByTagName("QQHOME")[0];
-			code = qqhome.getAttribute("code");
+			code = qqhome.getAttribute("code") * 1;
 			if (code != 0) {
 				console.error(oXml);
 				fnError(code);
@@ -228,7 +228,7 @@ H.cardFriends = {
 		function fnSucc(oXml) {
 			H.ui.waitEnd();
 			qqhome = oXml.xmlDom.getElementsByTagName("QQHOME")[0];
-			code = qqhome.getAttribute("code");
+			code = qqhome.getAttribute("code") * 1;
 			if (code != 0) {
 				console.error(qqhome);
 				fnError(code);

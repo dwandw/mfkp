@@ -175,7 +175,7 @@ H.transform = {
 			obj = H.stoveTree._my_theme_array[i];
 			html += '<a id="' + obj.tid + '" href="javascript:void(1);" onclick="H.stoveTree.init();H.transform.showTheme(' + obj.tid + ');H.transform.showMyBox();">' + H.ui.getThemeMiniLogo(obj.tid) + '</a>';
 		}
-		html += '<a href="javascript:void(1);" onclick="H.transform.showSelectTheme();">选择</a>';
+		html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="H.transform.showSelectTheme();" title="选择主题"><span class="ui-button-text">选择主题</span></button>';
 		html += '</div>';
 
 		function getStat(cardId) {
@@ -478,7 +478,7 @@ H.transform = {
 		function fnSucc(oXml) {
 			H.ui.waitEnd();
 			var obj = oXml.xmlDom.getElementsByTagName("QQHOME")[0];
-			var iCode = obj.getAttribute("code");
+			var iCode = obj.getAttribute("code") * 1;
 			if (iCode != 0) {
 				console.error(H.resChinese(oXml.text));
 				fnError(iCode);

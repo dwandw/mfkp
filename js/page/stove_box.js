@@ -84,7 +84,7 @@ H.stoveBox = {
 		if (stealStoveArr.length > 0) {
 			var slot = stealStoveArr[0];
 			if (slot.id && slot.id > 0) {
-				html += '<li id="' + slot.slot + '" class="float_left card_big text_align_center">';
+				html += '<li id="' + slot.slot + '" class="float_left card_big text_align_center" style="border-top:1px solid red;border-left:1px solid red;border-bottom:1px solid red;">';
 				html += '<div class="card_big_img">';
 				html += H.ui.getImgItemWithBg(slot.id);
 				html += '</div>';
@@ -93,7 +93,7 @@ H.stoveBox = {
 				html += '</li>';
 			}
 			if (slot.id2 && slot.id2 > 0) {
-				html += '<li id="' + slot.slot + '" class="float_left card_big text_align_center">';
+				html += '<li id="' + slot.slot + '" class="float_left card_big text_align_center" style="border-top:1px solid red;border-right:1px solid red;border-bottom:1px solid red;">';
 				html += '<div class="card_big_img">';
 				html += H.ui.getImgItemWithBg(slot.id2);
 				html += '</div>';
@@ -246,7 +246,9 @@ H.stoveBox = {
 				slot: card.getAttribute("slot") * 1,
 				id: card.getAttribute("id") * 1,
 				status: card.getAttribute("status") * 1,
-				type: card.getAttribute("type") * 1
+				type: card.getAttribute("type") * 1,
+				locate: slotType,
+				unlock: parseInt(new Date().getTime() / 1000) + 300
 			};
 			box[_oCard.slot] = _oCard;
 			H.user.clearStoveSlot(slotId);
@@ -294,7 +296,9 @@ H.stoveBox = {
 				slot: card.getAttribute("slot") * 1,
 				id: card.getAttribute("id") * 1,
 				status: card.getAttribute("status") * 1,
-				type: card.getAttribute("type") * 1
+				type: card.getAttribute("type") * 1,
+				locate: slotType,
+				unlock: parseInt(new Date().getTime() / 1000) + 300
 			};
 			box[_oCard.slot] = _oCard;
 			if (type == 0) {
@@ -348,7 +352,9 @@ H.stoveBox = {
 				slot: card.getAttribute("slot") * 1,
 				id: card.getAttribute("id") * 1,
 				status: card.getAttribute("status") * 1,
-				type: card.getAttribute("type") * 1
+				type: card.getAttribute("type") * 1,
+				locate: slotType,
+				unlock: parseInt(new Date().getTime() / 1000) + 300
 			};
 			box[_oCard.slot] = _oCard;
 			H.user.clearStoveSlot(5);

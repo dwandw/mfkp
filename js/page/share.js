@@ -143,7 +143,7 @@ H.share = {
 	_getShareGift: function(target) {
 		function fnSucc(oXml) {
 			var obj = oXml.xmlDom.getElementsByTagName("QQHOME")[0];
-			var iCode = obj.getAttribute("code");
+			var iCode = obj.getAttribute("code") * 1;
 			if (iCode != 0) {
 				fnError(iCode);
 				console.error(oXml.text);

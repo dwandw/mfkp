@@ -93,7 +93,8 @@ H.submitCollection = {
 		html += '</div>';
 		dialog.html(html);
 		dialog.dialog({
-			minWidth: 680,
+			minWidth: 670,
+			height: 440,
 			title: "集卡册",
 			dialogClass: "dialogClass",
 			position: "top",
@@ -203,13 +204,13 @@ H.submitCollection = {
 				};
 			}
 			var imgUrl = 'http://imgcache.qq.com/qqshow_v3/htdocs/syndata/excel_snashot/' + Math.floor(data[2] % 1000 / 100) + '/' + (data[2] % 1000 % 100) + '/' + data[2] + '_0.gif';
-			html += '<li onclick="H.submitCollection.chooseShow(' + data[1] + ');"><p class="pic"><img src="' + imgUrl + '" title="'+num+'"></p>';
+			html += '<li onclick="H.submitCollection.chooseShow(' + data[1] + ');"><p class="pic"><img src="' + imgUrl + '"></p>';
 			html += '<strong class="choose" style="display:' + (data[0] == 0 ? '' : 'none') + '" id="STRONG_' + data[1] + '">已选中</strong>';
 			if (num > 0) {
 				html += '<div class="received"></div>';
 			}
 			// html += '<p class="info" id="P_INFO_' + data[1] + '">' + (data[0] == 0 ? '已选中' : ('<a href="javascript:void(1);" onclick="H.submitCollection.chooseShow(' + data[1] + ')">选择这套</a>')) + '</p></li>';
-			html += '</li>';
+			html += '<p>' + num + '</p></li>';
 		};
 		jQuery('#submit_collection_dialog #UL_SHOW_LIST').html(html);
 		// var mapName = [
@@ -244,7 +245,7 @@ H.submitCollection = {
 	submitCollect: function() {
 		function fnSucc(oXml) {
 			var obj = oXml.xmlDom.getElementsByTagName("QQHOME")[0];
-			var iCode = obj.getAttribute("code");
+			var iCode = obj.getAttribute("code") * 1;
 
 			if (iCode != 0) {
 				console.error(oXml.text);
@@ -382,7 +383,7 @@ H.submitCollection = {
 		H.user.loadMyColletion(function() {
 			H.submitCollection.showSnapList(themeId);
 		});
-		H.user.load(function(){
+		H.user.load(function() {
 			H.stoveTree.init();
 		});
 		// CARD.getFlashObj().showShareMotion('1'); //显示主动分享魔女，分享撒礼特性添加了这个功能
@@ -484,14 +485,18 @@ H.submitCollection = {
 			title: '收集成功',
 			msg: arr.join(''),
 			width: 665,
-			height: 450
+			height: 450,
+			button_title: "分享",
+			button_func: function() {
+				H.submitCollection.share(themeId);
+			}
 		});
 	},
 	//NBA活动获取cdkey
 	getCdkey: function() {
 		function fnSucc(oXml) {
 			var obj = oXml.xmlDom.getElementsByTagName("QQHOME")[0];
-			var iCode = obj.getAttribute("code");
+			var iCode = obj.getAttribute("code") * 1;
 			jQuery('#submit_collection_dialog #BTN_NBA_CDKEY').hide();
 
 			if (iCode != 0) {
@@ -647,7 +652,7 @@ H.submitCollection = {
 
 		function fnSucc(oXml) {
 			var obj = oXml.xmlDom.getElementsByTagName("QQHOME")[0];
-			var iCode = obj.getAttribute("code");
+			var iCode = obj.getAttribute("code") * 1;
 
 			if (iCode != 0) {
 				console.error(oXml.text);
@@ -736,7 +741,7 @@ H.submitCollection = {
 	tryShow: function(recmdId) {
 		function fnSucc(oXml) {
 			var obj = oXml.xmlDom.getElementsByTagName("QQSHOW")[0];
-			var iCode = obj.getAttribute("code");
+			var iCode = obj.getAttribute("code") * 1;
 			if (iCode != 0) {
 				console.error(oXml.text);
 				fnError(iCode);
@@ -780,6 +785,10 @@ H.submitCollection = {
 		CARD.sendPGV("ISD.QQshow.Card.click_go_to_361");
 		var img = document.createElement("img");
 		img.src = "http://jump.t.l.qq.com/ping?target=http%3A//361london.qq.com/%3Fapp%3Dmoka&cpid=641009734&type=53";
+	},
+	share: function(themeId) {
+		var shareData = putCollectedCN(themeId);
+		fusion2.dialog.sendStory(shareData);
 	}
 };
 
@@ -791,6 +800,22 @@ function copyDone() {
 	});
 	setTimeout(CARD.dialog.closeMessage, 1000);
 };
+
+function putCollectedCN(themeId) {
+	var themeData = CARD.data.mapTheme[themeId];
+	var shareData = {};
+	shareData.summary = '轻松玩《' + themeData[1] + '》集卡游戏，免费拿精美QQ秀! ';
+	shareData.title = "魔法卡片";
+	shareData.img = 'http://appimg2.qq.com/card/img/theme/' + themeData[0] + '_museum';
+	shareData.msg = "我终于集齐《" + themeData[1] + "》套卡，可耗费我不少功夫，不过获得漂亮的QQ秀和惊喜奖励，还是很开心哦~";
+	shareData.source = "activepgv_come_from_ into_an_album _share_link";
+	shareData.button = "进入应用";
+	shareData.url = '';
+	shareData.onSuccess = function(opt) {
+		CARD.getFlashObj().putCollectedCallBack(opt);
+	};
+	return shareData;
+}
 
 
 
