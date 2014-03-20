@@ -24,10 +24,10 @@ H.transform = {
 			html += '</div>';
 			html += '<div class="width_20 float_left">';
 			html += '    <div id="transform_dialog_src_big_card" class="width_50 float_left">';
-			html += '        <div class="card_big_img"><img class="theme_bg" src="' + H.extension_base_url + 'images/theme/111"></div>';
+			html += '        <div class="card_big_img">' + H.ui.getThemeBg(111) + '</div>';
 			html += '    </div>';
 			html += '    <div id="transform_dialog_dst_big_card" class="width_50 float_left">';
-			html += '        <div class="card_big_img"><img class="theme_bg" src="' + H.extension_base_url + 'images/theme/111"></div>';
+			html += '        <div class="card_big_img">' + H.ui.getThemeBg(111) + '</div>';
 			html += '    </div>';
 			html += '    <div class="clear"></div>';
 			html += '    <div id="transform_dialog_transform_percent" class="width_100 text_align_center">';
@@ -87,7 +87,7 @@ H.transform = {
 			}
 		}
 
-		slotArr.sort(H.sortCardFunc);
+		slotArr.sort(H.sortCardFunc2);
 		for (var i = 0; i < slotArr.length; i++) {
 			var slot = slotArr[i];
 			// var slot = H.user.mapExchangeBox[index];
@@ -163,7 +163,7 @@ H.transform = {
 	showTheme: function(themeId) {
 		var cardPrice = 999999;
 		H.stoveTree.init();
-		themeId = themeId || (H.stoveTree._my_theme_array.length > 0 ? H.stoveTree._my_theme_array[0].tid : 40);
+		themeId = themeId || this.selectedThemeId || (H.stoveTree._my_theme_array.length > 0 ? H.stoveTree._my_theme_array[0].tid : 40);
 		this.selectedThemeId = themeId;
 		var div = jQuery("#transform_dialog_theme_tree");
 		if (div.children().length > 0) {
@@ -326,7 +326,7 @@ H.transform = {
 		}
 	},
 	showEmpty: function(isSrc) {
-		var html = '<div class="card_big_img"><img class="theme_bg" src="' + H.extension_base_url + 'images/theme/111"></div>';
+		var html = '<div class="card_big_img">' + H.ui.getThemeBg(111) + '</div>';
 		if (isSrc) {
 			jQuery('#transform_dialog_src_big_card').html(html);
 		} else {

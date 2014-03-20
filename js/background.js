@@ -30,7 +30,7 @@ function showNofification(timer, msg, cardId) {
 		type: "basic",
 		title: "魔法卡片-提示",
 		message: msg,
-		iconUrl: chrome.extension.getURL("images/card/" + cardId + "_56"),
+		iconUrl: chrome.extension.getURL("images/icon_100.png"),
 		eventTime: Date.now() + 24 * 3600 * 1000,
 		priority: 2,
 		buttons: [{
@@ -59,7 +59,7 @@ function onStart() {
 var timer1, timer2;
 var urlreg = [];
 urlreg.push("http://*.qq.com/snsapp/app/free_gif*/all.js*");
-//urlreg.push("http://appimg2.qq.com/*");
+// urlreg.push("http://appimg2.qq.com/*");
 
 function onBeforeRequestListener(details) {
 	if (/all.js/i.test(details.url)) {

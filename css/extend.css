@@ -1,3 +1,6 @@
+::selection{ color:#FFF; background:#FF6100; }
+body{}
+
 .overflow_auto{ overflow: auto; }
 .clear{ clear: both; }
 .width_10{ width: 10%; }
@@ -17,7 +20,7 @@
 .float_left{ float: left; }
 .float_right{ float: right; }
 
-.center{margin: 0 auto; }
+.center{ margin: 0 auto; }
 
 
 #eventDiv { float: left; padding-top: 5px; width: 500px; text-align: right; }
@@ -39,10 +42,10 @@
 .card_mini_img .bg { background-color: #000; height: 60px; opacity: 0.5; top: 5px; }
 .card_mini_img .num { background-color: transparent; height: 30px; top: 5px; width: 60px; text-align: left; }
 .card_mini_img .num div{ width:0; height:0; overflow:hidden; border: 15px solid #000; border-color:  #0f0 transparent transparent #0f0; position: absolute; top:0; left: 0; }
-.card_mini_img .num b{ position: absolute; top:0; left: 0;  color: #000;}
+.card_mini_img .num b{ position: absolute; top:0; left: 0; color: #000; }
 .card_mini_img .need_num { background-color: transparent; height: 30px; width: 60px; text-align: right; top: 35px; }
 .card_mini_img .need_num div{ width:0; height:0; overflow:hidden; border: 15px solid #000; border-color: transparent #f33 #f33 transparent; position: absolute; bottom:0; right: 0; }
-.card_mini_img .need_num b{ position: absolute; bottom:0; right: 0; color: #FFF;}
+.card_mini_img .need_num b{ position: absolute; bottom:0; right: 0; color: #FFF; }
 /*card_mini end*/
 
 /*card big start*/
@@ -55,7 +58,7 @@
 .card_big_img .name { height: 20px; top: 5px; text-align: center; }
 .card_big_img .meny { height: 20px; top: 102px; text-align: right; }
 .card_big_img .lock { height: 22px; width: 22px; top: 5px; background-color: transparent; background-image: url(/images/qq/icon.png); background-position: -419px 1px; }
-.card_big_img .buttons {bottom: 10px;}
+.card_big_img .buttons { bottom: 10px; }
 .card_big_img .mask_not_click { height: 120px; top: 5px; background-color: #000; opacity: 0.5; }
 .selected .card_big_img .mask { height: 120px; top: 5px; background-color: #000; opacity: 0.5; }
 .card_big.not_click .mask { height: 120px; top: 5px; background-color: #000; opacity: 0.5; }
@@ -64,10 +67,12 @@
 /*card big end*/
 
 /*公用主题选择面板 start*/
-#choose_theme_dialog_tabs {height: 450px;}
-.background_color_gray{background-color: #666;}
-.background_color_red{background-color: #f99;}
-.background_color_dark_red{background-color: #f00;}
+#choose_theme_dialog_tabs { height: 450px; }
+.background_color_0{ background-color: #f00; }
+.background_color_1{ background-color: #f99; }
+.background_color_2{ background-color: #9f9; }
+.background_color_3{ background-color: #99f; }
+.background_color_4{ background-color: #666; }
 .selectTheme_tabs_content { width: 100%; }
 /*等级*/
 .theme_difficult_lv { width: 100%; clear: both; margin-top: 5px; }
@@ -80,12 +85,12 @@
 .theme_difficult_lv .card_lv5{ width:86px; }
 /*公用主题选择面板 end*/
 
-#submit_collection_dialog .received{position:absolute; right:-10px;top:150px;text-indent:-10000em; z-index:3;background:url(/images/qq/icon_received.png) no-repeat 0 0 transparent; width:84px; height:84px;}
+#submit_collection_dialog .received{ position:absolute; right:-10px; top:150px; text-indent:-10000em; z-index:3; background:url(/images/qq/icon_received.png) no-repeat 0 0 transparent; width:84px; height:84px; }
 
-.dialogClass { z-index: 1000;position: fixed; }
+.dialogClass { z-index: 1000; position: fixed; }
 
-#cardFriends .selected{background-color:#FF3333;}
-#friends .selected{background-color:#FF3333;}
+#cardFriends .selected{ background-color:#FF3333; }
+#friends .selected{ background-color:#FF3333; }
 
 #exchange_dialog_exchange_box ul{ height: 450px; }
 #exchange_dialog_coffer_box ul{ height: 450px; }
@@ -94,7 +99,7 @@
 
 #transform_dialog_exchange_box ul{ height: 450px; }
 #transform_dialog_coffer_box ul{ height: 450px; }
-#transform_dialog_theme_tree { height: 450px; overflow: auto;}
+#transform_dialog_theme_tree { height: 450px; overflow: auto; }
 
 #market_dialog_market_tabs ul.overflow_auto{ height: 450px; }
 #market_dialog_my_box_tabs ul.overflow_auto{ height: 450px; }

@@ -24,7 +24,7 @@ function injectStyle() {
 function injectHtml() {
 	var d = document.createElement('span');
 	d.id = "extension_base_url";
-	d.style = "display:none;";
+	d.style.cssText = "display:none;";
 	d.innerHTML = chrome.extension.getURL("");
 	document.body.appendChild(d);
 

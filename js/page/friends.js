@@ -95,6 +95,10 @@ H.friends = {
 				_user.nick = user.getAttribute("nick");
 				H.friends.mapFriend[i] = _user;
 			}
+			// if(fnSucceed){
+			// 	H.ui.waitEnd();
+			// 	fnSucceed();
+			// }
 			H.friends.loadFriendMemo(fnSucceed);
 		}
 
@@ -119,6 +123,7 @@ H.friends = {
 			if (code != 0) {
 				console.error(oXml);
 				fnError(code);
+				if (fnSucceed) fnSucceed();
 				return;
 			}
 			var data = jQuery.parseJSON(text.substring(text.indexOf(",") + 1, text.indexOf("\n")));

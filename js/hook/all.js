@@ -1,21 +1,130 @@
 var freeGiftConfigMap = {
 	7: 10001,
 	8: 10000,
-	54: 6,
-	53: 5,
-	51: 4,
-	52: 3,
-	55: 2,
-	56: 1,
-	45: -1,
-	46: -2,
-	47: -3,
-	48: -4,
-	49: -5,
-	50: -6,
+	54: -1,
+	53: -2,
+	51: -3,
+	52: -4,
+	55: -5,
+	56: -6,
+
+	57: 3,
+	58: 5,
+	59: 2,
+	60: 4,
+	61: 1,
+	62: 6,
 };
 
 var freeGiftConfig = [{
+	"asset_id": "45240",
+	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_57_v_3.png",
+	"id": 57,
+	"msg": "卡片贝币X1已赠送，请在“卡箱”查看",
+	"name": "卡片贝币",
+	"rewards_name": "点经验",
+	"show": 1,
+	"type": "卡片"
+}, {
+	"asset_id": "45241",
+	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_58_v_3.png",
+	"id": 58,
+	"msg": "卡片王莽币X1已赠送，请在“卡箱”查看",
+	"name": "卡片王莽币",
+	"rewards_name": "点经验",
+	"show": 1,
+	"type": "卡片"
+}, {
+	"asset_id": "45242",
+	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_59_v_3.png",
+	"id": 59,
+	"msg": "卡片布币X1已赠送，请在“卡箱”查看",
+	"name": "卡片布币",
+	"rewards_name": "点经验",
+	"show": 1,
+	"type": "卡片"
+}, {
+	"asset_id": "45243",
+	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_60_v_3.png",
+	"id": 60,
+	"msg": "卡片环钱X1已赠送，请在“卡箱”查看",
+	"name": "卡片环钱",
+	"rewards_name": "点经验",
+	"show": 1,
+	"type": "卡片"
+}, {
+	"asset_id": "45244",
+	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_61_v_3.png",
+	"id": 61,
+	"msg": "卡片蚊鼻钱X1已赠送，请在“卡箱”查看",
+	"name": "卡片蚊鼻钱",
+	"rewards_name": "点经验",
+	"show": 1,
+	"type": "卡片"
+}, {
+	"asset_id": "45245",
+	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_62_v_3.png",
+	"id": 62,
+	"msg": "卡片爱金X1已赠送，请在“卡箱”查看",
+	"name": "卡片爱金",
+	"rewards_name": "点经验",
+	"show": 1,
+	"type": "卡片"
+}, {
+	"asset_id": "43134",
+	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_54_v_1.png",
+	"id": 54,
+	"msg": "卡片磬结X1已赠送，请在“卡箱”查看",
+	"name": "卡片磬结",
+	"rewards_name": "点经验",
+	"show": 0,
+	"type": "卡片"
+}, {
+	"asset_id": "43133",
+	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_53_v_1.png",
+	"id": 53,
+	"msg": "卡片琵琶扣结X1已赠送，请在“卡箱”查看",
+	"name": "卡片琵琶扣结",
+	"rewards_name": "点经验",
+	"show": 0,
+	"type": "卡片"
+}, {
+	"asset_id": "43131",
+	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_51_v_1.png",
+	"id": 51,
+	"msg": "卡片吉祥结X1已赠送，请在“卡箱”查看",
+	"name": "卡片吉祥结",
+	"rewards_name": "点经验",
+	"show": 0,
+	"type": "卡片"
+}, {
+	"asset_id": "43132",
+	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_52_v_1.png",
+	"id": 52,
+	"msg": "卡片攀援结X1已赠送，请在“卡箱”查看",
+	"name": "卡片攀援结",
+	"rewards_name": "点经验",
+	"show": 0,
+	"type": "卡片"
+}, {
+	"asset_id": "43135",
+	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_55_v_1.png",
+	"id": 55,
+	"msg": "卡片太阳结X1已赠送，请在“卡箱”查看",
+	"name": "卡片太阳结",
+	"rewards_name": "点经验",
+	"show": 0,
+	"type": "卡片"
+}, {
+	"asset_id": "43136",
+	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_56_v_1.png",
+	"id": 56,
+	"msg": "卡片藻井结X1已赠送，请在“卡箱”查看",
+	"name": "卡片藻井结",
+	"rewards_name": "点经验",
+	"show": 0,
+	"type": "卡片"
+}, {
 	"asset_id": "29382",
 	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_7_v_1.png",
 	"id": 7,
@@ -23,8 +132,7 @@ var freeGiftConfig = [{
 	"name": "10点魔卡经验",
 	"rewards_name": "点经验",
 	"show": 1,
-	"type": "经验",
-	"index": 10001
+	"type": "经验"
 }, {
 	"asset_id": "29383",
 	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_8_v_1.png",
@@ -33,128 +141,7 @@ var freeGiftConfig = [{
 	"name": "20魔法金币 ",
 	"rewards_name": "点经验",
 	"show": 0,
-	"type": "金币",
-	"index": 10000
-}, {
-	"asset_id": "43134",
-	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_54_v_1.png",
-	"id": 54,
-	"msg": "卡片磬结X1已赠送，请在“卡箱”查看",
-	"name": "卡片磬结",
-	"rewards_name": "点经验",
-	"show": 1,
-	"type": "卡片",
-	"index": 6
-}, {
-	"asset_id": "43133",
-	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_53_v_1.png",
-	"id": 53,
-	"msg": "卡片琵琶扣结X1已赠送，请在“卡箱”查看",
-	"name": "卡片琵琶扣结",
-	"rewards_name": "点经验",
-	"show": 1,
-	"type": "卡片",
-	"index": 5
-}, {
-	"asset_id": "43131",
-	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_51_v_1.png",
-	"id": 51,
-	"msg": "卡片吉祥结X1已赠送，请在“卡箱”查看",
-	"name": "卡片吉祥结",
-	"rewards_name": "点经验",
-	"show": 1,
-	"type": "卡片",
-	"index": 4
-}, {
-	"asset_id": "43132",
-	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_52_v_1.png",
-	"id": 52,
-	"msg": "卡片攀援结X1已赠送，请在“卡箱”查看",
-	"name": "卡片攀援结",
-	"rewards_name": "点经验",
-	"show": 1,
-	"type": "卡片",
-	"index": 3
-}, {
-	"asset_id": "43135",
-	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_55_v_1.png",
-	"id": 55,
-	"msg": "卡片太阳结X1已赠送，请在“卡箱”查看",
-	"name": "卡片太阳结",
-	"rewards_name": "点经验",
-	"show": 1,
-	"type": "卡片",
-	"index": 2
-}, {
-	"asset_id": "43136",
-	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_56_v_1.png",
-	"id": 56,
-	"msg": "卡片藻井结X1已赠送，请在“卡箱”查看",
-	"name": "卡片藻井结",
-	"rewards_name": "点经验",
-	"show": 1,
-	"type": "卡片",
-	"index": 1
-}, {
-	"asset_id": "39759",
-	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_45_v_1.png",
-	"id": 45,
-	"msg": "卡片镂刻X1已赠送，请在“卡箱”查看",
-	"name": "卡片镂刻",
-	"rewards_name": "点经验",
-	"show": 0,
-	"type": "卡片",
-	"index": -1
-}, {
-	"asset_id": "39760",
-	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_46_v_1.png",
-	"id": 46,
-	"msg": "卡片敷彩X1已赠送，请在“卡箱”查看",
-	"name": "卡片敷彩",
-	"rewards_name": "点经验",
-	"show": 0,
-	"type": "卡片",
-	"index": -2
-}, {
-	"asset_id": "39761",
-	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_47_v_1.png",
-	"id": 47,
-	"msg": "卡片画稿X1已赠送，请在“卡箱”查看",
-	"name": "卡片画稿",
-	"rewards_name": "点经验",
-	"show": 0,
-	"type": "卡片",
-	"index": -3
-}, {
-	"asset_id": "39774",
-	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_48_v_1.png",
-	"id": 48,
-	"msg": "卡片制皮X1已赠送，请在“卡箱”查看",
-	"name": "卡片制皮",
-	"rewards_name": "点经验",
-	"show": 0,
-	"type": "卡片",
-	"index": -4
-}, {
-	"asset_id": "39775",
-	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_49_v_1.png",
-	"id": 49,
-	"msg": "卡片缀结X1已赠送，请在“卡箱”查看",
-	"name": "卡片缀结",
-	"rewards_name": "点经验",
-	"show": 0,
-	"type": "卡片",
-	"index": -5
-}, {
-	"asset_id": "39776",
-	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_50_v_1.png",
-	"id": 50,
-	"msg": "卡片脱水X1已赠送，请在“卡箱”查看",
-	"name": "卡片脱水",
-	"rewards_name": "点经验",
-	"show": 0,
-	"type": "卡片",
-	"index": -6
+	"type": "金币"
 }];
 
 
@@ -1079,7 +1066,12 @@ freeGift.sendPage = {
 	},
 	_render: function() {
 		var _html = [];
-		for (var i = 0, _item; _item = freeGiftConfig[i]; i++) {
+		//
+		_freeGiftConfig = freeGiftConfig.sort(function(a, b) {
+			return freeGiftConfigMap[b.id] - freeGiftConfigMap[a.id];
+		});
+		//for (var i = 0, _item; _item = freeGiftConfig[i]; i++) {
+		for (var i = 0, _item; _item = _freeGiftConfig[i]; i++) {
 			if (_item.show) {
 				_html.push(SL.tmpl("sendGiftItemTemp", {
 					item: _item
@@ -1230,9 +1222,9 @@ freeGift.receivePage = {
 			var _html = [];
 			// start
 			var tempArr = re.freegifts.sort(function(a, b) {
-				if(a.freegift_id == 7 || a.freegift_id == 8)
+				if (a.freegift_id == 7 || a.freegift_id == 8)
 					return -1;
-				if(b.freegift_id == 7 || b.freegift_id == 8)
+				if (b.freegift_id == 7 || b.freegift_id == 8)
 					return 1;
 				if (a.flags != b.flags) return a.flags - b.flags;
 				else

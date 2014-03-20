@@ -269,13 +269,13 @@ H.stoveTree = {
 			html += '<a id="' + obj.tid + '" href="javascript:void(1);" onclick="H.stoveTree.init();H.stoveTree.showTree(' + obj.tid + ');"' + (themeId == obj.tid ? 'class="current"' : '') + '>' + H.ui.getThemeMiniLogo(obj.tid) + '</a>';
 		}
 		html += '<br /><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="H.stoveTree.showSelectTheme();" title="选择主题"><span class="ui-button-text">选择主题</span></button>';
-		html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.download.getImgByThemeId(' + themeId + ');" title="下载图片"><span class="ui-button-text">下载图片</span></button>';
+		//html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.download.getImgByThemeId(' + themeId + ');" title="下载图片"><span class="ui-button-text">下载图片</span></button>';
 		html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.submitCollection.init(' + themeId + ');" title="已集齐"><span class="ui-button-text">已集齐</span></button>';
-		if (H.localStorage.checkIn("themes", themeId)) {
-			html += '<button type="button" class="ui-button ui-widget ui-state-active ui-corner-all ui-button-text-only" onclick="javascript:H.localStorage.remove(\'themes\', ' + themeId + ');H.stoveTree.showTree(' + themeId + ');" title="不想交换这个主题"><span class="ui-button-text">不想交换这个主题</span></button>';
-		} else {
-			html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.localStorage.add(\'themes\', ' + themeId + ');H.stoveTree.showTree(' + themeId + ');" title="想交换这个主题"><span class="ui-button-text">想交换这个主题</span></button>';
-		}
+		// if (H.localStorage.checkIn("themes", themeId)) {
+		// 	html += '<button type="button" class="ui-button ui-widget ui-state-active ui-corner-all ui-button-text-only" onclick="javascript:H.localStorage.remove(\'themes\', ' + themeId + ');H.stoveTree.showTree(' + themeId + ');" title="不想交换这个主题"><span class="ui-button-text">不想交换这个主题</span></button>';
+		// } else {
+		// 	html += '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.localStorage.add(\'themes\', ' + themeId + ');H.stoveTree.showTree(' + themeId + ');" title="想交换这个主题"><span class="ui-button-text">想交换这个主题</span></button>';
+		// }
 		if (H.localStorage.get("themes") || H.localStorage.get("cards")) {
 			html += '<button type="button" class="ui-button ui-widget ui-state-active ui-corner-all ui-button-text-only" onclick="javascript:H.localStorage.clear(\'themes\');H.localStorage.clear(\'cards\');H.stoveTree.showTree(' + themeId + ');" title="清除想交换的"><span class="ui-button-text">清除想交换的</span></button>';
 		}
@@ -401,16 +401,19 @@ H.stoveTree = {
 			html += '</div>';
 		}
 		html += '    <div class="width_100">';
+		html += '        <div class="float_left width_20">';
+		html += '            <div class="width_100">面值：<strong>' + CARD.data.mapCard[this._my_theme_map._normal_card_arr[0]][3] + '</strong></div>';
 		if (H.checkRP(themeId)) {
-			html += '        <div class="float_left width_20"><strong class="width_100">免合成套卡只能通过抽卡和变卡获得！</strong></div>';
+			html += '        <strong class="width_100">免合成套卡只能通过抽卡和变卡获得！</strong>';
 		} else if (H.checkFlashCard(themeId)) {
-			html += '        <div class="float_left width_20"><div class="width_100">闪卡素材卡通过变卡获得，详情参考 <a target="_blank"href="http://service.qq.com/info/59576.html">如何炼闪卡</a></div><div class="width_100"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveTree.oneKeyBuyAndTransfer();" title="一键购变"><span class="ui-button-text">一键购变</span></button></div></div>';
+			html += '        <div class="width_100">闪卡素材卡通过变卡获得，详情参考 <a target="_blank"href="http://service.qq.com/info/59576.html">如何炼闪卡</a></div><div class="width_100"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveTree.oneKeyBuyAndTransfer();" title="一键购变"><span class="ui-button-text">一键购变</span></button></div>';
 		} else if (H.checkJbCard(themeId)) {
 			var str = (!H.checkCanTransfer(themeId) ? '' : '变卡或');
-			html += '        <div class="float_left width_20"><strong class="width_100">已下架绝版卡无法购买，只能' + str + '与卡友交换！</strong></div>';
+			html += '        <strong class="width_100">已下架绝版卡无法购买，只能' + str + '与卡友交换！</strong>';
 		} else {
-			html += '        <div class="float_left width_20"><div class="width_100"><strong>素材卡</strong>售价：20金币/张</div><div class="width_100"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveTree.oneKeyBuy();" title="一键购买"><span class="ui-button-text">一键购买</span></button></div></div>';
+			html += '        <div class="width_100"><strong>素材卡</strong>售价：20金币/张</div><div class="width_100"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="javascript:H.stoveTree.oneKeyBuy();" title="一键购买"><span class="ui-button-text">一键购买</span></button></div>';
 		}
+		html += '        </div>';
 		html += '    <div class="float_left width_80">';
 		html += '        <ul class="text_align_center overflow_auto">';
 		for (var i = 0, len = this._my_theme_map._normal_card_arr.length; i < len; i++) {

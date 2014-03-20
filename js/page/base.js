@@ -174,6 +174,11 @@ var H = {
 		if (themeIdb === 81) return -1;
 		return b.id - a.id;
 	},
+	sortCardFunc2: function(a, b) {
+		if (CARD.data.mapCard[a.id][3] == CARD.data.mapCard[b.id][3])
+			return b.id - a.id;
+		return CARD.data.mapCard[a.id][3] - CARD.data.mapCard[b.id][3];
+	},
 	resChinese: function(str) {
 		return unescape(str.replace(/&#x/g, '%u').replace(/;/g, ''));
 	},

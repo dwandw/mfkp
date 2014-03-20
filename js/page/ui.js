@@ -2,22 +2,32 @@ H.ui = {
 	getThemeMiniLogo: function(themeId) {
 		var theme = CARD.data.mapTheme[themeId];
 		if (!theme) return '<img/>';
-		return '<img src="' + H.extension_base_url + 'images/theme/' + themeId + '_logo" title="' + theme[1] + '"/>';
+		// return '<img src="' + H.extension_base_url + 'images/theme/' + themeId + '_logo" title="' + theme[1] + '"/>';
+		return '<img src="/card/img/theme/' + themeId + '_logo?ver=' + theme[13] + '" title="' + theme[1] + '"/>';
 	},
 	getThemeBigLogo: function(themeId) {
 		var theme = CARD.data.mapTheme[themeId];
 		if (!theme) return '<img/>';
-		return '<img src="' + H.extension_base_url + 'images/theme/' + themeId + '_big_logo" title="' + theme[1] + '"/>';
+		// return '<img src="' + H.extension_base_url + 'images/theme/' + themeId + '_big_logo" title="' + theme[1] + '"/>';
+		return '<img src="/card/img/theme/' + themeId + '_big_logo?ver=' + theme[13] + '" title="' + theme[1] + '"/>';
+	},
+	getThemeBg: function(themeId) {
+		var theme = CARD.data.mapTheme[themeId];
+		if (!theme) return '<img/>';
+		// return '<img src="' + H.extension_base_url + 'images/theme/' + themeId + '_big_logo" title="' + theme[1] + '"/>';
+		return '<img class="theme_bg" src="/card/img/theme/' + themeId + '?ver=' + theme[13] + '" title="' + theme[1] + '"/>';
 	},
 	getCardMiniImg: function(cardId) {
 		var card = CARD.data.mapCard[cardId];
 		if (!card) return '<img/>';
-		return '<img title="' + card[2].escHtml() + '[' + card[3] + ']" src="' + H.extension_base_url + 'images/card/' + card[0] + '_56" />';
+		// return '<img title="' + card[2].escHtml() + '[' + card[3] + ']" src="' + H.extension_base_url + 'images/card/' + card[0] + '_56" />';
+		return '<img title="' + card[2].escHtml() + '[' + card[3] + ']" src="/card/img/card/' + card[0] + '_56?ver=' + card[7] + '" />';
 	},
 	getCardBigImg: function(cardId) {
 		var card = CARD.data.mapCard[cardId];
 		if (!card) return '<img/>';
-		return '<img title="' + card[2].escHtml() + '" src="' + H.extension_base_url + 'images/card/' + card[0] + '" />';
+		// return '<img title="' + card[2].escHtml() + '" src="' + H.extension_base_url + 'images/card/' + card[0] + '" />';
+		return '<img title="' + card[2].escHtml() + '" src="/card/img/card/' + card[0] + '?ver=' + card[7] + '" />';
 	},
 	getCardBigImgSrc: function(cardId) {
 		return H.extension_base_url + 'images/card/' + cardId;
@@ -28,9 +38,12 @@ H.ui = {
 	getImgItemWithBg: function(cardId) {
 		var card = CARD.data.mapCard[cardId];
 		if (!card) return '';
+		var theme = CARD.data.mapTheme[card[1]];
 		var html = '';
-		html += '<img class="position_absolute theme" src="' + H.extension_base_url + 'images/theme/' + card[1] + '" />';
-		html += '<img class="position_absolute card" title="' + card[2] + '" src="' + H.extension_base_url + 'images/card/' + card[0] + '"/>';
+		// html += '<img class="position_absolute theme" src="' + H.extension_base_url + 'images/theme/' + card[1] + '" />';
+		html += '<img class="position_absolute theme" src="/card/img/theme/' + theme[0] + '?ver=' + theme[13] + '" />';
+		// html += '<img class="position_absolute card" title="' + card[2] + '" src="' + H.extension_base_url + 'images/card/' + card[0] + '"/>';
+		html += '<img class="position_absolute card" title="' + card[2] + '" src="/card/img/card/' + card[0] + '?ver=' + card[7] + '"/>';
 		html += '<span class="position_absolute name" style="color:' + H.ui.getThemeFontColor(card[1]) + ';"><strong>' + card[2] + '</strong></span>';
 		html += '<span class="position_absolute meny" style="color:' + H.ui.getThemeFontColor(card[1]) + ';"><font style="padding-right:9px;">' + card[3] + '</font></span>';
 		html += '<span class="position_absolute mask"></span>';
@@ -44,7 +57,8 @@ H.ui = {
 				slotArr.push(arg.box[index]);
 			}
 		}
-		slotArr.sort(H.sortCardFunc);
+		var sortFunc = arg.sortFunc||H.sortCardFunc;
+		slotArr.sort(sortFunc);
 		var html = '';
 		html += '<ul class="overflow_auto">';
 		for (var i = 0; i < slotArr.length; i++) {
@@ -71,8 +85,11 @@ H.ui = {
 				html += '<div class="card_big_img">';
 				// html += H.ui.getImgItemWithBg(slot.id);
 				var card = CARD.data.mapCard[slot.id];
-				html += '<img class="position_absolute theme" src="' + H.extension_base_url + 'images/theme/' + card[1] + '" />';
-				html += '<img class="position_absolute card" title="' + card[2] + '" src="' + H.extension_base_url + 'images/card/' + card[0] + '"/>';
+				var theme = CARD.data.mapTheme[card[1]];
+				// html += '<img class="position_absolute theme" src="' + H.extension_base_url + 'images/theme/' + card[1] + '" />';
+				html += '<img class="position_absolute theme" src="/card/img/theme/' + theme[0] + '?ver=' + theme[13] + '" />';
+				// html += '<img class="position_absolute card" title="' + card[2] + '" src="' + H.extension_base_url + 'images/card/' + card[0] + '"/>';
+				html += '<img class="position_absolute card" title="' + card[2] + '" src="/card/img/card/' + card[0] + '?ver=' + card[7] + '"/>';
 				html += '<span class="position_absolute name" style="color:' + H.ui.getThemeFontColor(card[1]) + ';"><strong>' + card[2] + '</strong></span>';
 				html += '<span class="position_absolute meny" style="color:' + H.ui.getThemeFontColor(card[1]) + ';"><font style="padding-right:9px;">' + card[3] + '</font></span>';
 				html += '<span class="position_absolute mask"></span>';
@@ -318,13 +335,16 @@ H.ui = {
 					if (H.user.mapCollection[theme[0]] && H.user.mapCollection[theme[0]].num) {
 						num = H.user.mapCollection[theme[0]].num;
 					}
-					if (num > 0) {
-						if (num < 4)
-							html += ' background_color_red';
-						else
-							html += ' background_color_gray';
+					if (num > 3) {
+						html += ' background_color_4';
+					} else if (num > 2) {
+						html += ' background_color_3';
+					} else if (num > 1) {
+						html += ' background_color_2';
+					} else if (num > 0) {
+						html += ' background_color_1';
 					} else {
-						html += ' background_color_dark_red';
+						html += ' background_color_0';
 					}
 					html += '" style="margin: 2px 1%; cursor: pointer;">';
 					html += '<span>' + theme[1] + '</span>';

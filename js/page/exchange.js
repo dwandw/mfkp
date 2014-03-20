@@ -208,7 +208,8 @@ H.exchange = {
 			},
 			canOnClick: function(slotId, locate) {
 				return H.exchange.canOnClick(slotId, locate);
-			}
+			},
+			sortFunc: H.sortCardFunc2
 		});
 		div.html(html);
 	},
@@ -260,7 +261,8 @@ H.exchange = {
 					return false;
 				}
 				return true;
-			}
+			},
+			sortFunc: H.sortCardFunc2
 		});
 		div.html(html);
 	},

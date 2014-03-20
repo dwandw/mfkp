@@ -32,7 +32,8 @@
 			}, {
 				text: "炼卡攻略",
 				click: "H.box.showTree"
-			}]
+			}],
+			sortFunc: H.sortCardFunc2
 		});
 		html += '</div>';
 		div.append(html);

@@ -97,7 +97,7 @@ H.market = {
 	showCards: function() {
 		for (var i = 0; i < this.tabArr[this.showNow].length; i++) {
 			html = '<ul class="overflow_auto">';
-			this.tabArr[this.showNow][i].sort(function(a, b){
+			this.tabArr[this.showNow][i].sort(function(a, b) {
 				return b[0] - a[0];
 			});
 			for (var j = 0; j < this.tabArr[this.showNow][i].length; j++) {
@@ -130,7 +130,8 @@ H.market = {
 				if (CARD.data.mapCard[H.user.mapExchangeBox[slotId].id][3] > 10)
 					return true;
 				return false;
-			}
+			},
+			sortFunc: H.sortCardFunc2
 		});
 		div.html(html);
 	},
