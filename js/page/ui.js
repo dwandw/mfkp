@@ -131,7 +131,7 @@ H.ui = {
 		var dialog = jQuery('#wait_dialog');
 		if (dialog.children().length == 0) {
 			dialog = jQuery('<div id="wait_dialog"></div>');
-			dialog.html('<div style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:10000;background-color:#000;opacity:0.7;"></div><div style="position:fixed;top:50%;left:50%;width:55px;margin-left:-22px;z-index:10001;"><canvas id="wait_dialog_wait_effect" width="54" height="54">您的浏览器不支持html5哟</canvas><br /><span style="color:#fff;">加载中...</span></div>');
+			dialog.html('<div class="bg"></div><div class="loading"><canvas id="wait_dialog_wait_effect" width="54" height="54">您的浏览器不支持html5哟</canvas></div>');
 			jQuery('body').append(dialog);
 		}
 		var obj = {};
@@ -347,10 +347,10 @@ H.ui = {
 						html += ' background_color_0';
 					}
 					html += '" style="margin: 2px 1%; cursor: pointer;">';
-					html += '<span>' + theme[1] + '</span>';
-					if (num > 0) {
-						html += '(' + num + ')';
-					}
+					html += '<span title="'+num+'套">' + theme[1] + '</span>';
+					// if (num > 0) {
+					// 	html += '(' + num + ')';
+					// }
 					html += '                </li>';
 				}
 				html += '            </ul>';

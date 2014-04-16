@@ -1,6 +1,3 @@
-::selection{ color:#FFF; background:#FF6100; }
-body{}
-
 .overflow_auto{ overflow: auto; }
 .clear{ clear: both; }
 .width_10{ width: 10%; }
@@ -103,3 +100,6 @@ body{}
 
 #market_dialog_market_tabs ul.overflow_auto{ height: 450px; }
 #market_dialog_my_box_tabs ul.overflow_auto{ height: 450px; }
+
+#wait_dialog .bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:10000;background-color:#0CF5A1;opacity:0.8;}
+#wait_dialog .loading{position:fixed;top:50%;left:50%;width:56px;margin-left:-28px;margin-top:-28px;z-index:10001;}
