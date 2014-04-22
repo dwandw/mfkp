@@ -281,6 +281,9 @@ H.user = {
 	getUin: function() {
 		return H.user.oMyData.uin;
 	},
+	getNick: function() {
+		return H.user.oMyData.nick;
+	},
 	getRedVip: function() {
 		return H.user.oMyData.redvip;
 	},

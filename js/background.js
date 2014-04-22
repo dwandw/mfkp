@@ -1,36 +1,41 @@
 function onRequestListener(request, sender, sendResponse) {
-	var arr = request.name.split("|");
-	if (arr.length === 2) {
+	var arr = request.mapStove.split("|");
+	if (arr.length === 3) {
 		if (timer1) {
 			clearTimeout(timer1);
 		}
 		if (timer2) {
 			clearTimeout(timer2);
 		}
-		var timeOutSecond1 = parseInt(arr[0].split(",")[0]) - 5 * 1000;
-		var timeOutSecond2 = parseInt(arr[1].split(",")[0]) - 5 * 1000;
+		var timeOutSecond1 = parseInt(arr[1].split(",")[0]) - 5 * 1000;
+		var timeOutSecond2 = parseInt(arr[2].split(",")[0]) - 5 * 1000;
+		var msg = arr[0].split(",")[1] + '[' + arr[0].split(",")[0] + '],快炼好了，去收卡吧！\n';
 		if (timeOutSecond1 > 0) {
 			timer1 = setTimeout(function() {
-				showNofification(0, '快炼好了，去收卡吧！--' + new Date().Format("HH:MM:ss"), arr[0].split(",")[1]);
+				showNofification(arr[0].split(",")[0], msg + new Date().Format("HH:MM:ss"), arr[1].split(",")[1], arr[1].split(",")[2]);
 			}, timeOutSecond1);
 		};
 		if (timeOutSecond2 > 0) {
 			timer2 = setTimeout(function() {
-				showNofification(1, '快炼好了，去收卡吧！--' + new Date().Format("HH:MM:ss"), arr[1].split(",")[1]);
+				showNofification(arr[0].split(",")[0], msg + new Date().Format("HH:MM:ss"), arr[2].split(",")[1], arr[2].split(",")[2]);
 			}, timeOutSecond2);
 		};
 		console.log(new Date().Format("HH:MM:ss"));
+		sendResponse({
+			"status": "succeed"
+		});
 	};
 };
 
-function showNofification(timer, msg, cardId) {
+function showNofification(uid, msg, cardId, imgUrl) {
 	if (needVoice())
 		play();
-	chrome.notifications.create("qq_card_helper_" + timer + "_" + cardId, {
+	chrome.notifications.create("qq_card_helper_" + uid + "_" + cardId, {
 		type: "basic",
 		title: "魔法卡片-提示",
 		message: msg,
-		iconUrl: chrome.extension.getURL("images/icon_100.png"),
+		// iconUrl: chrome.extension.getURL("images/icon_100.png"),imgUrl
+		iconUrl: imgUrl,
 		eventTime: Date.now() + 24 * 3600 * 1000,
 		priority: 2,
 		buttons: [{
@@ -43,8 +48,8 @@ chrome.notifications.onButtonClicked.addListener(function(notificationId, button
 	if (notificationId.indexOf("qq_card_helper") > -1 && buttonIndex === 0) {
 		chrome.tabs.create({
 			'url': 'http://appimg.qq.com/card/index_v3.html',
-			'selected': true
-		});
+			'active': true
+		}, function(tabId) {});
 		chrome.notifications.clear(notificationId, function() {});
 	}
 });
@@ -67,7 +72,7 @@ function onBeforeRequestListener(details) {
 			redirectUrl: chrome.extension.getURL("js/hook/all.js")
 		};
 	}
-	if(/appimg2/i.test(details.url)){
+	if (/appimg2/i.test(details.url)) {
 		return {
 			redirectUrl: details.url.replace("appimg2", "appimg")
 		};

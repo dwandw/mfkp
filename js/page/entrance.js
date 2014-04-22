@@ -9,7 +9,7 @@
 		html += '            <li><a href="#tabs-2" onclick="javascript:H.box.showBox();">卡箱</a></li>';
 		html += '            <li><a href="#tabs-3" onclick="javascript:;">好友列表</a></li>';
 		html += '            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" onclick="javascript:jQuery(\'#helper\').hide();jQuery(\'#helper_min\').show();"><span class="ui-button-text">关闭助手</span></button>';
-		html += '            <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" onclick="javascript:H.user.load();"><span class="ui-button-text">更新</span></button>&nbsp;&nbsp;&nbsp;&nbsp;';
+		html += '            <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" onclick="javascript:H.user.load(function(){H.notification.getUnlockTimes();});"><span class="ui-button-text">更新</span></button>&nbsp;&nbsp;&nbsp;&nbsp;';
 		html += '            <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" onclick="javascript:H.stoveTree.showTree();"><span class="ui-button-text">炼卡攻略</span></button>';
 		html += '            <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" onclick="javascript:H.market.show();"><span class="ui-button-text">卡片市场</span></button>';
 		html += '            <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" onclick="javascript:H.transform.init();"><span class="ui-button-text">变卡</span></button>';
@@ -51,7 +51,7 @@
 			jQuery('#SPAN_NICK').html(H.user.oMyData.nick + '(' + H.user.oMyData.uin + ')');
 			H.stoveBox.showStoves();
 			var html = '';
-			html += '                0[我]<a href="javascript:void(1);" onclick="javascript:H.stoveTree.setStealUin('+H.user.oMyData.uin+');" title="炼卡">炼卡</a>&nbsp;&nbsp;&nbsp;&nbsp;<br />';
+			html += '                0[我]<a href="javascript:void(1);" onclick="javascript:H.stoveTree.setStealUin(' + H.user.oMyData.uin + ');" title="炼卡">炼卡</a>&nbsp;&nbsp;&nbsp;&nbsp;<br />';
 			html += '                1[苏](20372815)<a href="javascript:void(1);" onclick="javascript:H.stoveTree.setStealUin(20372815);" title="偷炉">偷炉</a>&nbsp;&nbsp;&nbsp;&nbsp;<br />';
 			html += '                2[小瓶子](404584976)<a href="javascript:void(1);" onclick="javascript:H.stoveTree.setStealUin(404584976);" title="偷炉">偷炉</a>&nbsp;&nbsp;&nbsp;&nbsp;<br />';
 			jQuery('#steal_friends').html(html);

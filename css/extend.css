@@ -20,7 +20,6 @@
 .center{ margin: 0 auto; }
 
 
-#eventDiv { float: left; padding-top: 5px; width: 500px; text-align: right; }
 #helper_min{ position: fixed; top: 250px; right: 0px; background-color: #b1d85c; padding: 5px; border-radius:5px 0 0 5px; z-index: 1000; }
 #helper { color: #fff; overflow: auto; position: absolute; top: 30px; width: 100%; z-index: 100; }
 

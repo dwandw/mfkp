@@ -22,7 +22,7 @@ function injectStyle() {
 }
 
 function injectHtml() {
-	var d = document.createElement('span');
+	var d = document.createElement('div');
 	d.id = "extension_base_url";
 	d.style.cssText = "display:none;";
 	d.innerHTML = chrome.extension.getURL("");
@@ -30,18 +30,20 @@ function injectHtml() {
 
 	var d1 = document.createElement('div');
 	d1.id = 'eventDiv';
-	var father = document.getElementsByClassName("live_header_main_v3")[0];
-	var target = document.getElementById("P_LOGIN");
-	father.insertBefore(d1, target);
-	//jQuery("#P_LOGIN").after(d1);
-	//document.body.appendChild(d1);
+	d1.style.cssText = "display:none;";
+	document.body.appendChild(d1);
 }
 
-function sendMessage(name, value) {
+function sendMessage(value) {
 	chrome.extension.sendRequest({
-		name: value
+		"mapStove": value
 	}, function(response) {
-		console.log("success");
+		if (response.status == "succeed") {
+			// alert("succeed");
+			console.log("success");
+		} else {
+			alert("fail");
+		}
 	});
 }
 
@@ -52,7 +54,7 @@ function notification() {
 	} else {
 		document.getElementById("eventDiv").addEventListener('myCustomEvent', function() {
 			var eventData = document.getElementById('eventDiv').innerText;
-			sendMessage("mapStove", eventData);
+			sendMessage(eventData);
 		});
 	}
 }

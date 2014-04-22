@@ -21,19 +21,19 @@ H.notification = {
 				unlockTimes[1] = arr[1];
 			}
 		};
-		var customEvent = document.createEvent('Event');
-		customEvent.initEvent('myCustomEvent', true, true);
 
 		function fireCustomEvent(data) {
-			hiddenDiv = document.getElementById("eventDiv");
-			var html = '<a href="javascript:void(1);" onclick="H.notification.getUnlockTimes();" class="exit">' + data + '</a>';
-			hiddenDiv.innerHTML = html;
-			hiddenDiv.dispatchEvent(customEvent);
+			var customEvent = document.createEvent('Event');
+			customEvent.initEvent('myCustomEvent', true, true);
+
+			hiddenDiv = jQuery("#eventDiv");
+			hiddenDiv.html(data);
+			hiddenDiv[0].dispatchEvent(customEvent);
 		}
-		var data = '';
+		var data = H.user.getUin() + "," + H.user.getNick() + '|';
 		for (var i = 0; i < unlockTimes.length; i++) {
 			var stove = unlockTimes[i];
-			data += (stove.btime * 1000 + stove.locktime * 1000 - now) + ',' + stove.id + (i == unlockTimes.length - 1 ? '' : '|');
+			data += (stove.btime * 1000 + stove.locktime * 1000 - now) + ',' + stove.id + ',' + (stove.id > 0 ? H.ui.getCardBigImgSrc(stove.id) : "0") + (i == unlockTimes.length - 1 ? '' : '|');
 		};
 		fireCustomEvent(data);
 	}

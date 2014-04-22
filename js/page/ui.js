@@ -29,11 +29,17 @@ H.ui = {
 		// return '<img title="' + card[2].escHtml() + '" src="' + H.extension_base_url + 'images/card/' + card[0] + '" />';
 		return '<img title="' + card[2].escHtml() + '" src="/card/img/card/' + card[0] + '?ver=' + card[7] + '" />';
 	},
+	getCardMiniImgSrc: function(cardId) {
+		var card = CARD.data.mapCard[cardId];
+		return 'http://appimg.qq.com/card/img/card/' + card[0] + '_56?ver=' + card[7];
+	},
 	getCardBigImgSrc: function(cardId) {
-		return H.extension_base_url + 'images/card/' + cardId;
+		var card = CARD.data.mapCard[cardId];
+		return 'http://appimg.qq.com/card/img/card/' + card[0] + '?ver=' + card[7];
 	},
 	getThemeImgSrc: function(themeId) {
-		return H.extension_base_url + 'images/theme/' + themeId;
+		var theme = CARD.data.mapTheme[themeId];
+		return 'http://appimg.qq.com/card/img/theme/' + theme[0] + '?ver=' + theme[13];
 	},
 	getImgItemWithBg: function(cardId) {
 		var card = CARD.data.mapCard[cardId];
@@ -57,7 +63,7 @@ H.ui = {
 				slotArr.push(arg.box[index]);
 			}
 		}
-		var sortFunc = arg.sortFunc||H.sortCardFunc;
+		var sortFunc = arg.sortFunc || H.sortCardFunc;
 		slotArr.sort(sortFunc);
 		var html = '';
 		html += '<ul class="overflow_auto">';
@@ -347,7 +353,7 @@ H.ui = {
 						html += ' background_color_0';
 					}
 					html += '" style="margin: 2px 1%; cursor: pointer;">';
-					html += '<span title="'+num+'套">' + theme[1] + '</span>';
+					html += '<span title="' + num + '套">' + theme[1] + '</span>';
 					// if (num > 0) {
 					// 	html += '(' + num + ')';
 					// }
