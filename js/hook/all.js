@@ -1,29 +1,77 @@
 var freeGiftConfigMap = {
 	7: 10001,
 	8: 10000,
-	54: -1,
-	53: -2,
-	51: -3,
-	52: -4,
-	55: -5,
-	56: -6,
 
-	57: 3,
-	58: 5,
-	59: 2,
-	60: 4,
-	61: 1,
-	62: 6,
+	63: 4,
+	64: 6,
+	65: 2,
+	66: 1,
+	67: 3,
+	68: 5,
 };
 
 var freeGiftConfig = [{
+	"asset_id": "46604",
+	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_63_v_1.png",
+	"id": 63,
+	"msg": "卡片竹编团扇X1已赠送，请在“卡箱”查看",
+	"name": "卡片竹编团扇",
+	"rewards_name": "点经验",
+	"show": 1,
+	"type": "卡片"
+}, {
+	"asset_id": "46605",
+	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_64_v_1.png",
+	"id": 64,
+	"msg": "卡片黑绸团扇X1已赠送，请在“卡箱”查看",
+	"name": "卡片黑绸团扇",
+	"rewards_name": "点经验",
+	"show": 1,
+	"type": "卡片"
+}, {
+	"asset_id": "46606",
+	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_65_v_1.png",
+	"id": 65,
+	"msg": "卡片象牙团扇X1已赠送，请在“卡箱”查看",
+	"name": "卡片象牙团扇",
+	"rewards_name": "点经验",
+	"show": 1,
+	"type": "卡片"
+}, {
+	"asset_id": "46607",
+	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_66_v_1.png",
+	"id": 66,
+	"msg": "卡片宣纸团扇X1已赠送，请在“卡箱”查看",
+	"name": "卡片宣纸团扇",
+	"rewards_name": "点经验",
+	"show": 1,
+	"type": "卡片"
+}, {
+	"asset_id": "46608",
+	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_67_v_1.png",
+	"id": 67,
+	"msg": "卡片麦茎团扇X1已赠送，请在“卡箱”查看",
+	"name": "卡片麦茎团扇",
+	"rewards_name": "点经验",
+	"show": 1,
+	"type": "卡片"
+}, {
+	"asset_id": "46609",
+	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_68_v_1.png",
+	"id": 68,
+	"msg": "卡片白玉团扇X1已赠送，请在“卡箱”查看",
+	"name": "卡片白玉团扇",
+	"rewards_name": "点经验",
+	"show": 1,
+	"type": "卡片"
+}, {
 	"asset_id": "45240",
 	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_57_v_3.png",
 	"id": 57,
 	"msg": "卡片贝币X1已赠送，请在“卡箱”查看",
 	"name": "卡片贝币",
 	"rewards_name": "点经验",
-	"show": 1,
+	"show": 0,
 	"type": "卡片"
 }, {
 	"asset_id": "45241",
@@ -32,7 +80,7 @@ var freeGiftConfig = [{
 	"msg": "卡片王莽币X1已赠送，请在“卡箱”查看",
 	"name": "卡片王莽币",
 	"rewards_name": "点经验",
-	"show": 1,
+	"show": 0,
 	"type": "卡片"
 }, {
 	"asset_id": "45242",
@@ -41,7 +89,7 @@ var freeGiftConfig = [{
 	"msg": "卡片布币X1已赠送，请在“卡箱”查看",
 	"name": "卡片布币",
 	"rewards_name": "点经验",
-	"show": 1,
+	"show": 0,
 	"type": "卡片"
 }, {
 	"asset_id": "45243",
@@ -50,7 +98,7 @@ var freeGiftConfig = [{
 	"msg": "卡片环钱X1已赠送，请在“卡箱”查看",
 	"name": "卡片环钱",
 	"rewards_name": "点经验",
-	"show": 1,
+	"show": 0,
 	"type": "卡片"
 }, {
 	"asset_id": "45244",
@@ -59,7 +107,7 @@ var freeGiftConfig = [{
 	"msg": "卡片蚊鼻钱X1已赠送，请在“卡箱”查看",
 	"name": "卡片蚊鼻钱",
 	"rewards_name": "点经验",
-	"show": 1,
+	"show": 0,
 	"type": "卡片"
 }, {
 	"asset_id": "45245",
@@ -67,60 +115,6 @@ var freeGiftConfig = [{
 	"id": 62,
 	"msg": "卡片爱金X1已赠送，请在“卡箱”查看",
 	"name": "卡片爱金",
-	"rewards_name": "点经验",
-	"show": 1,
-	"type": "卡片"
-}, {
-	"asset_id": "43134",
-	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_54_v_1.png",
-	"id": 54,
-	"msg": "卡片磬结X1已赠送，请在“卡箱”查看",
-	"name": "卡片磬结",
-	"rewards_name": "点经验",
-	"show": 0,
-	"type": "卡片"
-}, {
-	"asset_id": "43133",
-	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_53_v_1.png",
-	"id": 53,
-	"msg": "卡片琵琶扣结X1已赠送，请在“卡箱”查看",
-	"name": "卡片琵琶扣结",
-	"rewards_name": "点经验",
-	"show": 0,
-	"type": "卡片"
-}, {
-	"asset_id": "43131",
-	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_51_v_1.png",
-	"id": 51,
-	"msg": "卡片吉祥结X1已赠送，请在“卡箱”查看",
-	"name": "卡片吉祥结",
-	"rewards_name": "点经验",
-	"show": 0,
-	"type": "卡片"
-}, {
-	"asset_id": "43132",
-	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_52_v_1.png",
-	"id": 52,
-	"msg": "卡片攀援结X1已赠送，请在“卡箱”查看",
-	"name": "卡片攀援结",
-	"rewards_name": "点经验",
-	"show": 0,
-	"type": "卡片"
-}, {
-	"asset_id": "43135",
-	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_55_v_1.png",
-	"id": 55,
-	"msg": "卡片太阳结X1已赠送，请在“卡箱”查看",
-	"name": "卡片太阳结",
-	"rewards_name": "点经验",
-	"show": 0,
-	"type": "卡片"
-}, {
-	"asset_id": "43136",
-	"asset_url_freegift": "http://appimg.qq.com/freegift/365/freegift_56_v_1.png",
-	"id": 56,
-	"msg": "卡片藻井结X1已赠送，请在“卡箱”查看",
-	"name": "卡片藻井结",
 	"rewards_name": "点经验",
 	"show": 0,
 	"type": "卡片"
@@ -499,7 +493,8 @@ V.module.AbstractDAO.prototype = {
 	},
 	getData: function(opt) {
 		var _cgiConfig = null,
-			data = opt.data || {}, cb = opt.cb;
+			data = opt.data || {},
+			cb = opt.cb;
 		if (opt.key) {
 			_cgiConfig = this._config[opt.key];
 		} else {

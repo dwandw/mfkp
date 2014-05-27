@@ -104,7 +104,7 @@ H.transform = {
 					locked = false;
 				}
 				html += '<li id="' + slot.slot + '"';
-				html += locked ? '' : ' onmouseout="javascript:H.transform.mouseOutItem(this);" onmouseover="javascript:H.transform.mouseOverItem(this);" onclick="javascript:H.transform.selectSrcItem(this, ' + slot.slot + ', ' + slot.id + ', ' + slot.locate + ');"';
+				html += locked ? '' : ' onmouseout="javascript:H.transform.mouseOutItem(this, 1);" onmouseover="javascript:H.transform.mouseOverItem(this, 1);" onclick="javascript:H.transform.selectSrcItem(this, ' + slot.slot + ', ' + slot.id + ', ' + slot.locate + ');"';
 				html += ' class="card_mini float_left text_align_center' + (this.selectedSrcCard && this.selectedSrcCard.locate === 0 && this.selectedSrcCard.slot === slot.slot ? ' selected' : '') + '">';
 				html += '<div class="card_mini_img width_100">';
 				html += H.ui.getCardMiniImg(slot.id);
@@ -148,7 +148,7 @@ H.transform = {
 					locked = false;
 				}
 				html += '<li id="' + slot.slot + '"';
-				html += locked ? '' : ' onmouseout="javascript:H.transform.mouseOutItem(this);" onmouseover="javascript:H.transform.mouseOverItem(this);" onclick="javascript:H.transform.selectSrcItem(this, ' + slot.slot + ', ' + slot.id + ', ' + slot.locate + ');"';
+				html += locked ? '' : ' onmouseout="javascript:H.transform.mouseOutItem(this, 1);" onmouseover="javascript:H.transform.mouseOverItem(this, 1);" onclick="javascript:H.transform.selectSrcItem(this, ' + slot.slot + ', ' + slot.id + ', ' + slot.locate + ');"';
 				html += ' class="card_mini float_left text_align_center' + (this.selectedSrcCard && this.selectedSrcCard.locate === 1 && this.selectedSrcCard.slot === slot.slot ? ' selected' : '') + '">';
 				html += '<div class="card_mini_img width_100">';
 				html += H.ui.getCardMiniImg(slot.id);
@@ -260,11 +260,25 @@ H.transform = {
 			}
 		});
 	},
-	mouseOutItem: function(doc) {
+	mouseOutItem: function(doc, type) {
 		jQuery(doc).removeClass("mouse_on");
+		if (!type)
+			jQuery("#transform_dialog_dst_tabs .card_mini.linked").removeClass("linked");
 	},
-	mouseOverItem: function(doc) {
-		jQuery(doc).addClass("mouse_on");
+	mouseOverItem: function(doc, type) {
+		if (type)
+			jQuery(doc).addClass("mouse_on");
+		else {
+			id = parseInt(jQuery(doc).attr("id"));
+			jQuery("#transform_dialog_dst_tabs .card_mini.mouse_on").removeClass("mouse_on");
+			jQuery("#transform_dialog_dst_tabs .card_mini.linked").removeClass("linked");
+			var d = CARD.data.mapCompose[id];
+			if (!d) return;
+			jQuery("#transform_dialog_dst_tabs .card_mini#" + id).addClass("mouse_on");
+			for (var i = 0; i < 3; i++) {
+				jQuery("#transform_dialog_dst_tabs .card_mini#" + d[i + 3]).addClass("linked");
+			}
+		}
 	},
 	selectSrcItem: function(doc, slotId, cardId, locate) {
 		doc = jQuery(doc);
